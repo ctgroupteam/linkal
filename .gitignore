@@ -1,0 +1,8 @@
+# Ignore sub-projects
+/Linkal Tool/
+/Turkish Zaika/
+node_modules/
+.env
+.env.local
+.DS_Store
+Thumbs.db

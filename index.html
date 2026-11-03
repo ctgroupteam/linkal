@@ -1,0 +1,4174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>linkal.in — Your Branded Store on Your Own Subdomain</title>
+    <meta name="description"
+        content="Get a branded website store for your Indian Instagram business. Your own subdomain, WhatsApp ordering, AI business analyzer, and Story Studio — starting at ₹300/month." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500&display=swap"
+        rel="stylesheet" />
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --white: #FFFFFF;
+            --black: #0A0A0A;
+            --navy: #0D1B3E;
+            --navy-light: #EEF1F8;
+            --navy-dark: #1A2744;
+            --blue: #1A56FF;
+            --text: #374151;
+            --card-bg: #F8F9FC;
+            --border: rgba(13, 27, 62, 0.10);
+            --shadow: 0 4px 24px rgba(13, 27, 62, 0.08);
+            --shadow-lg: 0 12px 48px rgba(13, 27, 62, 0.14);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: var(--white);
+            color: var(--black);
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5 {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            color: var(--navy);
+            line-height: 1.2;
+        }
+
+        h1 {
+            font-size: clamp(2.4rem, 5vw, 4.2rem);
+            font-weight: 800;
+        }
+
+        h2 {
+            font-size: clamp(1.75rem, 3vw, 2.5rem);
+            font-weight: 700;
+        }
+
+        h3 {
+            font-size: clamp(1.1rem, 2vw, 1.35rem);
+            font-weight: 700;
+        }
+
+        p {
+            color: var(--text);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 clamp(1.25rem, 4vw, 2.5rem);
+        }
+
+        .section-pad {
+            padding: clamp(4rem, 8vw, 7rem) 0;
+        }
+
+        /* ─── NAVBAR ─────────────────────────────── */
+        #navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            transition: background 0.3s, box-shadow 0.3s, backdrop-filter 0.3s;
+            background: transparent;
+        }
+
+        #navbar.scrolled {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            box-shadow: 0 2px 20px rgba(13, 27, 62, 0.08);
+        }
+
+        .nav-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 70px;
+            gap: 2rem;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.55rem;
+            cursor: pointer;
+        }
+
+        .logo-mark {
+            width: 34px;
+            height: 34px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-text {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 800;
+            font-size: 1.35rem;
+            color: var(--navy);
+            letter-spacing: -0.02em;
+        }
+
+        .logo-text span {
+            color: var(--blue);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--navy);
+            transition: color 0.2s;
+            letter-spacing: -0.01em;
+        }
+
+        .nav-links a:hover {
+            color: var(--blue);
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 700;
+            font-size: 0.9rem;
+            padding: 0.65rem 1.5rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.2s;
+            border: 2px solid transparent;
+            white-space: nowrap;
+        }
+
+        .btn-blue {
+            background: var(--blue);
+            color: #fff;
+            border-color: var(--blue);
+        }
+
+        .btn-blue:hover {
+            background: #1245d6;
+            border-color: #1245d6;
+            transform: translateY(-1px);
+            box-shadow: 0 6px 20px rgba(26, 86, 255, 0.3);
+        }
+
+        .btn-navy {
+            background: var(--navy);
+            color: #fff;
+            border-color: var(--navy);
+        }
+
+        .btn-navy:hover {
+            background: #081228;
+            border-color: #081228;
+            transform: translateY(-1px);
+            box-shadow: 0 6px 20px rgba(13, 27, 62, 0.25);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--navy);
+            border-color: var(--navy);
+        }
+
+        .btn-outline:hover {
+            background: var(--navy);
+            color: #fff;
+            transform: translateY(-1px);
+        }
+
+        .btn-outline-white {
+            background: transparent;
+            color: #fff;
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+
+        .btn-outline-white:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: #fff;
+        }
+
+        .btn-white {
+            background: #fff;
+            color: var(--navy);
+            border-color: #fff;
+        }
+
+        .btn-white:hover {
+            background: #f0f0f0;
+            transform: translateY(-1px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+        }
+
+        .btn-lg {
+            padding: 0.85rem 2rem;
+            font-size: 1rem;
+        }
+
+        .btn-sm {
+            padding: 0.5rem 1.15rem;
+            font-size: 0.82rem;
+        }
+
+        .hamburger {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+            color: var(--navy);
+        }
+
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 70px;
+            left: 0;
+            right: 0;
+            background: #fff;
+            border-bottom: 1px solid var(--border);
+            padding: 1.5rem clamp(1.25rem, 4vw, 2.5rem);
+            flex-direction: column;
+            gap: 1.25rem;
+            z-index: 999;
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-10px);
+            opacity: 0;
+            transition: transform 0.3s, opacity 0.3s;
+        }
+
+        .mobile-menu.open {
+            display: flex;
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .mobile-menu a {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 600;
+            font-size: 1rem;
+            color: var(--navy);
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        /* ─── HERO ─────────────────────────────── */
+        #hero {
+            padding-top: calc(70px + clamp(3rem, 6vw, 5rem));
+            padding-bottom: clamp(4rem, 8vw, 6rem);
+            background: var(--white);
+            overflow: hidden;
+            position: relative;
+        }
+
+        #hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 45%;
+            height: 100%;
+            background: var(--navy-light);
+            clip-path: polygon(15% 0%, 100% 0%, 100% 100%, 0% 100%);
+            z-index: 0;
+            opacity: 0.45;
+        }
+
+        .hero-inner {
+            display: grid;
+            grid-template-columns: 55fr 45fr;
+            gap: 3rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--navy-light);
+            border: 1px solid var(--border);
+            border-radius: 50px;
+            padding: 0.4rem 1rem;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-badge-dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: var(--blue);
+            animation: pulse-dot 2s infinite;
+        }
+
+        @keyframes pulse-dot {
+
+            0%,
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+            50% {
+                opacity: 0.6;
+                transform: scale(1.3);
+            }
+        }
+
+        .hero-h1 {
+            margin-bottom: 1.25rem;
+        }
+
+        .hero-sub {
+            font-size: clamp(1rem, 1.5vw, 1.1rem);
+            color: var(--text);
+            max-width: 520px;
+            margin-bottom: 2rem;
+        }
+
+        .hero-ctas {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+
+        .trust-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.25rem;
+        }
+
+        .trust-badge {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--navy);
+        }
+
+        .trust-badge svg {
+            color: var(--blue);
+            flex-shrink: 0;
+        }
+
+        /* Phone mockup */
+        .phone-wrap {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .phone {
+            width: 240px;
+            background: var(--navy);
+            border-radius: 36px;
+            padding: 12px;
+            box-shadow: 0 32px 80px rgba(13, 27, 62, 0.35), 0 8px 24px rgba(13, 27, 62, 0.2);
+            position: relative;
+        }
+
+        .phone::before {
+            content: '';
+            position: absolute;
+            top: 12px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 6px;
+            background: #1e2f5c;
+            border-radius: 3px;
+        }
+
+        .phone-screen {
+            background: var(--white);
+            border-radius: 26px;
+            overflow: hidden;
+            min-height: 460px;
+        }
+
+        .phone-store-header {
+            background: var(--navy);
+            padding: 1rem;
+            text-align: center;
+            padding-top: 1.5rem;
+        }
+
+        .phone-store-name {
+            color: #fff;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 800;
+            font-size: 0.9rem;
+            letter-spacing: -0.01em;
+        }
+
+        .phone-store-sub {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.65rem;
+            margin-top: 2px;
+        }
+
+        .phone-products {
+            padding: 0.75rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+        }
+
+        .phone-product {
+            background: var(--card-bg);
+            border-radius: 10px;
+            padding: 0.65rem;
+            display: flex;
+            gap: 0.6rem;
+            align-items: center;
+            border: 1px solid var(--border);
+        }
+
+        .phone-product-img {
+            width: 44px;
+            height: 44px;
+            border-radius: 7px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .phone-product-img.c1 {
+            background: #fce4ec;
+        }
+
+        .phone-product-img.c2 {
+            background: #e3f2fd;
+        }
+
+        .phone-product-img.c3 {
+            background: #e8f5e9;
+        }
+
+        .phone-product-name {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 700;
+            font-size: 0.7rem;
+            color: var(--navy);
+        }
+
+        .phone-product-price {
+            font-size: 0.65rem;
+            color: var(--text);
+        }
+
+        .phone-wa-btn {
+            background: #25D366;
+            color: #fff;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 0.6rem;
+            font-weight: 700;
+            border-radius: 20px;
+            padding: 0.25rem 0.6rem;
+            margin-top: 2px;
+            display: inline-block;
+        }
+
+        .phone-subdomain {
+            text-align: center;
+            padding: 0.5rem;
+            font-size: 0.58rem;
+            color: var(--blue);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 600;
+        }
+
+        /* ─── TICKER ─────────────────────────────── */
+        #ticker {
+            background: var(--navy);
+            padding: 0.9rem 0;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .ticker-track {
+            display: flex;
+            gap: 0;
+            animation: ticker-scroll 28s linear infinite;
+            width: max-content;
+        }
+
+        .ticker-item {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            padding: 0 1.5rem;
+            white-space: nowrap;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 600;
+            font-size: 0.88rem;
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        .ticker-dot {
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: var(--blue);
+            flex-shrink: 0;
+        }
+
+        @keyframes ticker-scroll {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        /* ─── AI ANALYZER ─────────────────────────── */
+        #ai-analyzer {
+            background: var(--navy);
+            color: #fff;
+        }
+
+        .ai-label {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 700;
+            font-size: 0.75rem;
+            letter-spacing: 0.14em;
+            color: var(--blue);
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        #ai-analyzer h2 {
+            color: #fff;
+            margin-bottom: 1rem;
+        }
+
+        .ai-desc {
+            color: rgba(255, 255, 255, 0.7);
+            max-width: 620px;
+            margin-bottom: 3rem;
+            font-size: 1.05rem;
+        }
+
+        .ai-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.25rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .ai-card {
+            background: var(--navy-dark);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 1.5rem;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+
+        .ai-card:hover {
+            transform: translateY(-3px);
+            border-color: rgba(26, 86, 255, 0.3);
+        }
+
+        .ai-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--blue);
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+
+        .ai-card:hover::after {
+            opacity: 1;
+        }
+
+        .ai-card-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            background: rgba(26, 86, 255, 0.15);
+            color: #6b9eff;
+            border-radius: 6px;
+            padding: 0.25rem 0.65rem;
+            font-size: 0.72rem;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 700;
+            margin-bottom: 0.85rem;
+            letter-spacing: 0.02em;
+        }
+
+        .ai-card h4 {
+            color: #fff;
+            font-size: 0.95rem;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 700;
+            margin-bottom: 0.6rem;
+        }
+
+        .ai-card p {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.88rem;
+            line-height: 1.6;
+        }
+
+        .ai-cta-wrap {
+            text-align: center;
+        }
+
+        /* ─── HOW IT WORKS ─────────────────────────── */
+        #how {
+            background: var(--white);
+            position: relative;
+        }
+
+        .how-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .how-header p {
+            max-width: 500px;
+            margin: 0.75rem auto 0;
+            font-size: 1.05rem;
+        }
+
+        .steps-wrapper {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .steps-line {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: repeating-linear-gradient(to bottom,
+                    var(--navy) 0, var(--navy) 8px,
+                    transparent 8px, transparent 16px);
+            opacity: 0.2;
+            transform: translateX(-50%);
+        }
+
+        .step {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2.5rem;
+            align-items: center;
+            margin-bottom: 3.5rem;
+            position: relative;
+        }
+
+        .step:last-child {
+            margin-bottom: 0;
+        }
+
+        .step-number {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 44px;
+            height: 44px;
+            background: var(--navy);
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 800;
+            font-size: 0.8rem;
+            z-index: 2;
+            box-shadow: 0 0 0 6px var(--white);
+        }
+
+        .step-content {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 1.75rem;
+            transition: box-shadow 0.2s;
+        }
+
+        .step-content:hover {
+            box-shadow: var(--shadow);
+        }
+
+        .step-bg-num {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 800;
+            font-size: 4.5rem;
+            color: var(--navy);
+            opacity: 0.05;
+            line-height: 1;
+            margin-bottom: -0.5rem;
+        }
+
+        .step-icon {
+            color: var(--navy);
+            margin-bottom: 0.75rem;
+        }
+
+        .step-content h3 {
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .step-content p {
+            font-size: 0.92rem;
+        }
+
+        .step-empty {
+            display: block;
+        }
+
+        .step.right .step-content {
+            order: 2;
+        }
+
+        .step.right .step-empty {
+            order: 1;
+        }
+
+        /* ─── FEATURES BENTO ─────────────────────────── */
+        #features {
+            background: var(--white);
+        }
+
+        .features-header {
+            margin-bottom: 3rem;
+        }
+
+        .features-header p {
+            max-width: 500px;
+            margin-top: 0.75rem;
+        }
+
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-auto-rows: auto;
+            gap: 1rem;
+        }
+
+        .bento-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 1.5rem;
+            transition: box-shadow 0.2s, transform 0.2s;
+        }
+
+        .bento-card:hover {
+            box-shadow: var(--shadow);
+            transform: translateY(-2px);
+        }
+
+        .bento-card.span-2 {
+            grid-column: span 2;
+        }
+
+        .bento-card.span-3 {
+            grid-column: span 3;
+        }
+
+        .bento-card.span-4 {
+            grid-column: span 4;
+        }
+
+        .bento-card.row-2 {
+            grid-row: span 2;
+        }
+
+        .bento-card.hero-card {
+            background: var(--navy);
+            color: #fff;
+            grid-column: span 2;
+            grid-row: span 2;
+        }
+
+        .bento-card.hero-card h3 {
+            color: #fff;
+            font-size: 1.4rem;
+        }
+
+        .bento-card.hero-card p {
+            color: rgba(255, 255, 255, 0.65);
+        }
+
+        .bento-icon {
+            color: var(--navy);
+            margin-bottom: 0.85rem;
+        }
+
+        .bento-card.hero-card .bento-icon {
+            color: var(--blue);
+        }
+
+        .bento-card h3 {
+            margin-bottom: 0.35rem;
+            font-size: 0.95rem;
+        }
+
+        .bento-card p {
+            font-size: 0.85rem;
+            color: var(--text);
+        }
+
+        .bento-card.hero-card .subdomain-demo {
+            margin-top: 1.25rem;
+            background: rgba(255, 255, 255, 0.07);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 10px;
+            padding: 0.75rem 1rem;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .subdomain-demo .highlight {
+            color: var(--blue);
+        }
+
+        /* ─── EXCLUSIVE FEATURES ─────────────────────────── */
+        #exclusive {
+            background: var(--navy-light);
+        }
+
+        .exclusive-header {
+            margin-bottom: 3rem;
+        }
+
+        .exclusive-header p {
+            max-width: 500px;
+            margin-top: 0.75rem;
+        }
+
+        .exclusive-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.25rem;
+            align-items: start;
+        }
+
+        .exclusive-main {
+            background: var(--navy);
+            border-radius: 20px;
+            padding: 2.5rem;
+            color: #fff;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .exclusive-main h3 {
+            color: #fff;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .exclusive-main p {
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.75;
+            flex: 1;
+        }
+
+        .only-badge {
+            display: inline-flex;
+            align-items: center;
+            background: rgba(26, 86, 255, 0.2);
+            color: var(--blue);
+            border: 1px solid rgba(26, 86, 255, 0.3);
+            border-radius: 50px;
+            padding: 0.3rem 0.85rem;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            margin-bottom: 1.25rem;
+            width: fit-content;
+        }
+
+        .exclusive-right {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .ex-card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 1.4rem;
+            transition: box-shadow 0.2s;
+        }
+
+        .ex-card:hover {
+            box-shadow: var(--shadow);
+        }
+
+        .ex-card .ex-icon {
+            color: var(--navy);
+            margin-bottom: 0.75rem;
+        }
+
+        .ex-card h4 {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 700;
+            font-size: 0.9rem;
+            color: var(--navy);
+            margin-bottom: 0.45rem;
+        }
+
+        .ex-card p {
+            font-size: 0.82rem;
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        /* ─── STORY STUDIO ─────────────────────────── */
+        #story {
+            background: var(--navy);
+            color: #fff;
+        }
+
+        #story h2 {
+            color: #fff;
+        }
+
+        #story .story-sub {
+            color: rgba(255, 255, 255, 0.65);
+            max-width: 560px;
+            margin-top: 0.75rem;
+            margin-bottom: 3rem;
+        }
+
+        .story-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .story-card {
+            background: var(--white);
+            border-radius: 14px;
+            padding: 1.35rem;
+            transition: transform 0.2s;
+        }
+
+        .story-card:hover {
+            transform: translateY(-3px);
+        }
+
+        .story-badge {
+            display: inline-flex;
+            align-items: center;
+            background: rgba(26, 86, 255, 0.1);
+            color: var(--blue);
+            border-radius: 5px;
+            padding: 0.2rem 0.55rem;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            margin-bottom: 0.85rem;
+        }
+
+        .story-card .s-icon {
+            color: var(--navy);
+            margin-bottom: 0.65rem;
+        }
+
+        .story-card h4 {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 700;
+            font-size: 0.88rem;
+            color: var(--navy);
+            margin-bottom: 0.4rem;
+        }
+
+        .story-card p {
+            font-size: 0.8rem;
+            color: var(--text);
+            line-height: 1.55;
+        }
+
+        .story-note {
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 1rem 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 0.88rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .story-note svg {
+            color: var(--blue);
+            flex-shrink: 0;
+        }
+
+        /* ─── SEO ─────────────────────────────── */
+        #seo {
+            background: var(--white);
+        }
+
+        .seo-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .seo-left h2 {
+            margin-bottom: 1.25rem;
+        }
+
+        .seo-left p {
+            font-size: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .seo-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+        }
+
+        .seo-pill {
+            background: var(--navy-light);
+            border: 1px solid var(--border);
+            border-radius: 50px;
+            padding: 0.4rem 1rem;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--navy);
+        }
+
+        .google-card {
+            background: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 12px;
+            padding: 1.5rem 1.75rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            font-family: Arial, sans-serif;
+        }
+
+        .g-site {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.35rem;
+        }
+
+        .g-favicon {
+            width: 20px;
+            height: 20px;
+            background: var(--blue);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .g-domain {
+            font-size: 0.82rem;
+            color: #202124;
+        }
+
+        .g-title {
+            font-size: 1.15rem;
+            color: #1a0dab;
+            font-weight: 400;
+            margin-bottom: 0.3rem;
+            cursor: pointer;
+        }
+
+        .g-title:hover {
+            text-decoration: underline;
+        }
+
+        .g-green {
+            font-size: 0.8rem;
+            color: #0f9d58;
+            margin-bottom: 0.4rem;
+        }
+
+        .g-desc {
+            font-size: 0.82rem;
+            color: #4d5156;
+            line-height: 1.55;
+            margin-bottom: 0.75rem;
+        }
+
+        .g-stars {
+            display: flex;
+            align-items: center;
+            gap: 0.35rem;
+        }
+
+        .g-stars-row {
+            display: flex;
+            gap: 2px;
+        }
+
+        .g-star {
+            width: 14px;
+            height: 14px;
+            fill: #fbbc04;
+        }
+
+        .g-rating {
+            font-size: 0.78rem;
+            color: #70757a;
+        }
+
+        /* ─── PRICING ─────────────────────────────── */
+        #pricing {
+            background: var(--white);
+        }
+
+        .pricing-header {
+            text-align: center;
+            margin-bottom: 3.5rem;
+        }
+
+        .pricing-header p {
+            max-width: 440px;
+            margin: 0.75rem auto 0;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            align-items: center;
+        }
+
+        .plan-card {
+            background: var(--card-bg);
+            border: 1.5px solid var(--border);
+            border-radius: 20px;
+            padding: 2rem;
+            transition: box-shadow 0.2s;
+        }
+
+        .plan-card:hover {
+            box-shadow: var(--shadow-lg);
+        }
+
+        .plan-card.popular {
+            background: var(--navy);
+            border-color: var(--navy);
+            transform: scale(1.05);
+            position: relative;
+            z-index: 1;
+        }
+
+        .popular-badge {
+            position: absolute;
+            top: -14px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--blue);
+            color: #fff;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 0.72rem;
+            font-weight: 700;
+            padding: 0.3rem 1rem;
+            border-radius: 50px;
+            white-space: nowrap;
+            letter-spacing: 0.03em;
+        }
+
+        .plan-name {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 700;
+            font-size: 0.85rem;
+            color: var(--text);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 0.5rem;
+        }
+
+        .plan-card.popular .plan-name {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .plan-price {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 800;
+            font-size: 2.4rem;
+            color: var(--navy);
+            line-height: 1;
+            margin-bottom: 0.25rem;
+        }
+
+        .plan-price span {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text);
+        }
+
+        .plan-card.popular .plan-price {
+            color: #fff;
+        }
+
+        .plan-card.popular .plan-price span {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .plan-desc {
+            font-size: 0.85rem;
+            color: var(--text);
+            margin-bottom: 1.5rem;
+        }
+
+        .plan-card.popular .plan-desc {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .plan-divider {
+            height: 1px;
+            background: var(--border);
+            margin-bottom: 1.25rem;
+        }
+
+        .plan-card.popular .plan-divider {
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .plan-features {
+            list-style: none;
+            margin-bottom: 1.75rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.65rem;
+        }
+
+        .plan-features li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+            font-size: 0.88rem;
+            color: var(--text);
+        }
+
+        .plan-card.popular .plan-features li {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .plan-features li svg {
+            color: var(--blue);
+            flex-shrink: 0;
+            margin-top: 3px;
+        }
+
+        .plan-card.popular .plan-features li svg {
+            color: #6b9eff;
+        }
+
+        .pricing-note {
+            text-align: center;
+            margin-top: 2.5rem;
+            font-size: 0.9rem;
+            color: var(--text);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .pricing-note svg {
+            color: var(--blue);
+        }
+
+        /* ─── TESTIMONIALS ─────────────────────────── */
+        #testimonials {
+            background: var(--navy-light);
+        }
+
+        .testi-header {
+            margin-bottom: 3rem;
+        }
+
+        .testi-header p {
+            max-width: 460px;
+            margin-top: 0.75rem;
+        }
+
+        .testi-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.25rem;
+            align-items: start;
+        }
+
+        .testi-card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            padding: 1.75rem;
+            box-shadow: var(--shadow);
+            transition: transform 0.2s;
+        }
+
+        .testi-card:hover {
+            transform: translateY(-3px);
+        }
+
+        .testi-card:nth-child(2) {
+            transform: translateY(1.5rem);
+        }
+
+        .testi-card:nth-child(2):hover {
+            transform: translateY(calc(1.5rem - 3px));
+        }
+
+        .testi-stars {
+            display: flex;
+            gap: 3px;
+            margin-bottom: 1rem;
+        }
+
+        .testi-stars svg {
+            fill: #f59e0b;
+            color: #f59e0b;
+        }
+
+        .testi-quote {
+            font-size: 0.92rem;
+            line-height: 1.7;
+            color: var(--text);
+            margin-bottom: 1.25rem;
+            font-style: italic;
+        }
+
+        .testi-author {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .testi-avatar {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: var(--navy);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 800;
+            font-size: 0.85rem;
+            color: #fff;
+            flex-shrink: 0;
+        }
+
+        .testi-name {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 700;
+            font-size: 0.9rem;
+            color: var(--navy);
+        }
+
+        .testi-biz {
+            display: inline-flex;
+            align-items: center;
+            background: var(--navy-light);
+            border-radius: 5px;
+            padding: 0.15rem 0.5rem;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 0.72rem;
+            font-weight: 600;
+            color: var(--navy);
+            margin-top: 2px;
+        }
+
+        /* ─── FAQ ─────────────────────────────── */
+        #faq {
+            background: var(--white);
+        }
+
+        .faq-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .faq-header p {
+            max-width: 440px;
+            margin: 0.75rem auto 0;
+        }
+
+        .faq-list {
+            max-width: 780px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .faq-item {
+            border: 1.5px solid var(--border);
+            border-radius: 14px;
+            overflow: hidden;
+            background: var(--card-bg);
+        }
+
+        .faq-q {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1.25rem 1.5rem;
+            cursor: pointer;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: var(--navy);
+            gap: 1rem;
+            user-select: none;
+        }
+
+        .faq-chevron {
+            flex-shrink: 0;
+            transition: transform 0.3s;
+            color: var(--navy);
+        }
+
+        .faq-item.open .faq-chevron {
+            transform: rotate(180deg);
+        }
+
+        .faq-a {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+        }
+
+        .faq-a-inner {
+            padding: 0 1.5rem 1.25rem;
+            font-size: 0.92rem;
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        /* ─── CTA BANNER ─────────────────────────── */
+        #cta-banner {
+            background: var(--navy);
+            text-align: center;
+        }
+
+        #cta-banner h2 {
+            color: #fff;
+            margin-bottom: 0.75rem;
+        }
+
+        #cta-banner p {
+            color: rgba(255, 255, 255, 0.7);
+            max-width: 440px;
+            margin: 0 auto 2.5rem;
+            font-size: 1.05rem;
+        }
+
+        .cta-btns {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* ─── FOOTER ─────────────────────────────── */
+        footer {
+            background: var(--white);
+            border-top: 2px solid var(--navy);
+            padding-top: clamp(3rem, 6vw, 5rem);
+            padding-bottom: 2rem;
+        }
+
+        .footer-inner {
+            display: grid;
+            grid-template-columns: 1.6fr 1fr 1fr 1fr 1fr;
+            gap: 2.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-brand .logo {
+            margin-bottom: 1rem;
+        }
+
+        .footer-brand p {
+            font-size: 0.88rem;
+            color: var(--text);
+            max-width: 220px;
+            line-height: 1.65;
+        }
+
+        .footer-col h5 {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 700;
+            font-size: 0.82rem;
+            color: var(--navy);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 1rem;
+        }
+
+        .footer-col ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+        }
+
+        .footer-col a {
+            font-size: 0.88rem;
+            color: var(--text);
+            transition: color 0.2s;
+        }
+
+        .footer-col a:hover {
+            color: var(--navy);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid var(--border);
+            padding-top: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 0.82rem;
+            color: var(--text);
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-bottom a {
+            color: var(--text);
+        }
+
+        .footer-bottom a:hover {
+            color: var(--navy);
+        }
+
+        /* ─── FLOATING INSTAGRAM ─────────────────────────── */
+        .float-ig {
+            position: fixed;
+            bottom: 28px;
+            right: 28px;
+            width: 56px;
+            height: 56px;
+            background: var(--navy);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            box-shadow: 0 6px 24px rgba(13, 27, 62, 0.3);
+            z-index: 900;
+            transition: transform 0.2s, box-shadow 0.2s;
+            animation: ig-pulse 3s infinite;
+        }
+
+        .float-ig:hover {
+            transform: scale(1.12);
+            box-shadow: 0 10px 32px rgba(13, 27, 62, 0.4);
+            animation: none;
+        }
+
+        @keyframes ig-pulse {
+
+            0%,
+            100% {
+                box-shadow: 0 6px 24px rgba(13, 27, 62, 0.3);
+            }
+
+            50% {
+                box-shadow: 0 6px 32px rgba(13, 27, 62, 0.5), 0 0 0 8px rgba(13, 27, 62, 0.1);
+            }
+        }
+
+        /* ─── MODAL ─────────────────────────────── */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(13, 27, 62, 0.55);
+            backdrop-filter: blur(6px);
+            z-index: 2000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s;
+        }
+
+        .modal-overlay.open {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .modal-box {
+            background: #fff;
+            border-radius: 24px;
+            padding: clamp(1.5rem, 4vw, 2.5rem);
+            width: 100%;
+            max-width: 460px;
+            box-shadow: var(--shadow-lg);
+            transform: translateY(20px) scale(0.97);
+            transition: transform 0.3s;
+            position: relative;
+        }
+
+        .modal-overlay.open .modal-box {
+            transform: translateY(0) scale(1);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1.25rem;
+            right: 1.25rem;
+            background: var(--card-bg);
+            border: none;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--navy);
+            transition: background 0.2s;
+        }
+
+        .modal-close:hover {
+            background: var(--border);
+        }
+
+        .modal-box h3 {
+            margin-bottom: 0.5rem;
+        }
+
+        .modal-box .modal-sub {
+            font-size: 0.9rem;
+            color: var(--text);
+            margin-bottom: 1.75rem;
+        }
+
+        .form-field {
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+            margin-bottom: 1rem;
+        }
+
+        .form-field label {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 600;
+            font-size: 0.82rem;
+            color: var(--navy);
+        }
+
+        .form-field input,
+        .form-field select {
+            border: 1.5px solid var(--border);
+            border-radius: 10px;
+            padding: 0.7rem 1rem;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            color: var(--black);
+            background: var(--card-bg);
+            outline: none;
+            transition: border-color 0.2s;
+            min-height: 44px;
+        }
+
+        .form-field input:focus,
+        .form-field select:focus {
+            border-color: var(--blue);
+            background: #fff;
+        }
+
+        .form-field select {
+            cursor: pointer;
+        }
+
+        .modal-submit {
+            width: 100%;
+            padding: 0.85rem;
+            margin-top: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        .modal-success {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 1rem;
+            padding: 1.5rem 0;
+        }
+
+        .modal-success.show {
+            display: flex;
+        }
+
+        .modal-success-icon {
+            width: 64px;
+            height: 64px;
+            background: #e6fff4;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #16a34a;
+        }
+
+        .modal-success h3 {
+            color: var(--navy);
+        }
+
+        .modal-success p {
+            font-size: 0.9rem;
+            color: var(--text);
+        }
+
+        /* ─── SCROLL REVEAL ─────────────────────────── */
+        .reveal {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+
+        .reveal.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-delay-1 {
+            transition-delay: 0.1s;
+        }
+
+        .reveal-delay-2 {
+            transition-delay: 0.2s;
+        }
+
+        .reveal-delay-3 {
+            transition-delay: 0.3s;
+        }
+
+        /* ─── STATS STRIP ─────────────────────────── */
+        #stats {
+            background: var(--navy-light);
+            padding: clamp(2.5rem, 5vw, 4rem) 0;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .stat-num {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 800;
+            font-size: clamp(2rem, 4vw, 3rem);
+            color: var(--navy);
+            line-height: 1;
+            margin-bottom: 0.35rem;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.88rem;
+            color: var(--text);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 500;
+        }
+
+        /* ─── RESPONSIVE ─────────────────────────── */
+        @media (max-width: 1024px) {
+            .bento-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .bento-card.span-2 {
+                grid-column: span 2;
+            }
+
+            .bento-card.hero-card {
+                grid-column: span 2;
+            }
+
+            .story-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-inner {
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+
+            .footer-brand {
+                grid-column: span 3;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .nav-cta {
+                display: none;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .hero-inner {
+                grid-template-columns: 1fr;
+                text-align: left;
+            }
+
+            .phone-wrap {
+                order: -1;
+            }
+
+            .ai-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .steps-line {
+                display: none;
+            }
+
+            .step {
+                grid-template-columns: 1fr;
+            }
+
+            .step.right .step-content {
+                order: 0;
+            }
+
+            .step.right .step-empty {
+                display: none;
+            }
+
+            .step-empty {
+                display: none;
+            }
+
+            .step-number {
+                display: none;
+            }
+
+            .bento-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .bento-card.span-2 {
+                grid-column: span 2;
+            }
+
+            .bento-card.hero-card {
+                grid-column: span 2;
+            }
+
+            .bento-card.span-3 {
+                grid-column: span 2;
+            }
+
+            .bento-card.span-4 {
+                grid-column: span 2;
+            }
+
+            .exclusive-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .exclusive-right {
+                grid-template-columns: 1fr;
+            }
+
+            .story-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .seo-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .pricing-grid {
+                grid-template-columns: 1fr;
+                max-width: 380px;
+                margin: 0 auto;
+            }
+
+            .plan-card.popular {
+                transform: scale(1);
+            }
+
+            .testi-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .testi-card:nth-child(2) {
+                transform: none;
+            }
+
+            .testi-card:nth-child(2):hover {
+                transform: translateY(-3px);
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .footer-inner {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .footer-brand {
+                grid-column: span 2;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .bento-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .bento-card.span-2 {
+                grid-column: span 1;
+            }
+
+            .bento-card.hero-card {
+                grid-column: span 1;
+            }
+
+            .story-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .exclusive-right {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-ctas {
+                flex-direction: column;
+            }
+
+            .hero-ctas .btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .footer-inner {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-brand {
+                grid-column: span 1;
+            }
+
+            .ai-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .testi-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        /* ─── HERO LIVE BUTTON ─── */
+        .hero-live-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.55rem;
+            border-color: rgba(26, 86, 255, 0.35);
+            color: var(--navy);
+            background: #ffffff;
+            transition: all 0.25s ease;
+        }
+
+        .hero-live-btn:hover {
+            border-color: var(--blue);
+            background: var(--navy-light);
+            color: var(--blue);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 16px rgba(26, 86, 255, 0.15);
+        }
+
+        .hero-live-btn svg {
+            color: var(--blue);
+            transition: transform 0.2s ease;
+        }
+
+        .hero-live-btn:hover svg {
+            transform: translate(2px, -2px);
+        }
+
+        /* ─── WHO CAN USE / USE CASES SECTION ─── */
+        #use-cases {
+            background: #ffffff;
+            position: relative;
+            border-top: 1px solid var(--border);
+        }
+
+        .use-cases-header {
+            text-align: center;
+            max-width: 760px;
+            margin: 0 auto 3.5rem auto;
+        }
+
+        .use-cases-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+            background: var(--navy-light);
+            border: 1px solid var(--border);
+            border-radius: 50px;
+            padding: 0.35rem 0.95rem;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: var(--blue);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 1rem;
+        }
+
+        .use-cases-header h2 {
+            margin-bottom: 0.85rem;
+        }
+
+        .use-cases-header p {
+            font-size: 1.05rem;
+            color: var(--text);
+        }
+
+        .use-cases-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+        }
+
+        .use-case-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            padding: 1.75rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+        }
+
+        .use-case-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+            border-color: rgba(26, 86, 255, 0.35);
+            background: #ffffff;
+        }
+
+        .use-case-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--blue), #60A5FA);
+            opacity: 0;
+            transition: opacity 0.25s ease;
+        }
+
+        .use-case-card:hover::before {
+            opacity: 1;
+        }
+
+        .use-case-top {
+            margin-bottom: 1.25rem;
+        }
+
+        .use-case-icon-wrap {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1.15rem;
+        }
+
+        .use-case-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #ffffff;
+            border: 1px solid var(--border);
+            box-shadow: 0 2px 8px rgba(13, 27, 62, 0.05);
+            color: var(--blue);
+            transition: transform 0.25s ease, background 0.25s ease;
+        }
+
+        .use-case-card:hover .use-case-icon {
+            transform: scale(1.08);
+            background: var(--navy-light);
+        }
+
+        .use-case-tag {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 0.25rem 0.6rem;
+            border-radius: 6px;
+            background: rgba(13, 27, 62, 0.05);
+            color: var(--navy);
+        }
+
+        .use-case-card h3 {
+            font-size: 1.12rem;
+            font-weight: 700;
+            margin-bottom: 0.6rem;
+            color: var(--navy);
+        }
+
+        .use-case-card p {
+            font-size: 0.88rem;
+            line-height: 1.55;
+            color: var(--text);
+            margin-bottom: 1.25rem;
+        }
+
+        .use-case-features {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(13, 27, 62, 0.07);
+        }
+
+        .use-case-features li {
+            font-size: 0.78rem;
+            font-weight: 600;
+            color: var(--navy);
+            display: flex;
+            align-items: center;
+            gap: 0.45rem;
+        }
+
+        .use-case-features li svg {
+            color: var(--blue);
+            flex-shrink: 0;
+        }
+
+        /* ─── HOW IT WORKS SVG VISUAL CARDS ─── */
+        .step.right .step-content {
+            order: 2;
+        }
+
+        .step.right .step-visual {
+            order: 1;
+        }
+
+        .step-visual {
+            background: #ffffff;
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            padding: 1.5rem;
+            box-shadow: var(--shadow);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .step-visual:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .visual-top-bar {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid rgba(13, 27, 62, 0.08);
+        }
+
+        .v-dot {
+            width: 9px;
+            height: 9px;
+            border-radius: 50%;
+        }
+
+        .v-dot.red { background: #FF5F56; }
+        .v-dot.yellow { background: #FFBD2E; }
+        .v-dot.green { background: #27C93F; }
+
+        .v-url-bar {
+            margin-left: 0.5rem;
+            flex: 1;
+            background: var(--card-bg);
+            border-radius: 6px;
+            padding: 0.25rem 0.65rem;
+            font-family: 'Plus Jakarta Sans', monospace;
+            font-size: 0.72rem;
+            color: var(--navy);
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .v-url-bar svg {
+            color: var(--blue);
+        }
+
+        .v-url-domain {
+            font-weight: 700;
+            color: var(--blue);
+        }
+
+        .visual-badges {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+
+        .v-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            background: var(--navy-light);
+            color: var(--navy);
+            font-size: 0.7rem;
+            font-weight: 600;
+            padding: 0.2rem 0.55rem;
+            border-radius: 6px;
+        }
+
+        .v-badge.success {
+            background: #E8F5E9;
+            color: #2E7D32;
+        }
+
+        .v-badge.pulse-badge {
+            background: #EBF3FF;
+            color: var(--blue);
+        }
+
+        .v-live-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: #2E7D32;
+            animation: pulse-dot 1.5s infinite;
+        }
+
+        .v-chat-bubble {
+            background: #E7FCE8;
+            border: 1px solid #C8E6C9;
+            border-radius: 12px 12px 12px 2px;
+            padding: 0.75rem 0.9rem;
+            font-size: 0.78rem;
+            color: #1B5E20;
+            line-height: 1.45;
+            margin-top: 0.75rem;
+            display: flex;
+            gap: 0.5rem;
+            align-items: flex-start;
+        }
+
+        .v-chat-bubble svg {
+            color: #25D366;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .v-qr-preview {
+            display: flex;
+            align-items: center;
+            gap: 1.25rem;
+            background: var(--card-bg);
+            border-radius: 14px;
+            padding: 1rem;
+            border: 1px solid var(--border);
+        }
+
+        .v-qr-box {
+            background: #ffffff;
+            padding: 0.5rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(13, 27, 62, 0.08);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .v-qr-info {
+            font-size: 0.78rem;
+            color: var(--text);
+        }
+
+        .v-qr-info strong {
+            display: block;
+            color: var(--navy);
+            font-size: 0.88rem;
+            margin-bottom: 2px;
+        }
+
+        /* ─── FLOATING INSTAGRAM WITH EXPANDABLE TOOLTIP ─── */
+        .float-ig-wrap {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .float-ig-tooltip {
+            background: #0D1B3E;
+            color: #ffffff;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 0.78rem;
+            font-weight: 600;
+            padding: 0.5rem 0.95rem;
+            border-radius: 50px;
+            box-shadow: 0 4px 18px rgba(13, 27, 62, 0.25);
+            white-space: nowrap;
+            opacity: 0;
+            transform: translateX(10px);
+            pointer-events: none;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .float-ig-wrap:hover .float-ig-tooltip {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .float-ig {
+            position: relative;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 16px rgba(220, 39, 67, 0.35);
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
+        }
+
+        .float-ig::after {
+            content: '';
+            position: absolute;
+            inset: -4px;
+            border-radius: 50%;
+            border: 2px solid rgba(220, 39, 67, 0.4);
+            animation: ig-pulse 2.2s infinite;
+        }
+
+        @keyframes ig-pulse {
+            0% { transform: scale(0.95); opacity: 0.8; }
+            50% { transform: scale(1.18); opacity: 0; }
+            100% { transform: scale(0.95); opacity: 0; }
+        }
+
+        .float-ig:hover {
+            transform: translateY(-4px) scale(1.08);
+            box-shadow: 0 8px 26px rgba(220, 39, 67, 0.5);
+        }
+
+        .float-ig svg {
+            color: #ffffff;
+        }
+
+        @media (max-width: 1024px) {
+            .use-cases-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .use-cases-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .step {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .step.right .step-content {
+                order: 1;
+            }
+
+            .step.right .step-visual {
+                order: 2;
+            }
+
+            .step-visual {
+                order: 2;
+            }
+
+            .float-ig-tooltip {
+                display: none;
+            }
+
+            .float-ig-wrap {
+                bottom: 16px;
+                right: 16px;
+            }
+
+            .float-ig {
+                width: 48px;
+                height: 48px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header id="navbar">
+        <div class="container">
+            <nav class="nav-inner">
+                <a href="#" class="logo">
+                    <div class="logo-mark">
+                        <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="34" height="34" rx="9" fill="#0D1B3E" />
+                            <path d="M8 17L13 10L17 15L21 8L26 17" stroke="#1A56FF" stroke-width="2.5"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M8 22L13 17L17 21L21 16L26 22" stroke="white" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" opacity="0.7" />
+                        </svg>
+                    </div>
+                    <span class="logo-text">linkal<span>.in</span></span>
+                </a>
+
+                <ul class="nav-links">
+                    <li><a href="#use-cases">Who It's For</a></li>
+                    <li><a href="#how">How It Works</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#ai-analyzer">AI Tools</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                </ul>
+
+                <a href="storemaker.html" class="btn btn-outline nav-cta">Create Store</a>
+                <a href="#" class="btn btn-blue nav-cta" onclick="openModal(event)">Get Started</a>
+
+                <button class="hamburger" id="hamburger" aria-label="Open menu">
+                    <i data-lucide="menu" width="24" height="24"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- MOBILE MENU -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#use-cases" onclick="closeMobileMenu()">Who It's For</a>
+        <a href="#how" onclick="closeMobileMenu()">How It Works</a>
+        <a href="#features" onclick="closeMobileMenu()">Features</a>
+        <a href="#ai-analyzer" onclick="closeMobileMenu()">AI Tools</a>
+        <a href="#pricing" onclick="closeMobileMenu()">Pricing</a>
+        <a href="#faq" onclick="closeMobileMenu()">FAQ</a>
+        <a href="storemaker.html" class="btn btn-outline" style="justify-content:center;">Create Store</a>
+        <a href="#" class="btn btn-blue" onclick="openModal(event)" style="justify-content:center;">Get Started</a>
+    </div>
+
+    <main>
+
+        <!-- HERO -->
+        <section id="hero">
+            <div class="container">
+                <div class="hero-inner">
+                    <!-- Left -->
+                    <div class="hero-left reveal">
+                        <div class="hero-badge">
+                            <span class="hero-badge-dot"></span>
+                            300+ Indian businesses trust us
+                        </div>
+
+                        <h1 class="hero-h1">Your Business Deserves Its Own Website — Not Just a Bio Link</h1>
+
+                        <p class="hero-sub">Get a branded store on your own subdomain. Let customers browse your
+                            products and order via WhatsApp. No coding. No payment setup. Just results.</p>
+
+                        <div class="hero-ctas">
+                            <a href="#" class="btn btn-navy btn-lg" onclick="openModal(event)">Create My Store Free</a>
+                            <a href="storemaker.html" class="btn btn-blue btn-lg">Create Store</a>
+                            <a href="https://turkishzaikamenu.vercel.app" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-lg hero-live-btn">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                                <span>See Live Example</span>
+                            </a>
+                            <a href="#how" class="btn btn-outline btn-lg">See How It Works</a>
+                        </div>
+
+                        <div class="trust-badges">
+                            <div class="trust-badge">
+                                <i data-lucide="check-circle-2" width="16" height="16"></i>
+                                No credit card
+                            </div>
+                            <div class="trust-badge">
+                                <i data-lucide="check-circle-2" width="16" height="16"></i>
+                                Live in 10 minutes
+                            </div>
+                            <div class="trust-badge">
+                                <i data-lucide="check-circle-2" width="16" height="16"></i>
+                                WhatsApp ordering built-in
+                            </div>
+                            <div class="trust-badge">
+                                <i data-lucide="check-circle-2" width="16" height="16"></i>
+                                Google-indexed automatically
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right — Phone Mockup -->
+                    <div class="phone-wrap reveal reveal-delay-2">
+                        <div class="phone">
+                            <div class="phone-screen">
+                                <div class="phone-store-header">
+                                    <div class="phone-store-name">Royal Cakes Mumbai</div>
+                                    <div class="phone-store-sub">royalcakes.linkal.in</div>
+                                </div>
+                                <div class="phone-products">
+                                    <div class="phone-product">
+                                        <div class="phone-product-img c1">
+                                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#e91e63"
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                                                <circle cx="12" cy="7" r="4" />
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <div class="phone-product-name">Chocolate Truffle Cake</div>
+                                            <div class="phone-product-price">₹580 — 500g</div>
+                                            <div class="phone-wa-btn">Order on WhatsApp</div>
+                                        </div>
+                                    </div>
+                                    <div class="phone-product">
+                                        <div class="phone-product-img c2">
+                                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1565c0"
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                <rect x="2" y="3" width="20" height="14" rx="2" />
+                                                <path d="M8 21h8M12 17v4" />
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <div class="phone-product-name">Vanilla Birthday Cake</div>
+                                            <div class="phone-product-price">₹450 — Custom design</div>
+                                            <div class="phone-wa-btn">Order on WhatsApp</div>
+                                        </div>
+                                    </div>
+                                    <div class="phone-product">
+                                        <div class="phone-product-img c3">
+                                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#388e3c"
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                <path d="M12 2L2 7l10 5 10-5-10-5z" />
+                                                <path d="M2 17l10 5 10-5M2 12l10 5 10-5" />
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <div class="phone-product-name">Red Velvet Cupcakes</div>
+                                            <div class="phone-product-price">₹320 — Pack of 6</div>
+                                            <div class="phone-wa-btn">Order on WhatsApp</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="phone-subdomain">royalcakes.linkal.in</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- STATS STRIP -->
+        <section id="stats">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="reveal">
+                        <span class="stat-num" data-target="300">0</span>
+                        <span class="stat-label">Businesses on linkal.in</span>
+                    </div>
+                    <div class="reveal reveal-delay-1">
+                        <span class="stat-num" data-target="10">0</span>
+                        <span class="stat-label">Minutes to go live</span>
+                    </div>
+                    <div class="reveal reveal-delay-2">
+                        <span class="stat-num" data-target="20">0</span>
+                        <span class="stat-label">Indian festivals supported</span>
+                    </div>
+                    <div class="reveal reveal-delay-3">
+                        <span class="stat-num" data-target="15">0</span>
+                        <span class="stat-label">Powerful features included</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TICKER -->
+        <div id="ticker">
+            <div class="ticker-track" id="tickerTrack">
+                <!-- duplicated for seamless loop -->
+                <div class="ticker-item"><span class="ticker-dot"></span>Royal Cakes</div>
+                <div class="ticker-item"><span class="ticker-dot"></span>Meera Boutique</div>
+                <div class="ticker-item"><span class="ticker-dot"></span>Sharma Electronics</div>
+                <div class="ticker-item"><span class="ticker-dot"></span>Priya Handicrafts</div>
+                <div class="ticker-item"><span class="ticker-dot"></span>The Mithai Shop</div>
+                <div class="ticker-item"><span class="ticker-dot"></span>FitLife Store</div>
+                <div class="ticker-item"><span class="ticker-dot"></span>Rekha Sarees</div>
+                <div class="ticker-item"><span class="ticker-dot"></span>Mumbai Snacks</div>
+                <div class="ticker-item"><span class="ticker-dot"></span>Delhi Flowers</div>
+                <div class="ticker-item"><span class="ticker-dot"></span>Pune Dairy</div>
+                <!-- duplicate -->
+                <div class="ticker-item"><span class="ticker-dot"></span>Royal Cakes</div>
+                <div class="ticker-item"><span class="ticker-dot"></span>Meera Boutique</div>
+                <div class="ticker-item"><span class="ticker-dot"></span>Sharma Electronics</div>
+                <div class="ticker-item"><span class="ticker-dot"></span>Priya Handicrafts</div>
+                <div class="ticker-item"><span class="ticker-dot"></span>The Mithai Shop</div>
+                <div class="ticker-item"><span class="ticker-dot"></span>FitLife Store</div>
+                <div class="ticker-item"><span class="ticker-dot"></span>Rekha Sarees</div>
+                <div class="ticker-item"><span class="ticker-dot"></span>Mumbai Snacks</div>
+                <div class="ticker-item"><span class="ticker-dot"></span>Delhi Flowers</div>
+                <div class="ticker-item"><span class="ticker-dot"></span>Pune Dairy</div>
+            </div>
+        </div>
+
+        <!-- WHO CAN USE / USE CASES -->
+        <section id="use-cases" class="section-pad">
+            <div class="container">
+                <div class="use-cases-header reveal">
+                    <div class="use-cases-badge">Built For Every Vision</div>
+                    <h2>Who Can Use linkal.in?</h2>
+                    <p>Whether you sell artisanal products, run a bustling hotel, showcase design work, or apply for your dream role — linkal.in gives you a blazing-fast branded website on your own subdomain in minutes.</p>
+                </div>
+
+                <div class="use-cases-grid">
+                    <!-- 1. Instagram Businesses -->
+                    <div class="use-case-card reveal">
+                        <div class="use-case-top">
+                            <div class="use-case-icon-wrap">
+                                <div class="use-case-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+                                        <line x1="3" y1="6" x2="21" y2="6"/>
+                                        <path d="M16 10a4 4 0 0 1-8 0"/>
+                                    </svg>
+                                </div>
+                                <span class="use-case-tag">Social Stores</span>
+                            </div>
+                            <h3>Instagram Businesses &amp; Boutiques</h3>
+                            <p>Replace basic bio links with an interactive digital storefront. Showcase collections, sarees, jewelry, or bakery creations with instant WhatsApp checkout — 0% platform commission.</p>
+                        </div>
+                        <ul class="use-case-features">
+                            <li>
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                                Pre-filled WhatsApp order messages
+                            </li>
+                            <li>
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                                1-tap Instagram Story Studio cards
+                            </li>
+                            <li>
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                                Direct bio link integration
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- 2. Hotel & Restaurant Menus -->
+                    <div class="use-case-card reveal reveal-delay-1">
+                        <div class="use-case-top">
+                            <div class="use-case-icon-wrap">
+                                <div class="use-case-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M3 19h18M4 15h16a8 8 0 0 0-16 0z"/>
+                                        <path d="M12 4v3"/>
+                                        <circle cx="12" cy="3" r="1"/>
+                                    </svg>
+                                </div>
+                                <span class="use-case-tag">Dining &amp; Cafes</span>
+                            </div>
+                            <h3>Hotel &amp; Restaurant Menu Cards</h3>
+                            <p>Ditch expensive printed menus. Generate high-resolution table QR codes that open your digital menu instantly with appetizing food photography, veg/non-veg tags, and live price updates.</p>
+                        </div>
+                        <ul class="use-case-features">
+                            <li>
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                                Instant printable table QR codes
+                            </li>
+                            <li>
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                                Live daily special &amp; price updates
+                            </li>
+                            <li>
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                                Sold-out toggles in 10 milliseconds
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- 3. Personal Portfolios -->
+                    <div class="use-case-card reveal reveal-delay-2">
+                        <div class="use-case-top">
+                            <div class="use-case-icon-wrap">
+                                <div class="use-case-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <rect x="2" y="3" width="20" height="14" rx="2"/>
+                                        <line x1="8" y1="21" x2="16" y2="21"/>
+                                        <line x1="12" y1="17" x2="12" y2="21"/>
+                                        <path d="M7 8l3 3-3 3M13 14h4"/>
+                                    </svg>
+                                </div>
+                                <span class="use-case-tag">Creatives &amp; Tech</span>
+                            </div>
+                            <h3>Personal Portfolio Websites</h3>
+                            <p>Give your creative work the stage it deserves. Perfect for UI/UX designers, photographers, architects, developers, and writers displaying case studies, visual galleries, and client reviews.</p>
+                        </div>
+                        <ul class="use-case-features">
+                            <li>
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                                High-res project gallery &amp; case studies
+                            </li>
+                            <li>
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                                Client testimonial &amp; social proof wall
+                            </li>
+                            <li>
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                                Direct WhatsApp project inquiries
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- 4. Live CV & Resume -->
+                    <div class="use-case-card reveal reveal-delay-3">
+                        <div class="use-case-top">
+                            <div class="use-case-icon-wrap">
+                                <div class="use-case-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                        <polyline points="14 2 14 8 20 8"/>
+                                        <line x1="16" y1="13" x2="8" y2="13"/>
+                                        <line x1="16" y1="17" x2="8" y2="17"/>
+                                        <polyline points="10 9 9 9 8 9"/>
+                                    </svg>
+                                </div>
+                                <span class="use-case-tag">Careers &amp; Pros</span>
+                            </div>
+                            <h3>Live CV &amp; Resume Websites</h3>
+                            <p>Stop sending static, outdated PDF attachments. Send recruiters an interactive live resume on your own subdomain with verified project links, experience timelines, and a 1-click PDF download.</p>
+                        </div>
+                        <ul class="use-case-features">
+                            <li>
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                                Memorable permanent URL for LinkedIn
+                            </li>
+                            <li>
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                                Recruiter mobile-optimized view
+                            </li>
+                            <li>
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                                1-click download resume button
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- 5. Local Services & Salons -->
+                    <div class="use-case-card reveal">
+                        <div class="use-case-top">
+                            <div class="use-case-icon-wrap">
+                                <div class="use-case-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                                        <line x1="16" y1="2" x2="16" y2="6"/>
+                                        <line x1="8" y1="2" x2="8" y2="6"/>
+                                        <line x1="3" y1="10" x2="21" y2="10"/>
+                                        <path d="M9 16l2 2 4-4"/>
+                                    </svg>
+                                </div>
+                                <span class="use-case-tag">Local Services</span>
+                            </div>
+                            <h3>Salons, Clinics &amp; Local Services</h3>
+                            <p>Built for hair studios, nail salons, dentists, physiotherapists, and repair shops. Publish your service menu with transparent pricing, business hours, and one-tap WhatsApp appointment bookings.</p>
+                        </div>
+                        <ul class="use-case-features">
+                            <li>
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                                Real-time Open &amp; Closed status
+                            </li>
+                            <li>
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                                Service packages &amp; price rate card
+                            </li>
+                            <li>
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                                Direct WhatsApp appointment request
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- 6. Wedding & Event Invites -->
+                    <div class="use-case-card reveal reveal-delay-1">
+                        <div class="use-case-top">
+                            <div class="use-case-icon-wrap">
+                                <div class="use-case-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                        <polyline points="22,6 12,13 2,6"/>
+                                        <circle cx="12" cy="15" r="2"/>
+                                    </svg>
+                                </div>
+                                <span class="use-case-tag">Events &amp; RSVP</span>
+                            </div>
+                            <h3>Wedding &amp; Event Invitations</h3>
+                            <p>Send guests an elegant interactive digital invitation. Feature your love story, ceremony itineraries, live countdown timer, photo gallery, and embedded Google Maps venue directions.</p>
+                        </div>
+                        <ul class="use-case-features">
+                            <li>
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                                Interactive live event countdown
+                            </li>
+                            <li>
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                                1-tap Google Maps venue directions
+                            </li>
+                            <li>
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                                WhatsApp RSVP collection built-in
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- 7. Real Estate & Properties -->
+                    <div class="use-case-card reveal reveal-delay-2">
+                        <div class="use-case-top">
+                            <div class="use-case-icon-wrap">
+                                <div class="use-case-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                                        <polyline points="9 22 9 12 15 12 15 22"/>
+                                    </svg>
+                                </div>
+                                <span class="use-case-tag">Real Estate</span>
+                            </div>
+                            <h3>Real Estate &amp; Property Listings</h3>
+                            <p>Brokers and property owners can showcase apartments, luxury villas, and commercial properties with high-definition photo galleries, floor plans, amenity lists, and direct buyer leads.</p>
+                        </div>
+                        <ul class="use-case-features">
+                            <li>
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                                High-speed image gallery tours
+                            </li>
+                            <li>
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                                Verified amenities &amp; specs matrix
+                            </li>
+                            <li>
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                                Direct WhatsApp tour scheduling
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- 8. Coaches & Mentors -->
+                    <div class="use-case-card reveal reveal-delay-3">
+                        <div class="use-case-top">
+                            <div class="use-case-icon-wrap">
+                                <div class="use-case-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+                                        <path d="M6 12v5c0 2 3 3 6 3s6-1 6-3v-5"/>
+                                    </svg>
+                                </div>
+                                <span class="use-case-tag">Education</span>
+                            </div>
+                            <h3>Coaches, Tutors &amp; Consultants</h3>
+                            <p>Share your courses, masterclasses, and 1-on-1 consultation packages. Build instant credibility with verified client results, syllabus breakdowns, and frictionless WhatsApp enrollment.</p>
+                        </div>
+                        <ul class="use-case-features">
+                            <li>
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                                Syllabus &amp; fee structure breakdown
+                            </li>
+                            <li>
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                                Student reviews &amp; outcome showcase
+                            </li>
+                            <li>
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                                WhatsApp consultation booking
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- AI ANALYZER -->
+        <section id="ai-analyzer" class="section-pad">
+            <div class="container">
+                <div class="reveal">
+                    <div class="ai-label">Powered by Artificial Intelligence</div>
+                    <h2 style="color:#fff; margin-bottom: 1rem;">Your Personal AI Business Advisor</h2>
+                    <p class="ai-desc">Our AI studies your store — your products, your prices, your traffic patterns,
+                        your customer behavior — and tells you exactly what to do to earn more. Not generic advice. Your
+                        business, analyzed, every week.</p>
+                </div>
+
+                <div class="ai-grid reveal">
+                    <div class="ai-card">
+                        <div class="ai-card-label">
+                            <i data-lucide="trending-up" width="12" height="12"></i>
+                            Revenue Opportunity
+                        </div>
+                        <h4>Revenue Opportunity Detected</h4>
+                        <p>Your kurti photos are getting 3x more clicks but 0 orders. AI suggests: add size chart +
+                            lower price by ₹50.</p>
+                    </div>
+                    <div class="ai-card">
+                        <div class="ai-card-label">
+                            <i data-lucide="clock" width="12" height="12"></i>
+                            Timing Insight
+                        </div>
+                        <h4>Best Time to Post</h4>
+                        <p>Your store gets 68% traffic between 8–10 PM. AI recommends: post new arrivals at 7:45 PM for
+                            maximum reach.</p>
+                    </div>
+                    <div class="ai-card">
+                        <div class="ai-card-label">
+                            <i data-lucide="flame" width="12" height="12"></i>
+                            Trend Alert
+                        </div>
+                        <h4>Trending in Your Category</h4>
+                        <p>Palazzo pants are trending in Maharashtra this week. You don't have any listed. Add 2–3
+                            products now.</p>
+                    </div>
+                    <div class="ai-card">
+                        <div class="ai-card-label">
+                            <i data-lucide="search" width="12" height="12"></i>
+                            SEO Health
+                        </div>
+                        <h4>SEO Health Score: 94/100</h4>
+                        <p>Your store ranks #1 on Google for 'Royal Cakes Mumbai'. AI generated 3 new meta descriptions
+                            this week.</p>
+                    </div>
+                </div>
+
+                <div class="ai-cta-wrap reveal">
+                    <a href="#" class="btn btn-blue btn-lg" onclick="openModal(event)">See Your Business Analysis Free
+                        →</a>
+                    <a href="storemaker.html" class="btn btn-outline btn-lg"
+                        style="margin-top: 1rem; display: inline-flex;">Create Store</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- HOW IT WORKS -->
+        <section id="how" class="section-pad">
+            <div class="container">
+                <div class="how-header reveal">
+                    <h2>How It Works</h2>
+                    <p>Three simple steps. Your branded store is live before your next cup of chai.</p>
+                </div>
+
+                <div class="steps-wrapper">
+                    <div class="steps-line"></div>
+
+                    <!-- Step 1 -->
+                    <div class="step reveal">
+                        <div class="step-content">
+                            <div class="step-bg-num">01</div>
+                            <div class="step-icon"><i data-lucide="user-circle" width="28" height="28"></i></div>
+                            <h3>Tell us your business</h3>
+                            <p>Enter your business name, category, and upload your logo. Takes less than 2 minutes. We
+                                set up your subdomain instantly — yourname.linkal.in — live and indexed on Google within
+                                hours.</p>
+                        </div>
+                        
+                        <!-- Visual 1: Subdomain & SSL Engine -->
+                        <div class="step-visual">
+                            <div class="visual-top-bar">
+                                <span class="v-dot red"></span>
+                                <span class="v-dot yellow"></span>
+                                <span class="v-dot green"></span>
+                                <div class="v-url-bar">
+                                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                                    <span>https://<span class="v-url-domain">yourbrand</span>.linkal.in</span>
+                                </div>
+                            </div>
+                            
+                            <div class="visual-svg-canvas">
+                                <svg viewBox="0 0 360 140" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+                                    <defs>
+                                        <pattern id="grid-dots" width="18" height="18" patternUnits="userSpaceOnUse">
+                                            <circle cx="2" cy="2" r="1" fill="rgba(13,27,62,0.08)" />
+                                        </pattern>
+                                    </defs>
+                                    <rect width="360" height="140" rx="12" fill="url(#grid-dots)" />
+                                    
+                                    <!-- Connection Line with Pulse -->
+                                    <path d="M65 70 H180 H295" stroke="#E2E8F0" stroke-width="2.5" stroke-dasharray="4 4" />
+                                    <path d="M65 70 H180 H295" stroke="#1A56FF" stroke-width="2.5" stroke-dasharray="8 12">
+                                        <animate attributeName="stroke-dashoffset" values="40;0" dur="2.2s" repeatCount="indefinite" />
+                                    </path>
+                                    
+                                    <!-- Node 1: Cloudflare Wildcard Edge -->
+                                    <g transform="translate(32, 38)">
+                                        <rect width="66" height="64" rx="12" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5" />
+                                        <circle cx="33" cy="28" r="16" fill="#EFF6FF" />
+                                        <path d="M26 30h14a4 4 0 0 0 .5-8 5 5 0 0 0-9.5-1.5A3.5 3.5 0 0 0 26 30z" fill="none" stroke="#1A56FF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+                                        <text x="33" y="52" font-family="'Plus Jakarta Sans', sans-serif" font-size="7.5" font-weight="700" fill="#0D1B3E" text-anchor="middle">Cloud Edge</text>
+                                    </g>
+                                    
+                                    <!-- Node 2: Subdomain Dynamic Router -->
+                                    <g transform="translate(145, 34)">
+                                        <rect width="70" height="72" rx="14" fill="#0D1B3E" />
+                                        <circle cx="35" cy="30" r="16" fill="rgba(26,86,255,0.25)" />
+                                        <rect x="26" y="21" width="18" height="18" rx="4" stroke="#60A5FA" stroke-width="1.6" fill="none" />
+                                        <circle cx="35" cy="30" r="2.5" fill="#60A5FA" />
+                                        <text x="35" y="52" font-family="'Plus Jakarta Sans', sans-serif" font-size="8" font-weight="700" fill="#FFFFFF" text-anchor="middle">Wildcard DNS</text>
+                                        <text x="35" y="62" font-family="'Plus Jakarta Sans', sans-serif" font-size="7" font-weight="600" fill="#93C5FD" text-anchor="middle">*.linkal.in</text>
+                                    </g>
+                                    
+                                    <!-- Node 3: Live Store Output -->
+                                    <g transform="translate(262, 38)">
+                                        <rect width="66" height="64" rx="12" fill="#FFFFFF" stroke="#10B981" stroke-width="1.5" />
+                                        <circle cx="33" cy="28" r="16" fill="#ECFDF5" />
+                                        <path d="M26 28l5 5 8-9" stroke="#10B981" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+                                        <text x="33" y="52" font-family="'Plus Jakarta Sans', sans-serif" font-size="7.5" font-weight="700" fill="#065F46" text-anchor="middle">Live in 10s</text>
+                                    </g>
+                                </svg>
+                            </div>
+                            
+                            <div class="visual-badges">
+                                <span class="v-badge success"><span class="v-live-dot"></span>SSL Active &amp; Verified</span>
+                                <span class="v-badge pulse-badge">Edge CDN Routing</span>
+                                <span class="v-badge">Zero DNS Setup</span>
+                            </div>
+                        </div>
+                        
+                        <div class="step-number">1</div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="step right reveal">
+                        <!-- Visual 2: Product Catalog & WhatsApp Bubble -->
+                        <div class="step-visual">
+                            <div class="visual-top-bar">
+                                <span class="v-dot red"></span>
+                                <span class="v-dot yellow"></span>
+                                <span class="v-dot green"></span>
+                                <div class="v-url-bar">
+                                    <span>Catalogue Preview · <strong style="color:var(--navy);">Instant Order Ready</strong></span>
+                                </div>
+                            </div>
+                            
+                            <div style="background:var(--card-bg); border:1px solid var(--border); border-radius:12px; padding:0.85rem; display:flex; align-items:center; gap:0.85rem;">
+                                <div style="width:48px; height:48px; border-radius:10px; background:#FCE4EC; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#E91E63" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                                </div>
+                                <div style="flex:1; min-width:0;">
+                                    <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:2px;">
+                                        <span style="font-family:'Plus Jakarta Sans',sans-serif; font-size:0.85rem; font-weight:700; color:var(--navy);">Chocolate Truffle Cake</span>
+                                        <span style="font-family:'Plus Jakarta Sans',sans-serif; font-size:0.85rem; font-weight:800; color:var(--blue);">₹580</span>
+                                    </div>
+                                    <div style="font-size:0.72rem; color:var(--text); margin-bottom:6px;">Auto-formatted pre-filled order trigger</div>
+                                    <div style="display:inline-flex; align-items:center; gap:0.35rem; background:#25D366; color:#fff; font-family:'Plus Jakarta Sans',sans-serif; font-size:0.65rem; font-weight:700; border-radius:20px; padding:0.25rem 0.65rem;">
+                                        <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.05 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                                        Tap to Order on WhatsApp
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="v-chat-bubble">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                                <div>
+                                    <strong>Pre-filled Customer Message:</strong><br/>
+                                    "Hi, I want to order <strong>1x Truffle Cake (₹580)</strong> from royalcakes.linkal.in. Here is my delivery address..."
+                                </div>
+                            </div>
+                            
+                            <div class="visual-badges">
+                                <span class="v-badge success">Zero Gateway Fees</span>
+                                <span class="v-badge pulse-badge">1-Tap Direct WhatsApp</span>
+                                <span class="v-badge">Real-time Stock Toggles</span>
+                            </div>
+                        </div>
+
+                        <div class="step-content">
+                            <div class="step-bg-num">02</div>
+                            <div class="step-icon"><i data-lucide="layout-grid" width="28" height="28"></i></div>
+                            <h3>Build your store in minutes</h3>
+                            <p>Add products with photos, names, and prices. Choose a theme. Set business hours. Add your
+                                WhatsApp number. Your store auto-generates a pre-filled order message for every product
+                                — zero setup.</p>
+                        </div>
+                        <div class="step-number">2</div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="step reveal">
+                        <div class="step-content">
+                            <div class="step-bg-num">03</div>
+                            <div class="step-icon"><i data-lucide="share-2" width="28" height="28"></i></div>
+                            <h3>Share your link in your Instagram bio</h3>
+                            <p>Replace your Linktree with your branded linkal.in URL. Share it on stories, reels, and
+                                posts. Customers browse your store and tap "Order on WhatsApp" — orders start flowing in
+                                within the first hour.</p>
+                        </div>
+
+                        <!-- Visual 3: Precision Vector QR & Alert Toast -->
+                        <div class="step-visual">
+                            <div class="visual-top-bar">
+                                <span class="v-dot red"></span>
+                                <span class="v-dot yellow"></span>
+                                <span class="v-dot green"></span>
+                                <div class="v-url-bar">
+                                    <span>Omnichannel Launch · <strong style="color:var(--navy);">QR + Bio Link</strong></span>
+                                </div>
+                            </div>
+                            
+                            <div class="v-qr-preview">
+                                <div class="v-qr-box">
+                                    <svg width="74" height="74" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <!-- QR Finder 1 (Top Left) -->
+                                        <rect x="10" y="10" width="28" height="28" rx="4" fill="#0D1B3E" />
+                                        <rect x="16" y="16" width="16" height="16" rx="2" fill="#FFFFFF" />
+                                        <rect x="20" y="20" width="8" height="8" rx="1.5" fill="#1A56FF" />
+                                        
+                                        <!-- QR Finder 2 (Top Right) -->
+                                        <rect x="62" y="10" width="28" height="28" rx="4" fill="#0D1B3E" />
+                                        <rect x="68" y="16" width="16" height="16" rx="2" fill="#FFFFFF" />
+                                        <rect x="72" y="20" width="8" height="8" rx="1.5" fill="#1A56FF" />
+                                        
+                                        <!-- QR Finder 3 (Bottom Left) -->
+                                        <rect x="10" y="62" width="28" height="28" rx="4" fill="#0D1B3E" />
+                                        <rect x="16" y="68" width="16" height="16" rx="2" fill="#FFFFFF" />
+                                        <rect x="20" y="72" width="8" height="8" rx="1.5" fill="#1A56FF" />
+                                        
+                                        <!-- Timing & Data Modules -->
+                                        <rect x="44" y="12" width="6" height="6" fill="#0D1B3E" />
+                                        <rect x="52" y="20" width="6" height="6" fill="#0D1B3E" />
+                                        <rect x="44" y="28" width="6" height="6" fill="#1A56FF" />
+                                        <rect x="12" y="44" width="6" height="6" fill="#0D1B3E" />
+                                        <rect x="20" y="52" width="6" height="6" fill="#0D1B3E" />
+                                        <rect x="28" y="44" width="6" height="6" fill="#1A56FF" />
+                                        
+                                        <!-- Center Data Cluster -->
+                                        <rect x="42" y="42" width="16" height="16" rx="3" fill="#1A56FF" />
+                                        <circle cx="50" cy="50" r="3" fill="#FFFFFF" />
+                                        
+                                        <!-- Bottom Right Data Modules -->
+                                        <rect x="64" y="44" width="6" height="6" fill="#0D1B3E" />
+                                        <rect x="74" y="52" width="6" height="6" fill="#0D1B3E" />
+                                        <rect x="84" y="44" width="6" height="6" fill="#0D1B3E" />
+                                        <rect x="44" y="64" width="6" height="6" fill="#0D1B3E" />
+                                        <rect x="52" y="74" width="6" height="6" fill="#0D1B3E" />
+                                        <rect x="64" y="64" width="6" height="6" fill="#1A56FF" />
+                                        <rect x="74" y="74" width="6" height="6" fill="#0D1B3E" />
+                                        <rect x="84" y="64" width="6" height="6" fill="#0D1B3E" />
+                                        <rect x="64" y="84" width="6" height="6" fill="#0D1B3E" />
+                                        <rect x="84" y="84" width="6" height="6" fill="#1A56FF" />
+                                    </svg>
+                                </div>
+                                <div class="v-qr-info">
+                                    <strong>Scan to Launch</strong>
+                                    <span>Place on restaurant tables, product packaging, or print stickers. Instant redirect to your subdomain.</span>
+                                </div>
+                            </div>
+                            
+                            <div style="margin-top:0.75rem; background:#FFFFFF; border:1px solid #10B981; border-radius:10px; padding:0.6rem 0.8rem; display:flex; align-items:center; gap:0.65rem; box-shadow:0 4px 12px rgba(16,185,129,0.12);">
+                                <div style="width:24px; height:24px; border-radius:50%; background:#ECFDF5; display:flex; align-items:center; justify-content:center; color:#10B981; flex-shrink:0;">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+                                </div>
+                                <div style="flex:1; min-width:0;">
+                                    <div style="font-family:'Plus Jakarta Sans',sans-serif; font-size:0.75rem; font-weight:700; color:var(--navy); display:flex; align-items:center; justify-content:space-between;">
+                                        <span>New WhatsApp Order!</span>
+                                        <span style="font-size:0.65rem; color:#10B981; font-weight:600;">Just now</span>
+                                    </div>
+                                    <div style="font-size:0.68rem; color:var(--text);">Order #1042 · ₹580 via royalcakes.linkal.in</div>
+                                </div>
+                            </div>
+                            
+                            <div class="visual-badges">
+                                <span class="v-badge success">Print-Ready Vector QR</span>
+                                <span class="v-badge pulse-badge">Bio Link Ready</span>
+                                <span class="v-badge">Google Indexed</span>
+                            </div>
+                        </div>
+
+                        <div class="step-number">3</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FEATURES BENTO -->
+        <section id="features" class="section-pad" style="background: var(--navy-light);">
+            <div class="container">
+                <div class="features-header reveal">
+                    <h2>Everything Your Business Needs</h2>
+                    <p>15 powerful features included in every plan. No add-ons. No hidden limits.</p>
+                </div>
+
+                <div class="bento-grid reveal">
+                    <!-- Hero card: Custom Subdomain -->
+                    <div class="bento-card hero-card">
+                        <div class="bento-icon"><i data-lucide="globe" width="32" height="32"></i></div>
+                        <h3>Custom Subdomain</h3>
+                        <p>Your business gets its own permanent branded URL — professional, memorable, and fully yours.
+                        </p>
+                        <div class="subdomain-demo">
+                            <i data-lucide="link" width="16" height="16"></i>
+                            <span><span class="highlight">royalcakes</span>.linkal.in</span>
+                        </div>
+                    </div>
+
+                    <!-- Other cards -->
+                    <div class="bento-card reveal">
+                        <div class="bento-icon"><i data-lucide="smartphone" width="24" height="24"></i></div>
+                        <h3>Mobile-Optimized Store</h3>
+                        <p>Looks perfect on every phone screen — built for India's mobile-first shoppers.</p>
+                    </div>
+
+                    <div class="bento-card reveal">
+                        <div class="bento-icon"><i data-lucide="package" width="24" height="24"></i></div>
+                        <h3>200 Product Listings</h3>
+                        <p>Photo, name, price, description — add as many products as your business carries.</p>
+                    </div>
+
+                    <div class="bento-card reveal">
+                        <div class="bento-icon"><i data-lucide="message-circle" width="24" height="24"></i></div>
+                        <h3>Order on WhatsApp Button</h3>
+                        <p>Every product has a pre-filled WhatsApp order message. One tap, instant order.</p>
+                    </div>
+
+                    <div class="bento-card reveal">
+                        <div class="bento-icon"><i data-lucide="palette" width="24" height="24"></i></div>
+                        <h3>Theme Picker</h3>
+                        <p>Choose from 8 beautiful pre-built color themes to match your brand personality.</p>
+                    </div>
+
+                    <div class="bento-card reveal">
+                        <div class="bento-icon"><i data-lucide="image" width="24" height="24"></i></div>
+                        <h3>Logo &amp; Banner Upload</h3>
+                        <p>Upload your logo and store banner. Your complete branding, front and center.</p>
+                    </div>
+
+                    <div class="bento-card reveal">
+                        <div class="bento-icon"><i data-lucide="type" width="24" height="24"></i></div>
+                        <h3>Custom Tagline &amp; Bio</h3>
+                        <p>Write a short "About Us" that tells your story and builds customer trust.</p>
+                    </div>
+
+                    <div class="bento-card reveal">
+                        <div class="bento-icon"><i data-lucide="image-play" width="24" height="24"></i></div>
+                        <h3>Story-Ready Card Generator</h3>
+                        <p>Generate Instagram-ready product cards in one tap. Download and post instantly.</p>
+                    </div>
+
+                    <div class="bento-card reveal">
+                        <div class="bento-icon"><i data-lucide="clock" width="24" height="24"></i></div>
+                        <h3>Business Hours Display</h3>
+                        <p>Set your working hours. Your store auto-shows "Open" or "Closed" status in real time.</p>
+                    </div>
+
+                    <div class="bento-card reveal">
+                        <div class="bento-icon"><i data-lucide="toggle-right" width="24" height="24"></i></div>
+                        <h3>Available / Sold Out Toggle</h3>
+                        <p>One tap per product — instantly mark items as available or sold out.</p>
+                    </div>
+
+                    <div class="bento-card reveal">
+                        <div class="bento-icon"><i data-lucide="megaphone" width="24" height="24"></i></div>
+                        <h3>Announcement Banner</h3>
+                        <p>Scrolling text banner for your latest offers, sales, and announcements.</p>
+                    </div>
+
+                    <div class="bento-card reveal">
+                        <div class="bento-icon"><i data-lucide="star" width="24" height="24"></i></div>
+                        <h3>Customer Review Wall</h3>
+                        <p>Add testimonial screenshots from happy customers. Build social proof effortlessly.</p>
+                    </div>
+
+                    <div class="bento-card reveal">
+                        <div class="bento-icon"><i data-lucide="eye" width="24" height="24"></i></div>
+                        <h3>Visitor Counter</h3>
+                        <p>See total store visits in your dashboard. Track your growth every day.</p>
+                    </div>
+
+                    <div class="bento-card reveal">
+                        <div class="bento-icon"><i data-lucide="mouse-pointer-click" width="24" height="24"></i></div>
+                        <h3>Product Click Tracker</h3>
+                        <p>Know which product gets the most interest so you can stock and promote smarter.</p>
+                    </div>
+
+                    <div class="bento-card reveal">
+                        <div class="bento-icon"><i data-lucide="bar-chart-2" width="24" height="24"></i></div>
+                        <h3>WhatsApp Click Counter</h3>
+                        <p>Track how many customers tapped "Order on WhatsApp" for each product.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- EXCLUSIVE FEATURES -->
+        <section id="exclusive" class="section-pad">
+            <div class="container">
+                <div class="exclusive-header reveal">
+                    <h2>Features You Won't Find Anywhere Else</h2>
+                    <p>Built specifically for Indian Instagram sellers — not just another generic website builder.</p>
+                </div>
+
+                <div class="exclusive-grid reveal">
+                    <!-- Main large card -->
+                    <div class="exclusive-main">
+                        <div class="only-badge">ONLY ON LINKAL.IN</div>
+                        <div style="color: var(--blue); margin-bottom: 1rem;"><i data-lucide="brain-circuit" width="32"
+                                height="32"></i></div>
+                        <h3>AI Business Analyzer</h3>
+                        <p>Our AI reads your store data weekly and gives you a personalized report: what products to
+                            push, what prices to change, what content to post, and what your competitors are doing
+                            differently. Zero guesswork. Just data-backed action.</p>
+                    </div>
+
+                    <!-- Right 4 cards -->
+                    <div class="exclusive-right">
+                        <div class="ex-card">
+                            <div class="ex-icon"><i data-lucide="message-square-text" width="22" height="22"></i></div>
+                            <h4>Smart WhatsApp Message Templates</h4>
+                            <p>Customize order messages with product name, price, and business name variables. Every
+                                customer gets a perfectly written WhatsApp order — automatically.</p>
+                        </div>
+                        <div class="ex-card">
+                            <div class="ex-icon"><i data-lucide="sparkles" width="22" height="22"></i></div>
+                            <h4>Auto Festival Mode</h4>
+                            <p>Set your region once. Your store auto-switches theme on Diwali, Eid, Christmas, Ganesh
+                                Chaturthi, Holi, and 20+ Indian festivals. Zero effort.</p>
+                        </div>
+                        <div class="ex-card">
+                            <div class="ex-icon"><i data-lucide="clapperboard" width="22" height="22"></i></div>
+                            <h4>Instagram Reel Embed</h4>
+                            <p>Paste your reel URL. It auto-embeds on your store. Customers watch, get convinced, then
+                                tap Order on WhatsApp.</p>
+                        </div>
+                        <div class="ex-card">
+                            <div class="ex-icon"><i data-lucide="link-2" width="22" height="22"></i></div>
+                            <h4>Bio Link + Store Combo</h4>
+                            <p>One link does everything. Bio page with all your links + full product store — on a single
+                                branded subdomain. Replace Linktree forever.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- STORY STUDIO -->
+        <section id="story" class="section-pad">
+            <div class="container">
+                <div class="reveal">
+                    <div class="ai-label">Built-In Content Creator</div>
+                    <h2>Story Studio</h2>
+                    <p class="story-sub">Create Instagram-ready story cards for your products in one tap. No Canva. No
+                        designer. Just tap and download.</p>
+                </div>
+
+                <div class="story-grid reveal">
+                    <div class="story-card">
+                        <div class="story-badge">Story Studio</div>
+                        <div class="s-icon"><i data-lucide="share" width="20" height="20"></i></div>
+                        <h4>Share Product to Story</h4>
+                        <p>Product photo + price + your logo = a story card ready to download and share instantly.</p>
+                    </div>
+                    <div class="story-card">
+                        <div class="story-badge">Story Studio</div>
+                        <div class="s-icon"><i data-lucide="door-open" width="20" height="20"></i></div>
+                        <h4>"We're Open" Daily Card</h4>
+                        <p>Branded open announcement card in your exact theme colors — post every morning in seconds.
+                        </p>
+                    </div>
+                    <div class="story-card">
+                        <div class="story-badge">Story Studio</div>
+                        <div class="s-icon"><i data-lucide="flame" width="20" height="20"></i></div>
+                        <h4>Selling Fast Badge</h4>
+                        <p>Auto fire badge on products with high WhatsApp clicks — creates urgency that converts.</p>
+                    </div>
+                    <div class="story-card">
+                        <div class="story-badge">Story Studio</div>
+                        <div class="s-icon"><i data-lucide="ticket-percent" width="20" height="20"></i></div>
+                        <h4>Coupon Card Generator</h4>
+                        <p>Type discount code — get an instant branded story card. Share offers that look professional.
+                        </p>
+                    </div>
+                    <div class="story-card">
+                        <div class="story-badge">Story Studio</div>
+                        <div class="s-icon"><i data-lucide="bar-chart-horizontal" width="20" height="20"></i></div>
+                        <h4>Weekly Stats Card</h4>
+                        <p>"127 people visited your store this week" — shareable card that proves your growth.</p>
+                    </div>
+                    <div class="story-card">
+                        <div class="story-badge">Story Studio</div>
+                        <div class="s-icon"><i data-lucide="tag" width="20" height="20"></i></div>
+                        <h4>Sold Out Story Card</h4>
+                        <p>Keep followers engaged even when stock runs out. Build demand before restock.</p>
+                    </div>
+                    <div class="story-card">
+                        <div class="story-badge">Story Studio</div>
+                        <div class="s-icon"><i data-lucide="gift" width="20" height="20"></i></div>
+                        <h4>Seasonal Sale Banner</h4>
+                        <p>Pick festival + % off — get a story card + store banner together. Festival sales made easy.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="story-note reveal">
+                    <i data-lucide="zap" width="20" height="20"></i>
+                    <span>All generated in your browser. Instant download. No watermark. No Canva needed.</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEO -->
+        <section id="seo" class="section-pad">
+            <div class="container">
+                <div class="seo-grid">
+                    <div class="seo-left reveal">
+                        <div class="ai-label" style="color: var(--blue);">Search Engine Power</div>
+                        <h2>Your Business, Found on Google</h2>
+                        <p>Every store we build is SEO-optimized from day one. When someone searches 'Royal Cakes
+                            Mumbai' on Google — your store appears at the top. Our AI also monitors your online
+                            reputation and ensures AI tools like Google AI Overviews show positive information about
+                            your business.</p>
+                        <div class="seo-pills">
+                            <span class="seo-pill">Auto meta tags</span>
+                            <span class="seo-pill">Google sitemap</span>
+                            <span class="seo-pill">AI reputation monitoring</span>
+                            <span class="seo-pill">Business schema markup</span>
+                            <span class="seo-pill">Mobile SEO</span>
+                            <span class="seo-pill">AI Overview optimization</span>
+                        </div>
+                    </div>
+
+                    <div class="reveal reveal-delay-2">
+                        <div class="google-card">
+                            <div class="g-site">
+                                <div class="g-favicon">
+                                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="white"
+                                        stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M12 2L2 7l10 5 10-5-10-5z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <div class="g-domain">royalcakes.linkal.in</div>
+                                </div>
+                            </div>
+                            <div class="g-title">Royal Cakes Mumbai — royalcakes.linkal.in</div>
+                            <div class="g-green">royalcakes.linkal.in › products</div>
+                            <div class="g-desc">Order fresh custom cakes in Mumbai. Best prices, quick delivery. Contact
+                                on WhatsApp. Birthday cakes, wedding cakes, and more — ready for same-day delivery.
+                            </div>
+                            <div class="g-stars">
+                                <div class="g-stars-row">
+                                    <svg class="g-star" viewBox="0 0 24 24">
+                                        <path
+                                            d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                                    </svg>
+                                    <svg class="g-star" viewBox="0 0 24 24">
+                                        <path
+                                            d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                                    </svg>
+                                    <svg class="g-star" viewBox="0 0 24 24">
+                                        <path
+                                            d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                                    </svg>
+                                    <svg class="g-star" viewBox="0 0 24 24">
+                                        <path
+                                            d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                                    </svg>
+                                    <svg class="g-star" viewBox="0 0 24 24">
+                                        <path
+                                            d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                                    </svg>
+                                </div>
+                                <span class="g-rating">4.9 · 48 reviews</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PRICING -->
+        <section id="pricing" class="section-pad" style="background: var(--navy-light);">
+            <div class="container">
+                <div class="pricing-header reveal">
+                    <h2>Simple Pricing. No Surprises.</h2>
+                    <p>All plans include a 7-day free trial. Cancel anytime. No contracts.</p>
+                </div>
+
+                <div class="pricing-grid reveal">
+                    <!-- Starter -->
+                    <div class="plan-card">
+                        <div class="plan-name">Starter</div>
+                        <div class="plan-price">₹300<span>/mo</span></div>
+                        <div class="plan-desc">Perfect for new sellers getting started.</div>
+                        <div class="plan-divider"></div>
+                        <ul class="plan-features">
+                            <li><i data-lucide="check" width="15" height="15"></i>50 product listings</li>
+                            <li><i data-lucide="check" width="15" height="15"></i>Custom subdomain</li>
+                            <li><i data-lucide="check" width="15" height="15"></i>WhatsApp ordering</li>
+                            <li><i data-lucide="check" width="15" height="15"></i>Theme picker (8 themes)</li>
+                            <li><i data-lucide="check" width="15" height="15"></i>Story Studio</li>
+                            <li><i data-lucide="check" width="15" height="15"></i>Visitor analytics</li>
+                            <li><i data-lucide="check" width="15" height="15"></i>SEO optimization</li>
+                            <li><i data-lucide="check" width="15" height="15"></i>Business hours display</li>
+                        </ul>
+                        <a href="storemaker.html" class="btn btn-navy"
+                            style="width:100%; justify-content:center; margin-bottom: 0.5rem;">Create Store</a>
+                        <a href="#" class="btn btn-outline" style="width:100%; justify-content:center;"
+                            onclick="openModal(event)">Get Started</a>
+                    </div>
+
+                    <!-- Growth (popular) -->
+                    <div class="plan-card popular" style="position:relative;">
+                        <div class="popular-badge">Most Popular</div>
+                        <div class="plan-name">Growth</div>
+                        <div class="plan-price">₹500<span>/mo</span></div>
+                        <div class="plan-desc">For sellers ready to grow with AI insights.</div>
+                        <div class="plan-divider"></div>
+                        <ul class="plan-features">
+                            <li><i data-lucide="check" width="15" height="15"></i>100 product listings</li>
+                            <li><i data-lucide="check" width="15" height="15"></i>Everything in Starter</li>
+                            <li><i data-lucide="check" width="15" height="15"></i>AI Business Analyzer (weekly)</li>
+                            <li><i data-lucide="check" width="15" height="15"></i>Smart WhatsApp templates</li>
+                            <li><i data-lucide="check" width="15" height="15"></i>Auto Festival Mode</li>
+                            <li><i data-lucide="check" width="15" height="15"></i>Instagram Reel Embed</li>
+                            <li><i data-lucide="check" width="15" height="15"></i>Bio Link + Store Combo</li>
+                            <li><i data-lucide="check" width="15" height="15"></i>Priority support</li>
+                        </ul>
+                        <a href="storemaker.html" class="btn btn-blue"
+                            style="width:100%; justify-content:center; margin-bottom: 0.5rem; border-color: #fff;">Create
+                            Store</a>
+                        <a href="#" class="btn btn-white" style="width:100%; justify-content:center;"
+                            onclick="openModal(event)">Get Started</a>
+                    </div>
+
+                    <!-- Pro -->
+                    <div class="plan-card">
+                        <div class="plan-name">Pro</div>
+                        <div class="plan-price">₹700<span>/mo</span></div>
+                        <div class="plan-desc">For serious sellers who want the best of everything.</div>
+                        <div class="plan-divider"></div>
+                        <ul class="plan-features">
+                            <li><i data-lucide="check" width="15" height="15"></i>200+ product listings</li>
+                            <li><i data-lucide="check" width="15" height="15"></i>Everything in Growth</li>
+                            <li><i data-lucide="check" width="15" height="15"></i>Daily AI Business Analysis</li>
+                            <li><i data-lucide="check" width="15" height="15"></i>AI Reputation Monitoring</li>
+                            <li><i data-lucide="check" width="15" height="15"></i>Google AI Overview optimization</li>
+                            <li><i data-lucide="check" width="15" height="15"></i>Story Studio — all 7 tools</li>
+                            <li><i data-lucide="check" width="15" height="15"></i>Custom domain support</li>
+                            <li><i data-lucide="check" width="15" height="15"></i>Dedicated WhatsApp support</li>
+                        </ul>
+                        <a href="storemaker.html" class="btn btn-navy"
+                            style="width:100%; justify-content:center; margin-bottom: 0.5rem;">Create Store</a>
+                        <a href="#" class="btn btn-outline" style="width:100%; justify-content:center;"
+                            onclick="openModal(event)">Get Started</a>
+                    </div>
+                </div>
+
+                <p class="pricing-note reveal">
+                    <i data-lucide="shield-check" width="16" height="16"></i>
+                    All plans include 7-day free trial. No credit card required.
+                </p>
+            </div>
+        </section>
+
+        <!-- TESTIMONIALS -->
+        <section id="testimonials" class="section-pad">
+            <div class="container">
+                <div class="testi-header reveal">
+                    <h2>Real Sellers. Real Results.</h2>
+                    <p>Indian business owners across Maharashtra are growing with linkal.in every day.</p>
+                </div>
+
+                <div class="testi-grid reveal">
+                    <div class="testi-card">
+                        <div class="testi-stars">
+                            <i data-lucide="star" width="16" height="16" style="fill:#f59e0b;color:#f59e0b;"></i>
+                            <i data-lucide="star" width="16" height="16" style="fill:#f59e0b;color:#f59e0b;"></i>
+                            <i data-lucide="star" width="16" height="16" style="fill:#f59e0b;color:#f59e0b;"></i>
+                            <i data-lucide="star" width="16" height="16" style="fill:#f59e0b;color:#f59e0b;"></i>
+                            <i data-lucide="star" width="16" height="16" style="fill:#f59e0b;color:#f59e0b;"></i>
+                        </div>
+                        <p class="testi-quote">"Maine apna store 15 minute mein banaya. Ab customers seedha WhatsApp pe
+                            order karte hain. Pehle mahine mein hi 40+ orders aaye!"</p>
+                        <div class="testi-author">
+                            <div class="testi-avatar">PS</div>
+                            <div>
+                                <div class="testi-name">Priya Sharma</div>
+                                <div class="testi-biz">Royal Cakes, Mumbai</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testi-card">
+                        <div class="testi-stars">
+                            <i data-lucide="star" width="16" height="16" style="fill:#f59e0b;color:#f59e0b;"></i>
+                            <i data-lucide="star" width="16" height="16" style="fill:#f59e0b;color:#f59e0b;"></i>
+                            <i data-lucide="star" width="16" height="16" style="fill:#f59e0b;color:#f59e0b;"></i>
+                            <i data-lucide="star" width="16" height="16" style="fill:#f59e0b;color:#f59e0b;"></i>
+                            <i data-lucide="star" width="16" height="16" style="fill:#f59e0b;color:#f59e0b;"></i>
+                        </div>
+                        <p class="testi-quote">"AI Business Analyzer ne bataya ki meri battery listing mein photo
+                            quality kharab hai. Maine fix kiya — sales 2x ho gayi. Seriously useful."</p>
+                        <div class="testi-author">
+                            <div class="testi-avatar">RV</div>
+                            <div>
+                                <div class="testi-name">Rahul Verma</div>
+                                <div class="testi-biz">Verma Electronics, Pune</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testi-card">
+                        <div class="testi-stars">
+                            <i data-lucide="star" width="16" height="16" style="fill:#f59e0b;color:#f59e0b;"></i>
+                            <i data-lucide="star" width="16" height="16" style="fill:#f59e0b;color:#f59e0b;"></i>
+                            <i data-lucide="star" width="16" height="16" style="fill:#f59e0b;color:#f59e0b;"></i>
+                            <i data-lucide="star" width="16" height="16" style="fill:#f59e0b;color:#f59e0b;"></i>
+                            <i data-lucide="star" width="16" height="16" style="fill:#f59e0b;color:#f59e0b;"></i>
+                        </div>
+                        <p class="testi-quote">"Festival mode is unbelievable. Diwali pe automatically store ka theme
+                            change ho gaya. Customers ne socha maine khud design kiya. Bahut impressive!"</p>
+                        <div class="testi-author">
+                            <div class="testi-avatar">MJ</div>
+                            <div>
+                                <div class="testi-name">Meera Joshi</div>
+                                <div class="testi-biz">Meera Boutique, Nashik</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section id="faq" class="section-pad" style="background: var(--navy-light);">
+            <div class="container">
+                <div class="faq-header reveal">
+                    <h2>Frequently Asked Questions</h2>
+                    <p>Everything you need to know before getting started.</p>
+                </div>
+
+                <div class="faq-list reveal">
+                    <div class="faq-item">
+                        <div class="faq-q">
+                            Do I need any technical knowledge to build my store?
+                            <i data-lucide="chevron-down" width="20" height="20" class="faq-chevron"></i>
+                        </div>
+                        <div class="faq-a">
+                            <div class="faq-a-inner">
+                                Absolutely not. linkal.in is designed for Indian small business owners — not developers.
+                                If you can use WhatsApp and Instagram, you can build your store. Everything is
+                                point-and-click: upload photos, type names and prices, pick a theme, and hit publish.
+                                Most sellers go live in under 10 minutes.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-q">
+                            Can my customers pay online through the store?
+                            <i data-lucide="chevron-down" width="20" height="20" class="faq-chevron"></i>
+                        </div>
+                        <div class="faq-a">
+                            <div class="faq-a-inner">
+                                linkal.in uses WhatsApp-based ordering — customers tap "Order on WhatsApp," get sent to
+                                a pre-filled message, and you handle payment your preferred way (UPI, bank transfer,
+                                cash on delivery). This keeps things simple and builds trust. Online payment gateway
+                                integration is coming in a future update for Pro plan users.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-q">
+                            What happens after I sign up?
+                            <i data-lucide="chevron-down" width="20" height="20" class="faq-chevron"></i>
+                        </div>
+                        <div class="faq-a">
+                            <div class="faq-a-inner">
+                                As soon as you sign up, our team contacts you on WhatsApp within 2 hours to help you set
+                                up your store. Your subdomain (yourname.linkal.in) is activated immediately. We also
+                                send you a step-by-step setup guide on WhatsApp so you can get your first product listed
+                                in minutes.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-q">
+                            Can I change my store design anytime?
+                            <i data-lucide="chevron-down" width="20" height="20" class="faq-chevron"></i>
+                        </div>
+                        <div class="faq-a">
+                            <div class="faq-a-inner">
+                                Yes — switch themes, change your logo, update your tagline, or add a new banner anytime
+                                from your dashboard. Changes go live instantly. You can even set up seasonal themes for
+                                festivals manually or let Auto Festival Mode handle it for you on Growth and Pro plans.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-q">
+                            How does the AI Business Analyzer work?
+                            <i data-lucide="chevron-down" width="20" height="20" class="faq-chevron"></i>
+                        </div>
+                        <div class="faq-a">
+                            <div class="faq-a-inner">
+                                Every week (or daily on Pro), our AI scans your store's traffic data, product click
+                                rates, WhatsApp order taps, and pricing — and compares it against trending data in your
+                                category and region. It then generates a personalized report delivered to your WhatsApp
+                                with specific, actionable suggestions: what to fix, what to promote, and what to add.
+                                Think of it as having a digital marketing advisor available 24/7 at no extra cost.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-q">
+                            What if I want to cancel my subscription?
+                            <i data-lucide="chevron-down" width="20" height="20" class="faq-chevron"></i>
+                        </div>
+                        <div class="faq-a">
+                            <div class="faq-a-inner">
+                                You can cancel anytime — no lock-in contracts, no cancellation fees. Just message us on
+                                WhatsApp or email us, and we'll process your cancellation immediately. Your store stays
+                                live until the end of your current billing period, then goes offline. Your data is kept
+                                for 30 days in case you want to reactivate.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA BANNER -->
+        <section id="cta-banner" class="section-pad">
+            <div class="container">
+                <div class="reveal">
+                    <h2>Your Store is 10 Minutes Away</h2>
+                    <p>Join 300+ Indian businesses already selling smarter on linkal.in.</p>
+                    <div class="cta-btns">
+                        <a href="#" class="btn btn-white btn-lg" onclick="openModal(event)">Create My Store Free</a>
+                        <a href="storemaker.html" class="btn btn-outline-white btn-lg">Create Store</a>
+                        <a href="https://wa.me/919999999999?text=Hi!%20I%20want%20to%20create%20my%20store%20on%20linkal.in"
+                            target="_blank" rel="noopener noreferrer" class="btn btn-outline-white btn-lg">
+                            <i data-lucide="message-circle" width="18" height="18"></i>
+                            Chat on WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-inner">
+                <div class="footer-brand">
+                    <a href="#" class="logo">
+                        <div class="logo-mark">
+                            <svg width="34" height="34" viewBox="0 0 34 34" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <rect width="34" height="34" rx="9" fill="#0D1B3E" />
+                                <path d="M8 17L13 10L17 15L21 8L26 17" stroke="#1A56FF" stroke-width="2.5"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M8 22L13 17L17 21L21 16L26 22" stroke="white" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" opacity="0.7" />
+                            </svg>
+                        </div>
+                        <span class="logo-text">linkal<span>.in</span></span>
+                    </a>
+                    <p>Stores for every Indian business. Your brand, your subdomain, your customers.</p>
+                </div>
+
+                <div class="footer-col">
+                    <h5>Product</h5>
+                    <ul>
+                        <li><a href="#use-cases">Who It's For</a></li>
+                        <li><a href="#how">How It Works</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#pricing">Pricing</a></li>
+                        <li><a href="#story">Story Studio</a></li>
+                        <li><a href="#ai-analyzer">AI Tools</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h5>Company</h5>
+                    <ul>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h5>Support</h5>
+                    <ul>
+                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="https://wa.me/919999999999" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+                        </li>
+                        <li><a href="#">Setup Guide</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h5>Legal</h5>
+                    <ul>
+                        <li><a href="#">Privacy</a></li>
+                        <li><a href="#">Terms</a></li>
+                        <li><a href="#">Refund Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <span>© 2026 linkal.in — Made with love in India</span>
+                <a href="https://instagram.com/direct/t/linkal.in" target="_blank" rel="noopener noreferrer"
+                    aria-label="Instagram">
+                    <i data-lucide="instagram" width="20" height="20"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- FLOATING INSTAGRAM -->
+    <div class="float-ig-wrap">
+        <div class="float-ig-tooltip">
+            <span>Chat on Instagram @linkal.in</span>
+        </div>
+        <a href="https://ig.me/m/linkal.in" target="_blank" rel="noopener noreferrer" class="float-ig"
+            aria-label="Contact on Instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="white"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+            </svg>
+        </a>
+    </div>
+
+    <!-- MODAL -->
+    <div class="modal-overlay" id="modalOverlay" onclick="handleOverlayClick(event)">
+        <div class="modal-box">
+            <button class="modal-close" onclick="closeModal()" aria-label="Close">
+                <i data-lucide="x" width="16" height="16"></i>
+            </button>
+
+            <div id="modalForm">
+                <h3>Create Your Free Store</h3>
+                <p class="modal-sub">Fill in your details and we'll contact you on WhatsApp within 2 hours.</p>
+
+                <div class="form-field">
+                    <label for="f-name">Your Name</label>
+                    <input type="text" id="f-name" placeholder="Priya Sharma" />
+                </div>
+                <div class="form-field">
+                    <label for="f-biz">Business Name</label>
+                    <input type="text" id="f-biz" placeholder="Royal Cakes" />
+                </div>
+                <div class="form-field">
+                    <label for="f-wa">WhatsApp Number</label>
+                    <input type="tel" id="f-wa" placeholder="+91 98765 43210" />
+                </div>
+                <div class="form-field">
+                    <label for="f-plan">Select Plan</label>
+                    <select id="f-plan">
+                        <option value="">Choose a plan...</option>
+                        <option value="starter">Starter — ₹300/month</option>
+                        <option value="growth">Growth — ₹500/month (Most Popular)</option>
+                        <option value="pro">Pro — ₹700/month</option>
+                    </select>
+                </div>
+                <button class="btn btn-navy btn-lg modal-submit" onclick="submitForm()">Create My Store Free</button>
+            </div>
+
+            <div class="modal-success" id="modalSuccess">
+                <div class="modal-success-icon">
+                    <i data-lucide="check-circle-2" width="32" height="32"></i>
+                </div>
+                <h3>You're in!</h3>
+                <p>We'll contact you on WhatsApp within 2 hours to set up your store. Welcome to linkal.in!</p>
+                <a href="https://wa.me/919999999999?text=Hi!%20I%20just%20signed%20up%20for%20linkal.in" target="_blank"
+                    rel="noopener noreferrer" class="btn btn-navy">
+                    <i data-lucide="message-circle" width="16" height="16"></i>
+                    Chat on WhatsApp Now
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // ─── LUCIDE ICONS ───────────────────────────────
+        document.addEventListener('DOMContentLoaded', () => {
+            if (window.lucide) {
+                lucide.createIcons();
+            }
+        });
+
+        // ─── NAVBAR SCROLL ───────────────────────────────
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 60) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // ─── HAMBURGER ───────────────────────────────
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        hamburger.addEventListener('click', () => {
+            mobileMenu.classList.toggle('open');
+        });
+
+        function closeMobileMenu() {
+            mobileMenu.classList.remove('open');
+        }
+
+        // ─── SCROLL REVEAL ───────────────────────────────
+        const revealElements = document.querySelectorAll('.reveal');
+
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+        revealElements.forEach(el => revealObserver.observe(el));
+
+        // ─── COUNTER ANIMATION ───────────────────────────────
+        function animateCounter(el, target, suffix) {
+            const duration = 1800;
+            const start = performance.now();
+
+            function update(time) {
+                const elapsed = time - start;
+                const progress = Math.min(elapsed / duration, 1);
+                const ease = 1 - Math.pow(1 - progress, 3);
+                const current = Math.round(ease * target);
+                el.textContent = current + (suffix || '+');
+                if (progress < 1) requestAnimationFrame(update);
+            }
+
+            requestAnimationFrame(update);
+        }
+
+        const statNums = document.querySelectorAll('.stat-num[data-target]');
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const el = entry.target;
+                    const target = parseInt(el.dataset.target);
+                    const suffix = target <= 10 ? '' : '+';
+                    animateCounter(el, target, suffix);
+                    counterObserver.unobserve(el);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        statNums.forEach(el => counterObserver.observe(el));
+
+        // ─── FAQ ACCORDION ───────────────────────────────
+        document.querySelectorAll('.faq-q').forEach(q => {
+            q.addEventListener('click', () => {
+                const item = q.parentElement;
+                const answer = item.querySelector('.faq-a');
+                const isOpen = item.classList.contains('open');
+
+                // Close all
+                document.querySelectorAll('.faq-item').forEach(i => {
+                    i.classList.remove('open');
+                    i.querySelector('.faq-a').style.maxHeight = '0';
+                });
+
+                // Open clicked if it was closed
+                if (!isOpen) {
+                    item.classList.add('open');
+                    answer.style.maxHeight = answer.scrollHeight + 'px';
+                }
+            });
+        });
+
+        // ─── MODAL ───────────────────────────────
+        function openModal(e) {
+            if (e) e.preventDefault();
+            document.getElementById('modalOverlay').classList.add('open');
+            document.getElementById('modalForm').style.display = 'block';
+            document.getElementById('modalSuccess').classList.remove('show');
+            document.body.style.overflow = 'hidden';
+            // re-init lucide in modal
+            if (window.lucide) lucide.createIcons();
+        }
+
+        function closeModal() {
+            document.getElementById('modalOverlay').classList.remove('open');
+            document.body.style.overflow = '';
+        }
+
+        function handleOverlayClick(e) {
+            if (e.target === document.getElementById('modalOverlay')) {
+                closeModal();
+            }
+        }
+
+        function submitForm() {
+            const name = document.getElementById('f-name').value.trim();
+            const biz = document.getElementById('f-biz').value.trim();
+            const wa = document.getElementById('f-wa').value.trim();
+
+            if (!name || !biz || !wa) {
+                alert('Please fill in all fields before submitting.');
+                return;
+            }
+
+            document.getElementById('modalForm').style.display = 'none';
+            document.getElementById('modalSuccess').classList.add('show');
+            if (window.lucide) lucide.createIcons();
+        }
+
+        // ─── CLOSE MODAL ON ESC ───────────────────────────────
+        document.addEventListener('keydown', e => {
+            if (e.key === 'Escape') closeModal();
+        });
+
+        // ─── SMOOTH SCROLL FOR ANCHOR LINKS ───────────────────────────────
+        document.querySelectorAll('a[href^="#"]').forEach(a => {
+            a.addEventListener('click', e => {
+                const href = a.getAttribute('href');
+                if (href === '#') return;
+                const target = document.querySelector(href);
+                if (target) {
+                    e.preventDefault();
+                    const offset = 80;
+                    const top = target.getBoundingClientRect().top + window.scrollY - offset;
+                    window.scrollTo({ top, behavior: 'smooth' });
+                    closeMobileMenu();
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>
