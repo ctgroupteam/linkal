@@ -78,6 +78,30 @@
 - Vercel project rename via `PATCH /v9/projects/{projectId}` with `{ name: "newname" }`
 - Vercel domain removal via `DELETE /v9/projects/{projectId}/domains/{domain}`
 
+### Session 3 — Linkal Main Platform Landing Page & Storemaker Deployment (Nov 2026)
+
+**What was built & updated:**
+- **Landing page (`index.html`) revamp**:
+  - Added new **"Who Can Use linkal.in?"** section (`#use-cases`) featuring 8 tailored cards: Instagram Businesses, Hotel Menu Cards, Personal Portfolio Websites, Live CV & Resume Websites, Local Services, Wedding & Event Invites, Real Estate Listings, and Coaches/Consultants. All with precision inline SVG icons (no emojis).
+  - Upgraded **"How It Works"** section (`#how`) with 3 interactive animated SVG visual cards: Subdomain & Edge DNS router preview, Product catalog & pre-filled WhatsApp bubble trigger, and precision vector QR code with live order toast alert.
+  - Added **"See Live Example"** button in hero linking to `https://turkishzaikamenu.vercel.app`.
+  - Added 4th trust badge in hero: `Google-indexed automatically`.
+  - Upgraded floating Instagram button with an expandable hover tooltip: `Chat on Instagram @linkal.in` and subtle pulse ring.
+- **Store Builder integration (`storemaker.html`)**:
+  - Published alongside `index.html` so all "Create Store" buttons route to the builder tool seamlessly.
+
+**GitHub Repository:**
+- Repo: `https://github.com/ctgroupteam/linkal`
+- Owner: `ctgroupteam`
+- Branch: `main`
+- GitHub repoId: `1444009762`
+
+**Vercel Deployment:**
+- Project ID: `prj_zjOfk5dnsiW320ef4WIWlRzopktD`
+- Project name on Vercel: `linkalsite`
+- **Production URL**: `https://linkalsite.vercel.app` ✅
+- **Store Builder**: `https://linkalsite.vercel.app/storemaker.html` ✅
+
 ---
 
 ## 🛣️ Product Roadmap & Upcoming Features
