@@ -1618,42 +1618,7 @@
             color: var(--navy);
         }
 
-        /* ─── FLOATING INSTAGRAM ─────────────────────────── */
-        .float-ig {
-            position: fixed;
-            bottom: 28px;
-            right: 28px;
-            width: 56px;
-            height: 56px;
-            background: var(--navy);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #fff;
-            box-shadow: 0 6px 24px rgba(13, 27, 62, 0.3);
-            z-index: 900;
-            transition: transform 0.2s, box-shadow 0.2s;
-            animation: ig-pulse 3s infinite;
-        }
-
-        .float-ig:hover {
-            transform: scale(1.12);
-            box-shadow: 0 10px 32px rgba(13, 27, 62, 0.4);
-            animation: none;
-        }
-
-        @keyframes ig-pulse {
-
-            0%,
-            100% {
-                box-shadow: 0 6px 24px rgba(13, 27, 62, 0.3);
-            }
-
-            50% {
-                box-shadow: 0 6px 32px rgba(13, 27, 62, 0.5), 0 0 0 8px rgba(13, 27, 62, 0.1);
-            }
-        }
+        /* ─── FLOATING INSTAGRAM (STYLES AT END OF HEAD) ─── */
 
         /* ─── MODAL ─────────────────────────────── */
         .modal-overlay {
@@ -2084,20 +2049,20 @@
             transform: translate(2px, -2px);
         }
 
-        /* ─── WHO CAN USE / USE CASES SECTION ─── */
-        #use-cases {
+        /* ─── HOW IT WORKS SINGLE-BOX SHOWCASE ─── */
+        #how {
             background: #ffffff;
             position: relative;
             border-top: 1px solid var(--border);
         }
 
-        .use-cases-header {
+        .how-header {
             text-align: center;
-            max-width: 760px;
-            margin: 0 auto 3.5rem auto;
+            max-width: 650px;
+            margin: 0 auto 2.5rem auto;
         }
 
-        .use-cases-badge {
+        .how-header .badge-pill {
             display: inline-flex;
             align-items: center;
             gap: 0.45rem;
@@ -2111,412 +2076,569 @@
             color: var(--blue);
             text-transform: uppercase;
             letter-spacing: 0.08em;
-            margin-bottom: 1rem;
+            margin-bottom: 0.75rem;
         }
 
-        .use-cases-header h2 {
-            margin-bottom: 0.85rem;
-        }
-
-        .use-cases-header p {
-            font-size: 1.05rem;
-            color: var(--text);
-        }
-
-        .use-cases-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 1.5rem;
-        }
-
-        .use-case-card {
-            background: var(--card-bg);
+        .how-showcase {
+            max-width: 920px;
+            margin: 0 auto;
+            background: #ffffff;
             border: 1px solid var(--border);
-            border-radius: 18px;
-            padding: 1.75rem;
+            border-radius: 20px;
+            box-shadow: 0 16px 48px rgba(13, 27, 62, 0.08);
+            overflow: hidden;
+        }
+
+        /* 5 Top Toggle Buttons */
+        .how-tabs {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            background: var(--card-bg);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .how-tab-btn {
+            border: none;
+            background: transparent;
+            padding: 1rem 0.6rem;
+            cursor: pointer;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
+            align-items: center;
+            gap: 0.35rem;
             position: relative;
-            overflow: hidden;
-            transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+            transition: all 0.25s ease;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            color: var(--text);
+            text-align: center;
         }
 
-        .use-case-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-lg);
-            border-color: rgba(26, 86, 255, 0.35);
+        .how-tab-btn:hover {
+            background: rgba(26, 86, 255, 0.04);
+            color: var(--navy);
+        }
+
+        .how-tab-btn.active {
             background: #ffffff;
+            color: var(--blue);
+            font-weight: 700;
         }
 
-        .use-case-card::before {
+        .how-tab-btn.active::after {
             content: '';
             position: absolute;
-            top: 0;
+            bottom: 0;
             left: 0;
             right: 0;
             height: 3px;
-            background: linear-gradient(90deg, var(--blue), #60A5FA);
-            opacity: 0;
-            transition: opacity 0.25s ease;
+            background: var(--blue);
         }
 
-        .use-case-card:hover::before {
-            opacity: 1;
-        }
-
-        .use-case-top {
-            margin-bottom: 1.25rem;
-        }
-
-        .use-case-icon-wrap {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 1.15rem;
-        }
-
-        .use-case-icon {
-            width: 48px;
-            height: 48px;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: #ffffff;
-            border: 1px solid var(--border);
-            box-shadow: 0 2px 8px rgba(13, 27, 62, 0.05);
-            color: var(--blue);
-            transition: transform 0.25s ease, background 0.25s ease;
-        }
-
-        .use-case-card:hover .use-case-icon {
-            transform: scale(1.08);
-            background: var(--navy-light);
-        }
-
-        .use-case-tag {
-            font-family: 'Plus Jakarta Sans', sans-serif;
+        .how-tab-num {
             font-size: 0.7rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            padding: 0.25rem 0.6rem;
-            border-radius: 6px;
-            background: rgba(13, 27, 62, 0.05);
+            font-weight: 800;
+            padding: 0.15rem 0.5rem;
+            border-radius: 50px;
+            background: rgba(13, 27, 62, 0.08);
             color: var(--navy);
+            transition: all 0.2s ease;
         }
 
-        .use-case-card h3 {
-            font-size: 1.12rem;
-            font-weight: 700;
-            margin-bottom: 0.6rem;
-            color: var(--navy);
+        .how-tab-btn.active .how-tab-num {
+            background: var(--blue);
+            color: #ffffff;
         }
 
-        .use-case-card p {
-            font-size: 0.88rem;
-            line-height: 1.55;
-            color: var(--text);
-            margin-bottom: 1.25rem;
-        }
-
-        .use-case-features {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-            padding-top: 1rem;
-            border-top: 1px solid rgba(13, 27, 62, 0.07);
-        }
-
-        .use-case-features li {
-            font-size: 0.78rem;
+        .how-tab-title {
+            font-size: 0.82rem;
             font-weight: 600;
-            color: var(--navy);
+            white-space: nowrap;
+        }
+
+        /* Animated Scenes Container */
+        .how-stage {
+            padding: 2.25rem;
+            min-height: 340px;
             display: flex;
             align-items: center;
-            gap: 0.45rem;
-        }
-
-        .use-case-features li svg {
-            color: var(--blue);
-            flex-shrink: 0;
-        }
-
-        /* ─── HOW IT WORKS SVG VISUAL CARDS ─── */
-        .step.right .step-content {
-            order: 2;
-        }
-
-        .step.right .step-visual {
-            order: 1;
-        }
-
-        .step-visual {
-            background: #ffffff;
-            border: 1px solid var(--border);
-            border-radius: 18px;
-            padding: 1.5rem;
-            box-shadow: var(--shadow);
-            display: flex;
-            flex-direction: column;
             justify-content: center;
             position: relative;
+            background: #ffffff;
+        }
+
+        .how-scene {
+            display: none;
+            width: 100%;
+            max-width: 680px;
+            animation: fadeInScene 0.4s ease forwards;
+        }
+
+        .how-scene.active {
+            display: block;
+        }
+
+        @keyframes fadeInScene {
+            from {
+                opacity: 0;
+                transform: translateY(10px) scale(0.99);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        /* Mockup Window Header */
+        .mock-window {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 14px;
             overflow: hidden;
-            transition: transform 0.25s ease, box-shadow 0.25s ease;
+            box-shadow: 0 8px 24px rgba(13, 27, 62, 0.06);
         }
 
-        .step-visual:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .visual-top-bar {
+        .mock-bar {
             display: flex;
             align-items: center;
             gap: 0.4rem;
-            margin-bottom: 1rem;
-            padding-bottom: 0.75rem;
-            border-bottom: 1px solid rgba(13, 27, 62, 0.08);
+            padding: 0.7rem 1rem;
+            background: #ffffff;
+            border-bottom: 1px solid var(--border);
         }
 
-        .v-dot {
+        .mock-dots {
+            display: flex;
+            gap: 0.35rem;
+        }
+
+        .mock-dot {
             width: 9px;
             height: 9px;
             border-radius: 50%;
         }
+        .mock-dot.r { background: #FF5F56; }
+        .mock-dot.y { background: #FFBD2E; }
+        .mock-dot.g { background: #27C93F; }
 
-        .v-dot.red { background: #FF5F56; }
-        .v-dot.yellow { background: #FFBD2E; }
-        .v-dot.green { background: #27C93F; }
-
-        .v-url-bar {
-            margin-left: 0.5rem;
+        .mock-url {
             flex: 1;
+            margin-left: 0.5rem;
             background: var(--card-bg);
             border-radius: 6px;
             padding: 0.25rem 0.65rem;
             font-family: 'Plus Jakarta Sans', monospace;
-            font-size: 0.72rem;
+            font-size: 0.75rem;
             color: var(--navy);
             display: flex;
             align-items: center;
             gap: 0.4rem;
         }
 
-        .v-url-bar svg {
-            color: var(--blue);
+        .mock-content {
+            padding: 1.5rem;
         }
 
-        .v-url-domain {
-            font-weight: 700;
-            color: var(--blue);
-        }
-
-        .visual-badges {
-            display: flex;
-            gap: 0.5rem;
-            flex-wrap: wrap;
-            margin-top: 1rem;
-        }
-
-        .v-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.35rem;
-            background: var(--navy-light);
+        /* Scene 1: Enter Business */
+        .type-input-box {
+            background: #ffffff;
+            border: 1.5px solid var(--blue);
+            border-radius: 10px;
+            padding: 0.85rem 1rem;
+            font-size: 1rem;
             color: var(--navy);
-            font-size: 0.7rem;
             font-weight: 600;
-            padding: 0.2rem 0.55rem;
-            border-radius: 6px;
-        }
-
-        .v-badge.success {
-            background: #E8F5E9;
-            color: #2E7D32;
-        }
-
-        .v-badge.pulse-badge {
-            background: #EBF3FF;
-            color: var(--blue);
-        }
-
-        .v-live-dot {
-            width: 6px;
-            height: 6px;
-            border-radius: 50%;
-            background: #2E7D32;
-            animation: pulse-dot 1.5s infinite;
-        }
-
-        .v-chat-bubble {
-            background: #E7FCE8;
-            border: 1px solid #C8E6C9;
-            border-radius: 12px 12px 12px 2px;
-            padding: 0.75rem 0.9rem;
-            font-size: 0.78rem;
-            color: #1B5E20;
-            line-height: 1.45;
-            margin-top: 0.75rem;
             display: flex;
-            gap: 0.5rem;
-            align-items: flex-start;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 0 0 3px rgba(26, 86, 255, 0.12);
         }
 
-        .v-chat-bubble svg {
-            color: #25D366;
-            flex-shrink: 0;
-            margin-top: 2px;
+        .typing-cursor {
+            display: inline-block;
+            width: 2px;
+            height: 1.1rem;
+            background: var(--blue);
+            animation: blinkCursor 0.9s infinite;
+            vertical-align: middle;
+            margin-left: 2px;
         }
 
-        .v-qr-preview {
+        @keyframes blinkCursor {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+
+        /* Scene 2: Add Product */
+        .product-add-row {
             display: flex;
             align-items: center;
             gap: 1.25rem;
-            background: var(--card-bg);
-            border-radius: 14px;
-            padding: 1rem;
+            background: #ffffff;
             border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1rem;
         }
 
-        .v-qr-box {
-            background: #ffffff;
-            padding: 0.5rem;
+        .product-add-img {
+            width: 64px;
+            height: 64px;
             border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(13, 27, 62, 0.08);
+            background: #FEF3C7;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #D97706;
+            flex-shrink: 0;
+        }
+
+        /* Scene 4: Bio Link & QR */
+        .bio-qr-row {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 1.25rem;
+            align-items: center;
+        }
+
+        .ig-bio-card {
+            background: #ffffff;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1rem;
+        }
+
+        /* ─── WHO CAN USE SECTION (COMPACT) ─── */
+        #use-cases {
+            background: var(--card-bg);
+            position: relative;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .use-cases-header {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto 2.5rem auto;
+        }
+
+        .use-cases-header h2 {
+            font-size: clamp(1.6rem, 2.8vw, 2.2rem);
+            margin-bottom: 0.5rem;
+        }
+
+        .use-cases-header p {
+            font-size: 0.95rem;
+            color: var(--text);
+        }
+
+        .use-cases-grid-compact {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+        }
+
+        .use-case-compact {
+            background: #ffffff;
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 1rem 1.15rem;
+            display: flex;
+            align-items: center;
+            gap: 0.85rem;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+        }
+
+        .use-case-compact:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 24px rgba(13, 27, 62, 0.08);
+            border-color: rgba(26, 86, 255, 0.4);
+        }
+
+        .use-case-icon-colored {
+            width: 44px;
+            height: 44px;
+            border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
             flex-shrink: 0;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
         }
 
-        .v-qr-info {
-            font-size: 0.78rem;
-            color: var(--text);
-        }
-
-        .v-qr-info strong {
-            display: block;
+        .use-case-compact h3 {
+            font-size: 0.95rem;
+            font-weight: 700;
             color: var(--navy);
-            font-size: 0.88rem;
-            margin-bottom: 2px;
+            line-height: 1.3;
+            margin: 0;
         }
 
-        /* ─── FLOATING INSTAGRAM WITH EXPANDABLE TOOLTIP ─── */
-        .float-ig-wrap {
+        /* ─── STILL FLOATING INSTAGRAM BUTTON ─── */
+        .float-ig {
             position: fixed;
             bottom: 24px;
             right: 24px;
-            z-index: 1000;
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-        }
-
-        .float-ig-tooltip {
-            background: #0D1B3E;
-            color: #ffffff;
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            font-size: 0.78rem;
-            font-weight: 600;
-            padding: 0.5rem 0.95rem;
-            border-radius: 50px;
-            box-shadow: 0 4px 18px rgba(13, 27, 62, 0.25);
-            white-space: nowrap;
-            opacity: 0;
-            transform: translateX(10px);
-            pointer-events: none;
-            transition: opacity 0.3s ease, transform 0.3s ease;
-            display: flex;
-            align-items: center;
-            gap: 0.4rem;
-        }
-
-        .float-ig-wrap:hover .float-ig-tooltip {
-            opacity: 1;
-            transform: translateX(0);
-        }
-
-        .float-ig {
-            position: relative;
-            width: 56px;
-            height: 56px;
+            width: 54px;
+            height: 54px;
             border-radius: 50%;
             background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
             color: #ffffff;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 4px 16px rgba(220, 39, 67, 0.35);
-            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
-        }
-
-        .float-ig::after {
-            content: '';
-            position: absolute;
-            inset: -4px;
-            border-radius: 50%;
-            border: 2px solid rgba(220, 39, 67, 0.4);
-            animation: ig-pulse 2.2s infinite;
-        }
-
-        @keyframes ig-pulse {
-            0% { transform: scale(0.95); opacity: 0.8; }
-            50% { transform: scale(1.18); opacity: 0; }
-            100% { transform: scale(0.95); opacity: 0; }
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+            z-index: 1000;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
 
         .float-ig:hover {
-            transform: translateY(-4px) scale(1.08);
-            box-shadow: 0 8px 26px rgba(220, 39, 67, 0.5);
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
         }
 
         .float-ig svg {
             color: #ffffff;
         }
 
-        @media (max-width: 1024px) {
-            .use-cases-grid {
+        /* ─── GOOGLE SCREEN / SEO SECTION ─── */
+        #seo {
+            background: #ffffff;
+            position: relative;
+        }
+
+        .seo-header {
+            text-align: center;
+            max-width: 680px;
+            margin: 0 auto 2.5rem auto;
+        }
+
+        .seo-header .badge-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+            background: #EFF6FF;
+            border: 1px solid #DBEAFE;
+            border-radius: 50px;
+            padding: 0.35rem 0.95rem;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: #1A56FF;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 0.75rem;
+        }
+
+        .seo-grid {
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        .google-browser-mockup {
+            background: #ffffff;
+            border: 1px solid #E2E8F0;
+            border-radius: 18px;
+            box-shadow: 0 16px 40px rgba(13, 27, 62, 0.08);
+            overflow: hidden;
+        }
+
+        .google-top-bar {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.85rem 1.25rem;
+            background: #F8FAFC;
+            border-bottom: 1px solid #E2E8F0;
+        }
+
+        .google-search-input-mock {
+            flex: 1;
+            background: #ffffff;
+            border: 1px solid #CBD5E1;
+            border-radius: 24px;
+            padding: 0.45rem 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-size: 0.85rem;
+            color: #1E293B;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+        }
+
+        .google-results-container {
+            padding: 1.5rem;
+            background: #ffffff;
+        }
+
+        .google-stat-line {
+            font-size: 0.75rem;
+            color: #64748B;
+            margin-bottom: 1.25rem;
+        }
+
+        .google-result-card {
+            border-left: 3px solid #1A56FF;
+            padding-left: 1rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .google-url-row {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.78rem;
+            color: #202124;
+            margin-bottom: 0.25rem;
+        }
+
+        .google-favicon-mock {
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: #0D1B3E;
+            color: #1A56FF;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 0.65rem;
+        }
+
+        .google-result-title {
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: #1A0DAB;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.35rem;
+            line-height: 1.3;
+        }
+
+        .google-result-snippet {
+            font-size: 0.84rem;
+            color: #4D5156;
+            line-height: 1.5;
+            margin-bottom: 0.65rem;
+        }
+
+        .google-sitelinks-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.6rem;
+            margin-top: 0.75rem;
+            padding-top: 0.75rem;
+            border-top: 1px dashed #E2E8F0;
+        }
+
+        .google-sitelink-item {
+            background: #F8FAFC;
+            border: 1px solid #E2E8F0;
+            border-radius: 8px;
+            padding: 0.5rem 0.75rem;
+        }
+
+        .google-sitelink-item h5 {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #1A0DAB;
+            margin-bottom: 2px;
+        }
+
+        .google-sitelink-item p {
+            font-size: 0.7rem;
+            color: #64748B;
+            margin: 0;
+            line-height: 1.25;
+        }
+
+        .seo-feature-card {
+            background: #ffffff;
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 1.15rem 1.25rem;
+            margin-bottom: 0.85rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            transition: all 0.2s ease;
+        }
+
+        .seo-feature-card:hover {
+            border-color: rgba(26, 86, 255, 0.4);
+            box-shadow: 0 6px 20px rgba(13, 27, 62, 0.06);
+            transform: translateY(-2px);
+        }
+
+        .seo-feat-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            background: #EFF6FF;
+            color: #1A56FF;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .seo-feat-text h4 {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 0.25rem;
+        }
+
+        .seo-feat-text p {
+            font-size: 0.82rem;
+            color: var(--text);
+            margin: 0;
+            line-height: 1.45;
+        }
+
+        @media (max-width: 900px) {
+            .use-cases-grid-compact {
                 grid-template-columns: repeat(2, 1fr);
+            }
+            .how-tabs {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            .how-tab-btn:nth-child(4),
+            .how-tab-btn:nth-child(5) {
+                grid-column: span 1;
+            }
+            .bio-qr-row {
+                grid-template-columns: 1fr;
+            }
+            .seo-grid {
+                grid-template-columns: 1fr;
             }
         }
 
-        @media (max-width: 768px) {
-            .use-cases-grid {
+        @media (max-width: 600px) {
+            .use-cases-grid-compact {
                 grid-template-columns: 1fr;
             }
-
-            .step {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
+            .how-tabs {
+                display: flex;
+                overflow-x: auto;
+                padding-bottom: 2px;
             }
-
-            .step.right .step-content {
-                order: 1;
+            .how-tab-btn {
+                flex: 0 0 auto;
+                min-width: 120px;
             }
-
-            .step.right .step-visual {
-                order: 2;
+            .how-stage {
+                padding: 1.25rem;
             }
-
-            .step-visual {
-                order: 2;
-            }
-
-            .float-ig-tooltip {
-                display: none;
-            }
-
-            .float-ig-wrap {
+            .float-ig {
                 bottom: 16px;
                 right: 16px;
-            }
-
-            .float-ig {
                 width: 48px;
                 height: 48px;
+            }
+            .google-sitelinks-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -2542,15 +2664,14 @@
                 </a>
 
                 <ul class="nav-links">
-                    <li><a href="#use-cases">Who It's For</a></li>
                     <li><a href="#how">How It Works</a></li>
+                    <li><a href="#use-cases">Who Can Use</a></li>
                     <li><a href="#features">Features</a></li>
-                    <li><a href="#ai-analyzer">AI Tools</a></li>
+                    <li><a href="#seo">Google &amp; SEO</a></li>
                     <li><a href="#pricing">Pricing</a></li>
                     <li><a href="#faq">FAQ</a></li>
                 </ul>
 
-                <a href="storemaker.html" class="btn btn-outline nav-cta">Create Store</a>
                 <a href="#" class="btn btn-blue nav-cta" onclick="openModal(event)">Get Started</a>
 
                 <button class="hamburger" id="hamburger" aria-label="Open menu">
@@ -2562,14 +2683,13 @@
 
     <!-- MOBILE MENU -->
     <div class="mobile-menu" id="mobileMenu">
-        <a href="#use-cases" onclick="closeMobileMenu()">Who It's For</a>
         <a href="#how" onclick="closeMobileMenu()">How It Works</a>
+        <a href="#use-cases" onclick="closeMobileMenu()">Who Can Use</a>
         <a href="#features" onclick="closeMobileMenu()">Features</a>
-        <a href="#ai-analyzer" onclick="closeMobileMenu()">AI Tools</a>
+        <a href="#seo" onclick="closeMobileMenu()">Google &amp; SEO</a>
         <a href="#pricing" onclick="closeMobileMenu()">Pricing</a>
         <a href="#faq" onclick="closeMobileMenu()">FAQ</a>
-        <a href="storemaker.html" class="btn btn-outline" style="justify-content:center;">Create Store</a>
-        <a href="#" class="btn btn-blue" onclick="openModal(event)" style="justify-content:center;">Get Started</a>
+        <a href="#" class="btn btn-blue" onclick="openModal(event); closeMobileMenu();" style="justify-content:center;">Get Started Free</a>
     </div>
 
     <main>
@@ -2592,7 +2712,6 @@
 
                         <div class="hero-ctas">
                             <a href="#" class="btn btn-navy btn-lg" onclick="openModal(event)">Create My Store Free</a>
-                            <a href="storemaker.html" class="btn btn-blue btn-lg">Create Store</a>
                             <a href="https://turkishzaikamenu.vercel.app" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-lg hero-live-btn">
                                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
                                 <span>See Live Example</span>
@@ -2732,578 +2851,419 @@
             </div>
         </div>
 
-        <!-- WHO CAN USE / USE CASES -->
-        <section id="use-cases" class="section-pad">
-            <div class="container">
-                <div class="use-cases-header reveal">
-                    <div class="use-cases-badge">Built For Every Vision</div>
-                    <h2>Who Can Use linkal.in?</h2>
-                    <p>Whether you sell artisanal products, run a bustling hotel, showcase design work, or apply for your dream role — linkal.in gives you a blazing-fast branded website on your own subdomain in minutes.</p>
-                </div>
-
-                <div class="use-cases-grid">
-                    <!-- 1. Instagram Businesses -->
-                    <div class="use-case-card reveal">
-                        <div class="use-case-top">
-                            <div class="use-case-icon-wrap">
-                                <div class="use-case-icon">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
-                                        <line x1="3" y1="6" x2="21" y2="6"/>
-                                        <path d="M16 10a4 4 0 0 1-8 0"/>
-                                    </svg>
-                                </div>
-                                <span class="use-case-tag">Social Stores</span>
-                            </div>
-                            <h3>Instagram Businesses &amp; Boutiques</h3>
-                            <p>Replace basic bio links with an interactive digital storefront. Showcase collections, sarees, jewelry, or bakery creations with instant WhatsApp checkout — 0% platform commission.</p>
-                        </div>
-                        <ul class="use-case-features">
-                            <li>
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-                                Pre-filled WhatsApp order messages
-                            </li>
-                            <li>
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-                                1-tap Instagram Story Studio cards
-                            </li>
-                            <li>
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-                                Direct bio link integration
-                            </li>
-                        </ul>
-                    </div>
-
-                    <!-- 2. Hotel & Restaurant Menus -->
-                    <div class="use-case-card reveal reveal-delay-1">
-                        <div class="use-case-top">
-                            <div class="use-case-icon-wrap">
-                                <div class="use-case-icon">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="M3 19h18M4 15h16a8 8 0 0 0-16 0z"/>
-                                        <path d="M12 4v3"/>
-                                        <circle cx="12" cy="3" r="1"/>
-                                    </svg>
-                                </div>
-                                <span class="use-case-tag">Dining &amp; Cafes</span>
-                            </div>
-                            <h3>Hotel &amp; Restaurant Menu Cards</h3>
-                            <p>Ditch expensive printed menus. Generate high-resolution table QR codes that open your digital menu instantly with appetizing food photography, veg/non-veg tags, and live price updates.</p>
-                        </div>
-                        <ul class="use-case-features">
-                            <li>
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-                                Instant printable table QR codes
-                            </li>
-                            <li>
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-                                Live daily special &amp; price updates
-                            </li>
-                            <li>
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-                                Sold-out toggles in 10 milliseconds
-                            </li>
-                        </ul>
-                    </div>
-
-                    <!-- 3. Personal Portfolios -->
-                    <div class="use-case-card reveal reveal-delay-2">
-                        <div class="use-case-top">
-                            <div class="use-case-icon-wrap">
-                                <div class="use-case-icon">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                        <rect x="2" y="3" width="20" height="14" rx="2"/>
-                                        <line x1="8" y1="21" x2="16" y2="21"/>
-                                        <line x1="12" y1="17" x2="12" y2="21"/>
-                                        <path d="M7 8l3 3-3 3M13 14h4"/>
-                                    </svg>
-                                </div>
-                                <span class="use-case-tag">Creatives &amp; Tech</span>
-                            </div>
-                            <h3>Personal Portfolio Websites</h3>
-                            <p>Give your creative work the stage it deserves. Perfect for UI/UX designers, photographers, architects, developers, and writers displaying case studies, visual galleries, and client reviews.</p>
-                        </div>
-                        <ul class="use-case-features">
-                            <li>
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-                                High-res project gallery &amp; case studies
-                            </li>
-                            <li>
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-                                Client testimonial &amp; social proof wall
-                            </li>
-                            <li>
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-                                Direct WhatsApp project inquiries
-                            </li>
-                        </ul>
-                    </div>
-
-                    <!-- 4. Live CV & Resume -->
-                    <div class="use-case-card reveal reveal-delay-3">
-                        <div class="use-case-top">
-                            <div class="use-case-icon-wrap">
-                                <div class="use-case-icon">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                                        <polyline points="14 2 14 8 20 8"/>
-                                        <line x1="16" y1="13" x2="8" y2="13"/>
-                                        <line x1="16" y1="17" x2="8" y2="17"/>
-                                        <polyline points="10 9 9 9 8 9"/>
-                                    </svg>
-                                </div>
-                                <span class="use-case-tag">Careers &amp; Pros</span>
-                            </div>
-                            <h3>Live CV &amp; Resume Websites</h3>
-                            <p>Stop sending static, outdated PDF attachments. Send recruiters an interactive live resume on your own subdomain with verified project links, experience timelines, and a 1-click PDF download.</p>
-                        </div>
-                        <ul class="use-case-features">
-                            <li>
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-                                Memorable permanent URL for LinkedIn
-                            </li>
-                            <li>
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-                                Recruiter mobile-optimized view
-                            </li>
-                            <li>
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-                                1-click download resume button
-                            </li>
-                        </ul>
-                    </div>
-
-                    <!-- 5. Local Services & Salons -->
-                    <div class="use-case-card reveal">
-                        <div class="use-case-top">
-                            <div class="use-case-icon-wrap">
-                                <div class="use-case-icon">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
-                                        <line x1="16" y1="2" x2="16" y2="6"/>
-                                        <line x1="8" y1="2" x2="8" y2="6"/>
-                                        <line x1="3" y1="10" x2="21" y2="10"/>
-                                        <path d="M9 16l2 2 4-4"/>
-                                    </svg>
-                                </div>
-                                <span class="use-case-tag">Local Services</span>
-                            </div>
-                            <h3>Salons, Clinics &amp; Local Services</h3>
-                            <p>Built for hair studios, nail salons, dentists, physiotherapists, and repair shops. Publish your service menu with transparent pricing, business hours, and one-tap WhatsApp appointment bookings.</p>
-                        </div>
-                        <ul class="use-case-features">
-                            <li>
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-                                Real-time Open &amp; Closed status
-                            </li>
-                            <li>
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-                                Service packages &amp; price rate card
-                            </li>
-                            <li>
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-                                Direct WhatsApp appointment request
-                            </li>
-                        </ul>
-                    </div>
-
-                    <!-- 6. Wedding & Event Invites -->
-                    <div class="use-case-card reveal reveal-delay-1">
-                        <div class="use-case-top">
-                            <div class="use-case-icon-wrap">
-                                <div class="use-case-icon">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                                        <polyline points="22,6 12,13 2,6"/>
-                                        <circle cx="12" cy="15" r="2"/>
-                                    </svg>
-                                </div>
-                                <span class="use-case-tag">Events &amp; RSVP</span>
-                            </div>
-                            <h3>Wedding &amp; Event Invitations</h3>
-                            <p>Send guests an elegant interactive digital invitation. Feature your love story, ceremony itineraries, live countdown timer, photo gallery, and embedded Google Maps venue directions.</p>
-                        </div>
-                        <ul class="use-case-features">
-                            <li>
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-                                Interactive live event countdown
-                            </li>
-                            <li>
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-                                1-tap Google Maps venue directions
-                            </li>
-                            <li>
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-                                WhatsApp RSVP collection built-in
-                            </li>
-                        </ul>
-                    </div>
-
-                    <!-- 7. Real Estate & Properties -->
-                    <div class="use-case-card reveal reveal-delay-2">
-                        <div class="use-case-top">
-                            <div class="use-case-icon-wrap">
-                                <div class="use-case-icon">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
-                                        <polyline points="9 22 9 12 15 12 15 22"/>
-                                    </svg>
-                                </div>
-                                <span class="use-case-tag">Real Estate</span>
-                            </div>
-                            <h3>Real Estate &amp; Property Listings</h3>
-                            <p>Brokers and property owners can showcase apartments, luxury villas, and commercial properties with high-definition photo galleries, floor plans, amenity lists, and direct buyer leads.</p>
-                        </div>
-                        <ul class="use-case-features">
-                            <li>
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-                                High-speed image gallery tours
-                            </li>
-                            <li>
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-                                Verified amenities &amp; specs matrix
-                            </li>
-                            <li>
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-                                Direct WhatsApp tour scheduling
-                            </li>
-                        </ul>
-                    </div>
-
-                    <!-- 8. Coaches & Mentors -->
-                    <div class="use-case-card reveal reveal-delay-3">
-                        <div class="use-case-top">
-                            <div class="use-case-icon-wrap">
-                                <div class="use-case-icon">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
-                                        <path d="M6 12v5c0 2 3 3 6 3s6-1 6-3v-5"/>
-                                    </svg>
-                                </div>
-                                <span class="use-case-tag">Education</span>
-                            </div>
-                            <h3>Coaches, Tutors &amp; Consultants</h3>
-                            <p>Share your courses, masterclasses, and 1-on-1 consultation packages. Build instant credibility with verified client results, syllabus breakdowns, and frictionless WhatsApp enrollment.</p>
-                        </div>
-                        <ul class="use-case-features">
-                            <li>
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-                                Syllabus &amp; fee structure breakdown
-                            </li>
-                            <li>
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-                                Student reviews &amp; outcome showcase
-                            </li>
-                            <li>
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-                                WhatsApp consultation booking
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- AI ANALYZER -->
-        <section id="ai-analyzer" class="section-pad">
-            <div class="container">
-                <div class="reveal">
-                    <div class="ai-label">Powered by Artificial Intelligence</div>
-                    <h2 style="color:#fff; margin-bottom: 1rem;">Your Personal AI Business Advisor</h2>
-                    <p class="ai-desc">Our AI studies your store — your products, your prices, your traffic patterns,
-                        your customer behavior — and tells you exactly what to do to earn more. Not generic advice. Your
-                        business, analyzed, every week.</p>
-                </div>
-
-                <div class="ai-grid reveal">
-                    <div class="ai-card">
-                        <div class="ai-card-label">
-                            <i data-lucide="trending-up" width="12" height="12"></i>
-                            Revenue Opportunity
-                        </div>
-                        <h4>Revenue Opportunity Detected</h4>
-                        <p>Your kurti photos are getting 3x more clicks but 0 orders. AI suggests: add size chart +
-                            lower price by ₹50.</p>
-                    </div>
-                    <div class="ai-card">
-                        <div class="ai-card-label">
-                            <i data-lucide="clock" width="12" height="12"></i>
-                            Timing Insight
-                        </div>
-                        <h4>Best Time to Post</h4>
-                        <p>Your store gets 68% traffic between 8–10 PM. AI recommends: post new arrivals at 7:45 PM for
-                            maximum reach.</p>
-                    </div>
-                    <div class="ai-card">
-                        <div class="ai-card-label">
-                            <i data-lucide="flame" width="12" height="12"></i>
-                            Trend Alert
-                        </div>
-                        <h4>Trending in Your Category</h4>
-                        <p>Palazzo pants are trending in Maharashtra this week. You don't have any listed. Add 2–3
-                            products now.</p>
-                    </div>
-                    <div class="ai-card">
-                        <div class="ai-card-label">
-                            <i data-lucide="search" width="12" height="12"></i>
-                            SEO Health
-                        </div>
-                        <h4>SEO Health Score: 94/100</h4>
-                        <p>Your store ranks #1 on Google for 'Royal Cakes Mumbai'. AI generated 3 new meta descriptions
-                            this week.</p>
-                    </div>
-                </div>
-
-                <div class="ai-cta-wrap reveal">
-                    <a href="#" class="btn btn-blue btn-lg" onclick="openModal(event)">See Your Business Analysis Free
-                        →</a>
-                    <a href="storemaker.html" class="btn btn-outline btn-lg"
-                        style="margin-top: 1rem; display: inline-flex;">Create Store</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- HOW IT WORKS -->
+                <!-- HOW IT WORKS (SINGLE-BOX SHOWCASE WITH 5 TOP TOGGLES) -->
         <section id="how" class="section-pad">
             <div class="container">
                 <div class="how-header reveal">
+                    <span class="badge-pill">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                        Interactive Preview
+                    </span>
                     <h2>How It Works</h2>
-                    <p>Three simple steps. Your branded store is live before your next cup of chai.</p>
+                    <p>Five simple steps from setup to Google ranking and live WhatsApp orders. Click any tab to replay the step.</p>
                 </div>
 
-                <div class="steps-wrapper">
-                    <div class="steps-line"></div>
-
-                    <!-- Step 1 -->
-                    <div class="step reveal">
-                        <div class="step-content">
-                            <div class="step-bg-num">01</div>
-                            <div class="step-icon"><i data-lucide="user-circle" width="28" height="28"></i></div>
-                            <h3>Tell us your business</h3>
-                            <p>Enter your business name, category, and upload your logo. Takes less than 2 minutes. We
-                                set up your subdomain instantly — yourname.linkal.in — live and indexed on Google within
-                                hours.</p>
-                        </div>
-                        
-                        <!-- Visual 1: Subdomain & SSL Engine -->
-                        <div class="step-visual">
-                            <div class="visual-top-bar">
-                                <span class="v-dot red"></span>
-                                <span class="v-dot yellow"></span>
-                                <span class="v-dot green"></span>
-                                <div class="v-url-bar">
-                                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-                                    <span>https://<span class="v-url-domain">yourbrand</span>.linkal.in</span>
-                                </div>
-                            </div>
-                            
-                            <div class="visual-svg-canvas">
-                                <svg viewBox="0 0 360 140" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
-                                    <defs>
-                                        <pattern id="grid-dots" width="18" height="18" patternUnits="userSpaceOnUse">
-                                            <circle cx="2" cy="2" r="1" fill="rgba(13,27,62,0.08)" />
-                                        </pattern>
-                                    </defs>
-                                    <rect width="360" height="140" rx="12" fill="url(#grid-dots)" />
-                                    
-                                    <!-- Connection Line with Pulse -->
-                                    <path d="M65 70 H180 H295" stroke="#E2E8F0" stroke-width="2.5" stroke-dasharray="4 4" />
-                                    <path d="M65 70 H180 H295" stroke="#1A56FF" stroke-width="2.5" stroke-dasharray="8 12">
-                                        <animate attributeName="stroke-dashoffset" values="40;0" dur="2.2s" repeatCount="indefinite" />
-                                    </path>
-                                    
-                                    <!-- Node 1: Cloudflare Wildcard Edge -->
-                                    <g transform="translate(32, 38)">
-                                        <rect width="66" height="64" rx="12" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5" />
-                                        <circle cx="33" cy="28" r="16" fill="#EFF6FF" />
-                                        <path d="M26 30h14a4 4 0 0 0 .5-8 5 5 0 0 0-9.5-1.5A3.5 3.5 0 0 0 26 30z" fill="none" stroke="#1A56FF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
-                                        <text x="33" y="52" font-family="'Plus Jakarta Sans', sans-serif" font-size="7.5" font-weight="700" fill="#0D1B3E" text-anchor="middle">Cloud Edge</text>
-                                    </g>
-                                    
-                                    <!-- Node 2: Subdomain Dynamic Router -->
-                                    <g transform="translate(145, 34)">
-                                        <rect width="70" height="72" rx="14" fill="#0D1B3E" />
-                                        <circle cx="35" cy="30" r="16" fill="rgba(26,86,255,0.25)" />
-                                        <rect x="26" y="21" width="18" height="18" rx="4" stroke="#60A5FA" stroke-width="1.6" fill="none" />
-                                        <circle cx="35" cy="30" r="2.5" fill="#60A5FA" />
-                                        <text x="35" y="52" font-family="'Plus Jakarta Sans', sans-serif" font-size="8" font-weight="700" fill="#FFFFFF" text-anchor="middle">Wildcard DNS</text>
-                                        <text x="35" y="62" font-family="'Plus Jakarta Sans', sans-serif" font-size="7" font-weight="600" fill="#93C5FD" text-anchor="middle">*.linkal.in</text>
-                                    </g>
-                                    
-                                    <!-- Node 3: Live Store Output -->
-                                    <g transform="translate(262, 38)">
-                                        <rect width="66" height="64" rx="12" fill="#FFFFFF" stroke="#10B981" stroke-width="1.5" />
-                                        <circle cx="33" cy="28" r="16" fill="#ECFDF5" />
-                                        <path d="M26 28l5 5 8-9" stroke="#10B981" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none" />
-                                        <text x="33" y="52" font-family="'Plus Jakarta Sans', sans-serif" font-size="7.5" font-weight="700" fill="#065F46" text-anchor="middle">Live in 10s</text>
-                                    </g>
-                                </svg>
-                            </div>
-                            
-                            <div class="visual-badges">
-                                <span class="v-badge success"><span class="v-live-dot"></span>SSL Active &amp; Verified</span>
-                                <span class="v-badge pulse-badge">Edge CDN Routing</span>
-                                <span class="v-badge">Zero DNS Setup</span>
-                            </div>
-                        </div>
-                        
-                        <div class="step-number">1</div>
+                <div class="how-showcase reveal">
+                    <!-- 5 Top Button Toggles -->
+                    <div class="how-tabs" role="tablist">
+                        <button class="how-tab-btn active" data-step="1" role="tab" aria-selected="true">
+                            <span class="how-tab-num">01</span>
+                            <span class="how-tab-title">Enter Business</span>
+                        </button>
+                        <button class="how-tab-btn" data-step="2" role="tab" aria-selected="false">
+                            <span class="how-tab-num">02</span>
+                            <span class="how-tab-title">Add Products</span>
+                        </button>
+                        <button class="how-tab-btn" data-step="3" role="tab" aria-selected="false">
+                            <span class="how-tab-num">03</span>
+                            <span class="how-tab-title">Instant Domain</span>
+                        </button>
+                        <button class="how-tab-btn" data-step="4" role="tab" aria-selected="false">
+                            <span class="how-tab-num">04</span>
+                            <span class="how-tab-title">Bio Link &amp; QR</span>
+                        </button>
+                        <button class="how-tab-btn" data-step="5" role="tab" aria-selected="false">
+                            <span class="how-tab-num">05</span>
+                            <span class="how-tab-title">Google &amp; Orders</span>
+                        </button>
                     </div>
 
-                    <!-- Step 2 -->
-                    <div class="step right reveal">
-                        <!-- Visual 2: Product Catalog & WhatsApp Bubble -->
-                        <div class="step-visual">
-                            <div class="visual-top-bar">
-                                <span class="v-dot red"></span>
-                                <span class="v-dot yellow"></span>
-                                <span class="v-dot green"></span>
-                                <div class="v-url-bar">
-                                    <span>Catalogue Preview · <strong style="color:var(--navy);">Instant Order Ready</strong></span>
-                                </div>
-                            </div>
-                            
-                            <div style="background:var(--card-bg); border:1px solid var(--border); border-radius:12px; padding:0.85rem; display:flex; align-items:center; gap:0.85rem;">
-                                <div style="width:48px; height:48px; border-radius:10px; background:#FCE4EC; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#E91E63" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-                                </div>
-                                <div style="flex:1; min-width:0;">
-                                    <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:2px;">
-                                        <span style="font-family:'Plus Jakarta Sans',sans-serif; font-size:0.85rem; font-weight:700; color:var(--navy);">Chocolate Truffle Cake</span>
-                                        <span style="font-family:'Plus Jakarta Sans',sans-serif; font-size:0.85rem; font-weight:800; color:var(--blue);">₹580</span>
+                    <!-- Single Stage: Animated Scenes -->
+                    <div class="how-stage">
+
+                        <!-- SCENE 1: Enter Business Name -->
+                        <div class="how-scene active" data-step="1">
+                            <div class="mock-window">
+                                <div class="mock-bar">
+                                    <div class="mock-dots">
+                                        <span class="mock-dot r"></span>
+                                        <span class="mock-dot y"></span>
+                                        <span class="mock-dot g"></span>
                                     </div>
-                                    <div style="font-size:0.72rem; color:var(--text); margin-bottom:6px;">Auto-formatted pre-filled order trigger</div>
-                                    <div style="display:inline-flex; align-items:center; gap:0.35rem; background:#25D366; color:#fff; font-family:'Plus Jakarta Sans',sans-serif; font-size:0.65rem; font-weight:700; border-radius:20px; padding:0.25rem 0.65rem;">
-                                        <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.05 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                                        Tap to Order on WhatsApp
+                                    <div class="mock-url">
+                                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                                        <span>linkal.in/onboarding</span>
                                     </div>
                                 </div>
-                            </div>
-                            
-                            <div class="v-chat-bubble">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-                                <div>
-                                    <strong>Pre-filled Customer Message:</strong><br/>
-                                    "Hi, I want to order <strong>1x Truffle Cake (₹580)</strong> from royalcakes.linkal.in. Here is my delivery address..."
-                                </div>
-                            </div>
-                            
-                            <div class="visual-badges">
-                                <span class="v-badge success">Zero Gateway Fees</span>
-                                <span class="v-badge pulse-badge">1-Tap Direct WhatsApp</span>
-                                <span class="v-badge">Real-time Stock Toggles</span>
-                            </div>
-                        </div>
-
-                        <div class="step-content">
-                            <div class="step-bg-num">02</div>
-                            <div class="step-icon"><i data-lucide="layout-grid" width="28" height="28"></i></div>
-                            <h3>Build your store in minutes</h3>
-                            <p>Add products with photos, names, and prices. Choose a theme. Set business hours. Add your
-                                WhatsApp number. Your store auto-generates a pre-filled order message for every product
-                                — zero setup.</p>
-                        </div>
-                        <div class="step-number">2</div>
-                    </div>
-
-                    <!-- Step 3 -->
-                    <div class="step reveal">
-                        <div class="step-content">
-                            <div class="step-bg-num">03</div>
-                            <div class="step-icon"><i data-lucide="share-2" width="28" height="28"></i></div>
-                            <h3>Share your link in your Instagram bio</h3>
-                            <p>Replace your Linktree with your branded linkal.in URL. Share it on stories, reels, and
-                                posts. Customers browse your store and tap "Order on WhatsApp" — orders start flowing in
-                                within the first hour.</p>
-                        </div>
-
-                        <!-- Visual 3: Precision Vector QR & Alert Toast -->
-                        <div class="step-visual">
-                            <div class="visual-top-bar">
-                                <span class="v-dot red"></span>
-                                <span class="v-dot yellow"></span>
-                                <span class="v-dot green"></span>
-                                <div class="v-url-bar">
-                                    <span>Omnichannel Launch · <strong style="color:var(--navy);">QR + Bio Link</strong></span>
-                                </div>
-                            </div>
-                            
-                            <div class="v-qr-preview">
-                                <div class="v-qr-box">
-                                    <svg width="74" height="74" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <!-- QR Finder 1 (Top Left) -->
-                                        <rect x="10" y="10" width="28" height="28" rx="4" fill="#0D1B3E" />
-                                        <rect x="16" y="16" width="16" height="16" rx="2" fill="#FFFFFF" />
-                                        <rect x="20" y="20" width="8" height="8" rx="1.5" fill="#1A56FF" />
-                                        
-                                        <!-- QR Finder 2 (Top Right) -->
-                                        <rect x="62" y="10" width="28" height="28" rx="4" fill="#0D1B3E" />
-                                        <rect x="68" y="16" width="16" height="16" rx="2" fill="#FFFFFF" />
-                                        <rect x="72" y="20" width="8" height="8" rx="1.5" fill="#1A56FF" />
-                                        
-                                        <!-- QR Finder 3 (Bottom Left) -->
-                                        <rect x="10" y="62" width="28" height="28" rx="4" fill="#0D1B3E" />
-                                        <rect x="16" y="68" width="16" height="16" rx="2" fill="#FFFFFF" />
-                                        <rect x="20" y="72" width="8" height="8" rx="1.5" fill="#1A56FF" />
-                                        
-                                        <!-- Timing & Data Modules -->
-                                        <rect x="44" y="12" width="6" height="6" fill="#0D1B3E" />
-                                        <rect x="52" y="20" width="6" height="6" fill="#0D1B3E" />
-                                        <rect x="44" y="28" width="6" height="6" fill="#1A56FF" />
-                                        <rect x="12" y="44" width="6" height="6" fill="#0D1B3E" />
-                                        <rect x="20" y="52" width="6" height="6" fill="#0D1B3E" />
-                                        <rect x="28" y="44" width="6" height="6" fill="#1A56FF" />
-                                        
-                                        <!-- Center Data Cluster -->
-                                        <rect x="42" y="42" width="16" height="16" rx="3" fill="#1A56FF" />
-                                        <circle cx="50" cy="50" r="3" fill="#FFFFFF" />
-                                        
-                                        <!-- Bottom Right Data Modules -->
-                                        <rect x="64" y="44" width="6" height="6" fill="#0D1B3E" />
-                                        <rect x="74" y="52" width="6" height="6" fill="#0D1B3E" />
-                                        <rect x="84" y="44" width="6" height="6" fill="#0D1B3E" />
-                                        <rect x="44" y="64" width="6" height="6" fill="#0D1B3E" />
-                                        <rect x="52" y="74" width="6" height="6" fill="#0D1B3E" />
-                                        <rect x="64" y="64" width="6" height="6" fill="#1A56FF" />
-                                        <rect x="74" y="74" width="6" height="6" fill="#0D1B3E" />
-                                        <rect x="84" y="64" width="6" height="6" fill="#0D1B3E" />
-                                        <rect x="64" y="84" width="6" height="6" fill="#0D1B3E" />
-                                        <rect x="84" y="84" width="6" height="6" fill="#1A56FF" />
-                                    </svg>
-                                </div>
-                                <div class="v-qr-info">
-                                    <strong>Scan to Launch</strong>
-                                    <span>Place on restaurant tables, product packaging, or print stickers. Instant redirect to your subdomain.</span>
-                                </div>
-                            </div>
-                            
-                            <div style="margin-top:0.75rem; background:#FFFFFF; border:1px solid #10B981; border-radius:10px; padding:0.6rem 0.8rem; display:flex; align-items:center; gap:0.65rem; box-shadow:0 4px 12px rgba(16,185,129,0.12);">
-                                <div style="width:24px; height:24px; border-radius:50%; background:#ECFDF5; display:flex; align-items:center; justify-content:center; color:#10B981; flex-shrink:0;">
-                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
-                                </div>
-                                <div style="flex:1; min-width:0;">
-                                    <div style="font-family:'Plus Jakarta Sans',sans-serif; font-size:0.75rem; font-weight:700; color:var(--navy); display:flex; align-items:center; justify-content:space-between;">
-                                        <span>New WhatsApp Order!</span>
-                                        <span style="font-size:0.65rem; color:#10B981; font-weight:600;">Just now</span>
+                                <div class="mock-content">
+                                    <div style="font-size:0.75rem; text-transform:uppercase; letter-spacing:0.06em; color:var(--blue); font-weight:700; margin-bottom:0.4rem;">Step 1 of 3 · Setup</div>
+                                    <h4 style="font-size:1.1rem; color:var(--navy); margin-bottom:1rem; font-weight:700;">Enter your business name</h4>
+                                    
+                                    <div class="type-input-box" style="margin-bottom:1rem;">
+                                        <div style="display:flex; align-items:center; gap:0.5rem;">
+                                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1A56FF" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                                            <span id="how-typing-text" style="font-family:'Plus Jakarta Sans',sans-serif; font-size:1rem; font-weight:700; color:var(--navy);">Turkish Zaika</span><span class="typing-cursor"></span>
+                                        </div>
+                                        <span style="font-size:0.7rem; font-weight:700; background:#ECFDF5; color:#059669; padding:0.2rem 0.55rem; border-radius:20px;">✓ Available</span>
                                     </div>
-                                    <div style="font-size:0.68rem; color:var(--text);">Order #1042 · ₹580 via royalcakes.linkal.in</div>
+
+                                    <div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-bottom:1.25rem;">
+                                        <span style="font-size:0.75rem; padding:0.35rem 0.75rem; border-radius:30px; background:var(--blue); color:#ffffff; font-weight:600; display:inline-flex; align-items:center; gap:0.35rem;">
+                                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                                            Restaurant &amp; Dining
+                                        </span>
+                                        <span style="font-size:0.75rem; padding:0.35rem 0.75rem; border-radius:30px; background:#F1F5F9; color:#475569; font-weight:600;">Fashion &amp; Boutique</span>
+                                        <span style="font-size:0.75rem; padding:0.35rem 0.75rem; border-radius:30px; background:#F1F5F9; color:#475569; font-weight:600;">Services</span>
+                                    </div>
+
+                                    <div style="background:#F8FAFC; border:1px dashed #CBD5E1; border-radius:10px; padding:0.75rem 1rem; display:flex; align-items:center; justify-content:space-between;">
+                                        <div style="font-size:0.8rem; color:#475569;">
+                                            <span>Your assigned subdomain: </span>
+                                            <strong style="color:var(--navy); font-weight:700;">turkishzaika.linkal.in</strong>
+                                        </div>
+                                        <span style="font-size:0.72rem; color:#10B981; font-weight:700; display:inline-flex; align-items:center; gap:0.25rem;">
+                                            <span style="width:6px; height:6px; border-radius:50%; background:#10B981; display:inline-block;"></span>
+                                            Instant SSL Ready
+                                        </span>
+                                    </div>
                                 </div>
-                            </div>
-                            
-                            <div class="visual-badges">
-                                <span class="v-badge success">Print-Ready Vector QR</span>
-                                <span class="v-badge pulse-badge">Bio Link Ready</span>
-                                <span class="v-badge">Google Indexed</span>
                             </div>
                         </div>
 
-                        <div class="step-number">3</div>
+                        <!-- SCENE 2: Add Products -->
+                        <div class="how-scene" data-step="2">
+                            <div class="mock-window">
+                                <div class="mock-bar">
+                                    <div class="mock-dots">
+                                        <span class="mock-dot r"></span>
+                                        <span class="mock-dot y"></span>
+                                        <span class="mock-dot g"></span>
+                                    </div>
+                                    <div class="mock-url">
+                                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                                        <span>turkishzaika.linkal.in/dashboard/items</span>
+                                    </div>
+                                </div>
+                                <div class="mock-content">
+                                    <div style="font-size:0.75rem; text-transform:uppercase; letter-spacing:0.06em; color:var(--blue); font-weight:700; margin-bottom:0.4rem;">Step 2 · Menu &amp; Catalog</div>
+                                    <h4 style="font-size:1.1rem; color:var(--navy); margin-bottom:1rem; font-weight:700;">Add items in seconds</h4>
+
+                                    <div class="product-add-row" style="margin-bottom:1rem;">
+                                        <div class="product-add-img">
+                                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                <path d="M3 19h18M4 15h16a8 8 0 0 0-16 0z"/><path d="M12 4v3"/><circle cx="12" cy="3" r="1"/>
+                                            </svg>
+                                        </div>
+                                        <div style="flex:1; min-width:0;">
+                                            <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:2px;">
+                                                <span style="font-size:0.95rem; font-weight:700; color:var(--navy);">Turkish Doner Kebab Platter</span>
+                                                <span style="font-size:1rem; font-weight:800; color:var(--blue);">₹240 <span style="font-size:0.75rem; color:#94A3B8; text-decoration:line-through; font-weight:500;">₹280</span></span>
+                                            </div>
+                                            <div style="font-size:0.76rem; color:var(--text); margin-bottom:0.4rem;">Slow-roasted spiced chicken, garlic toum, pickled veggies &amp; butter pita</div>
+                                            <div style="display:flex; align-items:center; gap:0.5rem;">
+                                                <span style="display:inline-flex; align-items:center; gap:0.3rem; font-size:0.68rem; font-weight:700; background:#ECFDF5; color:#059669; padding:0.2rem 0.6rem; border-radius:20px;">
+                                                    <span style="width:6px; height:6px; border-radius:50%; background:#10B981;"></span>
+                                                    In Stock · WhatsApp Orders Active
+                                                </span>
+                                                <span style="font-size:0.68rem; background:#EFF6FF; color:#1A56FF; padding:0.2rem 0.5rem; border-radius:20px; font-weight:600;">Non-Veg</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div style="background:#F0FDF4; border:1px solid #BBF7D0; border-radius:10px; padding:0.65rem 0.85rem; display:flex; align-items:center; justify-content:space-between;">
+                                        <div style="display:flex; align-items:center; gap:0.5rem; font-size:0.78rem; color:#166534; font-weight:600;">
+                                            <svg width="15" height="15" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.05 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                                            Pre-formatted WhatsApp order triggers created automatically
+                                        </div>
+                                        <span style="font-size:0.72rem; color:#15803D; font-weight:700;">0% Commission</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- SCENE 3: Instant Domain -->
+                        <div class="how-scene" data-step="3">
+                            <div class="mock-window">
+                                <div class="mock-bar">
+                                    <div class="mock-dots">
+                                        <span class="mock-dot r"></span>
+                                        <span class="mock-dot y"></span>
+                                        <span class="mock-dot g"></span>
+                                    </div>
+                                    <div class="mock-url" style="background:#EFF6FF; border:1px solid #BFDBFE;">
+                                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                                        <span style="color:#0D1B3E; font-weight:700;">https://turkishzaika.linkal.in</span>
+                                    </div>
+                                </div>
+                                <div class="mock-content">
+                                    <div style="font-size:0.75rem; text-transform:uppercase; letter-spacing:0.06em; color:var(--blue); font-weight:700; margin-bottom:0.4rem;">Step 3 · Global Edge Infrastructure</div>
+                                    <h4 style="font-size:1.1rem; color:var(--navy); margin-bottom:1rem; font-weight:700;">Permanent branded URL with verified SSL</h4>
+
+                                    <!-- Architecture graphic -->
+                                    <div style="background:#F8FAFC; border:1px solid #E2E8F0; border-radius:12px; padding:1.25rem 1rem; margin-bottom:1rem;">
+                                        <div style="display:flex; align-items:center; justify-content:space-around; text-align:center;">
+                                            <div>
+                                                <div style="width:48px; height:48px; border-radius:12px; background:#EFF6FF; color:#1A56FF; display:flex; align-items:center; justify-content:center; margin:0 auto 0.4rem auto;">
+                                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                                                </div>
+                                                <div style="font-size:0.75rem; font-weight:700; color:var(--navy);">Global Edge</div>
+                                                <div style="font-size:0.68rem; color:#64748B;">Anycast Network</div>
+                                            </div>
+
+                                            <div style="color:#1A56FF; display:flex; align-items:center;">
+                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+                                            </div>
+
+                                            <div>
+                                                <div style="width:48px; height:48px; border-radius:12px; background:#0D1B3E; color:#93C5FD; display:flex; align-items:center; justify-content:center; margin:0 auto 0.4rem auto;">
+                                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+                                                </div>
+                                                <div style="font-size:0.75rem; font-weight:700; color:var(--navy);">Wildcard DNS</div>
+                                                <div style="font-size:0.68rem; color:#1A56FF; font-weight:600;">*.linkal.in</div>
+                                            </div>
+
+                                            <div style="color:#10B981; display:flex; align-items:center;">
+                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+                                            </div>
+
+                                            <div>
+                                                <div style="width:48px; height:48px; border-radius:12px; background:#ECFDF5; color:#059669; display:flex; align-items:center; justify-content:center; margin:0 auto 0.4rem auto;">
+                                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                                                </div>
+                                                <div style="font-size:0.75rem; font-weight:700; color:#065F46;">Live Store</div>
+                                                <div style="font-size:0.68rem; color:#059669; font-weight:600;">Zero DNS Setup</div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div style="display:flex; gap:0.5rem; justify-content:center; flex-wrap:wrap;">
+                                        <span style="font-size:0.72rem; font-weight:700; background:#ECFDF5; color:#065F46; padding:0.25rem 0.65rem; border-radius:20px;">✓ 100% Free SSL Certificate</span>
+                                        <span style="font-size:0.72rem; font-weight:700; background:#EFF6FF; color:#1A56FF; padding:0.25rem 0.65rem; border-radius:20px;">⚡ 20ms TTFB in India</span>
+                                        <span style="font-size:0.72rem; font-weight:700; background:#F8FAFC; color:#475569; padding:0.25rem 0.65rem; border-radius:20px;">🔒 HTTP/3 Enabled</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- SCENE 4: Bio Link & QR Code -->
+                        <div class="how-scene" data-step="4">
+                            <div class="mock-window">
+                                <div class="mock-bar">
+                                    <div class="mock-dots">
+                                        <span class="mock-dot r"></span>
+                                        <span class="mock-dot y"></span>
+                                        <span class="mock-dot g"></span>
+                                    </div>
+                                    <div class="mock-url">
+                                        <span>Omnichannel Sharing · Instagram Bio + Table QR</span>
+                                    </div>
+                                </div>
+                                <div class="mock-content">
+                                    <div class="bio-qr-row">
+                                        <!-- Instagram Bio Card -->
+                                        <div class="ig-bio-card">
+                                            <div style="display:flex; align-items:center; gap:0.75rem; margin-bottom:0.75rem;">
+                                                <div style="width:42px; height:42px; border-radius:50%; background:linear-gradient(45deg,#F59E0B,#EF4444); color:#ffffff; font-weight:800; font-size:0.85rem; display:flex; align-items:center; justify-content:center;">TZ</div>
+                                                <div>
+                                                    <div style="font-size:0.85rem; font-weight:700; color:var(--navy);">turkishzaika.official</div>
+                                                    <div style="font-size:0.7rem; color:#64748B;">Authentic Turkish Kitchen</div>
+                                                </div>
+                                            </div>
+                                            <div style="font-size:0.75rem; color:#334155; line-height:1.4; margin-bottom:0.75rem;">
+                                                Kebabs, Platters, Shawarmas &amp; Kunafa 🔥<br/>
+                                                Order on WhatsApp or dine-in:
+                                            </div>
+                                            <div style="background:#EFF6FF; border:1px solid #BFDBFE; border-radius:8px; padding:0.45rem 0.75rem; display:flex; align-items:center; gap:0.4rem;">
+                                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1A56FF" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+                                                <span style="font-size:0.75rem; font-weight:700; color:#1A56FF;">turkishzaika.linkal.in</span>
+                                            </div>
+                                        </div>
+
+                                        <!-- Printable QR Code Card -->
+                                        <div style="background:#ffffff; border:1px solid var(--border); border-radius:12px; padding:1rem; text-align:center;">
+                                            <div style="width:84px; height:84px; margin:0 auto 0.6rem auto; background:#ffffff; border:1px solid #E2E8F0; border-radius:10px; padding:6px; box-shadow:0 2px 8px rgba(0,0,0,0.06);">
+                                                <svg width="100%" height="100%" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <rect x="10" y="10" width="28" height="28" rx="4" fill="#0D1B3E" />
+                                                    <rect x="16" y="16" width="16" height="16" rx="2" fill="#FFFFFF" />
+                                                    <rect x="20" y="20" width="8" height="8" rx="1.5" fill="#1A56FF" />
+                                                    <rect x="62" y="10" width="28" height="28" rx="4" fill="#0D1B3E" />
+                                                    <rect x="68" y="16" width="16" height="16" rx="2" fill="#FFFFFF" />
+                                                    <rect x="72" y="20" width="8" height="8" rx="1.5" fill="#1A56FF" />
+                                                    <rect x="10" y="62" width="28" height="28" rx="4" fill="#0D1B3E" />
+                                                    <rect x="16" y="68" width="16" height="16" rx="2" fill="#FFFFFF" />
+                                                    <rect x="20" y="72" width="8" height="8" rx="1.5" fill="#1A56FF" />
+                                                    <rect x="44" y="12" width="6" height="6" fill="#0D1B3E" />
+                                                    <rect x="52" y="20" width="6" height="6" fill="#0D1B3E" />
+                                                    <rect x="44" y="28" width="6" height="6" fill="#1A56FF" />
+                                                    <rect x="42" y="42" width="16" height="16" rx="3" fill="#1A56FF" />
+                                                    <circle cx="50" cy="50" r="3" fill="#FFFFFF" />
+                                                    <rect x="64" y="64" width="6" height="16" fill="#1A56FF" />
+                                                    <rect x="74" y="74" width="6" height="6" fill="#0D1B3E" />
+                                                </svg>
+                                            </div>
+                                            <div style="font-size:0.78rem; font-weight:700; color:var(--navy);">Table &amp; Stand QR</div>
+                                            <div style="font-size:0.68rem; color:#64748B;">Scan opens menu directly</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- SCENE 5: Google & WhatsApp Orders -->
+                        <div class="how-scene" data-step="5">
+                            <div class="mock-window">
+                                <div class="mock-bar">
+                                    <div class="mock-dots">
+                                        <span class="mock-dot r"></span>
+                                        <span class="mock-dot y"></span>
+                                        <span class="mock-dot g"></span>
+                                    </div>
+                                    <div class="mock-url">
+                                        <span>google.com/search?q=turkish+zaika</span>
+                                    </div>
+                                </div>
+                                <div class="mock-content">
+                                    <!-- Google #1 Result Snippet -->
+                                    <div style="background:#ffffff; border:1px solid #E2E8F0; border-left:3px solid #1A56FF; border-radius:10px; padding:0.85rem 1rem; margin-bottom:1rem; text-align:left;">
+                                        <div style="display:flex; align-items:center; gap:0.4rem; font-size:0.75rem; color:#202124; margin-bottom:0.25rem;">
+                                            <span style="width:16px; height:16px; border-radius:50%; background:#0D1B3E; color:#93C5FD; font-size:0.55rem; font-weight:800; display:inline-flex; align-items:center; justify-content:center;">TZ</span>
+                                            <span>https://turkishzaika.linkal.in</span>
+                                            <span style="margin-left:auto; font-size:0.65rem; background:#ECFDF5; color:#065F46; font-weight:700; padding:0.15rem 0.45rem; border-radius:12px;">#1 on Google</span>
+                                        </div>
+                                        <div style="font-size:0.95rem; font-weight:600; color:#1A0DAB; margin-bottom:0.25rem;">Turkish Zaika — Authentic Kebabs, Platters &amp; Shawarma</div>
+                                        <div style="font-size:0.75rem; color:#4D5156; line-height:1.4;">Explore our official digital menu. Fast delivery, veg &amp; non-veg options. Order instantly on WhatsApp. ★★★★★ 4.9 (184 reviews)</div>
+                                    </div>
+
+                                    <!-- WhatsApp Order Toast -->
+                                    <div style="background:#ffffff; border:1px solid #10B981; border-radius:10px; padding:0.75rem 1rem; display:flex; align-items:center; gap:0.75rem; box-shadow:0 4px 14px rgba(16,185,129,0.15);">
+                                        <div style="width:34px; height:34px; border-radius:50%; background:#25D366; color:#ffffff; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+                                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.05 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                                        </div>
+                                        <div style="flex:1; min-width:0; text-align:left;">
+                                            <div style="font-size:0.75rem; font-weight:700; color:var(--navy); display:flex; justify-content:space-between;">
+                                                <span>New WhatsApp Order!</span>
+                                                <span style="font-size:0.65rem; color:#10B981; font-weight:600;">Just now</span>
+                                            </div>
+                                            <div style="font-size:0.72rem; color:var(--text); white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">
+                                                "Hi, I want to order 2x Special Doner Kebab (₹480) from turkishzaika.linkal.in"
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- FEATURES BENTO -->
+        <!-- WHO CAN USE (COMPACT CARDS: HEADINGS & COLORED SVG ONLY) -->
+        <section id="use-cases" class="section-pad">
+            <div class="container">
+                <div class="use-cases-header reveal">
+                    <span class="badge-pill">Built For Everyone</span>
+                    <h2>Who Can Use</h2>
+                    <p>Designed for every business, creator, and professional who needs a fast, branded online presence.</p>
+                </div>
+
+                <div class="use-cases-grid-compact">
+                    <!-- 1. Instagram Businesses -->
+                    <div class="use-case-compact reveal">
+                        <div class="use-case-icon-colored" style="background:#FDF2F8;">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#E1306C" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+                            </svg>
+                        </div>
+                        <h3>Instagram Businesses &amp; Boutiques</h3>
+                    </div>
+
+                    <!-- 2. Hotel & Restaurant Menus -->
+                    <div class="use-case-compact reveal reveal-delay-1">
+                        <div class="use-case-icon-colored" style="background:#FFFBEB;">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#D97706" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M3 19h18M4 15h16a8 8 0 0 0-16 0z"/><path d="M12 4v3"/><circle cx="12" cy="3" r="1"/>
+                            </svg>
+                        </div>
+                        <h3>Hotel &amp; Restaurant Menus</h3>
+                    </div>
+
+                    <!-- 3. Personal Portfolios -->
+                    <div class="use-case-compact reveal reveal-delay-2">
+                        <div class="use-case-icon-colored" style="background:#EFF6FF;">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/><path d="M7 8l3 3-3 3M13 14h4"/>
+                            </svg>
+                        </div>
+                        <h3>Personal Portfolio Websites</h3>
+                    </div>
+
+                    <!-- 4. Live CV & Resume -->
+                    <div class="use-case-compact reveal reveal-delay-3">
+                        <div class="use-case-icon-colored" style="background:#ECFDF5;">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/>
+                            </svg>
+                        </div>
+                        <h3>Live CV &amp; Resume Websites</h3>
+                    </div>
+
+                    <!-- 5. Services & Freelancers -->
+                    <div class="use-case-compact reveal">
+                        <div class="use-case-icon-colored" style="background:#F5F3FF;">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#7C3AED" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+                            </svg>
+                        </div>
+                        <h3>Services &amp; Freelancers</h3>
+                    </div>
+
+                    <!-- 6. Wedding & Event Invites -->
+                    <div class="use-case-compact reveal reveal-delay-1">
+                        <div class="use-case-icon-colored" style="background:#FFF1F2;">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#E11D48" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/><circle cx="12" cy="15" r="2"/>
+                            </svg>
+                        </div>
+                        <h3>Wedding &amp; Event Invites</h3>
+                    </div>
+
+                    <!-- 7. Real Estate & Properties -->
+                    <div class="use-case-compact reveal reveal-delay-2">
+                        <div class="use-case-icon-colored" style="background:#F0F9FF;">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0284C7" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>
+                            </svg>
+                        </div>
+                        <h3>Real Estate &amp; Properties</h3>
+                    </div>
+
+                    <!-- 8. Coaches, Tutors & Mentors -->
+                    <div class="use-case-compact reveal reveal-delay-3">
+                        <div class="use-case-icon-colored" style="background:#EEF2FF;">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#4F46E5" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 2 3 3 6 3s6-1 6-3v-5"/>
+                            </svg>
+                        </div>
+                        <h3>Coaches &amp; Creators</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+<!-- FEATURES BENTO -->
         <section id="features" class="section-pad" style="background: var(--navy-light);">
             <div class="container">
                 <div class="features-header reveal">
@@ -3411,6 +3371,174 @@
                 </div>
             </div>
         </section>
+
+        <!-- GOOGLE SCREEN / SEO SECTION -->
+        <section id="seo" class="section-pad">
+            <div class="container">
+                <div class="seo-header reveal">
+                    <span class="badge-pill">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                        Google Search Dominance
+                    </span>
+                    <h2>Rank on Google Automatically</h2>
+                    <p>Every Linkal website is built with native Schema.org structured data, instant sitemaps, and mobile-first performance so nearby customers discover your brand first.</p>
+                </div>
+
+                <div class="seo-grid reveal">
+                    <!-- Left: Google Search Mockup -->
+                    <div class="google-browser-mockup">
+                        <div class="google-top-bar">
+                            <div class="mock-dots">
+                                <span class="mock-dot r"></span>
+                                <span class="mock-dot y"></span>
+                                <span class="mock-dot g"></span>
+                            </div>
+                            <div class="google-search-input-mock">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#64748B" stroke-width="2.2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                                <span style="font-weight:600; color:#1E293B;">Turkish Zaika</span>
+                                <span style="margin-left:auto; display:flex; gap:0.4rem; color:#64748B;">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/></svg>
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="google-results-container">
+                            <div class="google-stat-line">About 14,200 results (0.24 seconds)</div>
+
+                            <!-- Organic #1 Result -->
+                            <div class="google-result-card">
+                                <div class="google-url-row">
+                                    <div class="google-favicon-mock">TZ</div>
+                                    <span style="font-weight:600; color:#202124;">Turkish Zaika</span>
+                                    <span style="color:#5F6368;">› menu</span>
+                                    <span style="margin-left:auto; font-size:0.65rem; background:#ECFDF5; color:#065F46; font-weight:700; padding:0.15rem 0.5rem; border-radius:12px;">#1 Ranking</span>
+                                </div>
+                                <a href="https://turkishzaikamenu.vercel.app" target="_blank" rel="noopener noreferrer" class="google-result-title">
+                                    Turkish Zaika | Authentic Kebabs, Platters &amp; Shawarma Menu
+                                </a>
+                                <div style="display:flex; align-items:center; gap:0.35rem; font-size:0.75rem; color:#E37400; font-weight:600; margin-bottom:0.3rem;">
+                                    <span>★★★★★</span>
+                                    <span style="color:#202124;">4.9</span>
+                                    <span style="color:#5F6368;">(184 reviews) · Fast Delivery · WhatsApp Ordering</span>
+                                </div>
+                                <div class="google-result-snippet">
+                                    Explore the official digital menu of Turkish Zaika. Order gourmet Doner Kebabs, Charcoal Grilled Platters, Turkish Pide, and Falafel rolls directly on WhatsApp.
+                                </div>
+
+                                <div class="google-sitelinks-grid">
+                                    <div class="google-sitelink-item">
+                                        <h5>Chef's Doner Platters</h5>
+                                        <p>Fresh rotisserie chicken, hummus &amp; pita</p>
+                                    </div>
+                                    <div class="google-sitelink-item">
+                                        <h5>Table QR &amp; Dine-In</h5>
+                                        <p>Instant contactless digital ordering</p>
+                                    </div>
+                                    <div class="google-sitelink-item">
+                                        <h5>Order on WhatsApp</h5>
+                                        <p>1-tap prefilled order message</p>
+                                    </div>
+                                    <div class="google-sitelink-item">
+                                        <h5>Customer Reviews</h5>
+                                        <p>4.9/5 stars from food lovers</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right: SEO Highlights -->
+                    <div class="seo-features-column">
+                        <div class="seo-feature-card">
+                            <div class="seo-feat-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                            </div>
+                            <div class="seo-feat-text">
+                                <h4>Automated Structured Schema</h4>
+                                <p>Generates JSON-LD schema tags (Restaurant, LocalBusiness, Product, Rating) so search engines understand your items instantly.</p>
+                            </div>
+                        </div>
+
+                        <div class="seo-feature-card">
+                            <div class="seo-feat-icon" style="background:#ECFDF5; color:#059669;">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                            </div>
+                            <div class="seo-feat-text">
+                                <h4>99/100 Mobile PageSpeed</h4>
+                                <p>Static serverless architecture loads in 0.3 seconds across India's 4G and 5G networks, boosting organic mobile rankings.</p>
+                            </div>
+                        </div>
+
+                        <div class="seo-feature-card">
+                            <div class="seo-feat-icon" style="background:#FFFBEB; color:#D97706;">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+                            </div>
+                            <div class="seo-feat-text">
+                                <h4>Zero-Configuration Indexing</h4>
+                                <p>Automated XML sitemaps and meta descriptions ensure Google indexes your subdomain within hours of publishing.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- AI ANALYZER -->
+        <section id="ai-analyzer" class="section-pad">
+            <div class="container">
+                <div class="reveal">
+                    <div class="ai-label">Powered by Artificial Intelligence</div>
+                    <h2 style="color:#fff; margin-bottom: 1rem;">Your Personal AI Business Advisor</h2>
+                    <p class="ai-desc">Our AI studies your store — your products, your prices, your traffic patterns,
+                        your customer behavior — and tells you exactly what to do to earn more. Not generic advice. Your
+                        business, analyzed, every week.</p>
+                </div>
+
+                <div class="ai-grid reveal">
+                    <div class="ai-card">
+                        <div class="ai-card-label">
+                            <i data-lucide="trending-up" width="12" height="12"></i>
+                            Revenue Opportunity
+                        </div>
+                        <h4>Revenue Opportunity Detected</h4>
+                        <p>Your kurti photos are getting 3x more clicks but 0 orders. AI suggests: add size chart +
+                            lower price by ₹50.</p>
+                    </div>
+                    <div class="ai-card">
+                        <div class="ai-card-label">
+                            <i data-lucide="clock" width="12" height="12"></i>
+                            Timing Insight
+                        </div>
+                        <h4>Best Time to Post</h4>
+                        <p>Your store gets 68% traffic between 8–10 PM. AI recommends: post new arrivals at 7:45 PM for
+                            maximum reach.</p>
+                    </div>
+                    <div class="ai-card">
+                        <div class="ai-card-label">
+                            <i data-lucide="flame" width="12" height="12"></i>
+                            Trend Alert
+                        </div>
+                        <h4>Trending in Your Category</h4>
+                        <p>Palazzo pants are trending in Maharashtra this week. You don't have any listed. Add 2–3
+                            products now.</p>
+                    </div>
+                    <div class="ai-card">
+                        <div class="ai-card-label">
+                            <i data-lucide="search" width="12" height="12"></i>
+                            SEO Health
+                        </div>
+                        <h4>SEO Health Score: 94/100</h4>
+                        <p>Your store ranks #1 on Google for 'Royal Cakes Mumbai'. AI generated 3 new meta descriptions
+                            this week.</p>
+                    </div>
+                </div>
+
+                <div class="ai-cta-wrap reveal">
+                    <a href="#" class="btn btn-blue btn-lg" onclick="openModal(event)">See Your Business Analysis Free →</a>
+                </div>
+            </div>
+        </section>
+
 
         <!-- EXCLUSIVE FEATURES -->
         <section id="exclusive" class="section-pad">
@@ -3528,75 +3656,7 @@
             </div>
         </section>
 
-        <!-- SEO -->
-        <section id="seo" class="section-pad">
-            <div class="container">
-                <div class="seo-grid">
-                    <div class="seo-left reveal">
-                        <div class="ai-label" style="color: var(--blue);">Search Engine Power</div>
-                        <h2>Your Business, Found on Google</h2>
-                        <p>Every store we build is SEO-optimized from day one. When someone searches 'Royal Cakes
-                            Mumbai' on Google — your store appears at the top. Our AI also monitors your online
-                            reputation and ensures AI tools like Google AI Overviews show positive information about
-                            your business.</p>
-                        <div class="seo-pills">
-                            <span class="seo-pill">Auto meta tags</span>
-                            <span class="seo-pill">Google sitemap</span>
-                            <span class="seo-pill">AI reputation monitoring</span>
-                            <span class="seo-pill">Business schema markup</span>
-                            <span class="seo-pill">Mobile SEO</span>
-                            <span class="seo-pill">AI Overview optimization</span>
-                        </div>
-                    </div>
-
-                    <div class="reveal reveal-delay-2">
-                        <div class="google-card">
-                            <div class="g-site">
-                                <div class="g-favicon">
-                                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="white"
-                                        stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="M12 2L2 7l10 5 10-5-10-5z" />
-                                    </svg>
-                                </div>
-                                <div>
-                                    <div class="g-domain">royalcakes.linkal.in</div>
-                                </div>
-                            </div>
-                            <div class="g-title">Royal Cakes Mumbai — royalcakes.linkal.in</div>
-                            <div class="g-green">royalcakes.linkal.in › products</div>
-                            <div class="g-desc">Order fresh custom cakes in Mumbai. Best prices, quick delivery. Contact
-                                on WhatsApp. Birthday cakes, wedding cakes, and more — ready for same-day delivery.
-                            </div>
-                            <div class="g-stars">
-                                <div class="g-stars-row">
-                                    <svg class="g-star" viewBox="0 0 24 24">
-                                        <path
-                                            d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                                    </svg>
-                                    <svg class="g-star" viewBox="0 0 24 24">
-                                        <path
-                                            d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                                    </svg>
-                                    <svg class="g-star" viewBox="0 0 24 24">
-                                        <path
-                                            d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                                    </svg>
-                                    <svg class="g-star" viewBox="0 0 24 24">
-                                        <path
-                                            d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                                    </svg>
-                                    <svg class="g-star" viewBox="0 0 24 24">
-                                        <path
-                                            d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                                    </svg>
-                                </div>
-                                <span class="g-rating">4.9 · 48 reviews</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        
 
         <!-- PRICING -->
         <section id="pricing" class="section-pad" style="background: var(--navy-light);">
@@ -3623,8 +3683,6 @@
                             <li><i data-lucide="check" width="15" height="15"></i>SEO optimization</li>
                             <li><i data-lucide="check" width="15" height="15"></i>Business hours display</li>
                         </ul>
-                        <a href="storemaker.html" class="btn btn-navy"
-                            style="width:100%; justify-content:center; margin-bottom: 0.5rem;">Create Store</a>
                         <a href="#" class="btn btn-outline" style="width:100%; justify-content:center;"
                             onclick="openModal(event)">Get Started</a>
                     </div>
@@ -3646,9 +3704,6 @@
                             <li><i data-lucide="check" width="15" height="15"></i>Bio Link + Store Combo</li>
                             <li><i data-lucide="check" width="15" height="15"></i>Priority support</li>
                         </ul>
-                        <a href="storemaker.html" class="btn btn-blue"
-                            style="width:100%; justify-content:center; margin-bottom: 0.5rem; border-color: #fff;">Create
-                            Store</a>
                         <a href="#" class="btn btn-white" style="width:100%; justify-content:center;"
                             onclick="openModal(event)">Get Started</a>
                     </div>
@@ -3669,8 +3724,6 @@
                             <li><i data-lucide="check" width="15" height="15"></i>Custom domain support</li>
                             <li><i data-lucide="check" width="15" height="15"></i>Dedicated WhatsApp support</li>
                         </ul>
-                        <a href="storemaker.html" class="btn btn-navy"
-                            style="width:100%; justify-content:center; margin-bottom: 0.5rem;">Create Store</a>
                         <a href="#" class="btn btn-outline" style="width:100%; justify-content:center;"
                             onclick="openModal(event)">Get Started</a>
                     </div>
@@ -3862,7 +3915,6 @@
                     <p>Join 300+ Indian businesses already selling smarter on linkal.in.</p>
                     <div class="cta-btns">
                         <a href="#" class="btn btn-white btn-lg" onclick="openModal(event)">Create My Store Free</a>
-                        <a href="storemaker.html" class="btn btn-outline-white btn-lg">Create Store</a>
                         <a href="https://wa.me/919999999999?text=Hi!%20I%20want%20to%20create%20my%20store%20on%20linkal.in"
                             target="_blank" rel="noopener noreferrer" class="btn btn-outline-white btn-lg">
                             <i data-lucide="message-circle" width="18" height="18"></i>
@@ -3899,8 +3951,9 @@
                 <div class="footer-col">
                     <h5>Product</h5>
                     <ul>
-                        <li><a href="#use-cases">Who It's For</a></li>
                         <li><a href="#how">How It Works</a></li>
+                        <li><a href="#use-cases">Who Can Use</a></li>
+                        <li><a href="#seo">Google & SEO</a></li>
                         <li><a href="#features">Features</a></li>
                         <li><a href="#pricing">Pricing</a></li>
                         <li><a href="#story">Story Studio</a></li>
@@ -3947,71 +4000,14 @@
         </div>
     </footer>
 
-    <!-- FLOATING INSTAGRAM -->
-    <div class="float-ig-wrap">
-        <div class="float-ig-tooltip">
-            <span>Chat on Instagram @linkal.in</span>
-        </div>
-        <a href="https://ig.me/m/linkal.in" target="_blank" rel="noopener noreferrer" class="float-ig"
-            aria-label="Contact on Instagram">
-            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="white"
-                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
-                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
-            </svg>
-        </a>
-    </div>
-
-    <!-- MODAL -->
-    <div class="modal-overlay" id="modalOverlay" onclick="handleOverlayClick(event)">
-        <div class="modal-box">
-            <button class="modal-close" onclick="closeModal()" aria-label="Close">
-                <i data-lucide="x" width="16" height="16"></i>
-            </button>
-
-            <div id="modalForm">
-                <h3>Create Your Free Store</h3>
-                <p class="modal-sub">Fill in your details and we'll contact you on WhatsApp within 2 hours.</p>
-
-                <div class="form-field">
-                    <label for="f-name">Your Name</label>
-                    <input type="text" id="f-name" placeholder="Priya Sharma" />
-                </div>
-                <div class="form-field">
-                    <label for="f-biz">Business Name</label>
-                    <input type="text" id="f-biz" placeholder="Royal Cakes" />
-                </div>
-                <div class="form-field">
-                    <label for="f-wa">WhatsApp Number</label>
-                    <input type="tel" id="f-wa" placeholder="+91 98765 43210" />
-                </div>
-                <div class="form-field">
-                    <label for="f-plan">Select Plan</label>
-                    <select id="f-plan">
-                        <option value="">Choose a plan...</option>
-                        <option value="starter">Starter — ₹300/month</option>
-                        <option value="growth">Growth — ₹500/month (Most Popular)</option>
-                        <option value="pro">Pro — ₹700/month</option>
-                    </select>
-                </div>
-                <button class="btn btn-navy btn-lg modal-submit" onclick="submitForm()">Create My Store Free</button>
-            </div>
-
-            <div class="modal-success" id="modalSuccess">
-                <div class="modal-success-icon">
-                    <i data-lucide="check-circle-2" width="32" height="32"></i>
-                </div>
-                <h3>You're in!</h3>
-                <p>We'll contact you on WhatsApp within 2 hours to set up your store. Welcome to linkal.in!</p>
-                <a href="https://wa.me/919999999999?text=Hi!%20I%20just%20signed%20up%20for%20linkal.in" target="_blank"
-                    rel="noopener noreferrer" class="btn btn-navy">
-                    <i data-lucide="message-circle" width="16" height="16"></i>
-                    Chat on WhatsApp Now
-                </a>
-            </div>
-        </div>
-    </div>
+    <!-- FLOATING INSTAGRAM (STILL BUTTON, NO TOOLTIP) -->
+    <a href="https://ig.me/m/linkal.in?text=Hello%2C%20I%20am%20interested%20in%20Linkal" target="_blank" rel="noopener noreferrer" class="float-ig" aria-label="Contact Linkal on Instagram">
+        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+            <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+        </svg>
+    </a>
 
     <script>
         // ─── LUCIDE ICONS ───────────────────────────────
@@ -4167,6 +4163,67 @@
                 }
             });
         });
+    
+        // ─── HOW IT WORKS 5-STEP CONTROLLER ───────────────────────────
+        let currentHowStep = 1;
+        let howAutoInterval = null;
+
+        function setHowStep(stepIndex) {
+            currentHowStep = stepIndex;
+            const tabs = document.querySelectorAll('.how-tab-btn');
+            const scenes = document.querySelectorAll('.how-scene');
+
+            tabs.forEach(btn => {
+                const btnStep = parseInt(btn.getAttribute('data-step'), 10);
+                const isActive = (btnStep === stepIndex);
+                btn.classList.toggle('active', isActive);
+                btn.setAttribute('aria-selected', isActive ? 'true' : 'false');
+            });
+
+            scenes.forEach(scene => {
+                const sceneStep = parseInt(scene.getAttribute('data-step'), 10);
+                scene.classList.toggle('active', sceneStep === stepIndex);
+            });
+
+            // Replay typewriter animation on step 1
+            if (stepIndex === 1) {
+                const textEl = document.getElementById('how-typing-text');
+                if (textEl) {
+                    textEl.textContent = '';
+                    const fullText = 'Turkish Zaika';
+                    let charIdx = 0;
+                    const typeInterval = setInterval(() => {
+                        if (charIdx < fullText.length) {
+                            textEl.textContent += fullText.charAt(charIdx);
+                            charIdx++;
+                        } else {
+                            clearInterval(typeInterval);
+                        }
+                    }, 85);
+                }
+            }
+        }
+
+        function startHowAutoCycle() {
+            if (howAutoInterval) clearInterval(howAutoInterval);
+            howAutoInterval = setInterval(() => {
+                currentHowStep = (currentHowStep % 5) + 1;
+                setHowStep(currentHowStep);
+            }, 4500);
+        }
+
+        document.querySelectorAll('.how-tab-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const step = parseInt(btn.getAttribute('data-step'), 10);
+                setHowStep(step);
+                startHowAutoCycle();
+            });
+        });
+
+        // Initialize How It Works
+        setHowStep(1);
+        startHowAutoCycle();
+
     </script>
 
 </body>
