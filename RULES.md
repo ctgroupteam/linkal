@@ -1,77 +1,105 @@
-# 🎯 Universal Agentic Engineering & Token Optimization Rules
+# 🎯 Universal Agentic Engineering & Token Optimization Framework
 
-> **Core Operating Philosophy**:
-> 1. **Priority #1 — Code Quality & Production Readiness**: Code must always be production-ready, robust, performant, and fully functional. Never compromise features, tests, or architecture. If a bug or solution cannot be found via targeted inspection, ALWAYS read the full code thoroughly rather than making assumptions.
-> 2. **Priority #2 — Maximum Token & Turn Efficiency**: Eliminate redundant re-reads, context bloat, turn-by-turn round trips, and unnecessary file scanning to cut token consumption by 80–90% across any project.
-
----
-
-## 🏛️ Rule Hierarchy
-
-```
-┌─────────────────────────────────────────────────────────┐
-│  Goal 1: Production-Ready Code & Feature Completeness   │  <-- Absolute Must
-└────────────────────────────┬────────────────────────────┘
-                             │
-┌────────────────────────────▼────────────────────────────┐
-│  Goal 2: 80–90% Token Reduction & Rapid Execution       │  <-- Operating Standard
-└─────────────────────────────────────────────────────────┘
-```
+> **Core Mandate**:
+> 1. **Zero-Omission Production Quality**: Implement 100% of requested requirements without skipping, assuming, or breaking existing features. Verify every change in code.
+> 2. **Maximum Execution Speed**: Eliminate tool thrashing, repeated round-trips, and idle pauses through direct, pipelined actions.
+> 3. **80–90% Token Reduction**: Protect context window capacity by eliminating multi-thousand-line dumps, conversational bloat, and redundant re-reads.
 
 ---
 
-## ⚡ The 12 Universal Golden Practices
+## 🧭 The 5-Phase Agent Workflow Loop
 
-### 1. Tiered Context Discovery
-- **Level 1 (Architecture Map)**: Check project documentation, architecture overviews, or `README.md` first to locate directory structures, module responsibilities, and key interfaces.
-- **Level 2 (Precision Slices)**: Use line-range reads (`view_file` with `StartLine` and `EndLine` covering 20–60 lines) around target symbols, functions, or styles instead of loading full multi-thousand-line files.
-- **Level 3 (Deep Read)**: Read full files or larger spans **only** when tracing unfamiliar cross-module logic, complex state mutations, or elusive bugs. Never blind-guess code.
+Every agent task must follow this disciplined 5-phase loop:
 
-### 2. Deterministic In-Place Refactoring
-- For single-location or small block edits: Use targeted string replacement tools (`replace_file_content`).
-- For complex, multi-section structural rewrites across massive files: Write and execute a dedicated local script (Node.js, Python, or PowerShell) in a temporary scratch directory. This executes the change deterministically on disk without streaming thousands of lines back and forth across conversational context.
+```
+[ Phase 1: Parse & Checklist ]
+         │ (Extract 100% of user items; create internal audit checklist)
+         ▼
+[ Phase 2: Targeted Discovery ]
+         │ (Check architecture docs -> grep line ranges -> inspect 20-50 lines)
+         ▼
+[ Phase 3: Fast-Path Execution ]
+         │ (Deterministic in-place edits or on-disk scripts -> pipelined commands)
+         ▼
+[ Phase 4: Mandatory Code Verification ]
+         │ (Verify git diff, syntax, and live output -> ensure zero regressions)
+         ▼
+[ Phase 5: Concise Structured Report ]
+         │ (Confirm all checklist items completed; provide clickable file links)
+```
 
-### 3. Pipelined Terminal Execution
-- Combine dependent shell commands into single command pipelines:
+---
+
+## ⚡ Core Operational Rules
+
+### 1. Zero-Omission Request Decomposition
+- **Requirement Audit**: Break down multi-part user prompts into an explicit checklist covering every fix, feature, reordering, deletion, and constraint.
+- **Completeness Guarantee**: An action is NOT complete until every single checklist item has been addressed in code. Never silently ignore a secondary request.
+- **Explicit Scope Tracking**: If a user asks for 5 changes (e.g., resize boxes, change title, swap order, delete unused component, update link), all 5 must be executed and confirmed.
+
+### 2. Tiered Context Discovery (Token Shield)
+- **Level 1 (Architecture & Maps)**: Check project documentation, sitemaps, or `README.md` first to identify exact file paths and module boundaries.
+- **Level 2 (Precision Grep & Slices)**: Use search tools (`grep_search` or shell `grep`/`Select-String`) to locate target symbols and line numbers. View only **20 to 60 lines** around the target (`view_file` with `StartLine`/`EndLine`).
+- **Level 3 (Deep Read — Only When Necessary)**: Read full files **only** when diagnosing unknown cross-file type errors, complex race conditions, or unmapped state flows. Never guess code to avoid reading, but never read 4,000 lines when 40 lines suffice.
+
+### 3. Precision In-Place Refactoring & Scripting
+- **Small to Medium Edits**: Use targeted in-place string replacement (`replace_file_content`) with exact character sequences.
+- **Large Structural Overhauls**: When reorganizing multiple sections across massive files (>1,000 lines), write and run a deterministic on-disk script (Node.js, Python, or bash) in a temporary git-ignored directory (`scratch/`). This executes in **1 single turn** on disk, avoiding hundreds of thousands of streaming tokens.
+- **Safe Rollback**: If an edit produces unexpected results, discard changes via `git checkout -- <file>` immediately rather than compounding broken edits.
+
+### 4. Pipelined Terminal Execution (Speed Booster)
+- **Batch Complementary Actions**: Group dependent shell operations into unified command chains instead of waiting for conversational turn loops:
   ```bash
   # Linux/macOS
-  npm run test && npm run build && git commit -am "feat: description"
+  npm run build && git add <files> && git commit -m "feat: description" && git push
   # Windows PowerShell
-  npm run test; npm run build; git commit -am "feat: description"
+  npm run build; git add <files>; git commit -m "feat: description"; git push
   ```
-- Executing complementary tasks together eliminates redundant model round-trips and saves conversational context turns.
+- **Filter Verbose CLI Outputs**: Pipe verbose commands through filters (`| tail -n 20`, `| Select-Object -Last 20`, or grep) to prevent megabytes of terminal logs from flooding the LLM context.
 
-### 4. Milestone-Based Fresh Chat Strategy
-- As conversations progress past 15–20 turns, accumulated history carries 40k–80k tokens of passive context into every subsequent prompt.
-- When transitioning to a new feature, module, or distinct milestone, start a fresh conversation. The new session reads project documentation in 1 turn and begins with a clean ~3k token baseline.
+### 5. Mandatory Post-Edit Verification (Proof of Change)
+- **Never Declare Success Without Verification**:
+  1. **Git State Check**: Run `git status` and `git diff --stat` to verify that *only* the intended files were changed and no files were accidentally deleted.
+  2. **Code Truth Check**: Verify modified lines via targeted grep or slice view to prove the code change actually took effect.
+  3. **Build & Syntax Integrity**: Run build, lint, or type-checks (e.g. `tsc --noEmit`, `npm run build`, syntax verification) to ensure zero syntax breaks or missing closing tags.
+  4. **Regression Check**: Verify that neighboring components, comments, and unrelated features remain 100% intact.
 
-### 5. Defensive Code Preservation & Zero Regressions
-- Never remove, truncate, or overwrite existing comments, documentation, or unrelated functions unless explicitly instructed.
-- Never blind-guess function signatures, variable names, database schemas, or API endpoints. Verify definitions before modifying callers.
-
-### 6. Design System & Styling Fidelity (Project-Agnostic)
-- When modifying UI components, inspect and adhere strictly to the project's *existing* styling framework and color palette (CSS variables, Tailwind config, theme objects, or global stylesheets).
-- Never hardcode foreign colors, tokens, or arbitrary styles from other projects. Match the host repository's established aesthetic.
+### 6. Universal Design System & Architecture Fidelity
+- **Zero External Style Injections**: When modifying or creating UI components, inspect and strictly adhere to the host project's *existing* styling methodology and design tokens (CSS variables, Tailwind config, theme objects, or global stylesheets).
+- **No Hardcoded Project Assumptions**: Never inject arbitrary colors, typography, or component patterns from previous projects. Match the active repository's conventions.
 
 ### 7. Decoupled Media & Heavy Binary Assets
-- Never embed raw base64 data, massive JSON fixtures, or binary assets directly into code files or chat prompts.
-- Reference assets via external paths, content delivery networks (CDNs), or clean vector SVGs to keep token payloads minimal.
+- **Keep Context Clean**: Never embed raw base64 data, large JSON fixtures, or media binaries directly in source code or chat prompts.
+- **Asset Strategy**: Reference media via clean vector SVGs, external URLs, or dedicated asset directories.
 
-### 8. Headless & Fast Automated Verification
-- Verify deployments, syntax, and logic using fast headless checks (unit test suites, linter commands, type-checkers, or HTTP status probes).
-- Only launch heavy browser subagents or visual automation when layout rendering or screenshot review is explicitly requested.
+### 8. Milestone-Based Fresh Chat Strategy
+- **Historical Context Bloat**: Every completed turn remains in conversational history. After 15–20 turns, passive history re-sends 40,000 to 80,000 tokens on every prompt.
+- **Fresh Chat Reset**: When completing a major milestone and starting a new epic, start a fresh conversation. The new chat reads the project architecture file in 1 turn and begins with a clean ~3k token baseline.
 
-### 9. Anti-Polling & Reactive Execution
-- Never execute loops or poll terminal commands waiting for background processes or dev servers.
-- Use native background task management and rely on reactive notifications to resume execution.
+### 9. Headless & Fast Verification over Heavy Emulation
+- **Headless First**: Verify API endpoints, status codes, and server responses with fast headless requests (`node -e "fetch(...)"`, `curl`, or CLI test runners).
+- **Subagents on Demand Only**: Only launch heavy browser subagents when visual layout rendering, cross-device responsiveness, or screenshot capture is explicitly required.
 
-### 10. Milestone Documentation Updates
-- Avoid updating high-level architecture documents or change logs on every minor typo or styling tweak.
-- Record documentation updates only upon completing major features, architectural milestones, or key decisions.
+### 10. Reactive Background Task Management
+- **No Polling**: Never run sleep loops or repeated polling commands to wait for long-running processes or dev servers.
+- **Event-Driven**: Antigravity automatically wakes the agent upon task completion. Launch daemon/background tasks with `WaitMsBeforeAsync` and proceed asynchronously.
 
 ### 11. Idempotent Scratch Automation
-- Store temporary automation scripts, migration runners, and one-off test harnesses in a git-ignored directory (e.g., `scratch/` or `.tmp/`).
-- Write scripts to be idempotent so they can be safely re-run without producing side effects.
+- Keep temporary helper scripts, migration tools, and test generators in a dedicated git-ignored directory (`scratch/`, `.tmp/`).
+- Design scripts idempotently so they can be re-run safely without corrupting data or duplicating records.
 
-### 12. Strict Pre-Commit Verification
-- Always run `git status` or `git diff --stat` before committing to confirm that only intended files are staged and no files were unintentionally altered or deleted.
+### 12. Concise, High-Density Communication
+- Deliver clear, structured status updates with direct file links using GitHub markdown syntax: `[filename](file:///path/to/file#L1-L20)`.
+- Avoid verbose re-summaries of code already written; highlight architectural decisions, verified results, and direct answers.
+
+---
+
+## 📊 Summary Checklist for Every Agent Turn
+
+| Step | Action | Verification Rule |
+| :--- | :--- | :--- |
+| **1. Parse** | Break user request into complete itemized list | Did I account for all requested items? |
+| **2. Locate** | Use grep/architecture docs to find exact lines | Am I reading only the 20–60 relevant lines? |
+| **3. Implement** | Use targeted replace or on-disk scratch script | Did I preserve existing comments & logic? |
+| **4. Verify** | Run `git diff` / syntax / build checks | Did the change take effect without regressions? |
+| **5. Ship** | Pipelined commit, push, and headless test | Is the production build passing and verified? |
