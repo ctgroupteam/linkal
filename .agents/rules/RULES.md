@@ -1,61 +1,77 @@
-# 🎯 Antigravity Agent Rules & Token Optimization Guide
+# 🎯 Universal Agentic Engineering & Token Optimization Rules
 
-> **Core Philosophy**:
-> 1. **Priority #1 — Code Integrity & Quality**: Code must always be production-ready, beautiful, robust, and completely functional. Never compromise features, design, or correctness. If a solution is elusive, read the full code thoroughly.
-> 2. **Priority #2 — Maximum Token & Context Efficiency**: Eliminate redundant re-reading, context bloat, and round-trip tool churn to save 80–90% of token consumption across development sessions.
+> **Core Operating Philosophy**:
+> 1. **Priority #1 — Code Quality & Production Readiness**: Code must always be production-ready, robust, performant, and fully functional. Never compromise features, tests, or architecture. If a bug or solution cannot be found via targeted inspection, ALWAYS read the full code thoroughly rather than making assumptions.
+> 2. **Priority #2 — Maximum Token & Turn Efficiency**: Eliminate redundant re-reads, context bloat, turn-by-turn round trips, and unnecessary file scanning to cut token consumption by 80–90% across any project.
 
 ---
 
-## ⚡ The 12 Golden Practices for Development
+## 🏛️ Rule Hierarchy
+
+```
+┌─────────────────────────────────────────────────────────┐
+│  Goal 1: Production-Ready Code & Feature Completeness   │  <-- Absolute Must
+└────────────────────────────┬────────────────────────────┘
+                             │
+┌────────────────────────────▼────────────────────────────┐
+│  Goal 2: 80–90% Token Reduction & Rapid Execution       │  <-- Operating Standard
+└─────────────────────────────────────────────────────────┘
+```
+
+---
+
+## ⚡ The 12 Universal Golden Practices
 
 ### 1. Tiered Context Discovery
-- **Step 1**: Check `context.md` first to pinpoint component locations, section IDs, and architectural patterns.
-- **Step 2**: Use targeted slices (`view_file` with `StartLine` and `EndLine` covering only 20–50 lines) around target code.
-- **Step 3**: Fall back to broader file reading **only** if debugging cross-file dependencies, race conditions, or unmapped logic.
+- **Level 1 (Architecture Map)**: Check project documentation, architecture overviews, or `README.md` first to locate directory structures, module responsibilities, and key interfaces.
+- **Level 2 (Precision Slices)**: Use line-range reads (`view_file` with `StartLine` and `EndLine` covering 20–60 lines) around target symbols, functions, or styles instead of loading full multi-thousand-line files.
+- **Level 3 (Deep Read)**: Read full files or larger spans **only** when tracing unfamiliar cross-module logic, complex state mutations, or elusive bugs. Never blind-guess code.
 
-### 2. Precision Edits over Massive Context Dumps
-- For small block changes: Use `replace_file_content`.
-- For complex, multi-section rewrites or structural reordering: Write and execute a dedicated Node.js script in `scratch/` directly on disk. This avoids streaming thousands of lines back and forth through model context.
+### 2. Deterministic In-Place Refactoring
+- For single-location or small block edits: Use targeted string replacement tools (`replace_file_content`).
+- For complex, multi-section structural rewrites across massive files: Write and execute a dedicated local script (Node.js, Python, or PowerShell) in a temporary scratch directory. This executes the change deterministically on disk without streaming thousands of lines back and forth across conversational context.
 
-### 3. Chained Terminal Pipeline Execution
-- Group complementary terminal actions into a single command:
-  ```powershell
-  git add <files>; git commit -m "feat: description"; git push origin main; node verify.js
+### 3. Pipelined Terminal Execution
+- Combine dependent shell commands into single command pipelines:
+  ```bash
+  # Linux/macOS
+  npm run test && npm run build && git commit -am "feat: description"
+  # Windows PowerShell
+  npm run test; npm run build; git commit -am "feat: description"
   ```
-- This accomplishes 4 tasks in 1 single turn, saving 3 redundant model invocations.
+- Executing complementary tasks together eliminates redundant model round-trips and saves conversational context turns.
 
 ### 4. Milestone-Based Fresh Chat Strategy
-- As chat history grows past 20+ turns, every single turn resends the entire accumulated history, costing 50k–100k input tokens per message.
-- Start a fresh chat session when moving between major milestones (e.g., transition from landing page design to Linkal Tool backend). The new chat reads `context.md` in 1 turn and starts with a clean ~3k token baseline.
+- As conversations progress past 15–20 turns, accumulated history carries 40k–80k tokens of passive context into every subsequent prompt.
+- When transitioning to a new feature, module, or distinct milestone, start a fresh conversation. The new session reads project documentation in 1 turn and begins with a clean ~3k token baseline.
 
-### 5. Concise, Direct User Prompting
-- Bullet points and clear instructions process in seconds with minimal token consumption.
-- Audio messages are processed with multimodal embeddings; text bullet points are 5x more token-efficient for routine code edits.
+### 5. Defensive Code Preservation & Zero Regressions
+- Never remove, truncate, or overwrite existing comments, documentation, or unrelated functions unless explicitly instructed.
+- Never blind-guess function signatures, variable names, database schemas, or API endpoints. Verify definitions before modifying callers.
 
-### 6. Code Preservation & No Blind Guessing
-- Never guess class names, variable names, or CSS IDs. Verify before editing.
-- Preserve all existing comments, docstrings, and unrelated functions.
-- If uncertain about file content, inspect the target lines rather than making assumptions.
+### 6. Design System & Styling Fidelity (Project-Agnostic)
+- When modifying UI components, inspect and adhere strictly to the project's *existing* styling framework and color palette (CSS variables, Tailwind config, theme objects, or global stylesheets).
+- Never hardcode foreign colors, tokens, or arbitrary styles from other projects. Match the host repository's established aesthetic.
 
-### 7. Decoupled Media & Asset Management
-- Never paste base64 encoded strings or large image binaries into HTML or chat context.
-- Use vector SVGs, external URLs, or Cloudflare/Supabase CDN endpoints.
+### 7. Decoupled Media & Heavy Binary Assets
+- Never embed raw base64 data, massive JSON fixtures, or binary assets directly into code files or chat prompts.
+- Reference assets via external paths, content delivery networks (CDNs), or clean vector SVGs to keep token payloads minimal.
 
-### 8. Fast Headless Verification over Heavy Emulation
-- Verify deployments and status codes with lightweight HTTP requests (`node -e "fetch(...)"`) or CLI tests.
-- Only launch heavy browser subagents when visual layout rendering or screenshot review is explicitly requested.
+### 8. Headless & Fast Automated Verification
+- Verify deployments, syntax, and logic using fast headless checks (unit test suites, linter commands, type-checkers, or HTTP status probes).
+- Only launch heavy browser subagents or visual automation when layout rendering or screenshot review is explicitly requested.
 
-### 9. Milestone Documentation Updates Only
-- Do not update `chat_history.md` or `context.md` on every small CSS or typo fix.
-- Update documentation only upon completing a major feature, milestone, or architectural decision.
+### 9. Anti-Polling & Reactive Execution
+- Never execute loops or poll terminal commands waiting for background processes or dev servers.
+- Use native background task management and rely on reactive notifications to resume execution.
 
-### 10. Idempotent Automation in `scratch/`
-- Keep temporary automation scripts, test harnesses, and migration runners in `scratch/`.
-- Ensure `scratch/` remains ignored by git via `.gitignore`.
+### 10. Milestone Documentation Updates
+- Avoid updating high-level architecture documents or change logs on every minor typo or styling tweak.
+- Record documentation updates only upon completing major features, architectural milestones, or key decisions.
 
-### 11. Strict Pre-Commit Verification
-- Always run `git status` or `git diff --stat` before committing to confirm that only intended files are changed and no files were accidentally deleted.
+### 11. Idempotent Scratch Automation
+- Store temporary automation scripts, migration runners, and one-off test harnesses in a git-ignored directory (e.g., `scratch/` or `.tmp/`).
+- Write scripts to be idempotent so they can be safely re-run without producing side effects.
 
-### 12. Component-Level Design Consistency
-- Adhere strictly to Linkal design system tokens (`--navy: #0D1B3E`, `--blue: #1A56FF`, `'Plus Jakarta Sans'`).
-- Avoid ad-hoc utility classes that clash with global styling.
+### 12. Strict Pre-Commit Verification
+- Always run `git status` or `git diff --stat` before committing to confirm that only intended files are staged and no files were unintentionally altered or deleted.
