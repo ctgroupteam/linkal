@@ -484,11 +484,110 @@ See Section below: "Linkal Landing Page — Proposed SVG Animation Revamp"
 - [x] Save GitHub credentials to `.env.local`
 - [x] Save Vercel credentials to `.env.local`
 - [x] Create `.env.example` template
-- [ ] Buy `linkal.in` domain
-- [ ] Add `linkal.in` to Cloudflare (Free Plan)
-- [ ] Add Wildcard CNAME: `*` &rarr; `cname.vercel-dns.com` (DNS only)
-- [ ] Add Cloudflare Zone ID and Token to `.env.local`
-- [ ] Replace `dominal.in` with `linkal.in` in codebase
+- [x] Complete Marketing Site revamp with 5-tab "How It Works" and SVG "Who Can Use"
+- [x] Deploy live landing page to Vercel (`linkalsite.vercel.app`)
+- [x] Push all landing page updates to GitHub (`ctgroupteam/linkal`)
+- [ ] Receive Cashfree API credentials (`CASHFREE_APP_ID`, `CASHFREE_SECRET_KEY`)
+- [ ] Connect Supabase project (`SUPABASE_URL`, `ANON_KEY`, `SERVICE_ROLE_KEY`)
+- [ ] Add Firebase web credentials & Admin SDK service account for FCM
+- [ ] Buy `linkal.in` domain and configure Cloudflare Wildcard CNAME (`*` → `cname.vercel-dns.com`)
+- [ ] Build Intern Template Engine (`Linkal Tool/templates/`) with auto-indexer
 - [ ] Implement Multi-Tenant `middleware.ts` for dynamic subdomain routing
-- [ ] Connect Supabase client for instant site data persistence
-- [ ] Configure Cloudflare CDN caching rule for Supabase image storage
+- [ ] Implement Cashfree checkout and webhook listener for plan upgrades
+- [ ] Build Growth Plan Android Admin App with instant FCM order notifications
+
+---
+
+## 🚀 Session 4 — Marketing Website Overhaul & Production Deployment (Nov 2026)
+
+**Key Deliverables Completed:**
+- **Reordered Section Sequence in `index.html`**:
+  `#navbar` &rarr; `#hero` &rarr; `#stats` &rarr; `#ticker` &rarr; `#how` &rarr; `#use-cases` &rarr; `#features` &rarr; `#seo` &rarr; `#ai-analyzer` &rarr; `#exclusive` &rarr; `#story` &rarr; `#pricing` &rarr; `#faq` &rarr; `#cta-banner` &rarr; `footer`.
+- **Single-Box Interactive "How It Works" Showcase (`#how`)**:
+  - Replaced static cards with a unified showcase box and 5 top toggle buttons (`.how-tab-btn`):
+    1. `01. Enter Business`: Live typing animation of *"Turkish Zaika"* + instant subdomain badge.
+    2. `02. Add Products`: Item card (*"Turkish Doner Kebab Platter"* @ ₹240), stock toggle, and 0% commission badge.
+    3. `03. Instant Domain`: `https://turkishzaika.linkal.in` address bar + Edge CDN & wildcard DNS diagram.
+    4. `04. Bio Link & QR`: Side-by-side Instagram bio link card + printable vector QR code.
+    5. `05. Google & Orders`: Google search #1 ranking card + incoming WhatsApp order notification toast.
+  - Scripted auto-cycle (4.5s per step) with immediate click override.
+- **Compact "Who Can Use" Grid (`#use-cases`)**:
+  - Compact cards displaying only the title and tailored colored SVG icon (no paragraphs): Instagram Businesses (`#E1306C`), Hotel & Restaurant Menus (`#D97706`), Personal Portfolios (`#2563EB`), Live CVs & Resumes (`#059669`), Local Services (`#7C3AED`), Wedding & Event Invites (`#E11D48`), Real Estate (`#0284C7`), Coaches & Creators (`#4F46E5`).
+- **Realistic Google SEO Mockup (`#seo`)**:
+  - Added simulated Google Search result card ranking Turkish Zaika #1 with structured schema highlights, 99/100 Mobile PageSpeed, and automated indexing badge.
+- **Still Floating Instagram Button (`.float-ig`)**:
+  - Changed from pulsing tooltip to clean, still circular gradient button linking directly to:
+    `https://ig.me/m/linkal.in?text=Hello%2C%20I%20am%20interested%20in%20Linkal`.
+- **Removed `storemaker.html` & CTA Route Cleanup**:
+  - Completely purged references to `storemaker.html`. All "Create Store" and plan selection buttons trigger the `#modalOverlay` onboarding modal.
+- **Live Deployment & Verification**:
+  - Deployed to Vercel at [`https://linkalsite.vercel.app`](https://linkalsite.vercel.app) (HTTP 200).
+  - Committed and pushed to GitHub [`ctgroupteam/linkal`](https://github.com/ctgroupteam/linkal.git) (`main` branch, commit `bf22460`).
+
+---
+
+## 🏗️ Session 5 — SaaS Architecture, Multi-Tenant Partitioning, Cashfree & API Keys Audit (Nov 2026)
+
+**Critical Architectural Decisions & Requirements Clarified:**
+
+1. **GitHub Repository Strategy: Single Multi-Tenant Repo**:
+   - **Decision**: All standard customer stores run from a single multi-tenant codebase. We do **NOT** create a separate GitHub repository for every customer.
+   - **Rationale**: Creating a repository per customer violates GitHub TOS (using GitHub as database persistence), hits GitHub API rate limits (5,000 req/hr), and causes unmanageable repository sprawl. Supabase PostgreSQL stores all customer data, dishes, products, prices, and themes dynamically.
+   - Standalone GitHub repositories are created only for enterprise clients purchasing custom source-code ownership.
+
+2. **Vercel Project Partitioning by Field/Category**:
+   - Rather than bundling all client types into a single monolithic deployment or spawning 1 project per user, Linkal partitions into **Category Projects**:
+     - `linkal-restaurants`: Dining menus, food catalogs, table QR systems.
+     - `linkal-ecommerce`: Retail stores, boutiques, product inventories.
+     - `linkal-portfolios`: Creative portfolios, freelancer showcases.
+     - `linkal-cv-resume`: Interactive live CVs and resumes (Free tier).
+     - `linkal-services`: Agencies, salons, consultancies.
+     - `linkal-events`: Weddings, RSVP landing pages, event invites.
+   - Each category project handles hundreds to thousands of customer subdomains via Vercel wildcard domain routing.
+
+3. **Plug-and-Play Template Engine for Interns (`Linkal Tool/templates/`)**:
+   - Folder structure: `Linkal Tool/templates/<category>/<template-name>/`
+   - Files per template:
+     - `template.html`: Vanilla HTML/CSS/JS with dynamic data placeholders (`{{BUSINESS_NAME}}`, `{{PRODUCTS_DATA}}`, `{{WHATSAPP_NUMBER}}`).
+     - `preview.jpg`: UI thumbnail displayed in the dashboard template picker.
+     - `metadata.json`: Template name, author, features, and responsive tags.
+   - Auto-indexed dynamically by `lib/templates.ts`, allowing interns to drop in 100+ templates without modifying Next.js core logic.
+
+4. **Cashfree Payment Gateway Integration**:
+   - Cashfree API provides seamless UPI, NetBanking, Card, and Wallet payments for Indian merchants.
+   - Flow:
+     - Next.js server calls Cashfree Orders API (`/api/checkout`) to generate a `payment_session_id`.
+     - Client opens the seamless Cashfree Drop JS checkout modal.
+     - Cashfree posts event `PAYMENT_SUCCESS_WEBHOOK` to `/api/webhooks/cashfree`.
+     - Server verifies HMAC-SHA256 signature, updates merchant plan status in Supabase, extends `plan_expiry` by 30 days, and unlocks product catalog limits.
+
+5. **Subscription Plans, 7-Day Free Trial & Restrictions**:
+   - **CV / Resume Websites**: 100% Free at the start.
+   - **Stores & E-commerce**: **7-day free trial**.
+     - **Trial Restriction**: Merchants can upload a maximum of **10 product images/items**.
+     - Once paid (Cashfree verified), the 10-product limit is removed and unlimited products are unlocked.
+   - **Plan Pricing**: Basic Plan (₹200–₹300/mo, web admin only); Growth Plan (₹500/mo, includes Admin Android App with instant FCM order notifications).
+
+6. **Merchant Onboarding Flow & Authentication Clarification**:
+   - **Primary Login**: **Google 1-Tap Sign-In** (Firebase Spark Free allows 50,000 monthly active users at $0 with zero credit card).
+   - **Secondary Login**: **Email / Password** (Firebase Spark Free allows unlimited accounts at $0 with zero credit card).
+   - **Why NOT Phone SMS OTP?**: Firebase Spark allows only 10 test SMS/day and requires a credit card on Blaze for real SMS. Because store owners need WhatsApp to receive customer orders, we collect their WhatsApp number and business name on the profile onboarding screen immediately after Google Sign-In, achieving 100% verified order routing with **$0 SMS cost**.
+
+7. **Admin Android App with FCM Push Notifications**:
+   - Merchants on the **Growth Plan (₹500/mo)** receive the Linkal Admin Android App.
+   - Configured with `google-services.json` using Firebase Cloud Messaging (FCM).
+   - Instant order alerts: When an order is placed on `<store>.linkal.in`, backend triggers FCM to play a loud cash-register chime and pop an instant push notification on the merchant's phone.
+   - Basic Plan users (₹200–₹300/mo) receive web-only admin and direct WhatsApp alerts.
+
+8. **API Keys & Credentials Audit**:
+   - **Active & Configured**: GitHub Token (`ghp_FZ...`), GitHub Owner (`ctgroupteam`), Vercel Token (`vcp_2y...`), Vercel Team ID (`team_tv...`).
+   - **Ready from User**: Cashfree App ID & Secret Key.
+   - **Pending Setup**:
+     - Supabase: `SUPABASE_URL`, `ANON_KEY`, `SERVICE_ROLE_KEY` (Free at supabase.com).
+     - Firebase: Web Config (for Google 1-Tap) + Admin SDK Service Account (for FCM backend). Note: Android `google-services.json` is ready.
+     - Cloudflare: Zone ID & API Token (to be added once `linkal.in` is registered).
+   - **Verdict on Firebase Services**:
+     - FCM is 100% free and unlimited for Android push alerts.
+     - Firebase Auth is 100% free for 50k MAU.
+     - For database and product image storage, **Supabase** is used alongside Firebase to avoid Firestore's 50k daily read limit and storage egress charges.
+
