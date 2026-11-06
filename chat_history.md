@@ -591,3 +591,25 @@ See Section below: "Linkal Landing Page — Proposed SVG Animation Revamp"
      - Firebase Auth is 100% free for 50k MAU.
      - For database and product image storage, **Supabase** is used alongside Firebase to avoid Firestore's 50k daily read limit and storage egress charges.
 
+---
+
+## 🌐 Session 6 — Domain Acquisition, Cloudflare DNS Fix & Live SSL Provisioning (Nov 2026)
+
+**Key Accomplishments & Live Verification:**
+1. **Domain Purchase & Nameserver Switch**:
+   - User acquired **`linkal.in`** via GoDaddy.
+   - Nameservers switched from GoDaddy to Cloudflare (`aldo.ns.cloudflare.com`, `nancy.ns.cloudflare.com`).
+   - Cloudflare Zone ID `481ff287798b0a40412db997237acc41` and API Token verified active (HTTP 200).
+2. **Cloudflare DNS Cleanup & Reconfiguration**:
+   - Removed 6 conflicting GoDaddy default parking A-records (`64.29.17.x` and `216.198.79.x`).
+   - Added Wildcard `*.linkal.in` CNAME pointing to `cname.vercel-dns.com` (DNS Only, grey cloud).
+   - Added `www.linkal.in` CNAME pointing to `cname.vercel-dns.com` (DNS Only, grey cloud).
+   - Maintained apex `linkal.in` pointing directly to Vercel IP (`76.76.21.21`).
+3. **Vercel Domains & SSL Certificate Generation**:
+   - `linkal.in` and `www.linkal.in` verified on Vercel project `linkalsite`.
+   - Issued auto-renewing SSL certificate `cert_pL18s4epbnbdN446YMWIRebP` for `linkal.in` and `www.linkal.in`.
+   - Issued auto-renewing SSL certificate `cert_8A1hinXVWUKdT2fvuPZoxGNK` for `turkishzaika.linkal.in` on Vercel project `turkishzaikamenu`.
+4. **Live URL Verification**:
+   - `https://linkal.in`: HTTP 200 OK (Serving Linkal marketing landing page).
+   - `https://www.linkal.in`: HTTP 308 (Redirecting securely to `https://linkal.in`).
+   - `https://turkishzaika.linkal.in`: HTTP 200 OK (Serving Turkish Zaika digital restaurant menu).

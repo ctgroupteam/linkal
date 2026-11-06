@@ -218,12 +218,14 @@ Linkal Tool/templates/
 
 | Service | Keys Needed | Current Status | Notes |
 | :--- | :--- | :--- | :--- |
-| **GitHub** | `GITHUB_TOKEN`, `GITHUB_OWNER` | ✅ **Active** | Token saved in `.env.local` (`ctgroupteam`) |
+| **Domain** | `linkal.in` | ✅ **Purchased & Active** | Registered, Cloudflare DNS active, Vercel SSL active |
+| **Cloudflare** | `CLOUDFLARE_API_TOKEN`, `ZONE_ID` | ✅ **Active** | Zone `481ff287798b0a40412db997237acc41` verified |
 | **Vercel** | `VERCEL_TOKEN`, `VERCEL_TEAM_ID` | ✅ **Active** | Token saved in `.env.local` (`team_tv...`) |
+| **GitHub** | `GITHUB_TOKEN`, `GITHUB_OWNER` | ✅ **Active** | Token saved in `.env.local` (`ctgroupteam`) |
+| **Supabase** | `SUPABASE_URL`, `ANON_KEY`, `SERVICE_ROLE_KEY` | ✅ **Active** | Project `yuvkbugblplulrzrjamg` connected & tested HTTP 200 |
+| **Firebase** | Web Config + `google-services.json` | ✅ **Active** | Web client in `.env.local`, `google-services.json` verified |
 | **Cashfree PG**| `CASHFREE_APP_ID`, `CASHFREE_SECRET_KEY` | ⏳ **User Ready** | User has keys; awaiting input to add to `.env.local` |
-| **Supabase** | `SUPABASE_URL`, `ANON_KEY`, `SERVICE_ROLE_KEY` | ⏳ **Pending Setup**| Free project at supabase.com (no card needed) |
-| **Firebase** | Web Config + Service Account / FCM | ⏳ **Pending Setup**| Free Spark project. `google-services.json` ready for Android |
-| **Cloudflare** | `CLOUDFLARE_API_TOKEN`, `ZONE_ID` | ⏳ **Pending Domain**| Added once `linkal.in` is registered |
+
 
 ### Is Firebase Enough for Everything?
 - **For FCM (Push Notifications)**: **YES, 100%.** FCM is completely free and unlimited for sending real-time notifications to Android devices.
