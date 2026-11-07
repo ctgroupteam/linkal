@@ -14,19 +14,30 @@
     <meta name="googlebot" content="index, follow" />
     <meta name="google-site-verification" content="O-HQz353RWSV6QicrTwKWJOtwQkS0JpgI7hWKEcu_q4" />
 
+    <!-- Favicon & PWA Icons (Official Linkal Logo) -->
+    <link rel="icon" type="image/jpeg" href="https://linkal.in/linkal.jpeg" />
+    <link rel="shortcut icon" type="image/jpeg" href="https://linkal.in/linkal.jpeg" />
+    <link rel="apple-touch-icon" href="https://linkal.in/linkal.jpeg" />
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#0D1B3E" />
+
     <!-- Open Graph / Facebook / WhatsApp -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://linkal.in/" />
     <meta property="og:title" content="Linkal AI — 1-Minute Website Builder &amp; Storefront Creator" />
-    <meta property="og:description" content="Launch a branded mobile website, restaurant digital QR menu, or store on your own .linkal.in subdomain with Linkal AI." />
+    <meta property="og:description" content="Launch a branded mobile website, restaurant digital QR menu, live CV, or store on your own .linkal.in subdomain with Linkal AI." />
     <meta property="og:site_name" content="Linkal AI" />
     <meta property="og:locale" content="en_IN" />
+    <meta property="og:image" content="https://linkal.in/linkal.jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:url" content="https://linkal.in/" />
     <meta name="twitter:title" content="Linkal AI — 1-Minute Website Builder &amp; Storefront Creator" />
     <meta name="twitter:description" content="Launch your branded website or digital menu on your own subdomain in 30 seconds with Linkal AI." />
+    <meta name="twitter:image" content="https://linkal.in/linkal.jpeg" />
 
     <!-- Schema.org JSON-LD for Google Rich Results & Brand Search -->
     <script type="application/ld+json">
@@ -39,6 +50,8 @@
           "name": "Linkal AI",
           "alternateName": ["Linkal", "linkal.in", "Linkal.AI", "Linkal Website Builder"],
           "url": "https://linkal.in/",
+          "logo": "https://linkal.in/linkal.jpeg",
+          "image": "https://linkal.in/linkal.jpeg",
           "description": "Linkal AI is an intelligent SaaS website and storefront generator platform empowering Indian businesses, restaurants, creators, and professionals to launch branded websites on custom subdomains with WhatsApp ordering.",
           "sameAs": [
             "https://instagram.com/linkal.in",
@@ -1293,9 +1306,9 @@
 
         .pricing-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             gap: 1.5rem;
-            align-items: center;
+            align-items: stretch;
         }
 
         .plan-card {
@@ -2726,6 +2739,133 @@
                 grid-template-columns: 1fr;
             }
         }
+
+        /* ─── CASHFREE COMPLIANCE & POLICY MODAL STYLES ─── */
+        .policy-modal-box {
+            background: #ffffff;
+            border-radius: 20px;
+            width: 100%;
+            max-width: 680px;
+            max-height: 88vh;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(13, 27, 62, 0.25);
+            position: relative;
+            transform: translateY(20px) scale(0.97);
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .modal-overlay.open .policy-modal-box {
+            transform: translateY(0) scale(1);
+        }
+
+        .policy-header {
+            padding: 1.5rem 2rem 1rem 2rem;
+            border-bottom: 1px solid rgba(13, 27, 62, 0.08);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #FAFAFC;
+        }
+
+        .policy-header h3 {
+            font-size: 1.35rem;
+            color: var(--navy);
+            margin: 0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .policy-body {
+            padding: 1.75rem 2rem;
+            overflow-y: auto;
+            font-size: 0.92rem;
+            line-height: 1.75;
+            color: #374151;
+        }
+
+        .policy-body h4 {
+            color: var(--navy);
+            font-size: 1.05rem;
+            margin: 1.25rem 0 0.5rem 0;
+        }
+
+        .policy-body p {
+            margin-bottom: 0.85rem;
+        }
+
+        .policy-card {
+            background: #F8FAFC;
+            border: 1px solid #E2E8F0;
+            border-radius: 12px;
+            padding: 1.25rem;
+            margin: 1rem 0;
+        }
+
+        /* ─── MOBILE STICKY BOTTOM TASKBAR ─── */
+        @media (max-width: 768px) {
+            body {
+                padding-bottom: 74px;
+            }
+
+            .mobile-taskbar {
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                height: 66px;
+                background: rgba(13, 27, 62, 0.94);
+                backdrop-filter: blur(18px);
+                -webkit-backdrop-filter: blur(18px);
+                border-top: 1px solid rgba(255, 255, 255, 0.14);
+                display: flex;
+                align-items: center;
+                justify-content: space-around;
+                padding: 0 0.5rem;
+                padding-bottom: env(safe-area-inset-bottom, 0px);
+                z-index: 1800;
+                box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.22);
+            }
+
+            .taskbar-btn {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 3px;
+                color: #CBD5E1;
+                text-decoration: none;
+                font-size: 0.68rem;
+                font-weight: 600;
+                padding: 0.35rem 0.6rem;
+                border-radius: 10px;
+                transition: all 0.2s;
+                background: transparent;
+                border: none;
+                cursor: pointer;
+            }
+
+            .taskbar-btn:active {
+                color: #FFFFFF;
+                transform: scale(0.96);
+            }
+
+            .taskbar-btn.primary {
+                background: linear-gradient(135deg, #1A56FF 0%, #0036C7 100%);
+                color: #FFFFFF;
+                padding: 0.5rem 0.95rem;
+                border-radius: 30px;
+                box-shadow: 0 4px 14px rgba(26, 86, 255, 0.45);
+            }
+        }
+
+        @media (min-width: 769px) {
+            .mobile-taskbar {
+                display: none !important;
+            }
+        }
     </style>
 </head>
 
@@ -3013,12 +3153,12 @@
 
                                     <div style="background:#F8FAFC; border:1px dashed #CBD5E1; border-radius:10px; padding:0.75rem 1rem; display:flex; align-items:center; justify-content:space-between;">
                                         <div style="font-size:0.8rem; color:#475569;">
-                                            <span>Your assigned subdomain: </span>
+                                            <span>Your assigned web link: </span>
                                             <strong style="color:var(--navy); font-weight:700;">turkishzaika.linkal.in</strong>
                                         </div>
                                         <span style="font-size:0.72rem; color:#10B981; font-weight:700; display:inline-flex; align-items:center; gap:0.25rem;">
                                             <span style="width:6px; height:6px; border-radius:50%; background:#10B981; display:inline-block;"></span>
-                                            Instant SSL Ready
+                                            Green Padlock Protected
                                         </span>
                                     </div>
                                 </div>
@@ -3076,7 +3216,7 @@
                             </div>
                         </div>
 
-                        <!-- SCENE 3: Instant Domain -->
+                        <!-- SCENE 3: Instant AI Publishing -->
                         <div class="how-scene" data-step="3">
                             <div class="mock-window">
                                 <div class="mock-bar">
@@ -3091,18 +3231,18 @@
                                     </div>
                                 </div>
                                 <div class="mock-content">
-                                    <div style="font-size:0.75rem; text-transform:uppercase; letter-spacing:0.06em; color:var(--blue); font-weight:700; margin-bottom:0.4rem;">Step 3 · Global Edge Infrastructure</div>
-                                    <h4 style="font-size:1.1rem; color:var(--navy); margin-bottom:1rem; font-weight:700;">Permanent branded URL with verified SSL</h4>
+                                    <div style="font-size:0.75rem; text-transform:uppercase; letter-spacing:0.06em; color:var(--blue); font-weight:700; margin-bottom:0.4rem;">Step 3 · Instant AI Publishing</div>
+                                    <h4 style="font-size:1.1rem; color:var(--navy); margin-bottom:1rem; font-weight:700;">Permanent branded link with green padlock security</h4>
 
-                                    <!-- Architecture graphic -->
+                                    <!-- AI Agent Generator Graphic -->
                                     <div style="background:#F8FAFC; border:1px solid #E2E8F0; border-radius:12px; padding:1.25rem 1rem; margin-bottom:1rem;">
                                         <div style="display:flex; align-items:center; justify-content:space-around; text-align:center;">
                                             <div>
                                                 <div style="width:48px; height:48px; border-radius:12px; background:#EFF6FF; color:#1A56FF; display:flex; align-items:center; justify-content:center; margin:0 auto 0.4rem auto;">
-                                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a4 4 0 0 1 4 4v2a4 4 0 0 1-8 0V6a4 4 0 0 1 4-4z"/><rect x="4" y="10" width="16" height="12" rx="4"/><circle cx="9" cy="15" r="1.5"/><circle cx="15" cy="15" r="1.5"/><path d="M9 19h6"/></svg>
                                                 </div>
-                                                <div style="font-size:0.75rem; font-weight:700; color:var(--navy);">Global Edge</div>
-                                                <div style="font-size:0.68rem; color:#64748B;">Anycast Network</div>
+                                                <div style="font-size:0.75rem; font-weight:700; color:var(--navy);">AI Agent Engine</div>
+                                                <div style="font-size:0.68rem; color:#64748B;">Auto Layout &amp; Code</div>
                                             </div>
 
                                             <div style="color:#1A56FF; display:flex; align-items:center;">
@@ -3111,9 +3251,9 @@
 
                                             <div>
                                                 <div style="width:48px; height:48px; border-radius:12px; background:#0D1B3E; color:#93C5FD; display:flex; align-items:center; justify-content:center; margin:0 auto 0.4rem auto;">
-                                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+                                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
                                                 </div>
-                                                <div style="font-size:0.75rem; font-weight:700; color:var(--navy);">Wildcard DNS</div>
+                                                <div style="font-size:0.75rem; font-weight:700; color:var(--navy);">Your Branded Link</div>
                                                 <div style="font-size:0.68rem; color:#1A56FF; font-weight:600;">*.linkal.in</div>
                                             </div>
 
@@ -3125,16 +3265,16 @@
                                                 <div style="width:48px; height:48px; border-radius:12px; background:#ECFDF5; color:#059669; display:flex; align-items:center; justify-content:center; margin:0 auto 0.4rem auto;">
                                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
                                                 </div>
-                                                <div style="font-size:0.75rem; font-weight:700; color:#065F46;">Live Store</div>
-                                                <div style="font-size:0.68rem; color:#059669; font-weight:600;">Zero DNS Setup</div>
+                                                <div style="font-size:0.75rem; font-weight:700; color:#065F46;">Live Online</div>
+                                                <div style="font-size:0.68rem; color:#059669; font-weight:600;">Ready in 10 Seconds</div>
                                             </div>
                                         </div>
                                     </div>
 
                                     <div style="display:flex; gap:0.5rem; justify-content:center; flex-wrap:wrap;">
-                                        <span style="font-size:0.72rem; font-weight:700; background:#ECFDF5; color:#065F46; padding:0.25rem 0.65rem; border-radius:20px;">✓ 100% Free SSL Certificate</span>
-                                        <span style="font-size:0.72rem; font-weight:700; background:#EFF6FF; color:#1A56FF; padding:0.25rem 0.65rem; border-radius:20px;">⚡ 20ms TTFB in India</span>
-                                        <span style="font-size:0.72rem; font-weight:700; background:#F8FAFC; color:#475569; padding:0.25rem 0.65rem; border-radius:20px;">🔒 HTTP/3 Enabled</span>
+                                        <span style="font-size:0.72rem; font-weight:700; background:#ECFDF5; color:#065F46; padding:0.25rem 0.65rem; border-radius:20px;">✓ Bank-Grade Data Protection</span>
+                                        <span style="font-size:0.72rem; font-weight:700; background:#EFF6FF; color:#1A56FF; padding:0.25rem 0.65rem; border-radius:20px;">⚡ Under 1-Second Loading Anywhere</span>
+                                        <span style="font-size:0.72rem; font-weight:700; background:#F8FAFC; color:#475569; padding:0.25rem 0.65rem; border-radius:20px;">🔒 Permanent Green Padlock Security</span>
                                     </div>
                                 </div>
                             </div>
@@ -3752,6 +3892,27 @@
                 </div>
 
                 <div class="pricing-grid reveal">
+                    <!-- Live Executive CV -->
+                    <div class="plan-card" style="border: 2px solid #1A56FF; background: #FFFFFF; position: relative;">
+                        <div style="position: absolute; top: -13px; left: 50%; transform: translateX(-50%); background: #1A56FF; color: #FFFFFF; font-size: 0.72rem; font-weight: 700; padding: 0.25rem 0.85rem; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.05em; white-space: nowrap;">100% Free with Code</div>
+                        <div class="plan-name">Live Executive CV</div>
+                        <div class="plan-price">₹0<span style="font-size: 0.88rem; color: #059669; font-weight: 700;"> Lifetime Free</span></div>
+                        <div class="plan-desc">Clean executive white CV with code <strong style="color: #1A56FF;">LINKALCV</strong> (Reg. ₹199).</div>
+                        <div class="plan-divider"></div>
+                        <ul class="plan-features">
+                            <li><i data-lucide="check" width="15" height="15"></i>Custom personal link (e.g. rahul.linkal.in)</li>
+                            <li><i data-lucide="check" width="15" height="15"></i>100% Clean White Background &amp; Charcoal Text</li>
+                            <li><i data-lucide="check" width="15" height="15"></i>Precision Vector SVG Icons (Zero Emojis)</li>
+                            <li><i data-lucide="check" width="15" height="15"></i>LinkedIn, GitHub, WhatsApp &amp; Email Direct Links</li>
+                            <li><i data-lucide="check" width="15" height="15"></i>1-Click "Download PDF Resume" Button</li>
+                            <li><i data-lucide="check" width="15" height="15"></i>Zero photos on free tier (Ultra-fast loading)</li>
+                            <li><i data-lucide="check" width="15" height="15"></i>Auto-Ranked on Google for your name</li>
+                            <li><i data-lucide="check" width="15" height="15"></i>No recurring monthly fees forever</li>
+                        </ul>
+                        <a href="https://studio.linkal.in" class="btn btn-blue" style="width:100%; justify-content:center;"
+                            onclick="openModal(event, 'cv')">Build Free CV</a>
+                    </div>
+
                     <!-- Starter -->
                     <div class="plan-card">
                         <div class="plan-name">Starter</div>
@@ -4049,9 +4210,10 @@
                 <div class="footer-col">
                     <h5>Company</h5>
                     <ul>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Contact</a></li>
-                        <li><a href="#">Blog</a></li>
+                        <li><a href="#how">About Linkal AI</a></li>
+                        <li><a href="javascript:void(0)" onclick="openPolicyModal('contact')">Contact Us</a></li>
+                        <li><a href="#use-cases">Who Can Use</a></li>
+                        <li><a href="#pricing">Pricing Plans</a></li>
                     </ul>
                 </div>
 
@@ -4059,18 +4221,18 @@
                     <h5>Support</h5>
                     <ul>
                         <li><a href="#faq">FAQ</a></li>
-                        <li><a href="https://wa.me/919999999999" target="_blank" rel="noopener noreferrer">WhatsApp</a>
-                        </li>
-                        <li><a href="#">Setup Guide</a></li>
+                        <li><a href="https://wa.me/919172200000?text=Hello%20Linkal%20Support" target="_blank" rel="noopener noreferrer">WhatsApp Support</a></li>
+                        <li><a href="mailto:admin@linkal.in">admin@linkal.in</a></li>
+                        <li><a href="javascript:void(0)" onclick="openPolicyModal('contact')">Office &amp; Helpdesk</a></li>
                     </ul>
                 </div>
 
                 <div class="footer-col">
-                    <h5>Legal</h5>
+                    <h5>Legal &amp; Compliance</h5>
                     <ul>
-                        <li><a href="#">Privacy</a></li>
-                        <li><a href="#">Terms</a></li>
-                        <li><a href="#">Refund Policy</a></li>
+                        <li><a href="javascript:void(0)" onclick="openPolicyModal('terms')">Terms &amp; Conditions</a></li>
+                        <li><a href="javascript:void(0)" onclick="openPolicyModal('refund')">Refunds &amp; Cancellations</a></li>
+                        <li><a href="javascript:void(0)" onclick="openPolicyModal('privacy')">Privacy Policy</a></li>
                     </ul>
                 </div>
             </div>
@@ -4309,7 +4471,293 @@
         setHowStep(1);
         startHowAutoCycle();
 
+        // ─── SUBDOMAIN RFC 1035 VALIDATION ───────────────────────────
+        function validateSubdomainInput(input) {
+            let val = input.value.toLowerCase().replace(/[^a-z0-9-]/g, '');
+            if (val.startsWith('-')) val = val.substring(1);
+            if (val.length > 30) val = val.substring(0, 30);
+            input.value = val;
+            
+            const notice = document.getElementById('subdomainNotice');
+            if (val.includes('_')) {
+                notice.style.color = '#DC2626';
+                notice.textContent = 'Underscores (_) are strictly prohibited by internet domain rules. Use hyphens (-) instead.';
+            } else if (val.length < 3 && val.length > 0) {
+                notice.style.color = '#D97706';
+                notice.textContent = 'Subdomain must be at least 3 characters long.';
+            } else {
+                notice.style.color = '#64748B';
+                notice.textContent = 'Only lowercase letters, numbers, and hyphens (-) allowed. No underscores.';
+            }
+        }
+
+        // ─── CATEGORY CHANGE LISTENER ───────────────────────────
+        function onCategoryChange() {
+            const type = document.getElementById('f-type').value;
+            const promo = document.getElementById('f-promo');
+            const biz = document.getElementById('f-biz');
+            if (type === 'cv') {
+                promo.value = 'LINKALCV';
+                biz.placeholder = 'e.g. Rahul Sharma Executive CV';
+            } else if (type === 'restaurant') {
+                biz.placeholder = 'e.g. Turkish Zaika';
+            } else {
+                biz.placeholder = 'e.g. Royal Fashion Boutique';
+            }
+        }
+
+        // ─── COMPLIANCE POLICY MODALS ───────────────────────────
+        function openPolicyModal(type) {
+            const overlay = document.getElementById('policyOverlay');
+            const titleEl = document.getElementById('policyModalTitle');
+            const contentEl = document.getElementById('policyModalContent');
+            
+            const policies = {
+                contact: {
+                    title: 'Contact Us',
+                    html: `
+                        <div class="policy-card">
+                            <h4 style="margin-top:0;">Linkal Technologies / CT Group</h4>
+                            <p>We are dedicated to helping businesses and professionals across India launch high-converting online presences instantly.</p>
+                            <p><strong>Official Support Email:</strong> <a href="mailto:admin@linkal.in" style="color:var(--blue); font-weight:600;">admin@linkal.in</a></p>
+                            <p><strong>Secondary Email:</strong> <a href="mailto:support@linkal.in" style="color:var(--blue); font-weight:600;">support@linkal.in</a></p>
+                            <p><strong>WhatsApp Merchant Helpline:</strong> <a href="https://wa.me/919172200000?text=Hi%20Linkal%20Support" target="_blank" style="color:#059669; font-weight:600;">+91 91722 00000 (Chat on WhatsApp)</a></p>
+                            <p><strong>Operational Hours:</strong> Monday – Saturday, 9:00 AM – 7:00 PM IST (Tickets resolved within 2 hours)</p>
+                            <p><strong>Registered Operating Address:</strong> Solapur, Maharashtra, India — 413005</p>
+                        </div>
+                    `
+                },
+                terms: {
+                    title: 'Terms & Conditions',
+                    html: `
+                        <p>Welcome to <strong>Linkal AI</strong> (accessible at <a href="https://linkal.in" style="color:var(--blue);">https://linkal.in</a>). By accessing or using our SaaS website generator, digital menu creator, and CV builder, you agree to comply with and be bound by the following Terms &amp; Conditions.</p>
+                        <h4>1. Service Overview</h4>
+                        <p>Linkal AI provides hosted storefronts, digital menus, and executive CVs under customer subdomains (e.g. <code>store.linkal.in</code>). Our services include direct WhatsApp order links, catalog management, and automated search engine optimization.</p>
+                        <h4>2. User Accounts & Responsibilities</h4>
+                        <p>Merchants and individuals are responsible for maintaining the confidentiality of their credentials and all activities occurring under their accounts. Users must not host counterfeit goods, misleading advertisements, illegal content, or malicious software.</p>
+                        <h4>3. Subscriptions & Payment Processing</h4>
+                        <p>Paid subscriptions (Starter at ₹300/mo, Growth at ₹500/mo, Pro at ₹700/mo) are billed in Indian Rupees (INR) through Cashfree Payments. Personal CVs generated with valid promotional codes (such as LINKALCV) are granted Lifetime Free access with zero recurring dues.</p>
+                        <h4>4. Intellectual Property & Brand Ownership</h4>
+                        <p>You retain 100% full ownership of your catalog images, business brand names, product information, and resume content. Linkal AI retains ownership of platform code, templates, and server infrastructure.</p>
+                        <h4>5. Service Availability & Governing Law</h4>
+                        <p>Linkal AI targets a 99.9% platform uptime backed by edge infrastructure. These terms shall be governed by and construed in accordance with the laws of India, with exclusive jurisdiction in the courts of Maharashtra.</p>
+                    `
+                },
+                refund: {
+                    title: 'Refunds & Cancellations Policy',
+                    html: `
+                        <p>At Linkal AI, customer satisfaction and transparency are our highest priorities. We operate an explicit and fair refund and cancellation policy for all merchants and subscribers.</p>
+                        <h4>1. 7-Day Unrestricted Free Trial</h4>
+                        <p>All storefront and digital menu plans come with an automatic <strong>7-day free trial</strong> upon creation. No credit card is required to begin, ensuring you can test features and receive live WhatsApp orders before deciding to subscribe.</p>
+                        <h4>2. Subscription Cancellation</h4>
+                        <p>You may cancel your monthly subscription at any time with immediate effect directly through your account dashboard or by emailing <a href="mailto:admin@linkal.in" style="color:var(--blue); font-weight:600;">admin@linkal.in</a>. There are zero cancellation penalties or lock-in contracts.</p>
+                        <h4>3. 100% Refund Guarantee</h4>
+                        <p>If you are billed and request a refund within <strong>48 hours of billing</strong> without significant platform usage, or if a duplicate or erroneous charge occurs due to a network glitch, you are entitled to a full 100% refund.</p>
+                        <h4>4. Refund Processing Timeline</h4>
+                        <p>Approved refunds are processed through Cashfree Payments directly back to the original method of payment (UPI, Debit Card, Credit Card, or NetBanking). Funds typically reflect in your account within <strong>5 to 7 business working days</strong> as per banking network guidelines.</p>
+                    `
+                },
+                privacy: {
+                    title: 'Privacy Policy',
+                    html: `
+                        <p>Linkal AI ("we", "our", or "us") is dedicated to protecting your privacy and business data. This Privacy Policy outlines our transparent data handling practices.</p>
+                        <h4>1. Information We Collect</h4>
+                        <p>We collect essential operational information necessary to build and host your website, including your name, WhatsApp phone number, business email, product names, catalog pricing, and resume details.</p>
+                        <h4>2. Zero Third-Party Selling Policy</h4>
+                        <p><strong>We never sell, rent, lease, or monetize your personal details, phone numbers, or customer order data to third-party advertisers or brokers.</strong> All data is used strictly to provide and optimize your Linkal website service.</p>
+                        <h4>3. Bank-Grade Data Security</h4>
+                        <p>All transmissions across Linkal AI and customer subdomains are protected with bank-grade 256-bit encryption and HTTPS green padlock security.</p>
+                        <h4>4. Right to Deletion & Export</h4>
+                        <p>Merchants have full authority to request complete deletion of their account and storefront data at any time by contacting <a href="mailto:admin@linkal.in" style="color:var(--blue); font-weight:600;">admin@linkal.in</a>.</p>
+                    `
+                }
+            };
+
+            const data = policies[type] || policies.contact;
+            titleEl.textContent = data.title;
+            contentEl.innerHTML = data.html;
+            overlay.classList.add('open');
+            document.body.style.overflow = 'hidden';
+            if (window.lucide) lucide.createIcons();
+        }
+
+        function closePolicyModal() {
+            document.getElementById('policyOverlay').classList.remove('open');
+            document.body.style.overflow = '';
+        }
+
+        // ─── TEMPLATES SHOWCASE MODAL ───────────────────────────
+        function openTemplatesModal() {
+            document.getElementById('templatesOverlay').classList.add('open');
+            document.body.style.overflow = 'hidden';
+            if (window.lucide) lucide.createIcons();
+        }
+
+        function closeTemplatesModal() {
+            document.getElementById('templatesOverlay').classList.remove('open');
+            document.body.style.overflow = '';
+        }
+
+        // ─── URL HASH ROUTER FOR POLICIES & SECTIONS ────────────
+        window.addEventListener('DOMContentLoaded', () => {
+            const hash = window.location.hash.toLowerCase();
+            if (hash === '#contact') openPolicyModal('contact');
+            if (hash === '#terms') openPolicyModal('terms');
+            if (hash === '#refunds' || hash === '#refund') openPolicyModal('refund');
+            if (hash === '#privacy') openPolicyModal('privacy');
+            if (hash === '#templates') openTemplatesModal();
+        });
     </script>
+
+    <!-- ─── MAIN BUILDER MODAL ─── -->
+    <div id="modalOverlay" class="modal-overlay" onclick="handleOverlayClick(event)">
+        <div class="modal-box">
+            <button class="modal-close" onclick="closeModal()" aria-label="Close modal">
+                <i data-lucide="x" width="18" height="18"></i>
+            </button>
+            <div id="modalForm">
+                <div style="display:inline-flex; align-items:center; gap:0.4rem; background:#EFF6FF; color:#1A56FF; padding:0.25rem 0.65rem; border-radius:20px; font-size:0.75rem; font-weight:700; margin-bottom:0.75rem;">
+                    <i data-lucide="sparkles" width="14" height="14"></i> Linkal Studio
+                </div>
+                <h3 id="modalTitle">Launch Your Free Site</h3>
+                <p class="modal-sub" id="modalSub">Ready in 60 seconds with instant WhatsApp ordering and Google SEO.</p>
+                
+                <div class="form-field">
+                    <label for="f-type">Website Category</label>
+                    <select id="f-type" onchange="onCategoryChange()">
+                        <option value="cv">Personal CV &amp; Portfolio (100% Free with LINKALCV)</option>
+                        <option value="restaurant">Restaurant &amp; Dining (Digital QR Menu)</option>
+                        <option value="store">E-Commerce &amp; Retail Store</option>
+                        <option value="boutique">Fashion &amp; Boutique</option>
+                        <option value="service">Doctor, Clinic &amp; Professional Services</option>
+                    </select>
+                </div>
+
+                <div class="form-field">
+                    <label for="f-name">Your Full Name</label>
+                    <input type="text" id="f-name" placeholder="e.g. Rahul Sharma" required />
+                </div>
+
+                <div class="form-field">
+                    <label for="f-biz">Business or Website Name</label>
+                    <input type="text" id="f-biz" placeholder="e.g. Rahul Sharma Executive CV" required />
+                </div>
+
+                <div class="form-field">
+                    <label for="f-subdomain">Desired Web Link (.linkal.in)</label>
+                    <div style="display:flex; align-items:center; background:#F8FAFC; border:1.5px solid var(--border); border-radius:10px; overflow:hidden;">
+                        <input type="text" id="f-subdomain" placeholder="rahul" style="border:none; background:transparent; flex:1; min-height:44px; padding:0.7rem 0.75rem;" oninput="validateSubdomainInput(this)" />
+                        <span style="padding:0 0.75rem; color:#64748B; font-weight:600; font-size:0.85rem; background:#E2E8F0; line-height:44px; height:44px;">.linkal.in</span>
+                    </div>
+                    <small id="subdomainNotice" style="font-size:0.75rem; color:#64748B; margin-top:2px;">Only lowercase letters, numbers, and hyphens (-) allowed. No underscores.</small>
+                </div>
+
+                <div class="form-field">
+                    <label for="f-wa">WhatsApp Number</label>
+                    <input type="tel" id="f-wa" placeholder="e.g. 9876543210" required />
+                </div>
+
+                <div class="form-field" id="promoCodeContainer">
+                    <label for="f-promo">Promo Code (Optional)</label>
+                    <input type="text" id="f-promo" value="LINKALCV" placeholder="Enter LINKALCV for 100% Free Lifetime CV" style="text-transform:uppercase;" />
+                </div>
+
+                <button class="btn btn-blue modal-submit" onclick="submitForm()">
+                    <span>Create My Site Now</span>
+                    <i data-lucide="arrow-right" width="18" height="18"></i>
+                </button>
+            </div>
+
+            <div id="modalSuccess" class="modal-success">
+                <div class="modal-success-icon">
+                    <i data-lucide="check" width="32" height="32"></i>
+                </div>
+                <h3>Site Generator Initiated!</h3>
+                <p>Congratulations! Your details have been submitted. Our AI agent is assembling your custom link. You will receive an instant WhatsApp confirmation within minutes.</p>
+                <button class="btn btn-blue" onclick="closeModal()" style="margin-top:1rem; width:100%; justify-content:center;">Got It</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ─── CASHFREE COMPLIANCE POLICIES MODAL ─── -->
+    <div id="policyOverlay" class="modal-overlay" onclick="if(event.target === this) closePolicyModal()">
+        <div class="policy-modal-box">
+            <div class="policy-header">
+                <h3 id="policyModalTitle">Policy Document</h3>
+                <button class="modal-close" onclick="closePolicyModal()" aria-label="Close policy" style="position:static;">
+                    <i data-lucide="x" width="18" height="18"></i>
+                </button>
+            </div>
+            <div class="policy-body" id="policyModalContent">
+                <!-- Injected via openPolicyModal() -->
+            </div>
+        </div>
+    </div>
+
+    <!-- ─── TEMPLATES SHOWCASE MODAL ─── -->
+    <div id="templatesOverlay" class="modal-overlay" onclick="if(event.target === this) closeTemplatesModal()">
+        <div class="policy-modal-box" style="max-width: 760px;">
+            <div class="policy-header">
+                <h3><i data-lucide="layout" width="20" height="20"></i> Official Linkal Templates</h3>
+                <button class="modal-close" onclick="closeTemplatesModal()" aria-label="Close" style="position:static;">
+                    <i data-lucide="x" width="18" height="18"></i>
+                </button>
+            </div>
+            <div class="policy-body">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem;">
+                    <!-- Template 1: Modern Executive CV -->
+                    <div style="background:#FFFFFF; border:1.5px solid #E2E8F0; border-radius:14px; padding:1.25rem; display:flex; flex-direction:column; justify-content:space-between;">
+                        <div>
+                            <span style="font-size:0.7rem; font-weight:700; background:#ECFDF5; color:#059669; padding:0.2rem 0.6rem; border-radius:20px;">100% Free Lifetime</span>
+                            <h4 style="margin:0.5rem 0 0.25rem 0; font-size:1.05rem;">Executive White CV</h4>
+                            <p style="font-size:0.8rem; color:#64748B;">Clean white background, dark typography, Lucide vector icons, and direct PDF download.</p>
+                        </div>
+                        <button class="btn btn-blue" style="width:100%; justify-content:center; margin-top:1rem; font-size:0.82rem; padding:0.5rem;" onclick="closeTemplatesModal(); openModal(null, 'cv');">Use This Template</button>
+                    </div>
+
+                    <!-- Template 2: Tech Developer CV -->
+                    <div style="background:#FFFFFF; border:1.5px solid #E2E8F0; border-radius:14px; padding:1.25rem; display:flex; flex-direction:column; justify-content:space-between;">
+                        <div>
+                            <span style="font-size:0.7rem; font-weight:700; background:#EFF6FF; color:#1A56FF; padding:0.2rem 0.6rem; border-radius:20px;">Developer &amp; Tech</span>
+                            <h4 style="margin:0.5rem 0 0.25rem 0; font-size:1.05rem;">Code &amp; Project Portfolio</h4>
+                            <p style="font-size:0.8rem; color:#64748B;">GitHub repositories, live demo badges, stack tags, and clean terminal accents.</p>
+                        </div>
+                        <button class="btn btn-blue" style="width:100%; justify-content:center; margin-top:1rem; font-size:0.82rem; padding:0.5rem;" onclick="closeTemplatesModal(); openModal(null, 'cv');">Use This Template</button>
+                    </div>
+
+                    <!-- Template 3: Turkish Zaika Dining -->
+                    <div style="background:#FFFFFF; border:1.5px solid #E2E8F0; border-radius:14px; padding:1.25rem; display:flex; flex-direction:column; justify-content:space-between;">
+                        <div>
+                            <span style="font-size:0.7rem; font-weight:700; background:#FFFBEB; color:#D97706; padding:0.2rem 0.6rem; border-radius:20px;">Restaurant &amp; Cafe</span>
+                            <h4 style="margin:0.5rem 0 0.25rem 0; font-size:1.05rem;">Turkish Zaika QR Menu</h4>
+                            <p style="font-size:0.8rem; color:#64748B;">Contactless dine-in QR ordering with instant WhatsApp triggers and veg/non-veg tags.</p>
+                        </div>
+                        <button class="btn btn-blue" style="width:100%; justify-content:center; margin-top:1rem; font-size:0.82rem; padding:0.5rem;" onclick="closeTemplatesModal(); openModal(null, 'restaurant');">Use This Template</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ─── MOBILE STICKY BOTTOM TASKBAR ─── -->
+    <nav class="mobile-taskbar" aria-label="Mobile Bottom Navigation">
+        <button class="taskbar-btn primary" onclick="openModal(event)">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 2a4 4 0 0 1 4 4v2a4 4 0 0 1-8 0V6a4 4 0 0 1 4-4z"/><rect x="4" y="10" width="16" height="12" rx="4"/><circle cx="9" cy="15" r="1.5"/><circle cx="15" cy="15" r="1.5"/></svg>
+            <span>Create Site/CV</span>
+        </button>
+        <a href="#how" class="taskbar-btn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <span>How It Works</span>
+        </a>
+        <button class="taskbar-btn" onclick="openTemplatesModal()">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+            <span>Templates</span>
+        </button>
+        <a href="https://wa.me/919172200000?text=Hi%20Linkal%20Team" target="_blank" rel="noopener noreferrer" class="taskbar-btn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#25D366" stroke-width="2.2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+            <span>WhatsApp</span>
+        </a>
+    </nav>
 
 </body>
 
