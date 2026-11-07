@@ -12,16 +12,15 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "react-jsx",
-    "typeRoots": [
-      "./Linkal Tool/node_modules/@types"
-    ],
     "paths": {
-      "@/*": ["./Linkal Tool/*"],
-      "react": ["./Linkal Tool/node_modules/@types/react"],
-      "react-dom": ["./Linkal Tool/node_modules/@types/react-dom"]
+      "@/*": ["./Linkal Tool/*"]
     }
   },
   "include": [
+    "*.d.ts",
+    "Linkal Tool/*.d.ts",
+    "Linkal Tool/**/*.d.ts",
+    "Linkal Tool/next-env.d.ts",
     "Linkal Tool/**/*.ts",
     "Linkal Tool/**/*.tsx",
     "Linkal Tool/.next/types/**/*.ts"
