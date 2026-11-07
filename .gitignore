@@ -1,5 +1,6 @@
 # Ignore sub-projects
 /Linkal Tool/
+/Linkal Admin/
 /Turkish Zaika/
 node_modules/
 .env
