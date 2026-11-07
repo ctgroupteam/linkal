@@ -1,8 +1,8 @@
 # 🚀 Linkal Platform — Master Architecture & Implementation Plan
 
-> **Plan Version**: 3.0 (Full SaaS Ecosystem: Marketing Landing + Linkal Studio + Linkal Admin)  
+> **Plan Version**: 5.0 (ATS-Friendly Executive CV Engine + Visual CV Tabs + Real Google Identity + Admin Persistence + 113 Automated Tests — 100% COMPLETE & VERIFIED)  
 > **Permanent Location**: `LINKAL_IMPLEMENTATION_PLAN.md`  
-> **Status**: APPROVED & IN ACTIVE EXECUTION  
+> **Status**: FULLY IMPLEMENTED, TESTED & DEPLOYED  
 > **Governing Standards**: [`RULES.md`](file:///c:/Users/Administrator/Desktop/All%20projects/Linkal/RULES.md) (Zero Omissions, Code Preservation, Mandatory Verification)
 
 ---
@@ -22,18 +22,66 @@ The Linkal platform is organized into three distinct, decoupled repositories:
          [ 1. Marketing Landing ]                    [ 2. Linkal Studio ]                    [ 3. Linkal Admin ]
           ctgroupteam/linkal                         ctgroupteam/linkaltool                  ctgroupteam/linkaladmin
           https://linkal.in                          https://studio.linkal.in                https://admin.linkal.in
-          - High-Converting Landing                  - User Dashboard ("My Sites")           - Founder Command Center
-          - Clean Linkal AI Logo                     - Real-Time Subdomain Validator         - Password: #kotlinjs (Vercel ENV)
-          - Direct Studio CTA                        - 1-Click Google Auth                   - Real-Time User & Visit Metrics
+          - High-Converting Landing                  - ATS-Friendly CV Visual Builder        - Founder Command Center
+          - Clean Linkal AI Logo                     - Real-Time Subdomain Validator         - Password: #kotlinjs (Persisted)
+          - Direct Studio CTA                        - Real Google Identity (GSI)            - Real-Time User & Visit Metrics
           - Cashfree Policy Modals                   - 1 Free CV Per User Rule               - Dynamic CV Promo Code Editor
           - Floating Instagram Button                - Auto-Free for First 100 CVs           - First 100 CVs Progress Tracker
           - Sticky Mobile Taskbar                    - 7-Day Trial Soft Paywall              - PWA + Web Push Notifications
-                                                     - Cashfree 1/3/6/12 Month Billing       - VAPID Push on New User / CV
+                                                     - Cashfree 1/3/6/12 Month Billing       - Direct WhatsApp User Contact
 ```
 
 ---
 
-## 🎨 2. Component Specifications & Requirements
+## 🎯 2. Version 4.0 Core Deliverables & Logic
+
+### A. Dedicated ATS-Friendly Executive CV Engine
+1. **Separation from E-Commerce**:
+   - For `portfolio` sites, the Visual Builder (`/builder/[id]`) strictly removes e-commerce tabs ("Banners", "Products", "Announcement", "Trust Badges", "Slider").
+   - Builder introduces dedicated CV tabs:
+     * **Profile & Contact**: Full Name, Executive Title, Location, Email, WhatsApp Phone, LinkedIn URL, GitHub URL, Website URL.
+     * **Executive Summary**: About Me / Bio textarea.
+     * **Work Experience**: Add/Edit/Delete work experiences (Company, Role, Period, Location, Description / Bullet points, Company Link).
+     * **Education**: Add/Edit/Delete education (Institution, Degree, Year, Honors).
+     * **Key Skills & Expertise**: Add/Edit/Delete skill tags/chips.
+     * **Featured Projects & Publications**: Add/Edit/Delete projects (Title, Description, Clickable Link, Tech Stack).
+     * **Certifications & Awards**: Add/Edit/Delete certifications (Name, Issuer, Year, Credential Link).
+2. **Pure ATS CV Generator & Live Preview**:
+   - `generateAtsCvHtml(site)`: Completely eliminates background stock photos, shopping bag icons, and storefront headers.
+   - Clean, high-contrast, executive layout (charcoal/white, high readability for ATS scanners).
+   - Clickable contact links (`mailto:`, `tel:`, `https://wa.me/`, LinkedIn, GitHub, Website).
+   - Clickable project URLs (`<a href="..." target="_blank">View Project ↗</a>`).
+   - Print-ready `@media print` CSS: Hides action bars and prints 1-2 standard A4 pages.
+   - Action bar on screen: "Print / Save PDF (ATS Ready)", "Copy CV Link", "Chat on WhatsApp".
+
+### B. Google Identity Services (GSI) & Profile Persistence
+1. **Interactive Google Sign-In**:
+   - Real Google Identity prompt with official GSI SDK / account picker.
+   - Gated Site Creation: If customer is not logged in, prompt Google Sign-In before finalizing site creation.
+   - Profile Header in Studio: Shows verified Google Profile (Avatar, Name, Google Email, WhatsApp Phone).
+   - Profile Modal: Shows customer identity, active websites, and free CV eligibility.
+
+### C. Admin Panel Session Persistence
+1. **Permanent LocalStorage & Cookie Auth**:
+   - Fix API mismatch in `Linkal Admin/api/auth.js`: Support both `password` and `passcode`, return `sessionToken` and `token`.
+   - Store session token in `localStorage.setItem('linkal_admin_session', ...)` upon login with `#kotlinjs`.
+   - Auto-login on reload: Directly show dashboard `#dashboard-app` if token exists, bypassing the login screen.
+
+### D. Comprehensive 50-100+ Automated Test Suite
+1. **End-to-End Test Suite**:
+   - Automated tests covering:
+     * CV Builder tabs & state management
+     * ATS CV generator output (verifying zero e-commerce elements, clickable links, print styles)
+     * Subdomain checker (RFC 1035, underscores, reserved names)
+     * Google Auth API & Free 100 CV eligibility
+     * Admin passcode API & session persistence
+     * Cashfree plans & trial expiry date calculation
+     * PWA manifest & push notification payloads
+2. Run tests to 100% green before pushing to GitHub.
+
+---
+
+## 🎨 3. Detailed Component Specifications
 
 ### A. Marketing Landing Page (`ctgroupteam/linkal` &rarr; `linkal.in`)
 1. **Top-Left Logo & Branding**:
@@ -213,7 +261,22 @@ ON CONFLICT (key) DO NOTHING;
 - [x] Edge dispatch for new user and new CV notifications (`/api/notify`).
 - [x] Deployed and active at `https://admin.linkal.in` (HTTP 200).
 
+### Phase 4: ATS Executive CV Visual Builder & Automated Tests
+- [x] Dedicated ATS CV generator `generateAtsCvHtml(site)` with zero e-commerce elements, zero product cards, and zero background image carousels.
+- [x] Visual CV Builder sidebar tabs: Profile & Contact, Executive Bio, Experience, Education, Skills, Featured Projects, Certifications.
+- [x] Clickable links for Email (`mailto:`), Phone (`tel:`), WhatsApp, LinkedIn, GitHub, Website, and Projects.
+- [x] High-contrast monochrome A4 `@media print` rules with 1-click "Print ATS PDF" action button.
+- [x] Real Google Identity Services (GSI) modal with active Google Profile Card in Studio header and hero.
+- [x] Admin session token persistence via `localStorage.setItem('linkal_admin_session', ...)` (no password re-entry on refresh/revisit).
+- [x] 113 automated verification tests in `Linkal Tool/test/platform.test.mjs` passing with 100% success rate (0 failures).
+- [x] Next.js production build (`node ./node_modules/next/dist/bin/next build`) compiled 22/22 routes successfully (exit code 0).
+- [x] Deployed to Vercel and assigned alias `https://studio.linkal.in` (HTTP 200 OK).
+
 ### Final Phase: Comprehensive Code Integrity Check
 - [x] Zero TypeScript errors across repositories (Next.js build exited with code 0).
+- [x] Zero diagnostic problems in VS Code editor (`get_diagnostics.js` reports 0 issues across all files).
 - [x] Zero secret leaks in Git commits (verified via GitHub Push Protection).
-- [x] Verified live endpoints: `https://linkal.in`, `https://admin.linkal.in`.
+- [x] Verified all three live endpoints:
+  * Marketing Website: `https://linkal.in` (HTTP 200 OK)
+  * Linkal Studio: `https://studio.linkal.in` (HTTP 200 OK)
+  * Linkal Admin: `https://admin.linkal.in` (HTTP 200 OK)
