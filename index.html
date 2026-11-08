@@ -713,11 +713,7 @@
                 display: contents;
             }
             .hero-badge {
-                order: 1;
-                margin-bottom: 0.35rem;
-                font-size: 0.74rem;
-                padding: 0.3rem 0.8rem;
-                display: inline-flex;
+                display: none !important;
             }
             .hero-h1 {
                 order: 2;
@@ -1307,12 +1303,116 @@
             object-fit: contain;
         }
 
-        @media (max-width: 640px) {
+        @media (max-width: 768px) {
+            .how-showcase {
+                border-radius: 14px;
+            }
+            .how-tabs {
+                -webkit-overflow-scrolling: touch;
+            }
+            .how-tab-btn {
+                min-width: 95px;
+                padding: 0.65rem 0.35rem;
+                gap: 0.15rem;
+            }
+            .how-tab-num {
+                font-size: 0.62rem;
+            }
+            .how-tab-title {
+                font-size: 0.72rem;
+            }
+            .how-stage {
+                padding: 0.85rem 0.45rem;
+                min-height: 380px;
+            }
+            .how-scene {
+                max-width: 100%;
+            }
+            .mock-window {
+                border-radius: 12px;
+            }
+            .mock-bar {
+                padding: 0.45rem 0.65rem;
+                gap: 0.45rem;
+            }
+            .mock-url {
+                font-size: 0.68rem;
+                padding: 0.2rem 0.45rem;
+            }
+            .mock-content {
+                padding: 0.85rem 0.65rem;
+            }
+            .type-input-box {
+                padding: 0.55rem 0.75rem;
+            }
+            .cat-chips {
+                gap: 0.35rem;
+                margin: 0.75rem 0;
+            }
+            .cat-chip {
+                padding: 0.25rem 0.55rem;
+                font-size: 0.72rem;
+            }
             .how-products-grid {
                 grid-template-columns: 1fr;
+                gap: 0.45rem;
+            }
+            .how-prod-card {
+                padding: 0.4rem 0.55rem;
+                gap: 0.5rem;
+                border-radius: 8px;
+            }
+            .how-prod-img {
+                width: 38px;
+                height: 38px;
+                border-radius: 6px;
+            }
+            .how-prod-title {
+                font-size: 0.74rem;
+            }
+            .how-prod-price {
+                font-size: 0.7rem;
+            }
+            .how-prod-chip {
+                font-size: 0.56rem;
+                padding: 1px 4px;
             }
             .step4-layout {
                 grid-template-columns: 1fr;
+                gap: 0.75rem;
+            }
+            .ig-mockup {
+                padding: 0.75rem;
+                border-radius: 12px;
+            }
+            .ig-avatar {
+                width: 40px;
+                height: 40px;
+            }
+            .ig-stats {
+                font-size: 0.65rem;
+                gap: 0.5rem;
+            }
+            .ig-bio-text {
+                font-size: 0.7rem;
+                line-height: 1.3;
+            }
+            .ig-btn {
+                font-size: 0.65rem;
+                padding: 0.3rem 0.4rem;
+            }
+            .ig-grid img {
+                height: 60px;
+            }
+            .qr-card-showcase {
+                padding: 0.85rem 0.65rem;
+                border-radius: 12px;
+            }
+            .qr-img-box {
+                width: 110px;
+                height: 110px;
+                padding: 6px;
+                margin-bottom: 0.5rem;
             }
         }
 
