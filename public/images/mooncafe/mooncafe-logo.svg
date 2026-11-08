@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <defs>
+    <linearGradient id="moonGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0D1B3E" />
+      <stop offset="100%" stop-color="#1E3A8A" />
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F59E0B" />
+      <stop offset="100%" stop-color="#D97706" />
+    </linearGradient>
+  </defs>
+  <circle cx="60" cy="60" r="58" fill="url(#moonGrad)" stroke="#FAF6EC" stroke-width="2.5" />
+  <path d="M72 26 C50 28 36 44 36 62 C36 80 50 96 72 98 C58 92 50 78 50 62 C50 46 58 32 72 26 Z" fill="url(#goldGrad)" />
+  <circle cx="75" cy="42" r="4.5" fill="#FAF6EC" />
+  <circle cx="85" cy="54" r="3" fill="#F59E0B" />
+  <path d="M58 64 C64 64 68 67 68 70 C68 73 64 76 58 76 C52 76 48 73 48 70 C48 67 52 64 58 64 Z" fill="#FAF6EC" opacity="0.9" />
+  <path d="M53 64 C53 60 55 58 58 56" stroke="#FAF6EC" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.8" />
+  <path d="M63 63 C63 59 65 57 68 55" stroke="#FAF6EC" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.8" />
+</svg>
