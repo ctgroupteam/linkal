@@ -8,5 +8,9 @@ node_modules/
 .DS_Store
 Thumbs.db
 scratch/
-google-services.json
+# Secrets and Keys Backup
+keys.txt
+*keys*.txt
+*secrets*.txt
+LINKAL_KEYS_BACKUP.txt
 
