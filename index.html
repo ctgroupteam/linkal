@@ -486,22 +486,21 @@
             flex-shrink: 0;
         }
 
-        /* Mobile hero tagline above phone */
-        .mobile-hero-tagline {
-            display: none;
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            font-size: 1.05rem;
-            font-weight: 700;
-            color: #0D1B3E;
-            text-align: center;
-            margin-bottom: 1.25rem;
-            line-height: 1.35;
+        .hero-trust-proof {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.82rem;
+            color: #374151;
+            font-weight: 600;
+            margin-top: 1.25rem;
         }
 
-        @media (max-width: 768px) {
-            .mobile-hero-tagline {
-                display: block;
-            }
+        .hero-trust-dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: #059669;
         }
 
         /* Phone mockup styling */
@@ -699,44 +698,100 @@
         }
 
         @media (max-width: 960px) {
+            #hero {
+                padding-top: calc(56px + 0.4rem);
+                padding-bottom: 2rem;
+            }
             .hero-inner {
                 display: flex;
                 flex-direction: column;
-                gap: 1.25rem;
+                align-items: center;
+                gap: 0.4rem;
                 text-align: center;
             }
             .hero-left {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
+                display: contents;
             }
             .hero-badge {
                 order: 1;
-                margin-bottom: 0.75rem;
+                margin-bottom: 0.35rem;
+                font-size: 0.74rem;
+                padding: 0.3rem 0.8rem;
+                display: inline-flex;
             }
             .hero-h1 {
                 order: 2;
-                font-size: clamp(1.85rem, 5vw, 2.4rem);
-                margin-bottom: 0.65rem;
+                font-size: clamp(1.45rem, 5.2vw, 1.95rem);
+                margin-bottom: 0.2rem;
+                line-height: 1.2;
+                letter-spacing: -0.02em;
             }
             .hero-sub {
                 order: 3;
-                margin: 0 auto 0.75rem auto;
-                font-size: 0.95rem;
+                margin: 0 auto 0.45rem auto;
+                font-size: 0.84rem;
+                color: #4B5563;
+                font-weight: 500;
             }
             .phone-wrap {
                 order: 4;
-                margin: 0.5rem 0 1rem 0;
+                margin: 0.2rem auto 0.85rem auto;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+            }
+            .phone {
+                width: 232px;
+                padding: 7px;
+                border-radius: 30px;
+                box-shadow: 0 12px 32px rgba(13, 27, 62, 0.2);
+            }
+            .phone-screen {
+                border-radius: 22px;
             }
             .hero-ctas {
                 order: 5;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
                 justify-content: center;
-                margin-bottom: 1.25rem;
+                gap: 0.5rem;
+                margin-bottom: 0.85rem;
                 width: 100%;
+                max-width: 300px;
+            }
+            .hero-ctas .btn {
+                width: 100%;
+                justify-content: center;
+                padding: 0.75rem 1.25rem;
+                font-size: 0.88rem;
             }
             .trust-badges {
                 order: 6;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
                 justify-content: center;
+                gap: 0.45rem;
+                margin-bottom: 0.6rem;
+            }
+            .trust-badge {
+                font-size: 0.78rem;
+            }
+            .hero-trust-proof {
+                order: 7;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                gap: 0.45rem;
+                font-size: 0.76rem;
+                color: #4B5563;
+                font-weight: 600;
+                background: #FFFDF7;
+                border: 1px solid var(--border);
+                padding: 0.35rem 0.85rem;
+                border-radius: 20px;
+                margin-top: 0.2rem;
             }
         }
 
@@ -2416,13 +2471,12 @@
                     <div class="hero-left reveal">
                         <div class="hero-badge">
                             <span class="hero-badge-dot"></span>
-                            <strong>Linkal AI</strong> — 300+ Indian businesses trust us
-                            <span style="margin-left:6px; background:#ECFDF5; color:#059669; padding:2px 8px; border-radius:12px; font-weight:700; font-size:0.75rem;">Free Website &amp; Free Domain Included</span>
+                            <span>⚡ Create Website Faster Than Blinkit Delivers Groceries</span>
                         </div>
 
-                        <h1 class="hero-h1">Create Website Faster Than Blinkit Delivers Groceries</h1>
+                        <h1 class="hero-h1">Create Free Websites in 1 Minute</h1>
 
-                        <p class="hero-sub">Get a branded storefront, cafe menu, or live CV in 1 minute. Free domain included, direct WhatsApp orders, and 0% commission.</p>
+                        <p class="hero-sub">Fastest website builder in the world</p>
 
                         <div class="hero-ctas">
                             <a href="https://studio.linkal.in" class="btn btn-navy btn-lg">
@@ -2435,11 +2489,11 @@
                         <div class="trust-badges">
                             <div class="trust-badge">
                                 <i data-lucide="check-circle-2" width="16" height="16"></i>
-                                Free website &amp; domain included
+                                Live in 1 minute
                             </div>
                             <div class="trust-badge">
                                 <i data-lucide="check-circle-2" width="16" height="16"></i>
-                                Live in 1 minute
+                                Free website &amp; domain included
                             </div>
                             <div class="trust-badge">
                                 <i data-lucide="check-circle-2" width="16" height="16"></i>
@@ -2450,13 +2504,15 @@
                                 Google listing automatically
                             </div>
                         </div>
+
+                        <div class="hero-trust-proof">
+                            <span class="hero-trust-dot"></span>
+                            <span>300+ Indian businesses trust Linkal AI</span>
+                        </div>
                     </div>
 
                     <!-- Right — Phone Mockup -->
                     <div class="phone-wrap reveal reveal-delay-2">
-                        <!-- Mobile-only tagline above phone -->
-                        <div class="mobile-hero-tagline">Your business deserves its own website — powered by Linkal AI</div>
-
                         <div class="phone">
                             <div class="phone-screen">
                                 <div class="phone-store-header">
