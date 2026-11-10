@@ -838,38 +838,58 @@
 
         #ticker {
             background: #0D1B3E;
-            padding: 0.9rem 0;
+            padding: 0.95rem 0;
             overflow: hidden;
             white-space: nowrap;
             border-top: 1px solid rgba(255, 255, 255, 0.08);
             border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            user-select: none;
+            -webkit-user-select: none;
+            cursor: grab;
+            touch-action: pan-y;
+            position: relative;
+        }
+
+        #ticker:active {
+            cursor: grabbing;
         }
 
         .ticker-track {
             display: inline-flex;
+            align-items: center;
             gap: 2.5rem;
-            animation: ticker-scroll 55s linear infinite;
-            animation-play-state: paused;
             will-change: transform;
-        }
-
-        .ticker-track.running {
-            animation-play-state: running;
-        }
-
-        .ticker-track:hover {
-            animation-play-state: paused;
+            transform: translate3d(0, 0, 0);
         }
 
         .ticker-item {
             display: inline-flex;
             align-items: center;
-            gap: 0.55rem;
+            gap: 0.65rem;
             color: #FAF6EC;
             font-family: 'Plus Jakarta Sans', sans-serif;
             font-size: 0.88rem;
             font-weight: 700;
             letter-spacing: 0.02em;
+            cursor: pointer;
+            flex-shrink: 0;
+            transition: opacity 0.15s ease, transform 0.15s ease;
+        }
+
+        .ticker-item:hover {
+            opacity: 0.95;
+            transform: scale(1.02);
+        }
+
+        .ticker-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .ticker-icon svg {
+            display: block;
         }
 
         .ticker-item span.dot {
@@ -878,17 +898,8 @@
             background: #D97706;
             border-radius: 50%;
             display: inline-block;
-            margin-left: 0.5rem;
-        }
-
-        .ticker-icon {
-            font-size: 1rem;
-            line-height: 1;
-        }
-
-        @keyframes ticker-scroll {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
+            margin-left: 0.65rem;
+            flex-shrink: 0;
         }
 
         @media (max-width: 640px) {
@@ -2871,7 +2882,7 @@
                     <div class="hero-left reveal">
                         <div class="hero-badge">
                             <span class="hero-badge-dot"></span>
-                            <span>⚡ Create Website Faster Than Blinkit Delivers Groceries</span>
+                            <span style="display:inline-flex; align-items:center; gap:5px;"><svg width="13" height="13" viewBox="0 0 24 24" fill="#F59E0B"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg> Create Website Faster Than Blinkit Delivers Groceries</span>
                         </div>
 
                         <h1 class="hero-h1">Create Free Website in 1 Minute</h1>
@@ -2903,7 +2914,7 @@
                                     </div>
                                 </div>
                                 <div class="phone-store-banner">
-                                    <span>⚡ FREE DELIVERY ABOVE ₹499 &bull; FRESHLY BAKED</span>
+                                    <span style="display:inline-flex; align-items:center; gap:4px;"><svg width="10" height="10" viewBox="0 0 24 24" fill="#F59E0B"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg> FREE DELIVERY ABOVE ₹499 &bull; FRESHLY BAKED</span>
                                 </div>
                                 <div class="phone-products">
                                     <!-- Product 1 -->
@@ -2966,30 +2977,102 @@
             </div>
         </section>
 
-        <!-- TICKER SLIDER (Slow, smooth, starts when user arrives) -->
-        <div id="ticker">
+        <!-- TICKER SLIDER (Interactive, Hand-Draggable, No Emojis, Restarts at 1st item) -->
+        <div id="ticker" role="region" aria-label="Key features slider">
             <div class="ticker-track">
-                <span class="ticker-item"><span class="ticker-icon">⚡</span> Live in 1 minute <span class="dot"></span></span>
-                <span class="ticker-item"><span class="ticker-icon">🌐</span> Free Website &amp; Domain Included <span class="dot"></span></span>
-                <span class="ticker-item"><span class="ticker-icon">💬</span> WhatsApp Ordering Built-in <span class="dot"></span></span>
-                <span class="ticker-item"><span class="ticker-icon">🔍</span> Google Listing Automatically <span class="dot"></span></span>
-                <span class="ticker-item"><span class="ticker-icon">🏪</span> 300+ Active Stores &amp; Menus <span class="dot"></span></span>
-                <span class="ticker-item"><span class="ticker-icon">⏱️</span> 1 Minute to Go Live <span class="dot"></span></span>
-                <span class="ticker-item"><span class="ticker-icon">💸</span> ₹0 Cost Setup or Hosting <span class="dot"></span></span>
-                <span class="ticker-item"><span class="ticker-icon">📱</span> 100% WhatsApp Checkout <span class="dot"></span></span>
-                <span class="ticker-item"><span class="ticker-icon">🚀</span> Zero Commission Forever <span class="dot"></span></span>
-                <span class="ticker-item"><span class="ticker-icon">🏷️</span> Branded .linkal.in Subdomain <span class="dot"></span></span>
-                <!-- duplicate for infinite loop -->
-                <span class="ticker-item"><span class="ticker-icon">⚡</span> Live in 1 minute <span class="dot"></span></span>
-                <span class="ticker-item"><span class="ticker-icon">🌐</span> Free Website &amp; Domain Included <span class="dot"></span></span>
-                <span class="ticker-item"><span class="ticker-icon">💬</span> WhatsApp Ordering Built-in <span class="dot"></span></span>
-                <span class="ticker-item"><span class="ticker-icon">🔍</span> Google Listing Automatically <span class="dot"></span></span>
-                <span class="ticker-item"><span class="ticker-icon">🏪</span> 300+ Active Stores &amp; Menus <span class="dot"></span></span>
-                <span class="ticker-item"><span class="ticker-icon">⏱️</span> 1 Minute to Go Live <span class="dot"></span></span>
-                <span class="ticker-item"><span class="ticker-icon">💸</span> ₹0 Cost Setup or Hosting <span class="dot"></span></span>
-                <span class="ticker-item"><span class="ticker-icon">📱</span> 100% WhatsApp Checkout <span class="dot"></span></span>
-                <span class="ticker-item"><span class="ticker-icon">🚀</span> Zero Commission Forever <span class="dot"></span></span>
-                <span class="ticker-item"><span class="ticker-icon">🏷️</span> Branded .linkal.in Subdomain <span class="dot"></span></span>
+                <!-- Set 1 -->
+                <span class="ticker-item">
+                    <span class="ticker-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="#F59E0B"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></span>
+                    Website in 1 Minute
+                    <span class="dot"></span>
+                </span>
+                <span class="ticker-item">
+                    <span class="ticker-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#06B6D4" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20M12 2a14.5 14.5 0 0 1 0 20M2 12h20"/></svg></span>
+                    Free Website &amp; Domain Included
+                    <span class="dot"></span>
+                </span>
+                <span class="ticker-item">
+                    <span class="ticker-icon"><svg width="18" height="18" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/></svg></span>
+                    Google Listing Automatically
+                    <span class="dot"></span>
+                </span>
+                <span class="ticker-item">
+                    <span class="ticker-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="#25D366"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.699c.971.53 1.771.815 2.796.815 3.182 0 5.768-2.587 5.768-5.767.001-3.18-2.585-5.766-5.768-5.766zm9.969 5.768c0 5.48-4.453 9.932-9.969 9.932-1.748 0-3.38-.456-4.807-1.252l-5.224 1.38 1.399-5.109c-.896-1.487-1.408-3.228-1.408-5.087 0-5.48 4.453-9.932 9.969-9.932 5.516 0 10.04 4.452 10.04 9.932z"/></svg></span>
+                    WhatsApp Ordering Built-in
+                    <span class="dot"></span>
+                </span>
+                <span class="ticker-item">
+                    <span class="ticker-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F97316" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m2 7 4.41-4.41A2 2 0 0 1 7.83 2h8.34a2 2 0 0 1 1.42.59L22 7"/><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><path d="M15 22v-4a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v4"/><path d="M2 7h20"/><path d="M22 7a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2"/></svg></span>
+                    300+ Active Stores &amp; Menus
+                    <span class="dot"></span>
+                </span>
+                <span class="ticker-item">
+                    <span class="ticker-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="#10B981"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg></span>
+                    ₹0 Setup or Hosting Cost
+                    <span class="dot"></span>
+                </span>
+                <span class="ticker-item">
+                    <span class="ticker-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></svg></span>
+                    100% WhatsApp Checkout
+                    <span class="dot"></span>
+                </span>
+                <span class="ticker-item">
+                    <span class="ticker-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#A855F7" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg></span>
+                    Zero Commission Forever
+                    <span class="dot"></span>
+                </span>
+                <span class="ticker-item">
+                    <span class="ticker-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#EAB308" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></span>
+                    Branded .linkal.in Subdomain
+                    <span class="dot"></span>
+                </span>
+
+                <!-- Set 2 (Duplicate for Seamless Infinite Loop & Hand Dragging) -->
+                <span class="ticker-item">
+                    <span class="ticker-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="#F59E0B"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></span>
+                    Website in 1 Minute
+                    <span class="dot"></span>
+                </span>
+                <span class="ticker-item">
+                    <span class="ticker-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#06B6D4" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20M12 2a14.5 14.5 0 0 1 0 20M2 12h20"/></svg></span>
+                    Free Website &amp; Domain Included
+                    <span class="dot"></span>
+                </span>
+                <span class="ticker-item">
+                    <span class="ticker-icon"><svg width="18" height="18" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/></svg></span>
+                    Google Listing Automatically
+                    <span class="dot"></span>
+                </span>
+                <span class="ticker-item">
+                    <span class="ticker-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="#25D366"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.699c.971.53 1.771.815 2.796.815 3.182 0 5.768-2.587 5.768-5.767.001-3.18-2.585-5.766-5.768-5.766zm9.969 5.768c0 5.48-4.453 9.932-9.969 9.932-1.748 0-3.38-.456-4.807-1.252l-5.224 1.38 1.399-5.109c-.896-1.487-1.408-3.228-1.408-5.087 0-5.48 4.453-9.932 9.969-9.932 5.516 0 10.04 4.452 10.04 9.932z"/></svg></span>
+                    WhatsApp Ordering Built-in
+                    <span class="dot"></span>
+                </span>
+                <span class="ticker-item">
+                    <span class="ticker-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F97316" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m2 7 4.41-4.41A2 2 0 0 1 7.83 2h8.34a2 2 0 0 1 1.42.59L22 7"/><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><path d="M15 22v-4a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v4"/><path d="M2 7h20"/><path d="M22 7a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2"/></svg></span>
+                    300+ Active Stores &amp; Menus
+                    <span class="dot"></span>
+                </span>
+                <span class="ticker-item">
+                    <span class="ticker-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="#10B981"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg></span>
+                    ₹0 Setup or Hosting Cost
+                    <span class="dot"></span>
+                </span>
+                <span class="ticker-item">
+                    <span class="ticker-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></svg></span>
+                    100% WhatsApp Checkout
+                    <span class="dot"></span>
+                </span>
+                <span class="ticker-item">
+                    <span class="ticker-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#A855F7" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg></span>
+                    Zero Commission Forever
+                    <span class="dot"></span>
+                </span>
+                <span class="ticker-item">
+                    <span class="ticker-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#EAB308" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></span>
+                    Branded .linkal.in Subdomain
+                    <span class="dot"></span>
+                </span>
             </div>
         </div>
 
@@ -3126,12 +3209,12 @@
 
                                     <div style="font-size:0.78rem; font-weight:700; color:#4B5563; margin-bottom:0.5rem;">Select Your Category:</div>
                                     <div class="cat-chips">
-                                        <span class="cat-chip active">☕ Cafe &amp; Coffee</span>
-                                        <span class="cat-chip">🎂 Cake Shop</span>
-                                        <span class="cat-chip">👗 Fashion Boutique</span>
-                                        <span class="cat-chip">⌚ Watch Store</span>
-                                        <span class="cat-chip">📄 Live CV / Resume</span>
-                                        <span class="cat-chip">💍 Wedding Cards</span>
+                                        <span class="cat-chip active">Cafe &amp; Coffee</span>
+                                        <span class="cat-chip">Cake Shop</span>
+                                        <span class="cat-chip">Fashion Boutique</span>
+                                        <span class="cat-chip">Watch Store</span>
+                                        <span class="cat-chip">Live CV / Resume</span>
+                                        <span class="cat-chip">Wedding Cards</span>
                                     </div>
 
                                     <div style="display:flex; justify-content:flex-end; margin-top:1.25rem;">
@@ -3244,7 +3327,7 @@
                                 </div>
                                 <div class="mock-content" style="text-align:center; padding:2rem 1.5rem;">
                                     <div style="display:inline-flex; align-items:center; gap:6px; background:#ECFDF5; color:#059669; font-weight:800; font-size:0.76rem; padding:0.35rem 0.95rem; border-radius:50px; margin-bottom:1rem;">
-                                        <span>⚡</span> FREE domain included with automated SSL
+                                        <svg width="13" height="13" viewBox="0 0 24 24" fill="#059669"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg> FREE domain included with automated SSL
                                     </div>
                                     <h4 style="font-size:1.35rem; color:#0D1B3E; font-weight:800; margin-bottom:0.5rem;">AI building your live website...</h4>
                                     <p style="font-size:0.86rem; color:#4B5563; max-width:440px; margin:0 auto 1.25rem auto;">Generating responsive layout, configuring digital menu, and activating cloud CDN.</p>
@@ -3255,7 +3338,7 @@
                                         <span style="color:#059669;">→</span>
                                         <span style="color:#059669;">✓ Menu</span>
                                         <span style="color:#059669;">→</span>
-                                        <span style="color:#0D1B3E;">⚡ Publishing Live</span>
+                                        <span style="color:#0D1B3E; display:inline-flex; align-items:center; gap:4px;"><svg width="12" height="12" viewBox="0 0 24 24" fill="#F59E0B"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg> Publishing Live</span>
                                     </div>
 
                                     <div class="domain-progress-bar">
@@ -3292,10 +3375,10 @@
                                         </div>
                                     </div>
                                     <div class="ig-bio-text">
-                                        <strong>Moon Cafe ☕✨</strong><br/>
+                                        <strong>Moon Cafe</strong><br/>
                                         <span style="color:#64748B; font-size:0.68rem;">Cafe &amp; Roastery</span><br/>
                                         Specialty brews &amp; fresh artisan bakes.<br/>
-                                        Order on WhatsApp 👇<br/>
+                                        Order on WhatsApp:<br/>
                                         <a href="https://mooncafe.linkal.in" target="_blank" rel="noopener noreferrer" style="color:#1A56FF; font-weight:700;">mooncafe.linkal.in</a>
                                     </div>
                                     <div class="ig-actions">
@@ -4241,22 +4324,131 @@
 
         revealElements.forEach(el => revealObserver.observe(el));
 
-        // ─── COUNTER ANIMATION ───
-        // ─── TICKER CONTROLLER (Starts smooth glide when user reaches ticker) ───
-        const tickerEl = document.getElementById('ticker');
-        const tickerTrack = tickerEl ? tickerEl.querySelector('.ticker-track') : null;
-        if (tickerEl && tickerTrack) {
+        // ─── TICKER CONTROLLER (Interactive, Hand-Draggable, Restarts at 1st point, Pauses on click, Resumes on scroll/click anywhere) ───
+        (function initInteractiveTicker() {
+            const tickerEl = document.getElementById('ticker');
+            if (!tickerEl) return;
+            const tickerTrack = tickerEl.querySelector('.ticker-track');
+            if (!tickerTrack) return;
+
+            let currentX = 0;
+            let isPaused = false;
+            let isVisible = false;
+            let isDragging = false;
+            let hasDragged = false;
+            let startClientX = 0;
+            let dragStartCurrentX = 0;
+            let lastTimestamp = performance.now();
+            const SLIDE_SPEED = 42; // pixels per second (relaxed, smooth, readable)
+
+            function getHalfWidth() {
+                return tickerTrack.scrollWidth > 0 ? (tickerTrack.scrollWidth / 2) : 0;
+            }
+
+            function applyTransform(x) {
+                tickerTrack.style.transform = `translate3d(${x}px, 0, 0)`;
+            }
+
+            // Continuous animation frame loop
+            function tick(now) {
+                const dt = Math.min((now - lastTimestamp) / 1000, 0.1);
+                lastTimestamp = now;
+
+                if (isVisible && !isPaused && !isDragging) {
+                    currentX -= SLIDE_SPEED * dt;
+                    const half = getHalfWidth();
+                    if (half > 0) {
+                        while (currentX <= -half) currentX += half;
+                        while (currentX > 0) currentX -= half;
+                    }
+                    applyTransform(currentX);
+                }
+
+                requestAnimationFrame(tick);
+            }
+            requestAnimationFrame(tick);
+
+            // 1. RESTART FROM 1ST POINT WHEN USER ENTERS THE SLIDER SCREEN
             const tickerObserver = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        tickerTrack.classList.add('running');
+                        // User came onto the slider screen: restart from 1st point!
+                        currentX = 0;
+                        applyTransform(0);
+                        isPaused = false;
+                        isVisible = true;
+                        lastTimestamp = performance.now();
                     } else {
-                        tickerTrack.classList.remove('running');
+                        isVisible = false;
                     }
                 });
-            }, { threshold: 0.05 });
+            }, { threshold: 0.12 });
             tickerObserver.observe(tickerEl);
-        }
+
+            // 2. SLIDE WITH HANDS / DRAG (Touch & Mouse support)
+            tickerEl.addEventListener('pointerdown', (e) => {
+                isDragging = true;
+                hasDragged = false;
+                startClientX = e.clientX;
+                dragStartCurrentX = currentX;
+                tickerEl.setPointerCapture?.(e.pointerId);
+            });
+
+            tickerEl.addEventListener('pointermove', (e) => {
+                if (!isDragging) return;
+                const deltaX = e.clientX - startClientX;
+                if (Math.abs(deltaX) > 4) {
+                    hasDragged = true;
+                }
+                currentX = dragStartCurrentX + deltaX;
+                const half = getHalfWidth();
+                if (half > 0) {
+                    while (currentX <= -half) currentX += half;
+                    while (currentX > 0) currentX -= half;
+                }
+                applyTransform(currentX);
+            });
+
+            function onPointerEnd(e) {
+                if (!isDragging) return;
+                isDragging = false;
+                try {
+                    if (tickerEl.hasPointerCapture?.(e.pointerId)) {
+                        tickerEl.releasePointerCapture(e.pointerId);
+                    }
+                } catch (_) {}
+
+                if (hasDragged) {
+                    // User finished sliding with hands -> continue moving
+                    isPaused = false;
+                    lastTimestamp = performance.now();
+                } else {
+                    // 3. CLICK ON PARTICULAR PART ON THE SLIDER: STOP
+                    isPaused = true;
+                }
+            }
+
+            tickerEl.addEventListener('pointerup', onPointerEnd);
+            tickerEl.addEventListener('pointercancel', onPointerEnd);
+
+            // 4. WHEN SCROLLED OR CLICKED ANYWHERE, CONTINUE SLIDING
+            window.addEventListener('scroll', () => {
+                if (isPaused && !isDragging) {
+                    isPaused = false;
+                    lastTimestamp = performance.now();
+                }
+            }, { passive: true });
+
+            document.addEventListener('pointerdown', (e) => {
+                // If clicked outside ticker and was paused, resume!
+                if (!tickerEl.contains(e.target)) {
+                    if (isPaused && !isDragging) {
+                        isPaused = false;
+                        lastTimestamp = performance.now();
+                    }
+                }
+            });
+        })();
 
         // ─── HOW IT WORKS CONTROLLER (MOON CAFE) ───
         let currentHowStep = 1;
