@@ -699,7 +699,7 @@
 
         @media (max-width: 960px) {
             #hero {
-                padding-top: calc(56px + 0.4rem);
+                padding-top: calc(72px + 1.25rem);
                 padding-bottom: 2rem;
             }
             .hero-inner {
@@ -878,59 +878,95 @@
         /* ─── THE 1-MINUTE WEBSITE MACHINE ─── */
         .machine-section {
             background: var(--white);
-            padding: 4rem 0 3rem 0;
+            padding: 3.5rem 0 3.5rem 0;
             border-bottom: 1px solid var(--border);
         }
 
-        .machine-card {
-            background: var(--card-bg);
-            border: 1px solid var(--border);
-            border-radius: var(--radius-lg);
-            box-shadow: var(--shadow);
-            padding: 2.75rem 2rem;
-            text-align: center;
-            max-width: 860px;
+        .machine-grid {
+            display: grid;
+            grid-template-columns: 440px 1fr;
+            align-items: center;
+            gap: 3.5rem;
+            max-width: 1140px;
             margin: 0 auto;
         }
 
+        .machine-media {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .machine-video-wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 440px;
+            max-height: 390px;
+            border-radius: 18px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            box-shadow: 0 8px 24px rgba(13, 27, 62, 0.08);
+            background: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .machine-video {
+            width: 100%;
+            height: 100%;
+            max-height: 390px;
+            object-fit: contain;
+            display: block;
+            border-radius: 18px;
+            background: var(--white);
+        }
+
+        .machine-content {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            text-align: left;
+        }
+
         .machine-header {
-            margin-bottom: 1.25rem;
+            margin-bottom: 1.15rem;
         }
 
         .machine-title {
             font-family: 'Plus Jakarta Sans', sans-serif;
-            font-size: clamp(1.65rem, 3.8vw, 2.4rem);
+            font-size: clamp(1.75rem, 3.2vw, 2.35rem);
             font-weight: 800;
             color: #0D1B3E;
-            margin-top: 0.65rem;
+            margin-top: 0.5rem;
             letter-spacing: -0.02em;
+            line-height: 1.2;
         }
 
         .workflow-box {
-            background: #FAF6EC;
+            background: #FFFDF7;
             border: 1.5px solid var(--border-strong);
             border-radius: 50px;
-            padding: 0.75rem 1.5rem;
-            display: inline-block;
-            margin: 0 auto 2.25rem auto;
+            padding: 0.65rem 1.35rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.55rem;
+            margin: 0 0 1.25rem 0;
             box-shadow: 0 2px 8px rgba(13, 27, 62, 0.04);
             max-width: 100%;
         }
 
-        .workflow-flow {
-            display: flex;
+        .workflow-line-1,
+        .workflow-line-2 {
+            display: inline-flex;
             align-items: center;
-            justify-content: center;
-            gap: 0.65rem;
-            flex-wrap: wrap;
-            font-size: 0.88rem;
-            font-weight: 700;
-            color: #111111;
+            gap: 0.55rem;
         }
 
         .workflow-step {
             color: #0D1B3E;
             font-weight: 800;
+            font-size: 0.86rem;
             white-space: nowrap;
         }
 
@@ -943,8 +979,9 @@
         .workflow-punch {
             color: #4B5563;
             font-weight: 600;
-            font-size: 0.84rem;
-            margin-left: 0.25rem;
+            font-size: 0.82rem;
+            margin-left: 0.15rem;
+            white-space: nowrap;
         }
 
         .workflow-arrow {
@@ -957,7 +994,7 @@
 
         .workflow-arrow:nth-of-type(1) { animation-delay: 0s; }
         .workflow-arrow:nth-of-type(2) { animation-delay: 0.35s; }
-        .workflow-arrow:nth-of-type(3) { animation-delay: 0.7s; }
+        .workflow-arrow.desktop-arrow { animation-delay: 0.7s; }
 
         @keyframes arrowFlow {
             0%, 100% {
@@ -971,22 +1008,18 @@
             }
         }
 
-        .machine-video-wrapper {
-            position: relative;
-            max-width: 720px;
-            margin: 0 auto;
-            border-radius: 18px;
-            overflow: hidden;
-            border: 1px solid var(--border);
-            box-shadow: 0 12px 36px rgba(13, 27, 62, 0.12);
-            background: #FAF6EC;
+        .machine-desc {
+            font-size: 0.94rem;
+            color: #4B5563;
+            line-height: 1.55;
+            margin-bottom: 1.35rem;
+            max-width: 540px;
         }
 
-        .machine-video {
-            width: 100%;
-            height: auto;
-            display: block;
-            border-radius: 18px;
+        .machine-cta-row {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
         }
 
         /* ─── HOW IT WORKS (MOON CAFE ANIMATION) ─── */
@@ -1432,34 +1465,80 @@
             .machine-section {
                 padding: 2.25rem 0 1.5rem 0;
             }
-            .machine-card {
-                padding: 1.25rem 0.65rem;
+            .machine-grid {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 1.25rem;
+                text-align: center;
+            }
+            .machine-content {
+                order: 1;
+                align-items: center;
+                text-align: center;
+                width: 100%;
+            }
+            .machine-media {
+                order: 2;
+                width: 100%;
+                max-width: 360px;
+            }
+            .machine-video-wrapper {
+                max-width: 100%;
+                max-height: 320px;
+                border-radius: 14px;
+            }
+            .machine-video {
+                max-height: 320px;
                 border-radius: 14px;
             }
             .machine-title {
                 font-size: 1.45rem;
             }
             .workflow-box {
-                border-radius: 12px;
-                padding: 0.6rem 0.55rem;
-                margin-bottom: 1.25rem;
+                border-radius: 14px;
+                padding: 0.65rem 0.55rem;
+                margin-bottom: 1rem;
                 width: 100%;
-            }
-            .workflow-flow {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
                 gap: 0.35rem;
+            }
+            .workflow-line-1 {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 0.35rem;
+                font-size: 0.72rem;
+                white-space: nowrap;
+            }
+            .workflow-line-1 .workflow-step {
+                font-size: 0.72rem;
+            }
+            .workflow-line-2 {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 0.3rem;
+                font-size: 0.72rem;
+            }
+            .workflow-line-2 .workflow-step {
                 font-size: 0.72rem;
             }
             .workflow-punch {
                 font-size: 0.7rem;
-                display: block;
-                width: 100%;
-                margin-top: 0.25rem;
             }
-            .machine-video-wrapper {
-                border-radius: 12px;
+            .desktop-arrow {
+                display: none !important;
             }
-            .machine-video {
-                border-radius: 12px;
+            .machine-desc {
+                font-size: 0.82rem;
+                margin-bottom: 0.85rem;
+            }
+            .machine-cta-row {
+                justify-content: center;
+                margin-bottom: 0.5rem;
             }
 
             .how-showcase {
@@ -2937,44 +3016,63 @@
         <!-- 2.5 THE 1-MINUTE WEBSITE MACHINE -->
         <section id="machine" class="machine-section">
             <div class="container">
-                <div class="machine-card reveal">
-                    <div class="machine-header">
-                        <span class="badge-pill">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                            100% Automated Setup
-                        </span>
-                        <h2 class="machine-title">The 1-Minute Website Machine</h2>
-                    </div>
-
-                    <!-- Single Line Workflow Box with Animated SVG Arrows -->
-                    <div class="workflow-box">
-                        <div class="workflow-flow">
-                            <span class="workflow-step">Business Name</span>
-                            <svg class="workflow-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                <line x1="5" y1="12" x2="19" y2="12"></line>
-                                <polyline points="12 5 19 12 12 19"></polyline>
-                            </svg>
-                            <span class="workflow-step">Add Products</span>
-                            <svg class="workflow-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                <line x1="5" y1="12" x2="19" y2="12"></line>
-                                <polyline points="12 5 19 12 12 19"></polyline>
-                            </svg>
-                            <span class="workflow-step">Get Free Domain</span>
-                            <svg class="workflow-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                <line x1="5" y1="12" x2="19" y2="12"></line>
-                                <polyline points="12 5 19 12 12 19"></polyline>
-                            </svg>
-                            <span class="workflow-step highlight">Live on Google.</span>
-                            <span class="workflow-punch">That’s literally all it takes.</span>
+                <div class="machine-grid reveal">
+                    <!-- Left Column on Desktop: Video Loop (Sized to fit screen) -->
+                    <div class="machine-media">
+                        <div class="machine-video-wrapper">
+                            <video class="machine-video" autoplay loop muted playsinline webkit-playsinline preload="auto">
+                                <source src="hero-loop.webm" type="video/webm">
+                                Your browser does not support WebM video.
+                            </video>
                         </div>
                     </div>
 
-                    <!-- Continuous Looping Video (Direct running without clicking play) -->
-                    <div class="machine-video-wrapper">
-                        <video class="machine-video" autoplay loop muted playsinline webkit-playsinline preload="auto">
-                            <source src="hero-loop.webm" type="video/webm">
-                            Your browser does not support WebM video.
-                        </video>
+                    <!-- Right Column on Desktop: Content & Workflow -->
+                    <div class="machine-content">
+                        <div class="machine-header">
+                            <span class="badge-pill">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                                100% Automated Setup
+                            </span>
+                            <h2 class="machine-title">The 1-Minute Website Machine</h2>
+                        </div>
+
+                        <!-- Workflow Box: Desktop 1-line, Mobile 2-lines (2 arrows on Line 1, NO arrow on Line 2) -->
+                        <div class="workflow-box">
+                            <div class="workflow-line-1">
+                                <span class="workflow-step">Business Name</span>
+                                <svg class="workflow-arrow" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                                    <polyline points="12 5 19 12 12 19"></polyline>
+                                </svg>
+                                <span class="workflow-step">Add Products</span>
+                                <svg class="workflow-arrow" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                                    <polyline points="12 5 19 12 12 19"></polyline>
+                                </svg>
+                                <span class="workflow-step">Get Free Domain</span>
+                                <!-- Desktop-only 3rd arrow connecting to Live on Google -->
+                                <svg class="workflow-arrow desktop-arrow" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                                    <polyline points="12 5 19 12 12 19"></polyline>
+                                </svg>
+                            </div>
+                            <div class="workflow-line-2">
+                                <span class="workflow-step highlight">Live on Google.</span>
+                                <span class="workflow-punch">That’s literally all it takes.</span>
+                            </div>
+                        </div>
+
+                        <p class="machine-desc">
+                            No coding, no manual configuration. Just enter your details and Linkal puts your branded website on Google with direct WhatsApp ordering in 60 seconds.
+                        </p>
+
+                        <div class="machine-cta-row">
+                            <a href="https://studio.linkal.in" class="btn btn-navy">
+                                <span>Launch in 1 Minute</span>
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
