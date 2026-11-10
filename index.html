@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Linkal AI — 1-Minute Website Builder &amp; Storefront Creator | linkal.in</title>
+    <title>Websites in 1 min with Free Domain, Instagram Business Websites | Free CV Websites</title>
     <meta name="description"
         content="Linkal AI is India's fastest 1-minute website builder. Launch a branded mobile storefront, restaurant digital QR menu, live CV, or boutique website on your own .linkal.in subdomain with direct WhatsApp ordering and automated Google listing." />
     <meta name="keywords" content="Linkal, Linkal AI, linkal.in, Linkal website builder, AI store builder, restaurant digital menu, WhatsApp ordering website, live CV maker, portfolio builder, ecommerce website builder India" />
@@ -13,18 +13,23 @@
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
     <meta name="googlebot" content="index, follow" />
     <meta name="google-site-verification" content="O-HQz353RWSV6QicrTwKWJOtwQkS0JpgI7hWKEcu_q4" />
+    <meta name="application-name" content="Linkal AI" />
+    <meta name="apple-mobile-web-app-title" content="Linkal AI" />
 
     <!-- Favicon & PWA Icons (Official Linkal Logo) -->
-    <link rel="icon" type="image/jpeg" href="https://linkal.in/linkal.jpeg" />
-    <link rel="shortcut icon" type="image/jpeg" href="https://linkal.in/linkal.jpeg" />
-    <link rel="apple-touch-icon" href="https://linkal.in/linkal.jpeg" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png" />
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/manifest.json" />
     <meta name="theme-color" content="#0D1B3E" />
 
     <!-- Open Graph / Facebook / WhatsApp -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://linkal.in/" />
-    <meta property="og:title" content="Linkal AI — 1-Minute Website Builder &amp; Storefront Creator" />
+    <meta property="og:title" content="Websites in 1 min with Free Domain, Instagram Business Websites | Free CV Websites" />
     <meta property="og:description" content="Launch a branded mobile website, restaurant digital QR menu, live CV, or store on your own .linkal.in subdomain with Linkal AI." />
     <meta property="og:site_name" content="Linkal AI" />
     <meta property="og:locale" content="en_IN" />
@@ -35,7 +40,7 @@
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:url" content="https://linkal.in/" />
-    <meta name="twitter:title" content="Linkal AI — 1-Minute Website Builder &amp; Storefront Creator" />
+    <meta name="twitter:title" content="Websites in 1 min with Free Domain, Instagram Business Websites | Free CV Websites" />
     <meta name="twitter:description" content="Launch your branded website or digital menu on your own subdomain in 1 minute with Linkal AI." />
     <meta name="twitter:image" content="https://linkal.in/linkal.jpeg" />
 
@@ -63,7 +68,7 @@
           "@id": "https://linkal.in/#website",
           "url": "https://linkal.in/",
           "name": "Linkal AI",
-          "alternateName": "Linkal",
+          "alternateName": ["Linkal", "linkal.in"],
           "publisher": {
             "@id": "https://linkal.in/#organization"
           }
@@ -833,21 +838,33 @@
 
         #ticker {
             background: #0D1B3E;
-            padding: 0.85rem 0;
+            padding: 0.9rem 0;
             overflow: hidden;
             white-space: nowrap;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
         }
 
         .ticker-track {
             display: inline-flex;
             gap: 2.5rem;
-            animation: ticker-scroll 24s linear infinite;
+            animation: ticker-scroll 55s linear infinite;
+            animation-play-state: paused;
+            will-change: transform;
+        }
+
+        .ticker-track.running {
+            animation-play-state: running;
+        }
+
+        .ticker-track:hover {
+            animation-play-state: paused;
         }
 
         .ticker-item {
             display: inline-flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 0.55rem;
             color: #FAF6EC;
             font-family: 'Plus Jakarta Sans', sans-serif;
             font-size: 0.88rem;
@@ -861,6 +878,12 @@
             background: #D97706;
             border-radius: 50%;
             display: inline-block;
+            margin-left: 0.5rem;
+        }
+
+        .ticker-icon {
+            font-size: 1rem;
+            line-height: 1;
         }
 
         @keyframes ticker-scroll {
@@ -877,7 +900,7 @@
 
         /* ─── THE 1-MINUTE WEBSITE MACHINE ─── */
         .machine-section {
-            background: var(--white);
+            background: var(--bg);
             padding: 3.5rem 0 3.5rem 0;
             border-bottom: 1px solid var(--border);
         }
@@ -905,8 +928,8 @@
             border-radius: 18px;
             overflow: hidden;
             border: 1px solid var(--border);
-            box-shadow: 0 8px 24px rgba(13, 27, 62, 0.08);
-            background: var(--white);
+            box-shadow: 0 8px 24px rgba(13, 27, 62, 0.05);
+            background: #FAF6EC;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -919,7 +942,7 @@
             object-fit: contain;
             display: block;
             border-radius: 18px;
-            background: var(--white);
+            background: #FAF6EC;
         }
 
         .machine-content {
@@ -2860,31 +2883,6 @@
                                 <span>Open Linkal Studio</span>
                                 <i data-lucide="arrow-right" width="16" height="16"></i>
                             </a>
-                            <a href="#how" class="btn btn-outline btn-lg">See How It Works</a>
-                        </div>
-
-                        <div class="trust-badges">
-                            <div class="trust-badge">
-                                <i data-lucide="check-circle-2" width="16" height="16"></i>
-                                Live in 1 minute
-                            </div>
-                            <div class="trust-badge">
-                                <i data-lucide="check-circle-2" width="16" height="16"></i>
-                                Free website &amp; domain included
-                            </div>
-                            <div class="trust-badge">
-                                <i data-lucide="check-circle-2" width="16" height="16"></i>
-                                WhatsApp ordering built-in
-                            </div>
-                            <div class="trust-badge">
-                                <i data-lucide="check-circle-2" width="16" height="16"></i>
-                                Google listing automatically
-                            </div>
-                        </div>
-
-                        <div class="hero-trust-proof">
-                            <span class="hero-trust-dot"></span>
-                            <span>300+ Indian businesses trust Linkal AI</span>
                         </div>
                     </div>
 
@@ -2968,48 +2966,30 @@
             </div>
         </section>
 
-        <!-- 2. STATS STRIP & TICKER -->
-        <section id="stats">
-            <div class="container">
-                <div class="stats-grid">
-                    <div class="stat-item reveal">
-                        <div class="stat-number" data-target="300">300+</div>
-                        <div class="stat-label">Active Stores &amp; Menus</div>
-                    </div>
-                    <div class="stat-item reveal reveal-delay-1">
-                        <div class="stat-number" data-target="1">1</div>
-                        <div class="stat-label">Minutes to Go Live</div>
-                    </div>
-                    <div class="stat-item reveal reveal-delay-2">
-                        <div class="stat-number" data-target="0">₹0</div>
-                        <div class="stat-label">Setup or Hosting Cost</div>
-                    </div>
-                    <div class="stat-item reveal reveal-delay-3">
-                        <div class="stat-number" data-target="100">100%</div>
-                        <div class="stat-label">WhatsApp Checkout</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- TICKER -->
+        <!-- TICKER SLIDER (Slow, smooth, starts when user arrives) -->
         <div id="ticker">
             <div class="ticker-track">
-                <span class="ticker-item">Automatic Google Listing <span class="dot"></span></span>
-                <span class="ticker-item">Branded .linkal.in Subdomain <span class="dot"></span></span>
-                <span class="ticker-item">Free Website &amp; Free Domain <span class="dot"></span></span>
-                <span class="ticker-item">1-Minute Live Setup <span class="dot"></span></span>
-                <span class="ticker-item">Direct WhatsApp Orders <span class="dot"></span></span>
-                <span class="ticker-item">Zero Commission Forever <span class="dot"></span></span>
-                <span class="ticker-item">QR Menus &amp; Mobile Stores <span class="dot"></span></span>
+                <span class="ticker-item"><span class="ticker-icon">⚡</span> Live in 1 minute <span class="dot"></span></span>
+                <span class="ticker-item"><span class="ticker-icon">🌐</span> Free Website &amp; Domain Included <span class="dot"></span></span>
+                <span class="ticker-item"><span class="ticker-icon">💬</span> WhatsApp Ordering Built-in <span class="dot"></span></span>
+                <span class="ticker-item"><span class="ticker-icon">🔍</span> Google Listing Automatically <span class="dot"></span></span>
+                <span class="ticker-item"><span class="ticker-icon">🏪</span> 300+ Active Stores &amp; Menus <span class="dot"></span></span>
+                <span class="ticker-item"><span class="ticker-icon">⏱️</span> 1 Minute to Go Live <span class="dot"></span></span>
+                <span class="ticker-item"><span class="ticker-icon">💸</span> ₹0 Cost Setup or Hosting <span class="dot"></span></span>
+                <span class="ticker-item"><span class="ticker-icon">📱</span> 100% WhatsApp Checkout <span class="dot"></span></span>
+                <span class="ticker-item"><span class="ticker-icon">🚀</span> Zero Commission Forever <span class="dot"></span></span>
+                <span class="ticker-item"><span class="ticker-icon">🏷️</span> Branded .linkal.in Subdomain <span class="dot"></span></span>
                 <!-- duplicate for infinite loop -->
-                <span class="ticker-item">Automatic Google Listing <span class="dot"></span></span>
-                <span class="ticker-item">Branded .linkal.in Subdomain <span class="dot"></span></span>
-                <span class="ticker-item">Free Website &amp; Free Domain <span class="dot"></span></span>
-                <span class="ticker-item">1-Minute Live Setup <span class="dot"></span></span>
-                <span class="ticker-item">Direct WhatsApp Orders <span class="dot"></span></span>
-                <span class="ticker-item">Zero Commission Forever <span class="dot"></span></span>
-                <span class="ticker-item">QR Menus &amp; Mobile Stores <span class="dot"></span></span>
+                <span class="ticker-item"><span class="ticker-icon">⚡</span> Live in 1 minute <span class="dot"></span></span>
+                <span class="ticker-item"><span class="ticker-icon">🌐</span> Free Website &amp; Domain Included <span class="dot"></span></span>
+                <span class="ticker-item"><span class="ticker-icon">💬</span> WhatsApp Ordering Built-in <span class="dot"></span></span>
+                <span class="ticker-item"><span class="ticker-icon">🔍</span> Google Listing Automatically <span class="dot"></span></span>
+                <span class="ticker-item"><span class="ticker-icon">🏪</span> 300+ Active Stores &amp; Menus <span class="dot"></span></span>
+                <span class="ticker-item"><span class="ticker-icon">⏱️</span> 1 Minute to Go Live <span class="dot"></span></span>
+                <span class="ticker-item"><span class="ticker-icon">💸</span> ₹0 Cost Setup or Hosting <span class="dot"></span></span>
+                <span class="ticker-item"><span class="ticker-icon">📱</span> 100% WhatsApp Checkout <span class="dot"></span></span>
+                <span class="ticker-item"><span class="ticker-icon">🚀</span> Zero Commission Forever <span class="dot"></span></span>
+                <span class="ticker-item"><span class="ticker-icon">🏷️</span> Branded .linkal.in Subdomain <span class="dot"></span></span>
             </div>
         </div>
 
@@ -4262,41 +4242,21 @@
         revealElements.forEach(el => revealObserver.observe(el));
 
         // ─── COUNTER ANIMATION ───
-        const statElements = document.querySelectorAll('.stat-number');
-        let statsCounted = false;
-
-        const statsObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting && !statsCounted) {
-                    statsCounted = true;
-                    statElements.forEach(el => {
-                        const target = parseInt(el.getAttribute('data-target'), 10);
-                        const rawText = el.textContent;
-                        let start = 0;
-                        const duration = 1200;
-                        const startTime = performance.now();
-
-                        function update(currentTime) {
-                            const elapsed = currentTime - startTime;
-                            const progress = Math.min(elapsed / duration, 1);
-                            const easeOut = 1 - Math.pow(1 - progress, 3);
-                            const current = Math.round(start + (target - start) * easeOut);
-
-                            if (rawText.includes('+')) el.textContent = current + '+';
-                            else if (rawText.includes('₹')) el.textContent = '₹' + current;
-                            else if (rawText.includes('%')) el.textContent = current + '%';
-                            else el.textContent = current;
-
-                            if (progress < 1) requestAnimationFrame(update);
-                        }
-                        requestAnimationFrame(update);
-                    });
-                }
-            });
-        }, { threshold: 0.25 });
-
-        const statsSection = document.getElementById('stats');
-        if (statsSection) statsObserver.observe(statsSection);
+        // ─── TICKER CONTROLLER (Starts smooth glide when user reaches ticker) ───
+        const tickerEl = document.getElementById('ticker');
+        const tickerTrack = tickerEl ? tickerEl.querySelector('.ticker-track') : null;
+        if (tickerEl && tickerTrack) {
+            const tickerObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        tickerTrack.classList.add('running');
+                    } else {
+                        tickerTrack.classList.remove('running');
+                    }
+                });
+            }, { threshold: 0.05 });
+            tickerObserver.observe(tickerEl);
+        }
 
         // ─── HOW IT WORKS CONTROLLER (MOON CAFE) ───
         let currentHowStep = 1;
