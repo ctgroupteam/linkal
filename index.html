@@ -454,60 +454,57 @@
             color: #0D1B3E;
         }
 
-        /* Hero 2-line Features Showcase (replacing hero-sub) */
-        .hero-features-showcase {
-            display: flex;
-            flex-direction: column;
-            gap: 0.65rem;
-            margin-bottom: 1.6rem;
-            max-width: 540px;
-        }
-
-        .hero-feature-item {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.65rem;
+        /* Hero Single Feature Box (CV & Wedding Card in 1 box) */
+        .hero-single-box {
             background: #FFFDF7;
             border: 1.5px solid var(--border);
-            border-radius: 14px;
-            padding: 0.55rem 0.85rem;
+            border-radius: 50px;
+            padding: 0.5rem 1.15rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 1.15rem;
             box-shadow: 0 2px 8px rgba(13, 27, 62, 0.04);
+            margin-bottom: 1.6rem;
+            max-width: 100%;
             transition: all 0.2s ease;
         }
 
-        .hero-feature-item:hover {
+        .hero-single-box:hover {
             border-color: #94A3B8;
-            transform: translateX(3px);
-            box-shadow: 0 4px 12px rgba(13, 27, 62, 0.07);
+            box-shadow: 0 4px 14px rgba(13, 27, 62, 0.07);
         }
 
-        .feature-icon-wrap {
-            width: 32px;
-            height: 32px;
-            border-radius: 10px;
+        .single-box-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .single-box-icon {
+            width: 26px;
+            height: 26px;
+            border-radius: 8px;
             display: inline-flex;
             align-items: center;
             justify-content: center;
             flex-shrink: 0;
         }
 
-        .feature-icon-wrap.cv-glow {
+        .single-box-icon.cv-icon {
             background: #EFF6FF;
             color: #2563EB;
-            box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.15);
         }
 
-        .feature-icon-wrap.wedding-glow {
+        .single-box-icon.wedding-icon {
             background: #FFF1F2;
             color: #E11D48;
-            box-shadow: 0 0 0 1px rgba(225, 29, 72, 0.15);
         }
 
         .feat-svg-anim {
             animation: gentlePulse 2.8s ease-in-out infinite;
         }
 
-        .hero-feature-item:nth-child(2) .feat-svg-anim {
+        .single-box-item:nth-child(3) .feat-svg-anim {
             animation-delay: 1.4s;
         }
 
@@ -520,56 +517,20 @@
             }
         }
 
-        .feature-text-main {
-            display: flex;
-            flex-direction: column;
-            gap: 1px;
-            flex: 1;
-            min-width: 0;
-            text-align: left;
-        }
-
-        .feature-text-main strong {
+        .single-box-text {
             font-family: 'Plus Jakarta Sans', sans-serif;
             font-size: 0.86rem;
-            font-weight: 800;
-            color: #0D1B3E;
-            line-height: 1.25;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-
-        .feature-subtext {
-            font-size: 0.74rem;
-            color: #64748B;
-            font-weight: 500;
-            line-height: 1.2;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-
-        .feature-pill {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            font-size: 0.64rem;
             font-weight: 700;
-            padding: 3px 8px;
-            border-radius: 20px;
+            color: #0D1B3E;
             white-space: nowrap;
+        }
+
+        .single-box-divider {
+            width: 1px;
+            height: 18px;
+            background: #CBD5E1;
+            display: inline-block;
             flex-shrink: 0;
-        }
-
-        .feature-pill.cv-pill {
-            background: #EFF6FF;
-            color: #1D4ED8;
-            border: 1px solid rgba(29, 78, 216, 0.18);
-        }
-
-        .feature-pill.wedding-pill {
-            background: #FEF2F2;
-            color: #BE123C;
-            border: 1px solid rgba(190, 18, 60, 0.18);
         }
 
         .hero-ctas {
@@ -932,31 +893,32 @@
             }
             .hero-h1 {
                 order: 2;
-                white-space: nowrap;
-                font-size: clamp(1.05rem, 5.2vw, 1.55rem);
-                margin-bottom: 0.35rem;
-                line-height: 1.2;
+                white-space: normal;
+                font-size: clamp(1.15rem, 5.2vw, 1.55rem);
+                margin-bottom: 0.45rem;
+                line-height: 1.25;
                 letter-spacing: -0.02em;
+                text-wrap: balance;
             }
-            .hero-features-showcase {
+            .hero-single-box {
                 order: 3;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.4rem;
+                padding: 0.55rem 0.85rem;
                 margin: 0 auto 0.65rem auto;
                 width: 100%;
-                max-width: 320px;
-                gap: 0.45rem;
+                max-width: 300px;
+                border-radius: 14px;
             }
-            .hero-feature-item {
-                padding: 0.45rem 0.65rem;
+            .single-box-divider {
+                width: 100%;
+                height: 1px;
+                background: rgba(13, 27, 62, 0.08);
             }
-            .feature-icon-wrap {
-                width: 28px;
-                height: 28px;
-            }
-            .feature-text-main strong {
-                font-size: 0.8rem;
-            }
-            .feature-subtext {
-                font-size: 0.68rem;
+            .single-box-text {
+                font-size: 0.82rem;
             }
             .phone-wrap {
                 order: 4;
@@ -3076,34 +3038,27 @@
                             <span style="display:inline-flex; align-items:center; gap:5px;"><svg width="13" height="13" viewBox="0 0 24 24" fill="#F59E0B"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg> Create Website Faster Than Blinkit Delivers Groceries</span>
                         </div>
 
-                        <h1 class="hero-h1">Create Free Website in 1 Minute</h1>
+                        <h1 class="hero-h1">Create Free Website in 1 Minute and get a Free Domain</h1>
 
-                        <div class="hero-features-showcase">
-                            <div class="hero-feature-item">
-                                <span class="feature-icon-wrap cv-glow">
+                        <div class="hero-single-box">
+                            <div class="single-box-item">
+                                <span class="single-box-icon cv-icon">
                                     <svg class="feat-svg-anim" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
                                         <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
                                         <circle cx="9" cy="7" r="4"/>
                                         <polyline points="16 11 18 13 22 9"/>
                                     </svg>
                                 </span>
-                                <span class="feature-text-main">
-                                    <strong>Free CV / Portfolio Websites</strong>
-                                    <span class="feature-subtext">Live interactive resume to showcase your work</span>
-                                </span>
-                                <span class="feature-pill cv-pill">Instant Live</span>
+                                <span class="single-box-text">Free CV / Portfolio Websites</span>
                             </div>
-                            <div class="hero-feature-item">
-                                <span class="feature-icon-wrap wedding-glow">
+                            <span class="single-box-divider"></span>
+                            <div class="single-box-item">
+                                <span class="single-box-icon wedding-icon">
                                     <svg class="feat-svg-anim" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#E11D48" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
                                         <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
                                     </svg>
                                 </span>
-                                <span class="feature-text-main">
-                                    <strong>Wedding Card Websites with Domain</strong>
-                                    <span class="feature-subtext">Digital invitations, venue map &amp; WhatsApp RSVP</span>
-                                </span>
-                                <span class="feature-pill wedding-pill">Free Domain</span>
+                                <span class="single-box-text">Free Wedding Card Websites</span>
                             </div>
                         </div>
 
