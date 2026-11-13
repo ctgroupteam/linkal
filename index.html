@@ -113,20 +113,29 @@
         }
 
         :root {
-            --white: #FAF6EC;
+            --white: #FFFFFF;
             --black: #111111;
+            --bg-page: #FFFFFF;
+            --card-bg: #FFFFFF;
             --navy: #0D1B3E;
-            --navy-light: #F3EDE0;
-            --navy-dark: #081026;
+            --navy-hover: #081229;
+            --navy-light: #EEF4FE;
+            --navy-dark: #081229;
             --blue: #0D1B3E;
-            --blue-hover: #162B5E;
+            --blue-hover: #081229;
+            --accent-blue: #4F8CF0;
+            --button-blue: #7FAAF5;
+            --sky: #DCE8FB;
+            --sky-light: #EEF4FE;
+            --sky-border: #D6E2F7;
             --text: #111111;
-            --text-muted: #4B5563;
-            --card-bg: #FFFDF7;
-            --border: rgba(13, 27, 62, 0.10);
-            --border-strong: rgba(13, 27, 62, 0.18);
-            --shadow: 0 4px 20px rgba(13, 27, 62, 0.05);
-            --shadow-lg: 0 12px 36px rgba(13, 27, 62, 0.09);
+            --text-primary: #111111;
+            --text-secondary: #5A6275;
+            --text-muted: #5A6275;
+            --border: #D6E2F7;
+            --border-strong: #BDD0EF;
+            --shadow: 0 4px 16px rgba(13, 27, 62, 0.05);
+            --shadow-lg: 0 8px 24px rgba(13, 27, 62, 0.08);
             --radius-sm: 8px;
             --radius-md: 14px;
             --radius-lg: 20px;
@@ -226,7 +235,7 @@
 
         .btn-navy:hover,
         .btn-blue:hover {
-            background: #182C61;
+            background: #081229;
             transform: translateY(-2px);
             box-shadow: 0 6px 20px rgba(13, 27, 62, 0.3);
         }
@@ -244,10 +253,23 @@
         }
 
         .btn-white {
-            background: #FFFDF7;
+            background: #FFFFFF;
             color: #0D1B3E !important;
             border: 1px solid var(--border);
             box-shadow: 0 4px 14px rgba(13, 27, 62, 0.08);
+        }
+
+        .btn-soft {
+            background: #7FAAF5;
+            color: #FFFFFF !important;
+            border: none;
+            box-shadow: 0 4px 14px rgba(79, 140, 240, 0.25);
+        }
+
+        .btn-soft:hover {
+            background: #4F8CF0;
+            color: #FFFFFF !important;
+            transform: translateY(-2px);
         }
 
         .btn-white:hover {
@@ -265,7 +287,7 @@
             display: inline-flex;
             align-items: center;
             gap: 0.4rem;
-            background: var(--navy-light);
+            background: #FFFFFF;
             border: 1px solid var(--border);
             color: var(--navy);
             padding: 0.35rem 0.95rem;
@@ -276,6 +298,7 @@
             text-transform: uppercase;
             letter-spacing: 0.05em;
             margin-bottom: 0.75rem;
+            box-shadow: 0 8px 24px rgba(13, 27, 62, 0.08);
         }
 
         /* ─── NAVBAR ─── */
@@ -285,7 +308,7 @@
             left: 0;
             right: 0;
             z-index: 1000;
-            background: rgba(250, 246, 236, 0.92);
+            background: rgba(255, 255, 255, 0.92);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
             border-bottom: 1px solid var(--border);
@@ -295,7 +318,7 @@
 
         #navbar.scrolled {
             box-shadow: 0 4px 20px rgba(13, 27, 62, 0.06);
-            background: rgba(250, 246, 236, 0.98);
+            background: rgba(255, 255, 255, 0.98);
         }
 
         .nav-inner {
@@ -372,7 +395,7 @@
             top: 70px;
             left: 0;
             right: 0;
-            background: #FFFDF7;
+            background: #FFFFFF;
             border-bottom: 1px solid var(--border);
             padding: 1.5rem;
             flex-direction: column;
@@ -422,7 +445,7 @@
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            background: var(--navy-light);
+            background: #FFFFFF;
             border: 1px solid var(--border);
             border-radius: 50px;
             padding: 0.4rem 1rem;
@@ -432,6 +455,7 @@
             color: var(--navy);
             margin-bottom: 1.25rem;
             flex-wrap: wrap;
+            box-shadow: 0 8px 24px rgba(13, 27, 62, 0.08);
         }
 
         .hero-badge-dot {
@@ -456,14 +480,14 @@
 
         /* Hero Single Feature Box (CV & Wedding Card in 1 box) */
         .hero-single-box {
-            background: #FFFDF7;
-            border: 1.5px solid var(--border);
+            background: #FFFFFF;
+            border: 1px solid var(--border);
             border-radius: 50px;
             padding: 0.5rem 1.15rem;
             display: inline-flex;
             align-items: center;
             gap: 1.15rem;
-            box-shadow: 0 2px 8px rgba(13, 27, 62, 0.04);
+            box-shadow: 0 8px 24px rgba(13, 27, 62, 0.08);
             margin-bottom: 1.6rem;
             max-width: 100%;
             transition: all 0.2s ease;
@@ -555,9 +579,9 @@
             background: #0F172A;
             border-radius: 36px;
             padding: 7px;
-            box-shadow: 0 20px 48px rgba(13, 27, 62, 0.24), 0 8px 20px rgba(13, 27, 62, 0.12);
+            box-shadow: 0 16px 44px rgba(13, 27, 62, 0.12), 0 6px 18px rgba(13, 27, 62, 0.08);
             position: relative;
-            border: 2.5px solid #334155;
+            border: 2px solid var(--border);
             max-height: 520px;
         }
 
@@ -700,7 +724,7 @@
 
         /* 3. The Live Website Viewport */
         .chrome-web-viewport {
-            background: #FFFDF7;
+            background: #FFFFFF;
             overflow-y: auto;
             max-height: 380px;
             display: flex;
@@ -957,7 +981,7 @@
 
         /* ─── STATS STRIP & TICKER ─── */
         #stats {
-            background: var(--navy-light);
+            background: #FFFFFF;
             border-top: 1px solid var(--border);
             border-bottom: 1px solid var(--border);
             padding: 2.2rem 0;
@@ -1019,7 +1043,7 @@
             display: inline-flex;
             align-items: center;
             gap: 0.65rem;
-            color: #FAF6EC;
+            color: #FFFFFF;
             font-family: 'Plus Jakarta Sans', sans-serif;
             font-size: 0.88rem;
             font-weight: 700;
@@ -1048,7 +1072,7 @@
         .ticker-item span.dot {
             width: 6px;
             height: 6px;
-            background: #D97706;
+            background: #4F8CF0;
             border-radius: 50%;
             display: inline-block;
             margin-left: 0.65rem;
@@ -1064,7 +1088,7 @@
 
         /* ─── THE 1-MINUTE WEBSITE MACHINE ─── */
         .machine-section {
-            background: var(--bg);
+            background: #FFFFFF;
             padding: 3.5rem 0 3.5rem 0;
             border-bottom: 1px solid var(--border);
         }
@@ -1093,7 +1117,7 @@
             overflow: hidden;
             border: 1px solid var(--border);
             box-shadow: 0 8px 24px rgba(13, 27, 62, 0.05);
-            background: #FAF6EC;
+            background: #FFFFFF;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -1106,7 +1130,7 @@
             object-fit: contain;
             display: block;
             border-radius: 18px;
-            background: #FAF6EC;
+            background: #FFFFFF;
         }
 
         .machine-content {
@@ -1131,15 +1155,15 @@
         }
 
         .workflow-box {
-            background: #FFFDF7;
-            border: 1.5px solid var(--border-strong);
+            background: #FFFFFF;
+            border: 1px solid var(--border);
             border-radius: 50px;
             padding: 0.65rem 1.35rem;
             display: inline-flex;
             align-items: center;
             gap: 0.55rem;
             margin: 0 0 1.25rem 0;
-            box-shadow: 0 2px 8px rgba(13, 27, 62, 0.04);
+            box-shadow: 0 8px 24px rgba(13, 27, 62, 0.08);
             max-width: 100%;
         }
 
@@ -1158,13 +1182,13 @@
         }
 
         .workflow-step.highlight {
-            color: #059669;
+            color: #4F8CF0;
             font-weight: 800;
             white-space: nowrap;
         }
 
         .workflow-punch {
-            color: #4B5563;
+            color: #5A6275;
             font-weight: 600;
             font-size: 0.82rem;
             margin-left: 0.15rem;
@@ -1172,7 +1196,7 @@
         }
 
         .workflow-arrow {
-            color: #059669;
+            color: #4F8CF0;
             animation: arrowFlow 1.8s ease-in-out infinite;
             flex-shrink: 0;
             display: inline-flex;
@@ -1197,7 +1221,7 @@
 
         .machine-desc {
             font-size: 0.94rem;
-            color: #4B5563;
+            color: #5A6275;
             line-height: 1.55;
             margin-bottom: 1.35rem;
             max-width: 540px;
@@ -1269,7 +1293,7 @@
         }
 
         .how-tab-btn.active {
-            background: #FFFDF7;
+            background: #FFFFFF;
             border-bottom-color: #0D1B3E;
         }
 
@@ -1321,7 +1345,7 @@
 
         /* Mock Window Frame */
         .mock-window {
-            background: #FFFDF7;
+            background: #FFFFFF;
             border: 1px solid var(--border);
             border-radius: var(--radius-md);
             box-shadow: 0 8px 30px rgba(13, 27, 62, 0.08);
@@ -1329,7 +1353,7 @@
         }
 
         .mock-bar {
-            background: #F3EDE0;
+            background: #EEF4FE;
             border-bottom: 1px solid var(--border);
             padding: 0.65rem 1rem;
             display: flex;
@@ -1412,8 +1436,8 @@
             font-size: 0.8rem;
             font-weight: 600;
             border: 1px solid var(--border);
-            background: #FAF6EC;
-            color: #111111;
+            background: #EEF4FE;
+            color: #0D1B3E;
         }
 
         .cat-chip.active {
@@ -1455,7 +1479,7 @@
             height: 46px;
             border-radius: 8px;
             object-fit: cover;
-            background: #F3EDE0;
+            background: #EEF4FE;
             flex-shrink: 0;
         }
 
@@ -1496,7 +1520,7 @@
         /* Step 3 Progress Bar */
         .domain-progress-bar {
             height: 8px;
-            background: #F3EDE0;
+            background: #EEF4FE;
             border-radius: 4px;
             overflow: hidden;
             margin: 1.25rem 0;
@@ -1504,7 +1528,7 @@
 
         .domain-progress-fill {
             height: 100%;
-            background: #0D1B3E;
+            background: #4F8CF0;
             width: 0%;
             transition: width 0.3s ease;
         }
@@ -1882,7 +1906,7 @@
 
         /* ─── WHO CAN USE (3x3 COMPACT GRID) ─── */
         #use-cases {
-            background: var(--navy-light);
+            background: #FFFFFF;
             border-top: 1px solid var(--border);
             border-bottom: 1px solid var(--border);
         }
@@ -1900,7 +1924,7 @@
         }
 
         .use-case-card {
-            background: #FFFDF7;
+            background: #FFFFFF;
             border: 1px solid var(--border);
             border-radius: 14px;
             padding: 1.15rem 1.25rem;
@@ -1908,7 +1932,7 @@
             align-items: center;
             gap: 0.95rem;
             transition: all 0.22s ease;
-            box-shadow: 0 2px 8px rgba(13, 27, 62, 0.03);
+            box-shadow: 0 8px 24px rgba(13, 27, 62, 0.05);
         }
 
         .use-case-card:hover {
@@ -2154,7 +2178,7 @@
             width: 40px;
             height: 40px;
             border-radius: 10px;
-            background: #FAF6EC;
+            background: #EEF4FE;
             color: #0D1B3E;
             display: flex;
             align-items: center;
@@ -2183,7 +2207,7 @@
 
         /* ─── FEATURES SLIDER (HORIZONTAL CAROUSEL) ─── */
         #features {
-            background: var(--navy-light);
+            background: #FFFFFF;
             border-top: 1px solid var(--border);
             border-bottom: 1px solid var(--border);
         }
@@ -2206,7 +2230,7 @@
             width: 36px;
             height: 36px;
             border-radius: 50%;
-            background: #FFFDF7;
+            background: #FFFFFF;
             border: 1px solid var(--border);
             color: #0D1B3E;
             display: flex;
@@ -2239,11 +2263,11 @@
             flex: 0 0 calc(25% - 0.9rem);
             min-width: 250px;
             scroll-snap-align: start;
-            background: #FFFDF7;
+            background: #FFFFFF;
             border: 1px solid var(--border);
             border-radius: 16px;
             padding: 1.35rem 1.25rem;
-            box-shadow: 0 2px 10px rgba(13, 27, 62, 0.04);
+            box-shadow: 0 8px 24px rgba(13, 27, 62, 0.05);
             display: flex;
             flex-direction: column;
             gap: 0.65rem;
@@ -2260,7 +2284,7 @@
             width: 44px;
             height: 44px;
             border-radius: 12px;
-            background: #FAF6EC;
+            background: #EEF4FE;
             border: 1px solid var(--border);
             color: #0D1B3E;
             display: flex;
@@ -2278,7 +2302,7 @@
         .feat-slide p {
             font-size: 0.84rem;
             line-height: 1.45;
-            color: #4B5563;
+            color: #5A6275;
         }
 
         .slider-dots-row {
@@ -2293,7 +2317,7 @@
             width: 8px;
             height: 8px;
             border-radius: 50%;
-            background: rgba(13, 27, 62, 0.2);
+            background: #D6E2F7;
             cursor: pointer;
             transition: all 0.2s ease;
         }
@@ -2376,7 +2400,7 @@
             display: inline-flex;
             align-items: center;
             gap: 0.6rem;
-            background: #FFFDF7;
+            background: #FFFFFF;
             border: 1px solid var(--border);
             border-radius: 50px;
             padding: 0.6rem 1.25rem;
@@ -2384,7 +2408,7 @@
             font-size: 0.88rem;
             font-weight: 700;
             color: #0D1B3E;
-            box-shadow: 0 2px 8px rgba(13, 27, 62, 0.04);
+            box-shadow: 0 8px 24px rgba(13, 27, 62, 0.06);
         }
 
         .marquee-pill svg {
@@ -2414,12 +2438,12 @@
         }
 
         .pricing-headline-chip {
-            background: #FFFDF7;
-            border: 2px solid var(--border);
+            background: #FFFFFF;
+            border: 1.5px solid var(--border);
             border-radius: 16px;
             padding: 1.25rem 1rem;
             text-align: center;
-            box-shadow: 0 2px 10px rgba(13, 27, 62, 0.04);
+            box-shadow: 0 8px 24px rgba(13, 27, 62, 0.06);
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -2443,7 +2467,7 @@
 
         .free-tier .chip-badge { background: #ECFDF5; color: #059669; }
         .cafe-tier .chip-badge { background: #EFF6FF; color: #2563EB; }
-        .standard-tier .chip-badge { background: #FAF6EC; color: #0D1B3E; }
+        .standard-tier .chip-badge { background: #EEF4FE; color: #0D1B3E; }
 
         .chip-price {
             font-family: 'Plus Jakarta Sans', sans-serif;
@@ -2456,7 +2480,7 @@
         .chip-desc {
             font-size: 0.82rem;
             font-weight: 600;
-            color: #4B5563;
+            color: #5A6275;
             line-height: 1.35;
         }
 
@@ -2474,11 +2498,11 @@
         }
 
         .plan-card {
-            background: #FFFDF7;
+            background: #FFFFFF;
             border: 1px solid var(--border);
             border-radius: 18px;
             padding: 1.75rem 1.35rem;
-            box-shadow: 0 2px 12px rgba(13, 27, 62, 0.04);
+            box-shadow: 0 8px 24px rgba(13, 27, 62, 0.06);
             display: flex;
             flex-direction: column;
             position: relative;
@@ -2636,11 +2660,11 @@
         }
 
         .review-card {
-            background: #FFFDF7;
+            background: #FFFFFF;
             border: 1px solid var(--border);
             border-radius: 16px;
             padding: 1.5rem;
-            box-shadow: 0 2px 10px rgba(13, 27, 62, 0.04);
+            box-shadow: 0 8px 24px rgba(13, 27, 62, 0.06);
             display: flex;
             flex-direction: column;
             gap: 0.85rem;
@@ -2672,7 +2696,7 @@
             height: 38px;
             border-radius: 50%;
             background: #0D1B3E;
-            color: #FFFDF7;
+            color: #FFFFFF;
             font-family: 'Plus Jakarta Sans', sans-serif;
             font-weight: 800;
             font-size: 0.8rem;
@@ -2700,7 +2724,7 @@
 
         /* ─── FAQ ─── */
         #faq {
-            background: var(--navy-light);
+            background: #FFFFFF;
             border-top: 1px solid var(--border);
             border-bottom: 1px solid var(--border);
         }
@@ -2720,11 +2744,11 @@
         }
 
         .faq-item {
-            background: #FFFDF7;
+            background: #FFFFFF;
             border: 1px solid var(--border);
             border-radius: 14px;
             overflow: hidden;
-            box-shadow: 0 2px 6px rgba(13, 27, 62, 0.03);
+            box-shadow: 0 8px 24px rgba(13, 27, 62, 0.05);
         }
 
         .faq-question {
@@ -2749,7 +2773,7 @@
             padding: 0 1.35rem 1.15rem 1.35rem;
             font-size: 0.92rem;
             line-height: 1.6;
-            color: #374151;
+            color: #5A6275;
         }
 
         .faq-item.active .faq-answer {
@@ -2798,7 +2822,7 @@
 
         /* ─── FOOTER ─── */
         footer {
-            background: #FAF6EC;
+            background: #FFFFFF;
             border-top: 1px solid var(--border);
             padding: 3.5rem 0 2rem 0;
         }
@@ -2835,7 +2859,7 @@
 
         .footer-col a {
             font-size: 0.85rem;
-            color: #4B5563;
+            color: #5A6275;
         }
 
         .footer-col a:hover {
@@ -2945,7 +2969,7 @@
             bottom: 0;
             left: 0;
             right: 0;
-            background: #FFFDF7;
+            background: #FFFFFF;
             border-top: 1px solid var(--border);
             padding: 0.4rem 0.5rem;
             z-index: 1000;
@@ -2959,7 +2983,7 @@
             flex-direction: column;
             align-items: center;
             gap: 2px;
-            color: #4B5563;
+            color: #5A6275;
             text-decoration: none;
             font-family: 'Plus Jakarta Sans', sans-serif;
             font-size: 0.68rem;
@@ -3065,7 +3089,7 @@
                             <span style="display:inline-flex; align-items:center; gap:5px;"><svg width="13" height="13" viewBox="0 0 24 24" fill="#F59E0B"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg> Create Website Faster Than Blinkit Delivers Groceries</span>
                         </div>
 
-                        <h1 class="hero-h1">Create Free Website in 1 Minute and get a Free Domain</h1>
+                        <h1 class="hero-h1">Create Free Website in 1 Minute and get a <span class="highlight">Free Domain</span></h1>
 
                         <div class="hero-single-box">
                             <div class="single-box-item">
@@ -3341,7 +3365,7 @@
                                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
                                 100% Automated Setup
                             </span>
-                            <h2 class="machine-title">The 1-Minute Website Machine</h2>
+                            <h2 class="machine-title">The 1-Minute Website <span class="highlight">Machine</span></h2>
                         </div>
 
                         <!-- Workflow Box: Desktop 1-line, Mobile 2-lines (2 arrows on Line 1, NO arrow on Line 2) -->
@@ -3451,7 +3475,7 @@
                                         <span style="font-size:0.7rem; font-weight:700; background:#ECFDF5; color:#059669; padding:0.25rem 0.6rem; border-radius:20px;">✓ Available</span>
                                     </div>
 
-                                    <div style="font-size:0.78rem; font-weight:700; color:#4B5563; margin-bottom:0.5rem;">Select Your Category:</div>
+                                    <div style="font-size:0.78rem; font-weight:700; color:#5A6275; margin-bottom:0.5rem;">Select Your Category:</div>
                                     <div class="cat-chips">
                                         <span class="cat-chip active">Cafe &amp; Coffee</span>
                                         <span class="cat-chip">Cake Shop</span>
@@ -3574,7 +3598,7 @@
                                         <svg width="13" height="13" viewBox="0 0 24 24" fill="#059669"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg> FREE domain included with automated SSL
                                     </div>
                                     <h4 style="font-size:1.35rem; color:#0D1B3E; font-weight:800; margin-bottom:0.5rem;">AI building your live website...</h4>
-                                    <p style="font-size:0.86rem; color:#4B5563; max-width:440px; margin:0 auto 1.25rem auto;">Generating responsive layout, configuring digital menu, and activating cloud CDN.</p>
+                                    <p style="font-size:0.86rem; color:#5A6275; max-width:440px; margin:0 auto 1.25rem auto;">Generating responsive layout, configuring digital menu, and activating cloud CDN.</p>
 
                                     <!-- Progress steps -->
                                     <div style="display:flex; justify-content:center; gap:1.25rem; font-size:0.78rem; font-weight:700; color:#0D1B3E; margin-bottom:0.85rem;">
@@ -3589,7 +3613,7 @@
                                         <div class="domain-progress-fill" id="domainFill" style="width:100%;"></div>
                                     </div>
 
-                                    <div style="display:inline-flex; align-items:center; gap:8px; background:#F3EDE0; border:1px solid var(--border); padding:0.5rem 1rem; border-radius:10px; margin-top:0.75rem;">
+                                    <div style="display:inline-flex; align-items:center; gap:8px; background:#EEF4FE; border:1px solid var(--border); padding:0.5rem 1rem; border-radius:10px; margin-top:0.75rem;">
                                         <span style="width:8px; height:8px; background:#10B981; border-radius:50%; display:inline-block;"></span>
                                         <span style="font-family:'SFMono-Regular',Consolas,monospace; font-size:0.85rem; font-weight:700; color:#0D1B3E;">mooncafe.linkal.in is LIVE</span>
                                         <span style="background:#10B981; color:#FFFFFF; font-size:0.62rem; font-weight:800; padding:2px 6px; border-radius:4px;">SSL OK</span>
@@ -3647,7 +3671,7 @@
                                     </div>
 
                                     <div style="font-family:'SFMono-Regular',Consolas,monospace; font-size:0.75rem; font-weight:700; color:#0D1B3E; margin-bottom:0.35rem;">https://mooncafe.linkal.in</div>
-                                    <p style="font-size:0.75rem; color:#4B5563; line-height:1.4;">Print and place on cafe tables or billing counter. Customers scan &amp; order on WhatsApp instantly.</p>
+                                    <p style="font-size:0.75rem; color:#5A6275; line-height:1.4;">Print and place on cafe tables or billing counter. Customers scan &amp; order on WhatsApp instantly.</p>
                                 </div>
                             </div>
                         </div>
@@ -4172,7 +4196,7 @@
             <div class="container">
                 <div class="pricing-header reveal">
                     <span class="badge-pill">Transparent Pricing</span>
-                    <h2>Simple Pricing. No Surprises.</h2>
+                    <h2>Simple Pricing. <span class="highlight">No Surprises.</span></h2>
                     <p>All plans include a 15-day free trial. Cancel anytime. No credit card required.</p>
                 </div>
 
@@ -4198,7 +4222,7 @@
                 <!-- PLAN CARDS -->
                 <div class="pricing-grid reveal">
                     <!-- Free CV Website -->
-                    <div class="plan-card" style="border: 2px solid #0D1B3E; background: #FFFDF7;">
+                    <div class="plan-card" style="border: 2px solid #0D1B3E; background: #FFFFFF;">
                         <div style="position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: #059669; color: #FFFFFF; font-size: 0.7rem; font-weight: 800; padding: 0.25rem 0.85rem; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.05em; white-space: nowrap;">Free for Students &amp; Job Seekers</div>
                         <div class="plan-name">Free CV Website</div>
                         <div class="plan-price">₹0<span style="font-size: 0.88rem; color: #059669; font-weight: 700;"> Lifetime Free</span></div>
@@ -4395,7 +4419,7 @@
         <!-- 11. CTA BANNER -->
         <section id="cta-banner">
             <div class="container reveal">
-                <h2>Your Store is 1 Minute Away</h2>
+                <h2>Your Store is <span class="highlight">1 Minute</span> Away</h2>
                 <p>Join hundreds of Indian entrepreneurs who launched their branded website with Linkal AI. Free website &amp; free domain included.</p>
                 <div class="cta-btns">
                     <a href="https://studio.linkal.in" class="btn btn-white btn-lg">
@@ -4494,7 +4518,7 @@
 
     <!-- POLICY MODAL -->
     <div id="policyModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(13,27,62,0.6); backdrop-filter:blur(4px); z-index:9999; align-items:center; justify-content:center; padding:1.5rem;">
-        <div style="background:#FFFDF7; border-radius:18px; max-width:680px; width:100%; max-height:85vh; overflow-y:auto; padding:2rem; position:relative; box-shadow:0 20px 60px rgba(0,0,0,0.3); border:1px solid var(--border);">
+        <div style="background:#FFFFFF; border-radius:18px; max-width:680px; width:100%; max-height:85vh; overflow-y:auto; padding:2rem; position:relative; box-shadow:0 20px 60px rgba(0,0,0,0.3); border:1px solid var(--border);">
             <button onclick="closePolicyModal()" style="position:absolute; top:1.25rem; right:1.25rem; background:none; border:none; cursor:pointer; color:#0D1B3E; font-size:1.5rem; line-height:1;">&times;</button>
             <div id="policyModalBody"></div>
         </div>
