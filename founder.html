@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Yahya Mundewadi – Founder of Linkal AI</title>
     <meta name="description" content="Meet Yahya Mundewadi, 22-year-old Indian founder building simple, affordable technology for small businesses at Linkal AI, Dominal Technology, and OpenSoftwares." />
-    <meta name="theme-color" content="#5B2A4A" />
+    <meta name="theme-color" content="#1B2A4E" />
     <link rel="canonical" href="https://linkal.in/founder" />
 
     <!-- Open Graph / Facebook -->
@@ -63,16 +63,18 @@
         }
 
         .founder-card {
-            max-width: 640px;
+            max-width: 600px;
             width: 100%;
             text-align: center;
             position: relative;
             z-index: 1;
-            padding: 3rem 2rem;
+            padding: 2.75rem 2rem;
             background: #FFFFFF;
             border-radius: 28px;
-            border: 1px solid var(--blush-border);
+            border: 1px solid var(--sky-border);
             box-shadow: var(--shadow-card);
+            box-sizing: border-box;
+            overflow: hidden;
         }
 
         .founder-avatar-wrap {
@@ -83,8 +85,8 @@
             border-radius: 50%;
             padding: 4px;
             background: #FFFFFF;
-            border: 3px solid var(--plum);
-            box-shadow: 0 10px 28px rgba(91, 42, 74, 0.15);
+            border: 3px solid var(--navy);
+            box-shadow: 0 10px 28px rgba(27, 42, 78, 0.12);
         }
 
         .founder-avatar {
@@ -105,7 +107,7 @@
         .founder-title {
             font-size: 1.05rem;
             font-weight: 600;
-            color: var(--plum);
+            color: var(--navy);
             margin-bottom: 1.75rem;
             letter-spacing: 0.02em;
         }
@@ -117,6 +119,8 @@
             gap: 1rem;
             margin-bottom: 2rem;
             flex-wrap: wrap;
+            width: 100%;
+            box-sizing: border-box;
         }
 
         .founder-btn {
@@ -125,7 +129,7 @@
             gap: 0.65rem;
             padding: 0.72rem 1.45rem;
             border-radius: 14px;
-            border: 1.5px solid var(--blush-border);
+            border: 1.5px solid var(--sky-border);
             background: #FFFFFF;
             color: var(--text-primary);
             font-family: var(--font-body);
@@ -134,12 +138,14 @@
             text-decoration: none;
             transition: all 0.22s ease;
             box-shadow: var(--shadow-subtle);
+            box-sizing: border-box;
+            max-width: 100%;
         }
 
         .founder-btn:hover {
-            border-color: var(--plum);
-            color: var(--plum);
-            background: var(--blush-light);
+            border-color: var(--navy);
+            color: var(--navy);
+            background: var(--sky-light);
             transform: translateY(-2px);
             box-shadow: var(--shadow-hover);
         }
@@ -157,7 +163,7 @@
         }
 
         .founder-bio a {
-            color: var(--plum);
+            color: var(--navy);
             font-weight: 700;
             text-decoration: underline;
             text-underline-offset: 3px;
@@ -165,10 +171,10 @@
         }
 
         .founder-bio a:hover {
-            color: var(--plum-hover);
+            color: var(--navy-hover);
         }
 
-        .blush-patch-founder {
+        .sky-patch-founder {
             position: absolute;
             top: 50%;
             left: 50%;
@@ -176,7 +182,7 @@
             width: 580px;
             height: 580px;
             border-radius: 50%;
-            background: radial-gradient(circle, rgba(248, 222, 226, 0.5) 0%, rgba(252, 239, 241, 0.2) 65%, transparent 100%);
+            background: radial-gradient(circle, rgba(220, 230, 250, 0.45) 0%, rgba(238, 243, 253, 0.15) 65%, transparent 100%);
             filter: blur(80px);
             pointer-events: none;
             z-index: 0;
@@ -184,15 +190,35 @@
 
         @media (max-width: 520px) {
             .founder-card {
-                padding: 2.25rem 1.25rem;
+                padding: 2rem 1.25rem !important;
+                box-sizing: border-box !important;
             }
             .founder-buttons {
-                flex-direction: column;
-                width: 100%;
+                flex-direction: column !important;
+                width: 100% !important;
+                gap: 0.65rem !important;
+                box-sizing: border-box !important;
             }
             .founder-btn {
-                width: 100%;
-                justify-content: center;
+                width: 100% !important;
+                max-width: 100% !important;
+                box-sizing: border-box !important;
+                justify-content: center !important;
+            }
+        }
+    
+        @media (max-width: 768px) {
+            body {
+                padding-bottom: 72px !important;
+            }
+            .mobile-taskbar {
+                display: flex !important;
+                position: fixed !important;
+                bottom: 0 !important;
+                left: 0 !important;
+                right: 0 !important;
+                width: 100% !important;
+                z-index: 99999 !important;
             }
         }
     </style>
@@ -284,7 +310,7 @@
     </aside>
 
     <main class="founder-page">
-        <div class="blush-patch-founder"></div>
+        <div class="sky-patch-founder"></div>
 
         <div class="founder-card reveal">
             <!-- 1. Circular Founder Photo -->
@@ -357,7 +383,7 @@
                 <div class="footer-col">
                     <h4>Company</h4>
                     <ul>
-                        <li><a href="/founder.html" style="color:var(--plum); font-weight:700;">Founder</a></li>
+                        <li><a href="/founder.html" style="color:var(--navy); font-weight:700;">Founder</a></li>
                         <li><a href="/about.html">About Us</a></li>
                         <li><a href="/contact.html">Contact Us</a></li>
                         <li><a href="/#faq">FAQ</a></li>

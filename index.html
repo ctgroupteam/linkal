@@ -35,7 +35,7 @@
     <link rel="shortcut icon" href="https://linkal.in/favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="https://linkal.in/apple-touch-icon.png" />
     <link rel="manifest" href="/manifest.json" />
-    <meta name="theme-color" content="#5B2A4A" />
+    <meta name="theme-color" content="#1B2A4E" />
 
     <!-- Open Graph / Facebook / WhatsApp -->
     <meta property="og:type" content="website" />
@@ -117,27 +117,25 @@
             --white: #FFFFFF;
             --bg-page: #FFFFFF;
             --black: #111111;
-            --plum: #5B2A4A;
-            --plum-hover: #3F1C33;
-            --plum-mid: #7A3D63;
-            --plum-light: #F7EFF4;
-            --blush: #F8DEE2;
-            --blush-light: #FCEFF1;
-            --blush-border: #F1C9D1;
-            --navy: #5B2A4A;
-            --navy-light: #FCEFF1;
-            --navy-dark: #3F1C33;
-            --blue: #5B2A4A;
-            --blue-hover: #3F1C33;
+            --navy: #1B2A4E;
+            --navy-hover: #121D38;
+            --navy-mid: #34467A;
+            --navy-light: #EEF3FD;
+            --sky: #DCE6FA;
+            --sky-light: #EEF3FD;
+            --sky-border: #C3D3F2;
+            --sky-border-strong: #A8C0ED;
+            --blue: #1B2A4E;
+            --blue-hover: #121D38;
             --text: #111111;
             --text-primary: #111111;
             --text-secondary: #555555;
             --text-muted: #555555;
             --card-bg: #FFFFFF;
-            --border: #F1C9D1;
-            --border-strong: #E5B2BD;
-            --shadow: 0 8px 24px rgba(91, 42, 74, 0.08);
-            --shadow-lg: 0 12px 32px rgba(91, 42, 74, 0.09);
+            --border: #C3D3F2;
+            --border-strong: #A8C0ED;
+            --shadow: 0 8px 24px rgba(27, 42, 78, 0.08);
+            --shadow-lg: 0 12px 32px rgba(27, 42, 78, 0.09);
             --radius-sm: 8px;
             --radius-md: 14px;
             --radius-lg: 20px;
@@ -147,12 +145,16 @@
 
         html {
             scroll-behavior: smooth;
+            overflow-x: hidden;
+            max-width: 100vw;
         }
 
         body {
             background: #FFFFFF !important;
             color: var(--text-primary);
             font-family: var(--font-body);
+            overflow-x: hidden;
+            max-width: 100vw;
             font-size: 16px;
             line-height: 1.65;
             overflow-x: hidden;
@@ -232,39 +234,39 @@
 
         .btn-navy,
         .btn-blue {
-            background: #5B2A4A;
+            background: #1B2A4E;
             color: #FFFFFF !important;
-            box-shadow: 0 4px 14px rgba(13, 27, 62, 0.2);
+            box-shadow: 0 4px 14px rgba(27, 42, 78, 0.16);
         }
 
         .btn-navy:hover,
         .btn-blue:hover {
-            background: #182C61;
+            background: #121D38;
             transform: translateY(-2px);
             box-shadow: 0 6px 20px rgba(13, 27, 62, 0.3);
         }
 
         .btn-outline {
             background: transparent;
-            color: #5B2A4A !important;
-            border: 1.5px solid #5B2A4A;
+            color: #1B2A4E !important;
+            border: 1.5px solid #1B2A4E;
         }
 
         .btn-outline:hover {
-            background: #5B2A4A;
+            background: #1B2A4E;
             color: #FFFFFF !important;
             transform: translateY(-2px);
         }
 
         .btn-white {
             background: #FFFFFF;
-            color: #5B2A4A !important;
+            color: #1B2A4E !important;
             border: 1px solid var(--border);
-            box-shadow: 0 4px 14px rgba(13, 27, 62, 0.08);
+            box-shadow: 0 4px 14px rgba(27, 42, 78, 0.08);
         }
 
         .btn-white:hover {
-            background: #5B2A4A;
+            background: #1B2A4E;
             color: #FFFFFF !important;
             transform: translateY(-2px);
         }
@@ -298,7 +300,7 @@
             left: 0;
             right: 0;
             z-index: 1000;
-            background: rgba(250, 246, 236, 0.92);
+            background: rgba(255, 255, 255, 0.92);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
             border-bottom: 1px solid var(--border);
@@ -308,7 +310,7 @@
 
         #navbar.scrolled {
             box-shadow: 0 4px 20px rgba(13, 27, 62, 0.06);
-            background: rgba(250, 246, 236, 0.98);
+            background: rgba(255, 255, 255, 0.98);
         }
 
         .nav-inner {
@@ -333,14 +335,14 @@
             height: 38px;
             border-radius: 10px;
             object-fit: cover;
-            box-shadow: 0 2px 8px rgba(13, 27, 62, 0.12);
+            box-shadow: 0 2px 8px rgba(27, 42, 78, 0.12);
         }
 
         .logo-text {
             font-family: var(--font-body);
             font-weight: 800;
             font-size: 1.35rem;
-            color: #5B2A4A;
+            color: #1B2A4E;
             letter-spacing: -0.03em;
             line-height: 1;
         }
@@ -361,7 +363,7 @@
         }
 
         .nav-links a:hover {
-            color: #5B2A4A;
+            color: #1B2A4E;
             opacity: 0.75;
         }
 
@@ -375,7 +377,7 @@
             background: none;
             border: none;
             cursor: pointer;
-            color: #5B2A4A;
+            color: #1B2A4E;
             padding: 0.5rem;
         }
 
@@ -464,7 +466,7 @@
         .hero-h1 {
             margin-bottom: 1.2rem;
             line-height: 1.15;
-            color: #5B2A4A;
+            color: #1B2A4E;
         }
 
         /* Hero Single Feature Box (CV & Wedding Card in 1 box) */
@@ -492,22 +494,22 @@
             align-items: center;
             gap: 4px;
             font-weight: 600;
-            color: var(--plum);
+            color: var(
             white-space: nowrap;
         }
         .hero-free-line .free-item svg {
             flex-shrink: 0;
             width: clamp(12px, 1.8vw, 15px);
             height: clamp(12px, 1.8vw, 15px);
-            stroke: var(--plum);
+            stroke: var(
         }
         .hero-free-line .free-bullet {
-            color: var(--blush-border);
+            color: var(
             font-size: 0.85em;
             user-select: none;
         }
         .hero-free-line .free-colon {
-            color: var(--plum-mid);
+            color: var(
             font-weight: 700;
             user-select: none;
         }
@@ -520,41 +522,8 @@
             white-space: nowrap;
         }
         .hero-free-line .free-pill {
-            background: var(--blush);
-            color: var(--plum);
-            font-weight: 800;
-            font-size: 0.85em;
-            padding: 2px 7px;
-            border-radius: 999px;
-            letter-spacing: 0.04em;
-            text-transform: uppercase;
-            display: inline-block;
-        }
-        @media (max-width: 768px) {
-            .hero-free-line {
-                justify-content: center;
-                width: 100%;
-                margin-left: auto;
-                margin-right: auto;
-            }
-        }
-
-        .hero-single-box {
-            background: #FFFFFF;
-            border: 1.5px solid var(--border);
-            border-radius: 50px;
-            padding: 0.5rem 1.15rem;
-            display: inline-flex;
-            align-items: center;
-            gap: 1.15rem;
-            box-shadow: 0 2px 8px rgba(13, 27, 62, 0.04);
-            margin-bottom: 1.6rem;
-            max-width: 100%;
-            transition: all 0.2s ease;
-        }
-
-        .hero-single-box:hover {
-            border-color: #94A3B8;
+            background: var(--sky);
+            color: var(--navy);
             box-shadow: 0 4px 14px rgba(13, 27, 62, 0.07);
         }
 
@@ -605,7 +574,7 @@
             font-family: var(--font-body);
             font-size: 0.86rem;
             font-weight: 700;
-            color: #5B2A4A;
+            color: #1B2A4E;
             white-space: nowrap;
         }
 
@@ -639,7 +608,7 @@
             background: #0F172A;
             border-radius: 36px;
             padding: 7px;
-            box-shadow: 0 20px 48px rgba(13, 27, 62, 0.24), 0 8px 20px rgba(13, 27, 62, 0.12);
+            box-shadow: 0 20px 48px rgba(27, 42, 78, 0.20), 0 8px 20px rgba(27, 42, 78, 0.12);
             position: relative;
             border: 2.5px solid #334155;
             max-height: 520px;
@@ -792,7 +761,7 @@
         }
 
         .phone-store-header {
-            background: #5B2A4A;
+            background: #1B2A4E;
             padding: 0.75rem 0.75rem 0.45rem 0.75rem;
             text-align: center;
             border-bottom: 1px solid rgba(255, 255, 255, 0.08);
@@ -832,7 +801,7 @@
 
         .phone-store-cats span.active {
             background: #FFFFFF;
-            color: #5B2A4A;
+            color: #1B2A4E;
             font-weight: 700;
         }
 
@@ -856,7 +825,7 @@
 
         .phone-product {
             background: #FFFFFF;
-            border: 1px solid rgba(13, 27, 62, 0.08);
+            border: 1px solid rgba(27, 42, 78, 0.08);
             border-radius: 10px;
             padding: 0.45rem;
             display: flex;
@@ -889,7 +858,7 @@
             font-family: var(--font-body);
             font-size: 0.72rem;
             font-weight: 700;
-            color: #5B2A4A;
+            color: #1B2A4E;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
@@ -999,7 +968,7 @@
             .single-box-divider {
                 width: 100%;
                 height: 1px;
-                background: rgba(13, 27, 62, 0.08);
+                background: rgba(27, 42, 78, 0.08);
             }
             .single-box-text {
                 font-size: 0.82rem;
@@ -1015,7 +984,7 @@
                 width: 242px;
                 padding: 6px;
                 border-radius: 30px;
-                box-shadow: 0 12px 32px rgba(13, 27, 62, 0.2);
+                box-shadow: 0 12px 32px rgba(27, 42, 78, 0.16);
             }
             .phone-screen {
                 border-radius: 22px;
@@ -1041,7 +1010,7 @@
 
         /* ─── STATS STRIP & TICKER ─── */
         #stats {
-            background: var(--navy-light);
+            background: #FFFFFF;
             border-top: 1px solid var(--border);
             border-bottom: 1px solid var(--border);
             padding: 2.2rem 0;
@@ -1062,7 +1031,7 @@
             font-family: var(--font-body);
             font-size: clamp(2rem, 3.5vw, 2.75rem);
             font-weight: 800;
-            color: #5B2A4A;
+            color: #1B2A4E;
             line-height: 1.1;
         }
 
@@ -1074,12 +1043,12 @@
         }
 
         #ticker {
-            background: #5B2A4A;
+            background: #FFFFFF;
             padding: 0.95rem 0;
             overflow: hidden;
             white-space: nowrap;
-            border-top: 1px solid rgba(255, 255, 255, 0.12);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+            border-top: 1px solid var(--sky-border);
+            border-bottom: 1px solid var(--sky-border);
             user-select: none;
             -webkit-user-select: none;
             cursor: grab;
@@ -1104,7 +1073,7 @@
             display: inline-flex;
             align-items: center;
             gap: 0.65rem;
-            color: #FFFFFF;
+            color: #111111;
             font-family: var(--font-body);
             font-size: 0.88rem;
             font-weight: 700;
@@ -1133,7 +1102,7 @@
         .ticker-item span.dot {
             width: 6px;
             height: 6px;
-            background: #D97706;
+            background: var(--sky-border-strong);
             border-radius: 50%;
             display: inline-block;
             margin-left: 0.65rem;
@@ -1212,7 +1181,7 @@
             font-family: var(--font-body);
             font-size: clamp(1.75rem, 3.2vw, 2.35rem);
             font-weight: 800;
-            color: #5B2A4A;
+            color: #1B2A4E;
             margin-top: 0.5rem;
             letter-spacing: -0.02em;
             line-height: 1.2;
@@ -1239,7 +1208,7 @@
         }
 
         .workflow-step {
-            color: #5B2A4A;
+            color: #1B2A4E;
             font-weight: 800;
             font-size: 0.86rem;
             white-space: nowrap;
@@ -1279,7 +1248,7 @@
             50% {
                 transform: translateX(4px);
                 opacity: 1;
-                color: #5B2A4A;
+                color: #1B2A4E;
             }
         }
 
@@ -1358,7 +1327,7 @@
 
         .how-tab-btn.active {
             background: #FFFFFF;
-            border-bottom-color: #5B2A4A;
+            border-bottom-color: #1B2A4E;
         }
 
         .how-tab-num {
@@ -1369,7 +1338,7 @@
         }
 
         .how-tab-btn.active .how-tab-num {
-            color: #5B2A4A;
+            color: #1B2A4E;
         }
 
         .how-tab-title {
@@ -1380,7 +1349,7 @@
         }
 
         .how-tab-btn.active .how-tab-title {
-            color: #5B2A4A;
+            color: #1B2A4E;
         }
 
         .how-stage {
@@ -1412,12 +1381,12 @@
             background: #FFFFFF;
             border: 1px solid var(--border);
             border-radius: var(--radius-md);
-            box-shadow: 0 8px 30px rgba(13, 27, 62, 0.08);
+            box-shadow: 0 8px 30px rgba(27, 42, 78, 0.08);
             overflow: hidden;
         }
 
         .mock-bar {
-            background: #FCEFF1;
+            background: #EEF3FD;
             border-bottom: 1px solid var(--border);
             padding: 0.65rem 1rem;
             display: flex;
@@ -1448,7 +1417,7 @@
             padding: 0.25rem 0.75rem;
             font-family: 'SFMono-Regular', Consolas, monospace;
             font-size: 0.76rem;
-            color: #5B2A4A;
+            color: #1B2A4E;
             display: flex;
             align-items: center;
             gap: 0.4rem;
@@ -1464,7 +1433,7 @@
         /* Step 1 Type box */
         .type-input-box {
             background: #FFFFFF;
-            border: 2px solid #5B2A4A;
+            border: 2px solid #1B2A4E;
             border-radius: 10px;
             padding: 0.85rem 1rem;
             display: flex;
@@ -1476,7 +1445,7 @@
             display: inline-block;
             width: 2px;
             height: 1.1rem;
-            background: #5B2A4A;
+            background: #1B2A4E;
             margin-left: 2px;
             vertical-align: middle;
             animation: blink 0.9s infinite;
@@ -1505,9 +1474,9 @@
         }
 
         .cat-chip.active {
-            background: #5B2A4A;
+            background: #1B2A4E;
             color: #FFFFFF;
-            border-color: #5B2A4A;
+            border-color: #1B2A4E;
         }
 
         /* Step 2 Products Grid */
@@ -1543,7 +1512,7 @@
             height: 46px;
             border-radius: 8px;
             object-fit: cover;
-            background: #FCEFF1;
+            background: #EEF3FD;
             flex-shrink: 0;
         }
 
@@ -1556,7 +1525,7 @@
             font-family: var(--font-body);
             font-size: 0.75rem;
             font-weight: 700;
-            color: #5B2A4A;
+            color: #1B2A4E;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
@@ -1584,7 +1553,7 @@
         /* Step 3 Progress Bar */
         .domain-progress-bar {
             height: 8px;
-            background: #FCEFF1;
+            background: #EEF3FD;
             border-radius: 4px;
             overflow: hidden;
             margin: 1.25rem 0;
@@ -1592,7 +1561,7 @@
 
         .domain-progress-fill {
             height: 100%;
-            background: #5B2A4A;
+            background: #1B2A4E;
             width: 0%;
             transition: width 0.3s ease;
         }
@@ -1659,7 +1628,7 @@
         .ig-stats strong {
             display: block;
             font-weight: 800;
-            color: #5B2A4A;
+            color: #1B2A4E;
         }
 
         .ig-bio-text {
@@ -1688,7 +1657,7 @@
         }
 
         .ig-btn.primary {
-            background: #5B2A4A;
+            background: #1B2A4E;
             color: #FFFFFF;
         }
 
@@ -1711,7 +1680,7 @@
             border-radius: 16px;
             padding: 1.25rem;
             text-align: center;
-            box-shadow: 0 4px 14px rgba(13, 27, 62, 0.05);
+            box-shadow: 0 4px 14px rgba(27, 42, 78, 0.05);
         }
 
         .qr-img-box {
@@ -2001,8 +1970,8 @@
 
         .use-case-card:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 24px rgba(13, 27, 62, 0.08);
-            border-color: #5B2A4A;
+            box-shadow: 0 8px 24px rgba(27, 42, 78, 0.08);
+            border-color: #1B2A4E;
         }
 
         .use-case-icon-box {
@@ -2018,7 +1987,7 @@
         .use-case-card h3 {
             font-size: 0.96rem;
             font-weight: 700;
-            color: #5B2A4A;
+            color: #1B2A4E;
             line-height: 1.3;
         }
 
@@ -2243,7 +2212,7 @@
             height: 40px;
             border-radius: 10px;
             background: #FFFFFF;
-            color: #5B2A4A;
+            color: #1B2A4E;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -2254,7 +2223,7 @@
         .seo-highlight-card h4 {
             font-size: 0.95rem;
             font-weight: 700;
-            color: #5B2A4A;
+            color: #1B2A4E;
             margin-bottom: 0.25rem;
         }
 
@@ -2296,7 +2265,7 @@
             border-radius: 50%;
             background: #FFFFFF;
             border: 1px solid var(--border);
-            color: #5B2A4A;
+            color: #1B2A4E;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -2305,7 +2274,7 @@
         }
 
         .slider-arrow-btn:hover {
-            background: #5B2A4A;
+            background: #1B2A4E;
             color: #FFFFFF;
         }
 
@@ -2340,8 +2309,8 @@
 
         .feat-slide:hover {
             transform: translateY(-3px);
-            border-color: #5B2A4A;
-            box-shadow: 0 8px 24px rgba(13, 27, 62, 0.08);
+            border-color: #1B2A4E;
+            box-shadow: 0 8px 24px rgba(27, 42, 78, 0.08);
         }
 
         .feat-slide-icon {
@@ -2350,7 +2319,7 @@
             border-radius: 12px;
             background: #FFFFFF;
             border: 1px solid var(--border);
-            color: #5B2A4A;
+            color: #1B2A4E;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -2359,7 +2328,7 @@
         .feat-slide h3 {
             font-size: 1.05rem;
             font-weight: 800;
-            color: #5B2A4A;
+            color: #1B2A4E;
             line-height: 1.25;
         }
 
@@ -2381,7 +2350,7 @@
             width: 8px;
             height: 8px;
             border-radius: 50%;
-            background: rgba(13, 27, 62, 0.2);
+            background: rgba(27, 42, 78, 0.16);
             cursor: pointer;
             transition: all 0.2s ease;
         }
@@ -2389,7 +2358,7 @@
         .feat-dot.active {
             width: 24px;
             border-radius: 4px;
-            background: #5B2A4A;
+            background: #1B2A4E;
         }
 
         @media (max-width: 960px) {
@@ -2471,12 +2440,12 @@
             font-family: var(--font-body);
             font-size: 0.88rem;
             font-weight: 700;
-            color: #5B2A4A;
+            color: #1B2A4E;
             box-shadow: 0 2px 8px rgba(13, 27, 62, 0.04);
         }
 
         .marquee-pill svg {
-            color: #5B2A4A;
+            color: #1B2A4E;
             flex-shrink: 0;
         }
 
@@ -2517,7 +2486,7 @@
 
         .pricing-headline-chip:hover {
             transform: translateY(-2px);
-            border-color: #5B2A4A;
+            border-color: #1B2A4E;
         }
 
         .chip-badge {
@@ -2531,13 +2500,13 @@
 
         .free-tier .chip-badge { background: #ECFDF5; color: #059669; }
         .cafe-tier .chip-badge { background: #EFF6FF; color: #2563EB; }
-        .standard-tier .chip-badge { background: #FFFFFF; color: #5B2A4A; }
+        .standard-tier .chip-badge { background: #FFFFFF; color: #1B2A4E; }
 
         .chip-price {
             font-family: var(--font-body);
             font-size: 2rem;
             font-weight: 800;
-            color: #5B2A4A;
+            color: #1B2A4E;
             line-height: 1;
         }
 
@@ -2573,8 +2542,8 @@
         }
 
         .plan-card.popular {
-            border: 2px solid #5B2A4A;
-            background: #5B2A4A;
+            border: 2px solid #1B2A4E;
+            background: #1B2A4E;
             color: #FFFFFF;
         }
 
@@ -2609,7 +2578,7 @@
             font-size: 2.2rem;
             font-weight: 800;
             margin-bottom: 0.4rem;
-            color: #5B2A4A;
+            color: #1B2A4E;
         }
 
         .plan-card.popular .plan-price {
@@ -2759,7 +2728,7 @@
             width: 38px;
             height: 38px;
             border-radius: 50%;
-            background: #5B2A4A;
+            background: #1B2A4E;
             color: #FFFFFF;
             font-family: var(--font-body);
             font-weight: 800;
@@ -2772,7 +2741,7 @@
         .review-meta h5 {
             font-size: 0.88rem;
             font-weight: 700;
-            color: #5B2A4A;
+            color: #1B2A4E;
         }
 
         .review-meta p {
@@ -2829,7 +2798,7 @@
             font-family: var(--font-body);
             font-size: 1rem;
             font-weight: 700;
-            color: #5B2A4A;
+            color: #1B2A4E;
         }
 
         .faq-answer {
@@ -2847,7 +2816,7 @@
         .faq-chevron {
             transition: transform 0.2s ease;
             flex-shrink: 0;
-            color: #5B2A4A;
+            color: #1B2A4E;
         }
 
         .faq-item.active .faq-chevron {
@@ -2856,7 +2825,7 @@
 
         /* ─── CTA BANNER ─── */
         #cta-banner {
-            background: #5B2A4A;
+            background: #1B2A4E;
             color: #FFFFFF;
             text-align: center;
             padding: 5rem 0;
@@ -2908,7 +2877,7 @@
         .footer-col h4 {
             font-size: 0.9rem;
             font-weight: 800;
-            color: #5B2A4A;
+            color: #1B2A4E;
             margin-bottom: 0.85rem;
             text-transform: uppercase;
             letter-spacing: 0.05em;
@@ -2927,7 +2896,7 @@
         }
 
         .footer-col a:hover {
-            color: #5B2A4A;
+            color: #1B2A4E;
         }
 
         .footer-bottom {
@@ -2948,7 +2917,7 @@
         }
 
         .footer-socials a {
-            color: #5B2A4A;
+            color: #1B2A4E;
             transition: opacity 0.2s ease;
         }
 
@@ -3029,15 +2998,16 @@
         /* ─── MOBILE STICKY BOTTOM TASKBAR (4 ITEMS, NO WA BUTTON, PRICING BUTTON INCLUDED) ─── */
         .mobile-taskbar {
             display: none;
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: #FFFFFF;
-            border-top: 1px solid var(--border);
-            padding: 0.4rem 0.5rem;
-            z-index: 1000;
-            box-shadow: 0 -4px 16px rgba(13, 27, 62, 0.08);
+            position: fixed !important;
+            bottom: 0 !important;
+            left: 0 !important;
+            right: 0 !important;
+            width: 100% !important;
+            background: #FFFFFF !important;
+            border-top: 1px solid var(--sky-border) !important;
+            padding: 0.45rem 0.5rem calc(0.45rem + env(safe-area-inset-bottom, 0px)) 0.5rem !important;
+            z-index: 99999 !important;
+            box-shadow: 0 -4px 16px rgba(27, 42, 78, 0.08);
             justify-content: space-around;
             align-items: center;
         }
@@ -3058,15 +3028,15 @@
         }
 
         .taskbar-btn:active {
-            color: #5B2A4A;
+            color: #1B2A4E;
         }
 
         .taskbar-btn.primary {
-            background: #5B2A4A;
+            background: #1B2A4E;
             color: #FFFFFF !important;
             padding: 0.45rem 1rem;
             border-radius: 50px;
-            box-shadow: 0 2px 8px rgba(13, 27, 62, 0.2);
+            box-shadow: 0 2px 8px rgba(27, 42, 78, 0.16);
         }
 
         @media (max-width: 768px) {
@@ -3109,7 +3079,7 @@
 
                 <ul class="nav-links">
                     <li><a href="#hero">Home</a></li>
-                    <li><a href="https://studio.linkal.in" style="color: #5B2A4A; font-weight:700;">Studio</a></li>
+                    <li><a href="https://studio.linkal.in" style="color: #1B2A4E; font-weight:700;">Studio</a></li>
                     <li><a href="#how">How It Works</a></li>
                     <li><a href="#use-cases">Who Can Use</a></li>
                     <li><a href="#seo">Google &amp; SEO</a></li>
@@ -3183,7 +3153,11 @@
     <main>
 
         <!-- 1. HERO -->
-        <section id="hero">
+        <!-- ─── HERO SECTION ─── -->
+        <section id="hero" class="hero-section" style="position:relative; overflow:hidden;">
+            <div class="sky-patch sky-patch-top-right" aria-hidden="true"></div>
+            <div class="sky-patch sky-patch-phone" aria-hidden="true"></div>
+
             <div class="container">
                 <div class="hero-inner">
                     <!-- Left -->
@@ -3195,6 +3169,7 @@
 
                         <h1 class="hero-h1">Create Free Website in 1 Minute and get a Free Domain</h1>
 
+                        <!-- Free Offer Line: Single line, no box, no wrap -->
                         <div class="hero-free-line">
                             <span class="free-item">
                                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><line x1="10" y1="9" x2="8" y2="9"/></svg>
@@ -3208,6 +3183,120 @@
                             <span class="free-colon">:</span>
                             <span class="free-lifetime">Lifetime <span class="free-pill">FREE</span></span>
                         </div>
+
+                        <div class="hero-ctas">
+                            <a href="https://studio.linkal.in" class="btn btn-navy btn-lg">
+                                <span>Open Linkal Studio</span>
+                                <i data-lucide="arrow-right" width="16" height="16"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Right — Chrome Mobile Browser Phone Mockup (Authentic, Fits Mobile Screen) -->
+                    <div class="phone-wrap reveal reveal-delay-2">
+                        <div class="phone">
+                            <!-- Phone Notch / Speaker -->
+                            <div class="phone-notch">
+                                <span class="phone-camera"></span>
+                                <span class="phone-speaker"></span>
+                            </div>
+
+                            <div class="phone-screen">
+                                <!-- 1. Phone Top Status Bar -->
+                                <div class="chrome-status-bar">
+                                    <span class="status-time">9:41</span>
+                                    <div class="status-icons">
+                                        <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M12 18c.83 0 1.5.67 1.5 1.5S12.83 21 12 21s-1.5-.67-1.5-1.5.67-1.5 1.5-1.5zm-4.95-3.54a6.996 6.996 0 0 1 9.9 0l-1.41 1.41a4.996 4.996 0 0 0-7.07 0l-1.42-1.41zM3.51 10.92a11.986 11.986 0 0 1 16.98 0l-1.41 1.41a9.988 9.988 0 0 0-14.15 0l-1.42-1.41z"/></svg>
+                                        <svg width="13" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="1" y="6" width="18" height="12" rx="2" ry="2"/><path d="M23 11v2"/><rect x="3" y="8" width="12" height="8" fill="currentColor"/></svg>
+                                    </div>
+                                </div>
+
+                                <!-- 2. Google Chrome Address Bar -->
+                                <div class="chrome-browser-bar">
+                                    <button class="chrome-btn" aria-label="Chrome Home">
+                                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#475569" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                                    </button>
+
+                                    <div class="chrome-url-box">
+                                        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                                        <span class="chrome-url-text">royalcakes.linkal.in</span>
+                                    </div>
+
+                                    <button class="chrome-btn" aria-label="Chrome Tabs">
+                                        <span class="chrome-tab-count">1</span>
+                                    </button>
+
+                                    <button class="chrome-btn" aria-label="Chrome Menu">
+                                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#475569" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="1.5"/><circle cx="12" cy="12" r="1.5"/><circle cx="12" cy="19" r="1.5"/></svg>
+                                    </button>
+                                </div>
+
+                                <!-- 3. Website Content (Live Mobile Store) -->
+                                <div class="phone-store-content">
+                                    <!-- Store Header -->
+                                    <div class="phone-store-header">
+                                        <div class="phone-store-name">
+                                            <span>Royal Cakes &amp; Patisserie</span>
+                                            <span class="store-verified-pill">✓ Verified</span>
+                                        </div>
+                                        <div class="phone-store-sub">Fresh Artisan Bakery &bull; Bandra West</div>
+                                        <div class="phone-store-cats">
+                                            <span class="active">All Cakes</span>
+                                            <span>Birthday</span>
+                                            <span>Cupcakes</span>
+                                        </div>
+                                    </div>
+
+                                    <!-- Store Offer Banner -->
+                                    <div class="phone-store-banner">
+                                        🎂 20% OFF on 1st Order &bull; Use Code: <strong>ROYAL20</strong>
+                                    </div>
+
+                                    <!-- Product List with 3 Cake Images -->
+                                    <div class="phone-products">
+                                        <!-- Product 1: Chocolate Truffle Cake -->
+                                        <div class="phone-product">
+                                            <div class="phone-product-img">
+                                                <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=160&auto=format&fit=crop&q=80" alt="Chocolate Truffle Cake" width="40" height="40" loading="eager" />
+                                            </div>
+                                            <div class="phone-product-info">
+                                                <div class="phone-product-name">Chocolate Truffle Cake</div>
+                                                <div class="phone-product-price">₹580 <span>/ 500g</span></div>
+                                                <a href="https://wa.me/918766882442?text=Hi%2C%20I%20want%20to%20order%20Chocolate%20Truffle%20Cake" target="_blank" rel="noopener noreferrer" class="phone-wa-btn">
+                                                    <svg width="9" height="9" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.699c.971.53 1.771.815 2.796.815 3.182 0 5.768-2.587 5.768-5.767.001-3.18-2.585-5.766-5.768-5.766zm9.969 5.768c0 5.48-4.453 9.932-9.969 9.932-1.748 0-3.38-.456-4.807-1.252l-5.224 1.38 1.399-5.109c-.896-1.487-1.408-3.228-1.408-5.087 0-5.48 4.453-9.932 9.969-9.932 5.516 0 10.04 4.452 10.04 9.932z"/></svg>
+                                                    <span>WhatsApp Order</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <!-- Product 2: White Vanilla Birthday Cake -->
+                                        <div class="phone-product">
+                                            <div class="phone-product-img">
+                                                <img src="/images/cakes/vanilla-white-cake.jpg" alt="White Vanilla Birthday Cake" width="40" height="40" loading="eager" />
+                                            </div>
+                                            <div class="phone-product-info">
+                                                <div class="phone-product-name">White Vanilla Birthday Cake</div>
+                                                <div class="phone-product-price">₹450 <span>/ 500g</span></div>
+                                                <a href="https://wa.me/918766882442?text=Hi%2C%20I%20want%20to%20order%20Vanilla%20Birthday%20Cake" target="_blank" rel="noopener noreferrer" class="phone-wa-btn">
+                                                    <svg width="9" height="9" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.699c.971.53 1.771.815 2.796.815 3.182 0 5.768-2.587 5.768-5.767.001-3.18-2.585-5.766-5.768-5.766zm9.969 5.768c0 5.48-4.453 9.932-9.969 9.932-1.748 0-3.38-.456-4.807-1.252l-5.224 1.38 1.399-5.109c-.896-1.487-1.408-3.228-1.408-5.087 0-5.48 4.453-9.932 9.969-9.932 5.516 0 10.04 4.452 10.04 9.932z"/></svg>
+                                                    <span>WhatsApp Order</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <!-- Product 3: Red Velvet Cupcakes -->
+                                        <div class="phone-product">
+                                            <div class="phone-product-img">
+                                                <img src="https://images.unsplash.com/photo-1614707267537-b85aaf00c4b7?w=160&auto=format&fit=crop&q=80" alt="Red Velvet Cupcakes" width="40" height="40" loading="eager" />
+                                            </div>
+                                            <div class="phone-product-info">
+                                                <div class="phone-product-name">Red Velvet Cupcakes</div>
+                                                <div class="phone-product-price">₹320 <span>/ Pack of 6</span></div>
+                                                <a href="https://wa.me/918766882442?text=Hi%2C%20I%20want%20to%20order%20Red%20Velvet%20Cupcakes" target="_blank" rel="noopener noreferrer" class="phone-wa-btn">
+                                                    <svg width="9" height="9" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.699c.971.53 1.771.815 2.796.815 3.182 0 5.768-2.587 5.768-5.767.001-3.18-2.585-5.766-5.768-5.768zm9.969 5.768c0 5.48-4.453 9.932-9.969 9.932-1.748 0-3.38-.456-4.807-1.252l-5.224 1.38 1.399-5.109c-.896-1.487-1.408-3.228-1.408-5.087 0-5.48 4.453-9.932 9.969-9.932 5.516 0 10.04 4.452 10.04 9.932z"/></svg>
+                                                    <span>WhatsApp Order</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
 
                                 <!-- 4. Android / Chrome Bottom Navigation Bar (Back, Home, Recents) -->
@@ -3234,12 +3323,12 @@
             <div class="ticker-track">
                 <!-- Set 1 -->
                 <span class="ticker-item">
-    <span class="ticker-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="#F59E0B"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></span>
-    Live in 1 Minute
-    <span class="dot"></span>
-</span>
+                    <span class="ticker-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="#F59E0B"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></span>
+                    Live in 1 Minute
+                    <span class="dot"></span>
+                </span>
                 <span class="ticker-item">
-                    <span class="ticker-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#7A3D63" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="3"/><line x1="2" y1="8" x2="22" y2="8"/><circle cx="5" cy="5.5" r="1" fill="#7A3D63"/><circle cx="8" cy="5.5" r="1" fill="#7A3D63"/><path d="m14 11 2 2 4-4"/></svg></span>
+                    <span class="ticker-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1B2A4E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20M12 2a14.5 14.5 0 0 1 0 20M2 12h20"/></svg></span>
                     Free Website &amp; Domain Included
                     <span class="dot"></span>
                 </span>
@@ -3264,29 +3353,29 @@
                     <span class="dot"></span>
                 </span>
                 <span class="ticker-item">
-                    <span class="ticker-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></svg></span>
-                    100% WhatsApp Checkout
+                    <span class="ticker-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1B2A4E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></svg></span>
+                    100% Mobile Ready
                     <span class="dot"></span>
                 </span>
                 <span class="ticker-item">
-                    <span class="ticker-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#A855F7" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg></span>
+                    <span class="ticker-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6366F1" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg></span>
                     Zero Commission Forever
                     <span class="dot"></span>
                 </span>
                 <span class="ticker-item">
-                    <span class="ticker-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#EAB308" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></span>
+                    <span class="ticker-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0284C7" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></span>
                     Branded .linkal.in Subdomain
                     <span class="dot"></span>
                 </span>
 
-                <!-- Set 2 (Duplicate for Seamless Infinite Loop & Hand Dragging) -->
+                <!-- Set 2 (Duplicate for Seamless Infinite Loop) -->
                 <span class="ticker-item">
-    <span class="ticker-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="#F59E0B"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></span>
-    Live in 1 Minute
-    <span class="dot"></span>
-</span>
+                    <span class="ticker-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="#F59E0B"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></span>
+                    Live in 1 Minute
+                    <span class="dot"></span>
+                </span>
                 <span class="ticker-item">
-                    <span class="ticker-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#7A3D63" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="3"/><line x1="2" y1="8" x2="22" y2="8"/><circle cx="5" cy="5.5" r="1" fill="#7A3D63"/><circle cx="8" cy="5.5" r="1" fill="#7A3D63"/><path d="m14 11 2 2 4-4"/></svg></span>
+                    <span class="ticker-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1B2A4E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20M12 2a14.5 14.5 0 0 1 0 20M2 12h20"/></svg></span>
                     Free Website &amp; Domain Included
                     <span class="dot"></span>
                 </span>
@@ -3311,17 +3400,17 @@
                     <span class="dot"></span>
                 </span>
                 <span class="ticker-item">
-                    <span class="ticker-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></svg></span>
-                    100% WhatsApp Checkout
+                    <span class="ticker-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1B2A4E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></svg></span>
+                    100% Mobile Ready
                     <span class="dot"></span>
                 </span>
                 <span class="ticker-item">
-                    <span class="ticker-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#A855F7" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg></span>
+                    <span class="ticker-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6366F1" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg></span>
                     Zero Commission Forever
                     <span class="dot"></span>
                 </span>
                 <span class="ticker-item">
-                    <span class="ticker-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#EAB308" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></span>
+                    <span class="ticker-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0284C7" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></span>
                     Branded .linkal.in Subdomain
                     <span class="dot"></span>
                 </span>
@@ -3446,13 +3535,13 @@
                                     </div>
                                 </div>
                                 <div class="mock-content">
-                                    <div style="font-size:0.75rem; text-transform:uppercase; letter-spacing:0.06em; color: #5B2A4A; font-weight:700; margin-bottom:0.4rem;">Step 1 of 3 · Quick Setup</div>
-                                    <h4 style="font-size:1.15rem; color: #5B2A4A; margin-bottom:1rem; font-weight:800;">Enter your business name</h4>
+                                    <div style="font-size:0.75rem; text-transform:uppercase; letter-spacing:0.06em; color: #1B2A4E; font-weight:700; margin-bottom:0.4rem;">Step 1 of 3 · Quick Setup</div>
+                                    <h4 style="font-size:1.15rem; color: #1B2A4E; margin-bottom:1rem; font-weight:800;">Enter your business name</h4>
                                     
                                     <div class="type-input-box" style="margin-bottom:1rem;">
                                         <div style="display:flex; align-items:center; gap:0.5rem;">
-                                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5B2A4A" stroke-width="2.2"><path d="M18 8h1a4 4 0 0 1 0 8h-1"></path><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path><line x1="6" y1="1" x2="6" y2="4"></line><line x1="10" y1="1" x2="10" y2="4"></line><line x1="14" y1="1" x2="14" y2="4"></line></svg>
-                                            <span id="how-typing-text" style="font-family: var(--font-body); font-size:1.05rem; font-weight:700; color: #5B2A4A;">Moon Cafe</span><span class="typing-cursor"></span>
+                                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1B2A4E" stroke-width="2.2"><path d="M18 8h1a4 4 0 0 1 0 8h-1"></path><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path><line x1="6" y1="1" x2="6" y2="4"></line><line x1="10" y1="1" x2="10" y2="4"></line><line x1="14" y1="1" x2="14" y2="4"></line></svg>
+                                            <span id="how-typing-text" style="font-family: var(--font-body); font-size:1.05rem; font-weight:700; color: #1B2A4E;">Moon Cafe</span><span class="typing-cursor"></span>
                                         </div>
                                         <span style="font-size:0.7rem; font-weight:700; background:#ECFDF5; color:#059669; padding:0.25rem 0.6rem; border-radius:20px;">✓ Available</span>
                                     </div>
@@ -3494,7 +3583,7 @@
                                     <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem;">
                                         <div>
                                             <div style="font-size:0.72rem; text-transform:uppercase; letter-spacing:0.06em; color:#059669; font-weight:700;">Live Catalog</div>
-                                            <h4 style="font-size:1.05rem; color: #5B2A4A; font-weight:800;">Moon Cafe Menu &bull; 6 Items Added</h4>
+                                            <h4 style="font-size:1.05rem; color: #1B2A4E; font-weight:800;">Moon Cafe Menu &bull; 6 Items Added</h4>
                                         </div>
                                         <span style="font-size:0.72rem; font-weight:700; background:#ECFDF5; color:#059669; padding:0.25rem 0.65rem; border-radius:20px; display:inline-flex; align-items:center; gap:4px;">
                                             <span>✓</span> Auto-saved
@@ -3572,32 +3661,32 @@
                                     </div>
                                     <div class="mock-url" id="how-step3-url">
                                         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-                                        <span style="font-weight:700; color: #5B2A4A;">https://mooncafe.linkal.in</span>
+                                        <span style="font-weight:700; color: #1B2A4E;">https://mooncafe.linkal.in</span>
                                     </div>
                                 </div>
                                 <div class="mock-content" style="text-align:center; padding:2rem 1.5rem;">
                                     <div style="display:inline-flex; align-items:center; gap:6px; background:#ECFDF5; color:#059669; font-weight:800; font-size:0.76rem; padding:0.35rem 0.95rem; border-radius:50px; margin-bottom:1rem;">
                                         <svg width="13" height="13" viewBox="0 0 24 24" fill="#059669"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg> FREE domain included with automated SSL
                                     </div>
-                                    <h4 style="font-size:1.35rem; color: #5B2A4A; font-weight:800; margin-bottom:0.5rem;">AI building your live website...</h4>
+                                    <h4 style="font-size:1.35rem; color: #1B2A4E; font-weight:800; margin-bottom:0.5rem;">AI building your live website...</h4>
                                     <p style="font-size:0.86rem; color:#4B5563; max-width:440px; margin:0 auto 1.25rem auto;">Generating responsive layout, configuring digital menu, and activating cloud CDN.</p>
 
                                     <!-- Progress steps -->
-                                    <div style="display:flex; justify-content:center; gap:1.25rem; font-size:0.78rem; font-weight:700; color: #5B2A4A; margin-bottom:0.85rem;">
+                                    <div style="display:flex; justify-content:center; gap:1.25rem; font-size:0.78rem; font-weight:700; color: #1B2A4E; margin-bottom:0.85rem;">
                                         <span style="color:#059669;">✓ Layout</span>
                                         <span style="color:#059669;">→</span>
                                         <span style="color:#059669;">✓ Menu</span>
                                         <span style="color:#059669;">→</span>
-                                        <span style="color: #5B2A4A; display:inline-flex; align-items:center; gap:4px;"><svg width="12" height="12" viewBox="0 0 24 24" fill="#F59E0B"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg> Publishing Live</span>
+                                        <span style="color: #1B2A4E; display:inline-flex; align-items:center; gap:4px;"><svg width="12" height="12" viewBox="0 0 24 24" fill="#F59E0B"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg> Publishing Live</span>
                                     </div>
 
                                     <div class="domain-progress-bar">
                                         <div class="domain-progress-fill" id="domainFill" style="width:100%;"></div>
                                     </div>
 
-                                    <div style="display:inline-flex; align-items:center; gap:8px; background: #FCEFF1; border:1px solid var(--border); padding:0.5rem 1rem; border-radius:10px; margin-top:0.75rem;">
+                                    <div style="display:inline-flex; align-items:center; gap:8px; background: #EEF3FD; border:1px solid var(--border); padding:0.5rem 1rem; border-radius:10px; margin-top:0.75rem;">
                                         <span style="width:8px; height:8px; background:#10B981; border-radius:50%; display:inline-block;"></span>
-                                        <span style="font-family:'SFMono-Regular',Consolas,monospace; font-size:0.85rem; font-weight:700; color: #5B2A4A;">mooncafe.linkal.in is LIVE</span>
+                                        <span style="font-family:'SFMono-Regular',Consolas,monospace; font-size:0.85rem; font-weight:700; color: #1B2A4E;">mooncafe.linkal.in is LIVE</span>
                                         <span style="background:#10B981; color:#FFFFFF; font-size:0.62rem; font-weight:800; padding:2px 6px; border-radius:4px;">SSL OK</span>
                                     </div>
                                 </div>
@@ -3646,13 +3735,13 @@
                                 <!-- Printable Scannable QR Code -->
                                 <div class="qr-card-showcase">
                                     <div style="font-size:0.72rem; text-transform:uppercase; letter-spacing:0.06em; color:#059669; font-weight:800; margin-bottom:0.4rem;">Official QR Stand</div>
-                                    <h4 style="font-size:1.05rem; color: #5B2A4A; font-weight:800; margin-bottom:0.85rem;">Scan to view menu</h4>
+                                    <h4 style="font-size:1.05rem; color: #1B2A4E; font-weight:800; margin-bottom:0.85rem;">Scan to view menu</h4>
                                     
                                     <div class="qr-img-box">
                                         <img src="/images/mooncafe/mooncafe-qr.svg" alt="Scan to view Moon Cafe menu" width="134" height="134" />
                                     </div>
 
-                                    <div style="font-family:'SFMono-Regular',Consolas,monospace; font-size:0.75rem; font-weight:700; color: #5B2A4A; margin-bottom:0.35rem;">https://mooncafe.linkal.in</div>
+                                    <div style="font-family:'SFMono-Regular',Consolas,monospace; font-size:0.75rem; font-weight:700; color: #1B2A4E; margin-bottom:0.35rem;">https://mooncafe.linkal.in</div>
                                     <p style="font-size:0.75rem; color:#4B5563; line-height:1.4;">Print and place on cafe tables or billing counter. Customers scan &amp; order on WhatsApp instantly.</p>
                                 </div>
                             </div>
@@ -3719,7 +3808,7 @@
                                             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.05 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
                                         </div>
                                         <div style="flex:1; min-width:0; text-align:left;">
-                                            <div style="font-size:0.72rem; font-weight:700; color: #5B2A4A; display:flex; justify-content:space-between;">
+                                            <div style="font-size:0.72rem; font-weight:700; color: #1B2A4E; display:flex; justify-content:space-between;">
                                                 <span>New WhatsApp Order!</span>
                                                 <span style="font-size:0.62rem; color:#059669; font-weight:600;">Just now</span>
                                             </div>
@@ -4204,7 +4293,7 @@
                 <!-- PLAN CARDS -->
                 <div class="pricing-grid reveal">
                     <!-- Free CV Website -->
-                    <div class="plan-card" style="border: 2px solid #5B2A4A; background: #FFFFFF;">
+                    <div class="plan-card" style="border: 2px solid #1B2A4E; background: #FFFFFF;">
                         <div style="position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: #059669; color: #FFFFFF; font-size: 0.7rem; font-weight: 800; padding: 0.25rem 0.85rem; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.05em; white-space: nowrap;">Free for Students &amp; Job Seekers</div>
                         <div class="plan-name">Free CV Website</div>
                         <div class="plan-price">₹0<span style="font-size: 0.88rem; color: #059669; font-weight: 700;"> Lifetime Free</span></div>
@@ -4499,9 +4588,9 @@
     </a>
 
     <!-- POLICY MODAL -->
-    <div id="policyModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(13,27,62,0.6); backdrop-filter:blur(4px); z-index:9999; align-items:center; justify-content:center; padding:1.5rem;">
+    <div id="policyModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(18, 29, 56, 0.6); backdrop-filter:blur(4px); z-index:9999; align-items:center; justify-content:center; padding:1.5rem;">
         <div style="background: #FFFFFF; border-radius:18px; max-width:680px; width:100%; max-height:85vh; overflow-y:auto; padding:2rem; position:relative; box-shadow:0 20px 60px rgba(0,0,0,0.3); border:1px solid var(--border);">
-            <button onclick="closePolicyModal()" style="position:absolute; top:1.25rem; right:1.25rem; background:none; border:none; cursor:pointer; color: #5B2A4A; font-size:1.5rem; line-height:1;">&times;</button>
+            <button onclick="closePolicyModal()" style="position:absolute; top:1.25rem; right:1.25rem; background:none; border:none; cursor:pointer; color: #1B2A4E; font-size:1.5rem; line-height:1;">&times;</button>
             <div id="policyModalBody"></div>
         </div>
     </div>

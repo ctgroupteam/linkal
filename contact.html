@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact Linkal AI – Merchant Support &amp; WhatsApp Helpline</title>
     <meta name="description" content="Get in touch with Linkal AI support team via WhatsApp, Instagram or LinkedIn. We reply fast on WhatsApp at +91 87668 82442." />
-    <meta name="theme-color" content="#5B2A4A" />
+    <meta name="theme-color" content="#1B2A4E" />
     <link rel="canonical" href="https://linkal.in/contact" />
 
     <!-- Open Graph / Facebook -->
@@ -56,9 +56,9 @@
             gap: 6px;
             font-size: 1.05rem;
             font-weight: 600;
-            color: var(--plum);
-            background: var(--blush-light);
-            border: 1px solid var(--blush-border);
+            color: var(--navy);
+            background: var(--sky-light);
+            border: 1px solid var(--sky-border);
             padding: 6px 18px;
             border-radius: 99px;
             margin-bottom: 2.5rem;
@@ -73,7 +73,7 @@
 
         .contact-card {
             background: #FFFFFF;
-            border: 1.5px solid var(--blush-border);
+            border: 1.5px solid var(--sky-border);
             border-radius: 20px;
             padding: 1.35rem 1.75rem;
             display: flex;
@@ -86,9 +86,9 @@
 
         .contact-card:hover {
             transform: translateY(-3px);
-            border-color: var(--plum);
+            border-color: var(--navy);
             box-shadow: var(--shadow-hover);
-            background: var(--blush-light);
+            background: var(--sky-light);
         }
 
         .contact-card-left {
@@ -102,12 +102,12 @@
             width: 52px;
             height: 52px;
             border-radius: 16px;
-            background: var(--blush-light);
+            background: var(--sky-light);
             display: flex;
             align-items: center;
             justify-content: center;
             flex-shrink: 0;
-            border: 1px solid var(--blush-border);
+            border: 1px solid var(--sky-border);
             transition: transform 0.2s ease;
         }
 
@@ -136,8 +136,8 @@
             width: 36px;
             height: 36px;
             border-radius: 50%;
-            background: var(--blush-light);
-            color: var(--plum);
+            background: var(--sky-light);
+            color: var(--navy);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -146,7 +146,7 @@
         }
 
         .contact-card:hover .contact-card-arrow {
-            background: var(--plum);
+            background: var(--navy);
             color: #FFFFFF;
             transform: translateX(3px);
         }
@@ -158,7 +158,7 @@
             margin-top: 1rem;
         }
 
-        .blush-patch-contact {
+        .sky-patch-contact {
             position: absolute;
             top: 50%;
             left: 50%;
@@ -166,7 +166,7 @@
             width: 600px;
             height: 600px;
             border-radius: 50%;
-            background: radial-gradient(circle, rgba(248, 222, 226, 0.45) 0%, rgba(252, 239, 241, 0.15) 65%, transparent 100%);
+            background: radial-gradient(circle, rgba(220, 230, 250, 0.45) 0%, rgba(238, 243, 253, 0.15) 65%, transparent 100%);
             filter: blur(80px);
             pointer-events: none;
             z-index: 0;
@@ -178,6 +178,21 @@
             }
             .contact-val {
                 font-size: 0.98rem;
+            }
+        }
+    
+        @media (max-width: 768px) {
+            body {
+                padding-bottom: 72px !important;
+            }
+            .mobile-taskbar {
+                display: flex !important;
+                position: fixed !important;
+                bottom: 0 !important;
+                left: 0 !important;
+                right: 0 !important;
+                width: 100% !important;
+                z-index: 99999 !important;
             }
         }
     </style>
@@ -269,7 +284,7 @@
     </aside>
 
     <main class="contact-page">
-        <div class="blush-patch-contact"></div>
+        <div class="sky-patch-contact"></div>
 
         <div class="contact-container">
             <h1 class="contact-hero-title">Get in Touch with Linkal AI</h1>
@@ -372,7 +387,7 @@
                     <ul>
                         <li><a href="/founder.html">Founder</a></li>
                         <li><a href="/about.html">About Us</a></li>
-                        <li><a href="/contact.html" style="color:var(--plum); font-weight:700;">Contact Us</a></li>
+                        <li><a href="/contact.html" style="color:var(--navy); font-weight:700;">Contact Us</a></li>
                         <li><a href="/#faq">FAQ</a></li>
                     </ul>
                 </div>
