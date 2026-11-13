@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Linkal AI – Merchant Support &amp; WhatsApp Helpline</title>
+    <meta name="description" content="Get in touch with Linkal AI support team via WhatsApp, Instagram or LinkedIn. We reply fast on WhatsApp at +91 87668 82442." />
+    <meta name="theme-color" content="#5B2A4A" />
+    <link rel="canonical" href="https://linkal.in/contact" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://linkal.in/contact" />
+    <meta property="og:title" content="Contact Linkal AI – Fast Support" />
+    <meta property="og:description" content="Chat with Linkal AI team directly on WhatsApp (+91 87668 82442) or Instagram (@linkal.in)." />
+    <meta property="og:image" content="https://linkal.in/linkal.jpeg" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400..700&family=Fraunces:ital,opsz,wght@0,9..144,600..700;1,9..144,600..700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/shared.css" />
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .contact-page {
+            min-height: calc(100vh - 70px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 7.5rem 1.5rem 5rem 1.5rem;
+            position: relative;
+            background: #FFFFFF;
+        }
+
+        .contact-container {
+            max-width: 680px;
+            width: 100%;
+            position: relative;
+            z-index: 1;
+            text-align: center;
+        }
+
+        .contact-hero-title {
+            font-size: clamp(2.2rem, 4.5vw, 3rem);
+            color: var(--text-primary);
+            margin-bottom: 0.65rem;
+            line-height: 1.2;
+        }
+
+        .contact-subline {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--plum);
+            background: var(--blush-light);
+            border: 1px solid var(--blush-border);
+            padding: 6px 18px;
+            border-radius: 99px;
+            margin-bottom: 2.5rem;
+        }
+
+        .contact-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .contact-card {
+            background: #FFFFFF;
+            border: 1.5px solid var(--blush-border);
+            border-radius: 20px;
+            padding: 1.35rem 1.75rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            text-decoration: none;
+            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: var(--shadow-subtle);
+        }
+
+        .contact-card:hover {
+            transform: translateY(-3px);
+            border-color: var(--plum);
+            box-shadow: var(--shadow-hover);
+            background: var(--blush-light);
+        }
+
+        .contact-card-left {
+            display: flex;
+            align-items: center;
+            gap: 1.25rem;
+            text-align: left;
+        }
+
+        .contact-icon-bubble {
+            width: 52px;
+            height: 52px;
+            border-radius: 16px;
+            background: var(--blush-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            border: 1px solid var(--blush-border);
+            transition: transform 0.2s ease;
+        }
+
+        .contact-card:hover .contact-icon-bubble {
+            transform: scale(1.08);
+            background: #FFFFFF;
+        }
+
+        .contact-label {
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-secondary);
+            margin-bottom: 2px;
+        }
+
+        .contact-val {
+            font-family: var(--font-body);
+            font-size: 1.12rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .contact-card-arrow {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: var(--blush-light);
+            color: var(--plum);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: all 0.2s ease;
+        }
+
+        .contact-card:hover .contact-card-arrow {
+            background: var(--plum);
+            color: #FFFFFF;
+            transform: translateX(3px);
+        }
+
+        .contact-meta-note {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-top: 1rem;
+        }
+
+        .blush-patch-contact {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(248, 222, 226, 0.45) 0%, rgba(252, 239, 241, 0.15) 65%, transparent 100%);
+            filter: blur(80px);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        @media (max-width: 520px) {
+            .contact-card {
+                padding: 1.15rem 1.25rem;
+            }
+            .contact-val {
+                font-size: 0.98rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ─── SHARED NAVBAR ─── -->
+    <header id="navbar">
+        <div class="container">
+            <div class="nav-inner">
+                <a href="/" class="nav-brand" aria-label="Linkal AI Home">
+                    <span class="nav-logo-box">
+                        <img src="/linkal.jpeg" alt="Linkal AI" width="38" height="38" />
+                    </span>
+                    <span>Linkal AI</span>
+                </a>
+
+                <nav class="nav-links">
+                    <a href="/">Home</a>
+                    <a href="/founder.html">Founder</a>
+                    <a href="https://studio.linkal.in" target="_blank" rel="noopener noreferrer">Studio</a>
+                    <a href="/about.html">About Us</a>
+                    <a href="/#how">How It Works</a>
+                    <a href="/#pricing">Pricing</a>
+                    <a href="/contact.html" class="active">Contact Us</a>
+                </nav>
+
+                <div class="nav-cta">
+                    <a href="https://studio.linkal.in" class="btn btn-navy">Get Started Free</a>
+                </div>
+
+                <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+                    <i data-lucide="menu" width="24" height="24"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ─── SHARED LEFT SLIDE-IN DRAWER (SECTION 6) ─── -->
+    <div class="drawer-overlay" id="drawerOverlay" aria-hidden="true"></div>
+    <aside class="left-drawer" id="leftDrawer" role="dialog" aria-modal="true" aria-label="Main Navigation Menu">
+        <div class="drawer-header">
+            <a href="/" class="nav-brand" style="font-size:1.15rem;">
+                <span class="nav-logo-box" style="width:32px; height:32px;">
+                    <img src="/linkal.jpeg" alt="Linkal AI" width="32" height="32" />
+                </span>
+                <span>Linkal AI</span>
+            </a>
+            <button class="drawer-close" id="drawerClose" aria-label="Close menu">&times;</button>
+        </div>
+
+        <nav class="drawer-nav">
+            <a href="/" class="drawer-link" style="--i:1;">
+                <span>Home</span>
+            </a>
+            <a href="/founder.html" class="drawer-link" style="--i:2;">
+                <span>Founder</span>
+            </a>
+            <a href="https://studio.linkal.in" class="drawer-link" style="--i:3;">
+                <span>Studio</span>
+                <span class="drawer-link-badge">App</span>
+            </a>
+            <a href="/about.html" class="drawer-link" style="--i:4;">
+                <span>About Us</span>
+            </a>
+            <a href="/#how" class="drawer-link" style="--i:5;">
+                <span>How It Works</span>
+            </a>
+            <a href="/#use-cases" class="drawer-link" style="--i:6;">
+                <span>Who Can Use</span>
+            </a>
+            <a href="/#features" class="drawer-link" style="--i:7;">
+                <span>Features</span>
+            </a>
+            <a href="/#pricing" class="drawer-link" style="--i:8;">
+                <span>Pricing</span>
+            </a>
+            <a href="/#faq" class="drawer-link" style="--i:9;">
+                <span>FAQ</span>
+            </a>
+            <a href="/contact.html" class="drawer-link active" style="--i:10;">
+                <span>Contact Us</span>
+                <span class="drawer-link-badge">You're here</span>
+            </a>
+        </nav>
+
+        <div class="drawer-footer">
+            <a href="https://studio.linkal.in" class="btn btn-navy" style="width:100%; justify-content:center;">Launch Studio &rarr;</a>
+        </div>
+    </aside>
+
+    <main class="contact-page">
+        <div class="blush-patch-contact"></div>
+
+        <div class="contact-container">
+            <h1 class="contact-hero-title">Get in Touch with Linkal AI</h1>
+            <div class="contact-subline">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="#25D366"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.699c.971.53 1.771.815 2.796.815 3.182 0 5.768-2.587 5.768-5.767.001-3.18-2.585-5.766-5.768-5.766zm9.969 5.768c0 5.48-4.453 9.932-9.969 9.932-1.748 0-3.38-.456-4.807-1.252l-5.224 1.38 1.399-5.109c-.896-1.487-1.408-3.228-1.408-5.087 0-5.48 4.453-9.932 9.969-9.932 5.516 0 10.04 4.452 10.04 9.932z"/></svg>
+                <span>We reply fast on WhatsApp</span>
+            </div>
+
+            <!-- 3 Contact Cards -->
+            <div class="contact-cards">
+                <!-- 1. WhatsApp Card -->
+                <a href="https://wa.me/918766882442?text=Hi%20Linkal%2C%20I%20want%20to%20create%20my%20website" target="_blank" rel="noopener noreferrer" class="contact-card">
+                    <div class="contact-card-left">
+                        <div class="contact-icon-bubble">
+                            <svg width="26" height="26" viewBox="0 0 24 24" fill="#25D366"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.699c.971.53 1.771.815 2.796.815 3.182 0 5.768-2.587 5.768-5.767.001-3.18-2.585-5.766-5.768-5.766zm9.969 5.768c0 5.48-4.453 9.932-9.969 9.932-1.748 0-3.38-.456-4.807-1.252l-5.224 1.38 1.399-5.109c-.896-1.487-1.408-3.228-1.408-5.087 0-5.48 4.453-9.932 9.969-9.932 5.516 0 10.04 4.452 10.04 9.932z"/></svg>
+                        </div>
+                        <div>
+                            <div class="contact-label">WhatsApp Helpline</div>
+                            <div class="contact-val">+91 87668 82442</div>
+                        </div>
+                    </div>
+                    <div class="contact-card-arrow">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                    </div>
+                </a>
+
+                <!-- 2. Instagram Card -->
+                <a href="https://instagram.com/linkal.in" target="_blank" rel="noopener noreferrer" class="contact-card">
+                    <div class="contact-card-left">
+                        <div class="contact-icon-bubble">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#E1306C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+                            </svg>
+                        </div>
+                        <div>
+                            <div class="contact-label">Official Instagram</div>
+                            <div class="contact-val">instagram.com/linkal.in</div>
+                        </div>
+                    </div>
+                    <div class="contact-card-arrow">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                    </div>
+                </a>
+
+                <!-- 3. LinkedIn Card -->
+                <a href="https://linkedin.com/company/linkalai" target="_blank" rel="noopener noreferrer" class="contact-card">
+                    <div class="contact-card-left">
+                        <div class="contact-icon-bubble">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="#0A66C2">
+                                <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <div class="contact-label">LinkedIn Page</div>
+                            <div class="contact-val">linkedin.com/company/linkalai</div>
+                        </div>
+                    </div>
+                    <div class="contact-card-arrow">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                    </div>
+                </a>
+            </div>
+
+            <p class="contact-meta-note">
+                Need business partnership, franchise enquiry, or website setup help? Drop us a WhatsApp message and our team will get back to you within minutes.
+            </p>
+        </div>
+    </main>
+
+    <!-- ─── SHARED FOOTER ─── -->
+    <footer id="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="/" class="nav-brand" style="margin-bottom:1rem; display:inline-flex;">
+                        <span class="nav-logo-box" style="width:34px; height:34px;">
+                            <img src="/linkal.jpeg" alt="Linkal AI" width="34" height="34" />
+                        </span>
+                        <span>Linkal AI</span>
+                    </a>
+                    <p style="font-size:0.9rem; line-height:1.6; max-width:320px;">
+                        India's 1-minute website builder. Branded mobile sites, restaurant digital menus, and business stores on custom subdomains with direct WhatsApp ordering.
+                    </p>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Product</h4>
+                    <ul>
+                        <li><a href="https://studio.linkal.in">Linkal Studio</a></li>
+                        <li><a href="/#features">Features</a></li>
+                        <li><a href="/#pricing">Pricing &amp; Plans</a></li>
+                        <li><a href="/#how">How It Works</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="/founder.html">Founder</a></li>
+                        <li><a href="/about.html">About Us</a></li>
+                        <li><a href="/contact.html" style="color:var(--plum); font-weight:700;">Contact Us</a></li>
+                        <li><a href="/#faq">FAQ</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Direct Support</h4>
+                    <ul>
+                        <li><a href="https://wa.me/918766882442?text=Hello%20Linkal%20Support" target="_blank" rel="noopener noreferrer">💬 WhatsApp: 8766882442</a></li>
+                        <li><a href="mailto:support@linkal.in">✉️ support@linkal.in</a></li>
+                        <li><a href="https://instagram.com/linkal.in" target="_blank" rel="noopener noreferrer">📸 @linkal.in</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div>&copy; 2026 Linkal AI. All rights reserved. Made in India.</div>
+                <div class="footer-socials">
+                    <a href="https://wa.me/918766882442?text=Hello%2C%20I%20want%20to%20use%20Linkal" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.301-.15-1.78-.879-2.056-.98-.276-.1-.476-.15-.676.15s-.776.98-.952 1.18-.351.226-.652.075c-.301-.15-1.27-.468-2.42-1.493-.895-.798-1.5-1.784-1.676-2.085s-.019-.464.132-.614c.135-.134.301-.351.452-.527s.2-.301.301-.502.05-.376-.025-.527c-.075-.15-.676-1.63-1.002-2.233-.25-.464-.502-.4-.676-.4h-.577c-.201 0-.527.075-.803.376s-1.054 1.029-1.054 2.509 1.079 2.91 1.229 3.111c.15.201 2.108 3.218 5.107 4.512.713.308 1.27.492 1.704.63.717.228 1.369.196 1.884.12.576-.086 1.78-.727 2.03-1.43.25-.702.25-1.304.175-1.43-.075-.125-.276-.201-.577-.351z"/><path d="M12.004 2C6.48 2 2 6.48 2 12.004c0 1.86.51 3.597 1.393 5.093L2 22.004l5.064-1.328A9.957 9.957 0 0 0 12.004 22c5.524 0 10.004-4.48 10.004-9.996C22.008 6.48 17.528 2 12.004 2zm0 18.25c-1.616 0-3.13-.46-4.423-1.258l-.317-.194-3.003.788.802-2.927-.213-.339A8.214 8.214 0 0 1 3.754 12c0-4.549 3.7-8.25 8.25-8.25s8.25 3.701 8.25 8.25-3.701 8.25-8.25 8.25z"/></svg>
+                    </a>
+                    <a href="https://instagram.com/linkal.in" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                        <i data-lucide="instagram" width="20" height="20"></i>
+                    </a>
+                    <a href="https://linkedin.com/company/linkalai" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                        <i data-lucide="linkedin" width="20" height="20"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ─── SHARED FLOATING BUTTONS ─── -->
+    <a href="https://wa.me/918766882442?text=Hello%2C%20I%20want%20to%20use%20Linkal" target="_blank" rel="noopener noreferrer" class="float-wa" aria-label="Chat with Linkal on WhatsApp">
+        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M17.472 14.382c-.301-.15-1.78-.879-2.056-.98-.276-.1-.476-.15-.676.15s-.776.98-.952 1.18-.351.226-.652.075c-.301-.15-1.27-.468-2.42-1.493-.895-.798-1.5-1.784-1.676-2.085s-.019-.464.132-.614c.135-.134.301-.351.452-.527s.2-.301.301-.502.05-.376-.025-.527c-.075-.15-.676-1.63-1.002-2.233-.25-.464-.502-.4-.676-.4h-.577c-.201 0-.527.075-.803.376s-1.054 1.029-1.054 2.509 1.079 2.91 1.229 3.111c.15.201 2.108 3.218 5.107 4.512.713.308 1.27.492 1.704.63.717.228 1.369.196 1.884.12.576-.086 1.78-.727 2.03-1.43.25-.702.25-1.304.175-1.43-.075-.125-.276-.201-.577-.351z"/>
+            <path d="M12.004 2C6.48 2 2 6.48 2 12.004c0 1.86.51 3.597 1.393 5.093L2 22.004l5.064-1.328A9.957 9.957 0 0 0 12.004 22c5.524 0 10.004-4.48 10.004-9.996C22.008 6.48 17.528 2 12.004 2zm0 18.25c-1.616 0-3.13-.46-4.423-1.258l-.317-.194-3.003.788.802-2.927-.213-.339A8.214 8.214 0 0 1 3.754 12c0-4.549 3.7-8.25 8.25-8.25s8.25 3.701 8.25 8.25-3.701 8.25-8.25 8.25z"/>
+        </svg>
+    </a>
+    <a href="https://instagram.com/linkal.in" target="_blank" rel="noopener noreferrer" class="float-ig" aria-label="Contact Linkal on Instagram">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+            <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+        </svg>
+    </a>
+
+    <!-- ─── SHARED MOBILE BOTTOM TASKBAR (SECTION 5) ─── -->
+    <nav class="mobile-taskbar" aria-label="Mobile Bottom Navigation">
+        <a href="/" class="taskbar-btn">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+            <span>Home</span>
+        </a>
+        <a href="https://studio.linkal.in" class="taskbar-btn primary">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            <span>Studio</span>
+        </a>
+        <a href="/#how" class="taskbar-btn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <span>How It Works</span>
+        </a>
+        <a href="/#pricing" class="taskbar-btn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+            <span>Pricing</span>
+        </a>
+    </nav>
+
+    <!-- ─── DRAWER SCRIPT ─── -->
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const leftDrawer = document.getElementById('leftDrawer');
+        const drawerOverlay = document.getElementById('drawerOverlay');
+        const drawerClose = document.getElementById('drawerClose');
+
+        function openDrawer() {
+            leftDrawer.classList.add('open');
+            drawerOverlay.classList.add('open');
+            document.body.style.overflow = 'hidden';
+            hamburger.setAttribute('aria-expanded', 'true');
+        }
+
+        function closeDrawer() {
+            leftDrawer.classList.remove('open');
+            drawerOverlay.classList.remove('open');
+            document.body.style.overflow = '';
+            hamburger.setAttribute('aria-expanded', 'false');
+        }
+
+        if (hamburger) hamburger.addEventListener('click', openDrawer);
+        if (drawerClose) drawerClose.addEventListener('click', closeDrawer);
+        if (drawerOverlay) drawerOverlay.addEventListener('click', closeDrawer);
+
+        document.querySelectorAll('.drawer-link').forEach(link => {
+            link.addEventListener('click', closeDrawer);
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && leftDrawer.classList.contains('open')) {
+                closeDrawer();
+            }
+        });
+
+        if (window.lucide) { lucide.createIcons(); }
+    </script>
+</body>
+</html>

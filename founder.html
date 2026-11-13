@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yahya Mundewadi – Founder of Linkal AI</title>
+    <meta name="description" content="Meet Yahya Mundewadi, 22-year-old Indian founder building simple, affordable technology for small businesses at Linkal AI, Dominal Technology, and OpenSoftwares." />
+    <meta name="theme-color" content="#5B2A4A" />
+    <link rel="canonical" href="https://linkal.in/founder" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="profile" />
+    <meta property="og:url" content="https://linkal.in/founder" />
+    <meta property="og:title" content="Yahya Mundewadi – Founder of Linkal AI" />
+    <meta property="og:description" content="22-year-old Indian founder building simple, affordable technology for small businesses." />
+    <meta property="og:image" content="https://linkal.in/images/founder/yahya.jpg" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Yahya Mundewadi – Founder of Linkal AI" />
+    <meta name="twitter:description" content="22-year-old Indian founder building simple, affordable technology for small businesses." />
+    <meta name="twitter:image" content="https://linkal.in/images/founder/yahya.jpg" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+    <!-- Person Schema (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Yahya Mundewadi",
+      "jobTitle": "Founder",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Linkal AI",
+        "url": "https://linkal.in"
+      },
+      "url": "https://yahya.in",
+      "sameAs": [
+        "https://yahya.in",
+        "https://linkedin.com/in/yahyamundewadi",
+        "https://instagram.com/linkal.in"
+      ]
+    }
+    </script>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400..700&family=Fraunces:ital,opsz,wght@0,9..144,600..700;1,9..144,600..700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/shared.css" />
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .founder-page {
+            min-height: calc(100vh - 70px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 7rem 1.5rem 5rem 1.5rem;
+            position: relative;
+            background: #FFFFFF;
+        }
+
+        .founder-card {
+            max-width: 640px;
+            width: 100%;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            padding: 3rem 2rem;
+            background: #FFFFFF;
+            border-radius: 28px;
+            border: 1px solid var(--blush-border);
+            box-shadow: var(--shadow-card);
+        }
+
+        .founder-avatar-wrap {
+            position: relative;
+            width: 136px;
+            height: 136px;
+            margin: 0 auto 1.5rem auto;
+            border-radius: 50%;
+            padding: 4px;
+            background: #FFFFFF;
+            border: 3px solid var(--plum);
+            box-shadow: 0 10px 28px rgba(91, 42, 74, 0.15);
+        }
+
+        .founder-avatar {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .founder-name {
+            font-size: clamp(2rem, 4vw, 2.6rem);
+            color: var(--text-primary);
+            margin-bottom: 0.35rem;
+            line-height: 1.2;
+        }
+
+        .founder-title {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--plum);
+            margin-bottom: 1.75rem;
+            letter-spacing: 0.02em;
+        }
+
+        .founder-buttons {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .founder-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.65rem;
+            padding: 0.72rem 1.45rem;
+            border-radius: 14px;
+            border: 1.5px solid var(--blush-border);
+            background: #FFFFFF;
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: all 0.22s ease;
+            box-shadow: var(--shadow-subtle);
+        }
+
+        .founder-btn:hover {
+            border-color: var(--plum);
+            color: var(--plum);
+            background: var(--blush-light);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .founder-btn svg {
+            flex-shrink: 0;
+        }
+
+        .founder-bio {
+            font-size: 1.02rem;
+            line-height: 1.7;
+            color: var(--text-secondary);
+            max-width: 540px;
+            margin: 0 auto;
+        }
+
+        .founder-bio a {
+            color: var(--plum);
+            font-weight: 700;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            transition: color 0.18s;
+        }
+
+        .founder-bio a:hover {
+            color: var(--plum-hover);
+        }
+
+        .blush-patch-founder {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 580px;
+            height: 580px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(248, 222, 226, 0.5) 0%, rgba(252, 239, 241, 0.2) 65%, transparent 100%);
+            filter: blur(80px);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        @media (max-width: 520px) {
+            .founder-card {
+                padding: 2.25rem 1.25rem;
+            }
+            .founder-buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+            .founder-btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ─── SHARED NAVBAR ─── -->
+    <header id="navbar">
+        <div class="container">
+            <div class="nav-inner">
+                <a href="/" class="nav-brand" aria-label="Linkal AI Home">
+                    <span class="nav-logo-box">
+                        <img src="/linkal.jpeg" alt="Linkal AI" width="38" height="38" />
+                    </span>
+                    <span>Linkal AI</span>
+                </a>
+
+                <nav class="nav-links">
+                    <a href="/">Home</a>
+                    <a href="/founder.html" class="active">Founder</a>
+                    <a href="https://studio.linkal.in" target="_blank" rel="noopener noreferrer">Studio</a>
+                    <a href="/about.html">About Us</a>
+                    <a href="/#how">How It Works</a>
+                    <a href="/#pricing">Pricing</a>
+                    <a href="/contact.html">Contact Us</a>
+                </nav>
+
+                <div class="nav-cta">
+                    <a href="https://studio.linkal.in" class="btn btn-navy">Get Started Free</a>
+                </div>
+
+                <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+                    <i data-lucide="menu" width="24" height="24"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ─── SHARED LEFT SLIDE-IN DRAWER (SECTION 6) ─── -->
+    <div class="drawer-overlay" id="drawerOverlay" aria-hidden="true"></div>
+    <aside class="left-drawer" id="leftDrawer" role="dialog" aria-modal="true" aria-label="Main Navigation Menu">
+        <div class="drawer-header">
+            <a href="/" class="nav-brand" style="font-size:1.15rem;">
+                <span class="nav-logo-box" style="width:32px; height:32px;">
+                    <img src="/linkal.jpeg" alt="Linkal AI" width="32" height="32" />
+                </span>
+                <span>Linkal AI</span>
+            </a>
+            <button class="drawer-close" id="drawerClose" aria-label="Close menu">&times;</button>
+        </div>
+
+        <nav class="drawer-nav">
+            <a href="/" class="drawer-link" style="--i:1;">
+                <span>Home</span>
+            </a>
+            <a href="/founder.html" class="drawer-link active" style="--i:2;">
+                <span>Founder</span>
+                <span class="drawer-link-badge">You're here</span>
+            </a>
+            <a href="https://studio.linkal.in" class="drawer-link" style="--i:3;">
+                <span>Studio</span>
+                <span class="drawer-link-badge">App</span>
+            </a>
+            <a href="/about.html" class="drawer-link" style="--i:4;">
+                <span>About Us</span>
+            </a>
+            <a href="/#how" class="drawer-link" style="--i:5;">
+                <span>How It Works</span>
+            </a>
+            <a href="/#use-cases" class="drawer-link" style="--i:6;">
+                <span>Who Can Use</span>
+            </a>
+            <a href="/#features" class="drawer-link" style="--i:7;">
+                <span>Features</span>
+            </a>
+            <a href="/#pricing" class="drawer-link" style="--i:8;">
+                <span>Pricing</span>
+            </a>
+            <a href="/#faq" class="drawer-link" style="--i:9;">
+                <span>FAQ</span>
+            </a>
+            <a href="/contact.html" class="drawer-link" style="--i:10;">
+                <span>Contact Us</span>
+            </a>
+        </nav>
+
+        <div class="drawer-footer">
+            <a href="https://studio.linkal.in" class="btn btn-navy" style="width:100%; justify-content:center;">Launch Studio &rarr;</a>
+        </div>
+    </aside>
+
+    <main class="founder-page">
+        <div class="blush-patch-founder"></div>
+
+        <div class="founder-card reveal">
+            <!-- 1. Circular Founder Photo -->
+            <div class="founder-avatar-wrap">
+                <picture>
+                    <source srcset="/images/founder/yahya.webp" type="image/webp" />
+                    <img src="/images/founder/yahya.jpg" alt="Yahya Mundewadi, Founder of Linkal AI" class="founder-avatar" width="130" height="130" loading="eager" />
+                </picture>
+            </div>
+
+            <!-- 2. Name & Subtitle -->
+            <h1 class="founder-name">Yahya Mundewadi</h1>
+            <div class="founder-title">Founder of Linkal AI</div>
+
+            <!-- 4. Two Buttons Side by Side -->
+            <div class="founder-buttons">
+                <!-- Portfolio Button: Google G SVG + yahya.in -->
+                <a href="https://yahya.in" target="_blank" rel="noopener noreferrer" class="founder-btn" aria-label="Visit Yahya Mundewadi's Portfolio">
+                    <svg width="20" height="20" viewBox="0 0 24 24">
+                        <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                        <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                        <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
+                        <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
+                    </svg>
+                    <span>yahya.in</span>
+                </a>
+
+                <!-- LinkedIn Button: Official LinkedIn SVG + LinkedIn -->
+                <a href="https://linkedin.com/in/yahyamundewadi" target="_blank" rel="noopener noreferrer" class="founder-btn" aria-label="Visit Yahya Mundewadi's LinkedIn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="#0A66C2">
+                        <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+                    </svg>
+                    <span>LinkedIn</span>
+                </a>
+            </div>
+
+            <!-- 5. Bio -->
+            <p class="founder-bio">
+                22-year-old Indian founder building simple, affordable technology for small businesses. Founder of <a href="https://dominal.in" target="_blank" rel="noopener noreferrer">Dominal Technology (dominal.in)</a> and <a href="https://opensoftwares.in" target="_blank" rel="noopener noreferrer">OpenSoftwares Pvt. Ltd. (opensoftwares.in)</a>.
+            </p>
+        </div>
+    </main>
+
+    <!-- ─── SHARED FOOTER ─── -->
+    <footer id="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="/" class="nav-brand" style="margin-bottom:1rem; display:inline-flex;">
+                        <span class="nav-logo-box" style="width:34px; height:34px;">
+                            <img src="/linkal.jpeg" alt="Linkal AI" width="34" height="34" />
+                        </span>
+                        <span>Linkal AI</span>
+                    </a>
+                    <p style="font-size:0.9rem; line-height:1.6; max-width:320px;">
+                        India's 1-minute website builder. Branded mobile sites, restaurant digital menus, and business stores on custom subdomains with direct WhatsApp ordering.
+                    </p>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Product</h4>
+                    <ul>
+                        <li><a href="https://studio.linkal.in">Linkal Studio</a></li>
+                        <li><a href="/#features">Features</a></li>
+                        <li><a href="/#pricing">Pricing &amp; Plans</a></li>
+                        <li><a href="/#how">How It Works</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="/founder.html" style="color:var(--plum); font-weight:700;">Founder</a></li>
+                        <li><a href="/about.html">About Us</a></li>
+                        <li><a href="/contact.html">Contact Us</a></li>
+                        <li><a href="/#faq">FAQ</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Direct Support</h4>
+                    <ul>
+                        <li><a href="https://wa.me/918766882442?text=Hello%20Linkal%20Support" target="_blank" rel="noopener noreferrer">💬 WhatsApp: 8766882442</a></li>
+                        <li><a href="mailto:support@linkal.in">✉️ support@linkal.in</a></li>
+                        <li><a href="https://instagram.com/linkal.in" target="_blank" rel="noopener noreferrer">📸 @linkal.in</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div>&copy; 2026 Linkal AI. All rights reserved. Made in India.</div>
+                <div class="footer-socials">
+                    <a href="https://wa.me/918766882442?text=Hello%2C%20I%20want%20to%20use%20Linkal" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.301-.15-1.78-.879-2.056-.98-.276-.1-.476-.15-.676.15s-.776.98-.952 1.18-.351.226-.652.075c-.301-.15-1.27-.468-2.42-1.493-.895-.798-1.5-1.784-1.676-2.085s-.019-.464.132-.614c.135-.134.301-.351.452-.527s.2-.301.301-.502.05-.376-.025-.527c-.075-.15-.676-1.63-1.002-2.233-.25-.464-.502-.4-.676-.4h-.577c-.201 0-.527.075-.803.376s-1.054 1.029-1.054 2.509 1.079 2.91 1.229 3.111c.15.201 2.108 3.218 5.107 4.512.713.308 1.27.492 1.704.63.717.228 1.369.196 1.884.12.576-.086 1.78-.727 2.03-1.43.25-.702.25-1.304.175-1.43-.075-.125-.276-.201-.577-.351z"/><path d="M12.004 2C6.48 2 2 6.48 2 12.004c0 1.86.51 3.597 1.393 5.093L2 22.004l5.064-1.328A9.957 9.957 0 0 0 12.004 22c5.524 0 10.004-4.48 10.004-9.996C22.008 6.48 17.528 2 12.004 2zm0 18.25c-1.616 0-3.13-.46-4.423-1.258l-.317-.194-3.003.788.802-2.927-.213-.339A8.214 8.214 0 0 1 3.754 12c0-4.549 3.7-8.25 8.25-8.25s8.25 3.701 8.25 8.25-3.701 8.25-8.25 8.25z"/></svg>
+                    </a>
+                    <a href="https://instagram.com/linkal.in" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                        <i data-lucide="instagram" width="20" height="20"></i>
+                    </a>
+                    <a href="https://linkedin.com/company/linkalai" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                        <i data-lucide="linkedin" width="20" height="20"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ─── SHARED FLOATING BUTTONS ─── -->
+    <a href="https://wa.me/918766882442?text=Hello%2C%20I%20want%20to%20use%20Linkal" target="_blank" rel="noopener noreferrer" class="float-wa" aria-label="Chat with Linkal on WhatsApp">
+        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M17.472 14.382c-.301-.15-1.78-.879-2.056-.98-.276-.1-.476-.15-.676.15s-.776.98-.952 1.18-.351.226-.652.075c-.301-.15-1.27-.468-2.42-1.493-.895-.798-1.5-1.784-1.676-2.085s-.019-.464.132-.614c.135-.134.301-.351.452-.527s.2-.301.301-.502.05-.376-.025-.527c-.075-.15-.676-1.63-1.002-2.233-.25-.464-.502-.4-.676-.4h-.577c-.201 0-.527.075-.803.376s-1.054 1.029-1.054 2.509 1.079 2.91 1.229 3.111c.15.201 2.108 3.218 5.107 4.512.713.308 1.27.492 1.704.63.717.228 1.369.196 1.884.12.576-.086 1.78-.727 2.03-1.43.25-.702.25-1.304.175-1.43-.075-.125-.276-.201-.577-.351z"/>
+            <path d="M12.004 2C6.48 2 2 6.48 2 12.004c0 1.86.51 3.597 1.393 5.093L2 22.004l5.064-1.328A9.957 9.957 0 0 0 12.004 22c5.524 0 10.004-4.48 10.004-9.996C22.008 6.48 17.528 2 12.004 2zm0 18.25c-1.616 0-3.13-.46-4.423-1.258l-.317-.194-3.003.788.802-2.927-.213-.339A8.214 8.214 0 0 1 3.754 12c0-4.549 3.7-8.25 8.25-8.25s8.25 3.701 8.25 8.25-3.701 8.25-8.25 8.25z"/>
+        </svg>
+    </a>
+    <a href="https://instagram.com/linkal.in" target="_blank" rel="noopener noreferrer" class="float-ig" aria-label="Contact Linkal on Instagram">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+            <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+        </svg>
+    </a>
+
+    <!-- ─── SHARED MOBILE BOTTOM TASKBAR (SECTION 5) ─── -->
+    <nav class="mobile-taskbar" aria-label="Mobile Bottom Navigation">
+        <a href="/" class="taskbar-btn">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+            <span>Home</span>
+        </a>
+        <a href="https://studio.linkal.in" class="taskbar-btn primary">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            <span>Studio</span>
+        </a>
+        <a href="/#how" class="taskbar-btn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <span>How It Works</span>
+        </a>
+        <a href="/#pricing" class="taskbar-btn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+            <span>Pricing</span>
+        </a>
+    </nav>
+
+    <!-- ─── DRAWER SCRIPT ─── -->
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const leftDrawer = document.getElementById('leftDrawer');
+        const drawerOverlay = document.getElementById('drawerOverlay');
+        const drawerClose = document.getElementById('drawerClose');
+
+        function openDrawer() {
+            leftDrawer.classList.add('open');
+            drawerOverlay.classList.add('open');
+            document.body.style.overflow = 'hidden';
+            hamburger.setAttribute('aria-expanded', 'true');
+        }
+
+        function closeDrawer() {
+            leftDrawer.classList.remove('open');
+            drawerOverlay.classList.remove('open');
+            document.body.style.overflow = '';
+            hamburger.setAttribute('aria-expanded', 'false');
+        }
+
+        if (hamburger) hamburger.addEventListener('click', openDrawer);
+        if (drawerClose) drawerClose.addEventListener('click', closeDrawer);
+        if (drawerOverlay) drawerOverlay.addEventListener('click', closeDrawer);
+
+        document.querySelectorAll('.drawer-link').forEach(link => {
+            link.addEventListener('click', closeDrawer);
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && leftDrawer.classList.contains('open')) {
+                closeDrawer();
+            }
+        });
+
+        if (window.lucide) { lucide.createIcons(); }
+    </script>
+</body>
+</html>

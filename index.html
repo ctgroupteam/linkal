@@ -35,7 +35,7 @@
     <link rel="shortcut icon" href="https://linkal.in/favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="https://linkal.in/apple-touch-icon.png" />
     <link rel="manifest" href="/manifest.json" />
-    <meta name="theme-color" content="#0D1B3E" />
+    <meta name="theme-color" content="#5B2A4A" />
 
     <!-- Open Graph / Facebook / WhatsApp -->
     <meta property="og:type" content="website" />
@@ -99,9 +99,10 @@
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap"
-        rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400..700&family=Fraunces:ital,opsz,wght@0,9..144,600..700;1,9..144,600..700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/shared.css" />
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
         *,
@@ -113,23 +114,35 @@
         }
 
         :root {
-            --white: #FAF6EC;
+            --white: #FFFFFF;
+            --bg-page: #FFFFFF;
             --black: #111111;
-            --navy: #0D1B3E;
-            --navy-light: #F3EDE0;
-            --navy-dark: #081026;
-            --blue: #0D1B3E;
-            --blue-hover: #162B5E;
+            --plum: #5B2A4A;
+            --plum-hover: #3F1C33;
+            --plum-mid: #7A3D63;
+            --plum-light: #F7EFF4;
+            --blush: #F8DEE2;
+            --blush-light: #FCEFF1;
+            --blush-border: #F1C9D1;
+            --navy: #5B2A4A;
+            --navy-light: #FCEFF1;
+            --navy-dark: #3F1C33;
+            --blue: #5B2A4A;
+            --blue-hover: #3F1C33;
             --text: #111111;
-            --text-muted: #4B5563;
-            --card-bg: #FFFDF7;
-            --border: rgba(13, 27, 62, 0.10);
-            --border-strong: rgba(13, 27, 62, 0.18);
-            --shadow: 0 4px 20px rgba(13, 27, 62, 0.05);
-            --shadow-lg: 0 12px 36px rgba(13, 27, 62, 0.09);
+            --text-primary: #111111;
+            --text-secondary: #555555;
+            --text-muted: #555555;
+            --card-bg: #FFFFFF;
+            --border: #F1C9D1;
+            --border-strong: #E5B2BD;
+            --shadow: 0 8px 24px rgba(91, 42, 74, 0.08);
+            --shadow-lg: 0 12px 32px rgba(91, 42, 74, 0.09);
             --radius-sm: 8px;
             --radius-md: 14px;
             --radius-lg: 20px;
+            --font-heading: 'Fraunces', Georgia, serif;
+            --font-body: 'DM Sans', system-ui, -apple-system, sans-serif;
         }
 
         html {
@@ -137,9 +150,9 @@
         }
 
         body {
-            background: var(--white);
-            color: var(--text);
-            font-family: 'Inter', sans-serif;
+            background: #FFFFFF !important;
+            color: var(--text-primary);
+            font-family: var(--font-body);
             font-size: 16px;
             line-height: 1.65;
             overflow-x: hidden;
@@ -151,8 +164,8 @@
         h3,
         h4,
         h5 {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            color: var(--navy);
+            font-family: var(--font-heading);
+            color: var(--text-primary);
             line-height: 1.25;
             letter-spacing: -0.02em;
         }
@@ -207,7 +220,7 @@
             gap: 0.5rem;
             padding: 0.75rem 1.6rem;
             border-radius: 50px;
-            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-family: var(--font-body);
             font-weight: 700;
             font-size: 0.95rem;
             cursor: pointer;
@@ -219,7 +232,7 @@
 
         .btn-navy,
         .btn-blue {
-            background: #0D1B3E;
+            background: #5B2A4A;
             color: #FFFFFF !important;
             box-shadow: 0 4px 14px rgba(13, 27, 62, 0.2);
         }
@@ -233,25 +246,25 @@
 
         .btn-outline {
             background: transparent;
-            color: #0D1B3E !important;
-            border: 1.5px solid #0D1B3E;
+            color: #5B2A4A !important;
+            border: 1.5px solid #5B2A4A;
         }
 
         .btn-outline:hover {
-            background: #0D1B3E;
+            background: #5B2A4A;
             color: #FFFFFF !important;
             transform: translateY(-2px);
         }
 
         .btn-white {
-            background: #FFFDF7;
-            color: #0D1B3E !important;
+            background: #FFFFFF;
+            color: #5B2A4A !important;
             border: 1px solid var(--border);
             box-shadow: 0 4px 14px rgba(13, 27, 62, 0.08);
         }
 
         .btn-white:hover {
-            background: #0D1B3E;
+            background: #5B2A4A;
             color: #FFFFFF !important;
             transform: translateY(-2px);
         }
@@ -270,7 +283,7 @@
             color: var(--navy);
             padding: 0.35rem 0.95rem;
             border-radius: 50px;
-            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-family: var(--font-body);
             font-size: 0.78rem;
             font-weight: 700;
             text-transform: uppercase;
@@ -324,10 +337,10 @@
         }
 
         .logo-text {
-            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-family: var(--font-body);
             font-weight: 800;
             font-size: 1.35rem;
-            color: #0D1B3E;
+            color: #5B2A4A;
             letter-spacing: -0.03em;
             line-height: 1;
         }
@@ -341,14 +354,14 @@
 
         .nav-links a {
             color: #111111;
-            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-family: var(--font-body);
             font-weight: 600;
             font-size: 0.92rem;
             transition: color 0.2s ease;
         }
 
         .nav-links a:hover {
-            color: #0D1B3E;
+            color: #5B2A4A;
             opacity: 0.75;
         }
 
@@ -362,7 +375,7 @@
             background: none;
             border: none;
             cursor: pointer;
-            color: #0D1B3E;
+            color: #5B2A4A;
             padding: 0.5rem;
         }
 
@@ -372,7 +385,7 @@
             top: 70px;
             left: 0;
             right: 0;
-            background: #FFFDF7;
+            background: #FFFFFF;
             border-bottom: 1px solid var(--border);
             padding: 1.5rem;
             flex-direction: column;
@@ -386,7 +399,7 @@
         }
 
         .mobile-menu a {
-            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-family: var(--font-body);
             font-weight: 600;
             font-size: 1.05rem;
             color: #111111;
@@ -426,7 +439,7 @@
             border: 1px solid var(--border);
             border-radius: 50px;
             padding: 0.4rem 1rem;
-            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-family: var(--font-body);
             font-size: 0.8rem;
             font-weight: 600;
             color: var(--navy);
@@ -451,12 +464,83 @@
         .hero-h1 {
             margin-bottom: 1.2rem;
             line-height: 1.15;
-            color: #0D1B3E;
+            color: #5B2A4A;
         }
 
         /* Hero Single Feature Box (CV & Wedding Card in 1 box) */
+        
+        /* ─── HERO FREE LINE (SECTION 4: SINGLE LINE, NO BOX, WCAG COMPLIANT) ─── */
+        .hero-free-line {
+            display: inline-flex;
+            align-items: center;
+            justify-content: flex-start;
+            flex-wrap: nowrap;
+            white-space: nowrap;
+            gap: clamp(4px, 1.4vw, 10px);
+            margin: 0.25rem 0 1.35rem 0;
+            padding: 0;
+            background: transparent !important;
+            border: none !important;
+            box-shadow: none !important;
+            font-size: clamp(0.72rem, 2.35vw, 0.95rem);
+            color: var(--text-primary);
+            line-height: 1.2;
+            max-width: 100%;
+        }
+        .hero-free-line .free-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            font-weight: 600;
+            color: var(--plum);
+            white-space: nowrap;
+        }
+        .hero-free-line .free-item svg {
+            flex-shrink: 0;
+            width: clamp(12px, 1.8vw, 15px);
+            height: clamp(12px, 1.8vw, 15px);
+            stroke: var(--plum);
+        }
+        .hero-free-line .free-bullet {
+            color: var(--blush-border);
+            font-size: 0.85em;
+            user-select: none;
+        }
+        .hero-free-line .free-colon {
+            color: var(--plum-mid);
+            font-weight: 700;
+            user-select: none;
+        }
+        .hero-free-line .free-lifetime {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            font-weight: 500;
+            color: var(--text-secondary);
+            white-space: nowrap;
+        }
+        .hero-free-line .free-pill {
+            background: var(--blush);
+            color: var(--plum);
+            font-weight: 800;
+            font-size: 0.85em;
+            padding: 2px 7px;
+            border-radius: 999px;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            display: inline-block;
+        }
+        @media (max-width: 768px) {
+            .hero-free-line {
+                justify-content: center;
+                width: 100%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+
         .hero-single-box {
-            background: #FFFDF7;
+            background: #FFFFFF;
             border: 1.5px solid var(--border);
             border-radius: 50px;
             padding: 0.5rem 1.15rem;
@@ -518,10 +602,10 @@
         }
 
         .single-box-text {
-            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-family: var(--font-body);
             font-size: 0.86rem;
             font-weight: 700;
-            color: #0D1B3E;
+            color: #5B2A4A;
             white-space: nowrap;
         }
 
@@ -693,14 +777,14 @@
             font-size: 0.56rem;
             font-weight: 800;
             color: #334155;
-            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-family: var(--font-body);
             flex-shrink: 0;
             line-height: 1;
         }
 
         /* 3. The Live Website Viewport */
         .chrome-web-viewport {
-            background: #FFFDF7;
+            background: #FFFFFF;
             overflow-y: auto;
             max-height: 380px;
             display: flex;
@@ -708,7 +792,7 @@
         }
 
         .phone-store-header {
-            background: #0D1B3E;
+            background: #5B2A4A;
             padding: 0.75rem 0.75rem 0.45rem 0.75rem;
             text-align: center;
             border-bottom: 1px solid rgba(255, 255, 255, 0.08);
@@ -720,7 +804,7 @@
             justify-content: center;
             gap: 4px;
             color: #FFFFFF;
-            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-family: var(--font-body);
             font-weight: 800;
             font-size: 0.82rem;
         }
@@ -748,7 +832,7 @@
 
         .phone-store-cats span.active {
             background: #FFFFFF;
-            color: #0D1B3E;
+            color: #5B2A4A;
             font-weight: 700;
         }
 
@@ -802,10 +886,10 @@
         }
 
         .phone-product-name {
-            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-family: var(--font-body);
             font-size: 0.72rem;
             font-weight: 700;
-            color: #0D1B3E;
+            color: #5B2A4A;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
@@ -975,10 +1059,10 @@
         }
 
         .stat-number {
-            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-family: var(--font-body);
             font-size: clamp(2rem, 3.5vw, 2.75rem);
             font-weight: 800;
-            color: #0D1B3E;
+            color: #5B2A4A;
             line-height: 1.1;
         }
 
@@ -990,12 +1074,12 @@
         }
 
         #ticker {
-            background: #0D1B3E;
+            background: #5B2A4A;
             padding: 0.95rem 0;
             overflow: hidden;
             white-space: nowrap;
-            border-top: 1px solid rgba(255, 255, 255, 0.08);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            border-top: 1px solid rgba(255, 255, 255, 0.12);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.12);
             user-select: none;
             -webkit-user-select: none;
             cursor: grab;
@@ -1013,14 +1097,15 @@
             gap: 2.5rem;
             will-change: transform;
             transform: translate3d(0, 0, 0);
+            padding-left: clamp(2rem, 8vw, 6rem);
         }
 
         .ticker-item {
             display: inline-flex;
             align-items: center;
             gap: 0.65rem;
-            color: #FAF6EC;
-            font-family: 'Plus Jakarta Sans', sans-serif;
+            color: #FFFFFF;
+            font-family: var(--font-body);
             font-size: 0.88rem;
             font-weight: 700;
             letter-spacing: 0.02em;
@@ -1064,7 +1149,7 @@
 
         /* ─── THE 1-MINUTE WEBSITE MACHINE ─── */
         .machine-section {
-            background: var(--bg);
+            background: #FFFFFF !important;
             padding: 3.5rem 0 3.5rem 0;
             border-bottom: 1px solid var(--border);
         }
@@ -1089,14 +1174,15 @@
             width: 100%;
             max-width: 440px;
             max-height: 390px;
-            border-radius: 18px;
-            overflow: hidden;
-            border: 1px solid var(--border);
-            box-shadow: 0 8px 24px rgba(13, 27, 62, 0.05);
-            background: #FAF6EC;
+            border-radius: 0 !important;
+            overflow: visible;
+            border: none !important;
+            box-shadow: none !important;
+            background: #FFFFFF !important;
             display: flex;
             align-items: center;
             justify-content: center;
+            padding: 0 !important;
         }
 
         .machine-video {
@@ -1105,8 +1191,10 @@
             max-height: 390px;
             object-fit: contain;
             display: block;
-            border-radius: 18px;
-            background: #FAF6EC;
+            border-radius: 0 !important;
+            border: none !important;
+            box-shadow: none !important;
+            background: #FFFFFF !important;
         }
 
         .machine-content {
@@ -1121,17 +1209,17 @@
         }
 
         .machine-title {
-            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-family: var(--font-body);
             font-size: clamp(1.75rem, 3.2vw, 2.35rem);
             font-weight: 800;
-            color: #0D1B3E;
+            color: #5B2A4A;
             margin-top: 0.5rem;
             letter-spacing: -0.02em;
             line-height: 1.2;
         }
 
         .workflow-box {
-            background: #FFFDF7;
+            background: #FFFFFF;
             border: 1.5px solid var(--border-strong);
             border-radius: 50px;
             padding: 0.65rem 1.35rem;
@@ -1151,7 +1239,7 @@
         }
 
         .workflow-step {
-            color: #0D1B3E;
+            color: #5B2A4A;
             font-weight: 800;
             font-size: 0.86rem;
             white-space: nowrap;
@@ -1191,7 +1279,7 @@
             50% {
                 transform: translateX(4px);
                 opacity: 1;
-                color: #0D1B3E;
+                color: #5B2A4A;
             }
         }
 
@@ -1269,8 +1357,8 @@
         }
 
         .how-tab-btn.active {
-            background: #FFFDF7;
-            border-bottom-color: #0D1B3E;
+            background: #FFFFFF;
+            border-bottom-color: #5B2A4A;
         }
 
         .how-tab-num {
@@ -1281,18 +1369,18 @@
         }
 
         .how-tab-btn.active .how-tab-num {
-            color: #0D1B3E;
+            color: #5B2A4A;
         }
 
         .how-tab-title {
-            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-family: var(--font-body);
             font-size: 0.86rem;
             font-weight: 700;
             color: #374151;
         }
 
         .how-tab-btn.active .how-tab-title {
-            color: #0D1B3E;
+            color: #5B2A4A;
         }
 
         .how-stage {
@@ -1321,7 +1409,7 @@
 
         /* Mock Window Frame */
         .mock-window {
-            background: #FFFDF7;
+            background: #FFFFFF;
             border: 1px solid var(--border);
             border-radius: var(--radius-md);
             box-shadow: 0 8px 30px rgba(13, 27, 62, 0.08);
@@ -1329,7 +1417,7 @@
         }
 
         .mock-bar {
-            background: #F3EDE0;
+            background: #FCEFF1;
             border-bottom: 1px solid var(--border);
             padding: 0.65rem 1rem;
             display: flex;
@@ -1360,7 +1448,7 @@
             padding: 0.25rem 0.75rem;
             font-family: 'SFMono-Regular', Consolas, monospace;
             font-size: 0.76rem;
-            color: #0D1B3E;
+            color: #5B2A4A;
             display: flex;
             align-items: center;
             gap: 0.4rem;
@@ -1376,7 +1464,7 @@
         /* Step 1 Type box */
         .type-input-box {
             background: #FFFFFF;
-            border: 2px solid #0D1B3E;
+            border: 2px solid #5B2A4A;
             border-radius: 10px;
             padding: 0.85rem 1rem;
             display: flex;
@@ -1388,7 +1476,7 @@
             display: inline-block;
             width: 2px;
             height: 1.1rem;
-            background: #0D1B3E;
+            background: #5B2A4A;
             margin-left: 2px;
             vertical-align: middle;
             animation: blink 0.9s infinite;
@@ -1412,14 +1500,14 @@
             font-size: 0.8rem;
             font-weight: 600;
             border: 1px solid var(--border);
-            background: #FAF6EC;
+            background: #FFFFFF;
             color: #111111;
         }
 
         .cat-chip.active {
-            background: #0D1B3E;
+            background: #5B2A4A;
             color: #FFFFFF;
-            border-color: #0D1B3E;
+            border-color: #5B2A4A;
         }
 
         /* Step 2 Products Grid */
@@ -1455,7 +1543,7 @@
             height: 46px;
             border-radius: 8px;
             object-fit: cover;
-            background: #F3EDE0;
+            background: #FCEFF1;
             flex-shrink: 0;
         }
 
@@ -1465,10 +1553,10 @@
         }
 
         .how-prod-title {
-            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-family: var(--font-body);
             font-size: 0.75rem;
             font-weight: 700;
-            color: #0D1B3E;
+            color: #5B2A4A;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
@@ -1496,7 +1584,7 @@
         /* Step 3 Progress Bar */
         .domain-progress-bar {
             height: 8px;
-            background: #F3EDE0;
+            background: #FCEFF1;
             border-radius: 4px;
             overflow: hidden;
             margin: 1.25rem 0;
@@ -1504,7 +1592,7 @@
 
         .domain-progress-fill {
             height: 100%;
-            background: #0D1B3E;
+            background: #5B2A4A;
             width: 0%;
             transition: width 0.3s ease;
         }
@@ -1535,7 +1623,7 @@
         }
 
         .ig-user {
-            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-family: var(--font-body);
             font-weight: 800;
             font-size: 0.85rem;
             color: #111111;
@@ -1571,7 +1659,7 @@
         .ig-stats strong {
             display: block;
             font-weight: 800;
-            color: #0D1B3E;
+            color: #5B2A4A;
         }
 
         .ig-bio-text {
@@ -1600,7 +1688,7 @@
         }
 
         .ig-btn.primary {
-            background: #0D1B3E;
+            background: #5B2A4A;
             color: #FFFFFF;
         }
 
@@ -1900,7 +1988,7 @@
         }
 
         .use-case-card {
-            background: #FFFDF7;
+            background: #FFFFFF;
             border: 1px solid var(--border);
             border-radius: 14px;
             padding: 1.15rem 1.25rem;
@@ -1914,7 +2002,7 @@
         .use-case-card:hover {
             transform: translateY(-3px);
             box-shadow: 0 8px 24px rgba(13, 27, 62, 0.08);
-            border-color: #0D1B3E;
+            border-color: #5B2A4A;
         }
 
         .use-case-icon-box {
@@ -1930,7 +2018,7 @@
         .use-case-card h3 {
             font-size: 0.96rem;
             font-weight: 700;
-            color: #0D1B3E;
+            color: #5B2A4A;
             line-height: 1.3;
         }
 
@@ -2074,7 +2162,7 @@
         }
 
         .google-title-link {
-            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-family: var(--font-body);
             font-size: 0.98rem;
             font-weight: 700;
             color: #1A0DAB;
@@ -2154,8 +2242,8 @@
             width: 40px;
             height: 40px;
             border-radius: 10px;
-            background: #FAF6EC;
-            color: #0D1B3E;
+            background: #FFFFFF;
+            color: #5B2A4A;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -2166,7 +2254,7 @@
         .seo-highlight-card h4 {
             font-size: 0.95rem;
             font-weight: 700;
-            color: #0D1B3E;
+            color: #5B2A4A;
             margin-bottom: 0.25rem;
         }
 
@@ -2206,9 +2294,9 @@
             width: 36px;
             height: 36px;
             border-radius: 50%;
-            background: #FFFDF7;
+            background: #FFFFFF;
             border: 1px solid var(--border);
-            color: #0D1B3E;
+            color: #5B2A4A;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -2217,7 +2305,7 @@
         }
 
         .slider-arrow-btn:hover {
-            background: #0D1B3E;
+            background: #5B2A4A;
             color: #FFFFFF;
         }
 
@@ -2239,7 +2327,7 @@
             flex: 0 0 calc(25% - 0.9rem);
             min-width: 250px;
             scroll-snap-align: start;
-            background: #FFFDF7;
+            background: #FFFFFF;
             border: 1px solid var(--border);
             border-radius: 16px;
             padding: 1.35rem 1.25rem;
@@ -2252,7 +2340,7 @@
 
         .feat-slide:hover {
             transform: translateY(-3px);
-            border-color: #0D1B3E;
+            border-color: #5B2A4A;
             box-shadow: 0 8px 24px rgba(13, 27, 62, 0.08);
         }
 
@@ -2260,9 +2348,9 @@
             width: 44px;
             height: 44px;
             border-radius: 12px;
-            background: #FAF6EC;
+            background: #FFFFFF;
             border: 1px solid var(--border);
-            color: #0D1B3E;
+            color: #5B2A4A;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -2271,7 +2359,7 @@
         .feat-slide h3 {
             font-size: 1.05rem;
             font-weight: 800;
-            color: #0D1B3E;
+            color: #5B2A4A;
             line-height: 1.25;
         }
 
@@ -2301,7 +2389,7 @@
         .feat-dot.active {
             width: 24px;
             border-radius: 4px;
-            background: #0D1B3E;
+            background: #5B2A4A;
         }
 
         @media (max-width: 960px) {
@@ -2376,19 +2464,19 @@
             display: inline-flex;
             align-items: center;
             gap: 0.6rem;
-            background: #FFFDF7;
+            background: #FFFFFF;
             border: 1px solid var(--border);
             border-radius: 50px;
             padding: 0.6rem 1.25rem;
-            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-family: var(--font-body);
             font-size: 0.88rem;
             font-weight: 700;
-            color: #0D1B3E;
+            color: #5B2A4A;
             box-shadow: 0 2px 8px rgba(13, 27, 62, 0.04);
         }
 
         .marquee-pill svg {
-            color: #0D1B3E;
+            color: #5B2A4A;
             flex-shrink: 0;
         }
 
@@ -2414,7 +2502,7 @@
         }
 
         .pricing-headline-chip {
-            background: #FFFDF7;
+            background: #FFFFFF;
             border: 2px solid var(--border);
             border-radius: 16px;
             padding: 1.25rem 1rem;
@@ -2429,7 +2517,7 @@
 
         .pricing-headline-chip:hover {
             transform: translateY(-2px);
-            border-color: #0D1B3E;
+            border-color: #5B2A4A;
         }
 
         .chip-badge {
@@ -2443,13 +2531,13 @@
 
         .free-tier .chip-badge { background: #ECFDF5; color: #059669; }
         .cafe-tier .chip-badge { background: #EFF6FF; color: #2563EB; }
-        .standard-tier .chip-badge { background: #FAF6EC; color: #0D1B3E; }
+        .standard-tier .chip-badge { background: #FFFFFF; color: #5B2A4A; }
 
         .chip-price {
-            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-family: var(--font-body);
             font-size: 2rem;
             font-weight: 800;
-            color: #0D1B3E;
+            color: #5B2A4A;
             line-height: 1;
         }
 
@@ -2474,7 +2562,7 @@
         }
 
         .plan-card {
-            background: #FFFDF7;
+            background: #FFFFFF;
             border: 1px solid var(--border);
             border-radius: 18px;
             padding: 1.75rem 1.35rem;
@@ -2485,8 +2573,8 @@
         }
 
         .plan-card.popular {
-            border: 2px solid #0D1B3E;
-            background: #0D1B3E;
+            border: 2px solid #5B2A4A;
+            background: #5B2A4A;
             color: #FFFFFF;
         }
 
@@ -2506,7 +2594,7 @@
         }
 
         .plan-name {
-            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-family: var(--font-body);
             font-size: 1.15rem;
             font-weight: 800;
             margin-bottom: 0.35rem;
@@ -2517,11 +2605,11 @@
         }
 
         .plan-price {
-            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-family: var(--font-body);
             font-size: 2.2rem;
             font-weight: 800;
             margin-bottom: 0.4rem;
-            color: #0D1B3E;
+            color: #5B2A4A;
         }
 
         .plan-card.popular .plan-price {
@@ -2636,7 +2724,7 @@
         }
 
         .review-card {
-            background: #FFFDF7;
+            background: #FFFFFF;
             border: 1px solid var(--border);
             border-radius: 16px;
             padding: 1.5rem;
@@ -2671,9 +2759,9 @@
             width: 38px;
             height: 38px;
             border-radius: 50%;
-            background: #0D1B3E;
-            color: #FFFDF7;
-            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: #5B2A4A;
+            color: #FFFFFF;
+            font-family: var(--font-body);
             font-weight: 800;
             font-size: 0.8rem;
             display: flex;
@@ -2684,7 +2772,7 @@
         .review-meta h5 {
             font-size: 0.88rem;
             font-weight: 700;
-            color: #0D1B3E;
+            color: #5B2A4A;
         }
 
         .review-meta p {
@@ -2720,7 +2808,7 @@
         }
 
         .faq-item {
-            background: #FFFDF7;
+            background: #FFFFFF;
             border: 1px solid var(--border);
             border-radius: 14px;
             overflow: hidden;
@@ -2738,10 +2826,10 @@
             align-items: center;
             justify-content: space-between;
             gap: 1rem;
-            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-family: var(--font-body);
             font-size: 1rem;
             font-weight: 700;
-            color: #0D1B3E;
+            color: #5B2A4A;
         }
 
         .faq-answer {
@@ -2759,7 +2847,7 @@
         .faq-chevron {
             transition: transform 0.2s ease;
             flex-shrink: 0;
-            color: #0D1B3E;
+            color: #5B2A4A;
         }
 
         .faq-item.active .faq-chevron {
@@ -2768,7 +2856,7 @@
 
         /* ─── CTA BANNER ─── */
         #cta-banner {
-            background: #0D1B3E;
+            background: #5B2A4A;
             color: #FFFFFF;
             text-align: center;
             padding: 5rem 0;
@@ -2798,7 +2886,7 @@
 
         /* ─── FOOTER ─── */
         footer {
-            background: #FAF6EC;
+            background: #FFFFFF;
             border-top: 1px solid var(--border);
             padding: 3.5rem 0 2rem 0;
         }
@@ -2820,7 +2908,7 @@
         .footer-col h4 {
             font-size: 0.9rem;
             font-weight: 800;
-            color: #0D1B3E;
+            color: #5B2A4A;
             margin-bottom: 0.85rem;
             text-transform: uppercase;
             letter-spacing: 0.05em;
@@ -2839,7 +2927,7 @@
         }
 
         .footer-col a:hover {
-            color: #0D1B3E;
+            color: #5B2A4A;
         }
 
         .footer-bottom {
@@ -2860,7 +2948,7 @@
         }
 
         .footer-socials a {
-            color: #0D1B3E;
+            color: #5B2A4A;
             transition: opacity 0.2s ease;
         }
 
@@ -2945,7 +3033,7 @@
             bottom: 0;
             left: 0;
             right: 0;
-            background: #FFFDF7;
+            background: #FFFFFF;
             border-top: 1px solid var(--border);
             padding: 0.4rem 0.5rem;
             z-index: 1000;
@@ -2961,7 +3049,7 @@
             gap: 2px;
             color: #4B5563;
             text-decoration: none;
-            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-family: var(--font-body);
             font-size: 0.68rem;
             font-weight: 700;
             padding: 0.3rem 0.5rem;
@@ -2970,11 +3058,11 @@
         }
 
         .taskbar-btn:active {
-            color: #0D1B3E;
+            color: #5B2A4A;
         }
 
         .taskbar-btn.primary {
-            background: #0D1B3E;
+            background: #5B2A4A;
             color: #FFFFFF !important;
             padding: 0.45rem 1rem;
             border-radius: 50px;
@@ -3021,7 +3109,7 @@
 
                 <ul class="nav-links">
                     <li><a href="#hero">Home</a></li>
-                    <li><a href="https://studio.linkal.in" style="color:#0D1B3E; font-weight:700;">Studio</a></li>
+                    <li><a href="https://studio.linkal.in" style="color: #5B2A4A; font-weight:700;">Studio</a></li>
                     <li><a href="#how">How It Works</a></li>
                     <li><a href="#use-cases">Who Can Use</a></li>
                     <li><a href="#seo">Google &amp; SEO</a></li>
@@ -3039,18 +3127,58 @@
         </div>
     </header>
 
-    <!-- MOBILE MENU -->
-    <div class="mobile-menu" id="mobileMenu">
-        <a href="#hero" onclick="closeMobileMenu()">Home</a>
-        <a href="https://studio.linkal.in" onclick="closeMobileMenu()" style="color:#0D1B3E; font-weight:700;">Linkal Studio</a>
-        <a href="#how" onclick="closeMobileMenu()">How It Works</a>
-        <a href="#use-cases" onclick="closeMobileMenu()">Who Can Use</a>
-        <a href="#seo" onclick="closeMobileMenu()">Google &amp; SEO</a>
-        <a href="#features" onclick="closeMobileMenu()">Features</a>
-        <a href="#pricing" onclick="closeMobileMenu()">Pricing</a>
-        <a href="#faq" onclick="closeMobileMenu()">FAQ</a>
-        <a href="https://studio.linkal.in" class="btn btn-navy" onclick="closeMobileMenu()" style="justify-content:center;">Get Started Free</a>
-    </div>
+    <!-- ─── SHARED LEFT SLIDE-IN DRAWER (SECTION 6) ─── -->
+    <div class="drawer-overlay" id="drawerOverlay" aria-hidden="true"></div>
+    <aside class="left-drawer" id="leftDrawer" role="dialog" aria-modal="true" aria-label="Main Navigation Menu">
+        <div class="drawer-header">
+            <a href="/" class="nav-brand" style="font-size:1.15rem;">
+                <span class="nav-logo-box" style="width:32px; height:32px;">
+                    <img src="/linkal.jpeg" alt="Linkal AI" width="32" height="32" />
+                </span>
+                <span>Linkal AI</span>
+            </a>
+            <button class="drawer-close" id="drawerClose" aria-label="Close menu">&times;</button>
+        </div>
+
+        <nav class="drawer-nav">
+            <a href="/" class="drawer-link active" style="--i:1;">
+                <span>Home</span>
+                <span class="drawer-link-badge">You're here</span>
+            </a>
+            <a href="/founder.html" class="drawer-link" style="--i:2;">
+                <span>Founder</span>
+            </a>
+            <a href="https://studio.linkal.in" class="drawer-link" style="--i:3;">
+                <span>Studio</span>
+                <span class="drawer-link-badge">App</span>
+            </a>
+            <a href="/about.html" class="drawer-link" style="--i:4;">
+                <span>About Us</span>
+            </a>
+            <a href="/#how" class="drawer-link" style="--i:5;">
+                <span>How It Works</span>
+            </a>
+            <a href="/#use-cases" class="drawer-link" style="--i:6;">
+                <span>Who Can Use</span>
+            </a>
+            <a href="/#features" class="drawer-link" style="--i:7;">
+                <span>Features</span>
+            </a>
+            <a href="/#pricing" class="drawer-link" style="--i:8;">
+                <span>Pricing</span>
+            </a>
+            <a href="/#faq" class="drawer-link" style="--i:9;">
+                <span>FAQ</span>
+            </a>
+            <a href="/contact.html" class="drawer-link" style="--i:10;">
+                <span>Contact Us</span>
+            </a>
+        </nav>
+
+        <div class="drawer-footer">
+            <a href="https://studio.linkal.in" class="btn btn-navy" style="width:100%; justify-content:center;">Launch Studio &rarr;</a>
+        </div>
+    </aside>
 
     <main>
 
@@ -3067,139 +3195,19 @@
 
                         <h1 class="hero-h1">Create Free Website in 1 Minute and get a Free Domain</h1>
 
-                        <div class="hero-single-box">
-                            <div class="single-box-item">
-                                <span class="single-box-icon cv-icon">
-                                    <svg class="feat-svg-anim" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
-                                        <circle cx="9" cy="7" r="4"/>
-                                        <polyline points="16 11 18 13 22 9"/>
-                                    </svg>
-                                </span>
-                                <span class="single-box-text">Free CV / Portfolio Websites</span>
-                            </div>
-                            <span class="single-box-divider"></span>
-                            <div class="single-box-item">
-                                <span class="single-box-icon wedding-icon">
-                                    <svg class="feat-svg-anim" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#E11D48" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
-                                    </svg>
-                                </span>
-                                <span class="single-box-text">Free Wedding Card Websites</span>
-                            </div>
+                        <div class="hero-free-line">
+                            <span class="free-item">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><line x1="10" y1="9" x2="8" y2="9"/></svg>
+                                <span>CV Website</span>
+                            </span>
+                            <span class="free-bullet">•</span>
+                            <span class="free-item">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                                <span>Wedding Card Website</span>
+                            </span>
+                            <span class="free-colon">:</span>
+                            <span class="free-lifetime">Lifetime <span class="free-pill">FREE</span></span>
                         </div>
-
-                        <div class="hero-ctas">
-                            <a href="https://studio.linkal.in" class="btn btn-navy btn-lg">
-                                <span>Open Linkal Studio</span>
-                                <i data-lucide="arrow-right" width="16" height="16"></i>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Right — Chrome Mobile Browser Phone Mockup -->
-                    <div class="phone-wrap reveal reveal-delay-2">
-                        <div class="phone">
-                            <!-- Phone Notch / Speaker -->
-                            <div class="phone-notch">
-                                <span class="phone-camera"></span>
-                                <span class="phone-speaker"></span>
-                            </div>
-
-                            <div class="phone-screen">
-                                <!-- 1. Phone Top Status Bar -->
-                                <div class="chrome-status-bar">
-                                    <span class="status-time">9:41</span>
-                                    <div class="status-icons">
-                                        <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M12 18c.83 0 1.5.67 1.5 1.5S12.83 21 12 21s-1.5-.67-1.5-1.5.67-1.5 1.5-1.5zm-4.95-3.54a6.996 6.996 0 0 1 9.9 0l-1.41 1.41a4.996 4.996 0 0 0-7.07 0l-1.42-1.41zM3.51 10.92a11.986 11.986 0 0 1 16.98 0l-1.41 1.41a9.988 9.988 0 0 0-14.15 0l-1.42-1.41z"/></svg>
-                                        <svg width="13" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="1" y="6" width="18" height="12" rx="2" ry="2"/><path d="M23 11v2"/><rect x="3" y="8" width="12" height="8" fill="currentColor"/></svg>
-                                    </div>
-                                </div>
-
-                                <!-- 2. Google Chrome Address Bar -->
-                                <div class="chrome-browser-bar">
-                                    <button class="chrome-btn" aria-label="Chrome Home">
-                                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#475569" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-                                    </button>
-
-                                    <div class="chrome-address-box">
-                                        <span class="chrome-lock-icon">
-                                            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-                                        </span>
-                                        <span class="chrome-url-text">royalcakes.linkal.in</span>
-                                        <span class="chrome-reload-btn">
-                                            <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#64748B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>
-                                        </span>
-                                    </div>
-
-                                    <span class="chrome-tab-pill">1</span>
-
-                                    <button class="chrome-btn" aria-label="More options">
-                                        <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="5" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="12" cy="19" r="2"/></svg>
-                                    </button>
-                                </div>
-
-                                <!-- 3. Live Website Viewport inside Chrome -->
-                                <div class="chrome-web-viewport">
-                                    <div class="phone-store-header">
-                                        <div class="phone-store-name">
-                                            <span>Royal Cakes Mumbai</span>
-                                            <svg width="12" height="12" viewBox="0 0 24 24" fill="#38BDF8"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-                                        </div>
-                                        <div class="phone-store-sub">Fresh Artisan Bakery &bull; Bandra West</div>
-                                        <div class="phone-store-cats">
-                                            <span class="active">All Cakes</span>
-                                            <span>Birthday</span>
-                                            <span>Cupcakes</span>
-                                        </div>
-                                    </div>
-                                    <div class="phone-store-banner">
-                                        <span style="display:inline-flex; align-items:center; gap:4px;"><svg width="10" height="10" viewBox="0 0 24 24" fill="#F59E0B"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg> FREE DELIVERY ABOVE ₹499 &bull; FRESHLY BAKED</span>
-                                    </div>
-                                    <div class="phone-products">
-                                        <!-- Product 1 -->
-                                        <div class="phone-product">
-                                            <div class="phone-product-img">
-                                                <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=160&auto=format&fit=crop&q=80" alt="Chocolate Truffle Cake" width="40" height="40" />
-                                            </div>
-                                            <div class="phone-product-info">
-                                                <div class="phone-product-name">Chocolate Truffle Cake</div>
-                                                <div class="phone-product-price">₹580 <span>/ 500g</span></div>
-                                                <a href="https://wa.me/918766882442?text=Hi%2C%20I%20want%20to%20order%20Chocolate%20Truffle%20Cake" target="_blank" rel="noopener noreferrer" class="phone-wa-btn">
-                                                    <svg width="9" height="9" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.699c.971.53 1.771.815 2.796.815 3.182 0 5.768-2.587 5.768-5.767.001-3.18-2.585-5.766-5.768-5.766zm9.969 5.768c0 5.48-4.453 9.932-9.969 9.932-1.748 0-3.38-.456-4.807-1.252l-5.224 1.38 1.399-5.109c-.896-1.487-1.408-3.228-1.408-5.087 0-5.48 4.453-9.932 9.969-9.932 5.516 0 10.04 4.452 10.04 9.932z"/></svg>
-                                                    <span>WhatsApp Order</span>
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <!-- Product 2 (White Vanilla Birthday Cake) -->
-                                        <div class="phone-product">
-                                            <div class="phone-product-img">
-                                                <img src="/images/cakes/vanilla-white-cake.jpg" alt="White Vanilla Birthday Cake" width="40" height="40" />
-                                            </div>
-                                            <div class="phone-product-info">
-                                                <div class="phone-product-name">White Vanilla Birthday Cake</div>
-                                                <div class="phone-product-price">₹450 <span>/ 500g</span></div>
-                                                <a href="https://wa.me/918766882442?text=Hi%2C%20I%20want%20to%20order%20Vanilla%20Birthday%20Cake" target="_blank" rel="noopener noreferrer" class="phone-wa-btn">
-                                                    <svg width="9" height="9" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.699c.971.53 1.771.815 2.796.815 3.182 0 5.768-2.587 5.768-5.767.001-3.18-2.585-5.766-5.768-5.768zm9.969 5.768c0 5.48-4.453 9.932-9.969 9.932-1.748 0-3.38-.456-4.807-1.252l-5.224 1.38 1.399-5.109c-.896-1.487-1.408-3.228-1.408-5.087 0-5.48 4.453-9.932 9.969-9.932 5.516 0 10.04 4.452 10.04 9.932z"/></svg>
-                                                    <span>WhatsApp Order</span>
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <!-- Product 3 -->
-                                        <div class="phone-product">
-                                            <div class="phone-product-img">
-                                                <img src="https://images.unsplash.com/photo-1614707267537-b85aaf00c4b7?w=160&auto=format&fit=crop&q=80" alt="Red Velvet Cupcakes" width="40" height="40" />
-                                            </div>
-                                            <div class="phone-product-info">
-                                                <div class="phone-product-name">Red Velvet Cupcakes</div>
-                                                <div class="phone-product-price">₹320 <span>/ Pack of 6</span></div>
-                                                <a href="https://wa.me/918766882442?text=Hi%2C%20I%20want%20to%20order%20Red%20Velvet%20Cupcakes" target="_blank" rel="noopener noreferrer" class="phone-wa-btn">
-                                                    <svg width="9" height="9" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.699c.971.53 1.771.815 2.796.815 3.182 0 5.768-2.587 5.768-5.767.001-3.18-2.585-5.766-5.768-5.768zm9.969 5.768c0 5.48-4.453 9.932-9.969 9.932-1.748 0-3.38-.456-4.807-1.252l-5.224 1.38 1.399-5.109c-.896-1.487-1.408-3.228-1.408-5.087 0-5.48 4.453-9.932 9.969-9.932 5.516 0 10.04 4.452 10.04 9.932z"/></svg>
-                                                    <span>WhatsApp Order</span>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
                                 </div>
 
                                 <!-- 4. Android / Chrome Bottom Navigation Bar (Back, Home, Recents) -->
@@ -3226,12 +3234,12 @@
             <div class="ticker-track">
                 <!-- Set 1 -->
                 <span class="ticker-item">
-                    <span class="ticker-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="#F59E0B"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></span>
-                    Website in 1 Minute
-                    <span class="dot"></span>
-                </span>
+    <span class="ticker-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="#F59E0B"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></span>
+    Live in 1 Minute
+    <span class="dot"></span>
+</span>
                 <span class="ticker-item">
-                    <span class="ticker-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#06B6D4" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20M12 2a14.5 14.5 0 0 1 0 20M2 12h20"/></svg></span>
+                    <span class="ticker-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#7A3D63" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="3"/><line x1="2" y1="8" x2="22" y2="8"/><circle cx="5" cy="5.5" r="1" fill="#7A3D63"/><circle cx="8" cy="5.5" r="1" fill="#7A3D63"/><path d="m14 11 2 2 4-4"/></svg></span>
                     Free Website &amp; Domain Included
                     <span class="dot"></span>
                 </span>
@@ -3273,12 +3281,12 @@
 
                 <!-- Set 2 (Duplicate for Seamless Infinite Loop & Hand Dragging) -->
                 <span class="ticker-item">
-                    <span class="ticker-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="#F59E0B"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></span>
-                    Website in 1 Minute
-                    <span class="dot"></span>
-                </span>
+    <span class="ticker-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="#F59E0B"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></span>
+    Live in 1 Minute
+    <span class="dot"></span>
+</span>
                 <span class="ticker-item">
-                    <span class="ticker-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#06B6D4" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20M12 2a14.5 14.5 0 0 1 0 20M2 12h20"/></svg></span>
+                    <span class="ticker-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#7A3D63" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="3"/><line x1="2" y1="8" x2="22" y2="8"/><circle cx="5" cy="5.5" r="1" fill="#7A3D63"/><circle cx="8" cy="5.5" r="1" fill="#7A3D63"/><path d="m14 11 2 2 4-4"/></svg></span>
                     Free Website &amp; Domain Included
                     <span class="dot"></span>
                 </span>
@@ -3327,7 +3335,7 @@
                     <!-- Left Column on Desktop: Video Loop (Sized to fit screen) -->
                     <div class="machine-media">
                         <div class="machine-video-wrapper">
-                            <video class="machine-video" autoplay loop muted playsinline webkit-playsinline preload="auto">
+                            <video class="machine-video" autoplay loop muted playsinline webkit-playsinline preload="metadata">
                                 <source src="hero-loop.webm" type="video/webm">
                                 Your browser does not support WebM video.
                             </video>
@@ -3370,9 +3378,7 @@
                             </div>
                         </div>
 
-                        <p class="machine-desc">
-                            No coding, no manual configuration. Just enter your details and Linkal puts your branded website on Google with direct WhatsApp ordering in 60 seconds.
-                        </p>
+                        
 
                         <div class="machine-cta-row">
                             <a href="https://studio.linkal.in" class="btn btn-navy">
@@ -3440,13 +3446,13 @@
                                     </div>
                                 </div>
                                 <div class="mock-content">
-                                    <div style="font-size:0.75rem; text-transform:uppercase; letter-spacing:0.06em; color:#0D1B3E; font-weight:700; margin-bottom:0.4rem;">Step 1 of 3 · Quick Setup</div>
-                                    <h4 style="font-size:1.15rem; color:#0D1B3E; margin-bottom:1rem; font-weight:800;">Enter your business name</h4>
+                                    <div style="font-size:0.75rem; text-transform:uppercase; letter-spacing:0.06em; color: #5B2A4A; font-weight:700; margin-bottom:0.4rem;">Step 1 of 3 · Quick Setup</div>
+                                    <h4 style="font-size:1.15rem; color: #5B2A4A; margin-bottom:1rem; font-weight:800;">Enter your business name</h4>
                                     
                                     <div class="type-input-box" style="margin-bottom:1rem;">
                                         <div style="display:flex; align-items:center; gap:0.5rem;">
-                                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0D1B3E" stroke-width="2.2"><path d="M18 8h1a4 4 0 0 1 0 8h-1"></path><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path><line x1="6" y1="1" x2="6" y2="4"></line><line x1="10" y1="1" x2="10" y2="4"></line><line x1="14" y1="1" x2="14" y2="4"></line></svg>
-                                            <span id="how-typing-text" style="font-family:'Plus Jakarta Sans',sans-serif; font-size:1.05rem; font-weight:700; color:#0D1B3E;">Moon Cafe</span><span class="typing-cursor"></span>
+                                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5B2A4A" stroke-width="2.2"><path d="M18 8h1a4 4 0 0 1 0 8h-1"></path><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path><line x1="6" y1="1" x2="6" y2="4"></line><line x1="10" y1="1" x2="10" y2="4"></line><line x1="14" y1="1" x2="14" y2="4"></line></svg>
+                                            <span id="how-typing-text" style="font-family: var(--font-body); font-size:1.05rem; font-weight:700; color: #5B2A4A;">Moon Cafe</span><span class="typing-cursor"></span>
                                         </div>
                                         <span style="font-size:0.7rem; font-weight:700; background:#ECFDF5; color:#059669; padding:0.25rem 0.6rem; border-radius:20px;">✓ Available</span>
                                     </div>
@@ -3488,7 +3494,7 @@
                                     <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem;">
                                         <div>
                                             <div style="font-size:0.72rem; text-transform:uppercase; letter-spacing:0.06em; color:#059669; font-weight:700;">Live Catalog</div>
-                                            <h4 style="font-size:1.05rem; color:#0D1B3E; font-weight:800;">Moon Cafe Menu &bull; 6 Items Added</h4>
+                                            <h4 style="font-size:1.05rem; color: #5B2A4A; font-weight:800;">Moon Cafe Menu &bull; 6 Items Added</h4>
                                         </div>
                                         <span style="font-size:0.72rem; font-weight:700; background:#ECFDF5; color:#059669; padding:0.25rem 0.65rem; border-radius:20px; display:inline-flex; align-items:center; gap:4px;">
                                             <span>✓</span> Auto-saved
@@ -3566,32 +3572,32 @@
                                     </div>
                                     <div class="mock-url" id="how-step3-url">
                                         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-                                        <span style="font-weight:700; color:#0D1B3E;">https://mooncafe.linkal.in</span>
+                                        <span style="font-weight:700; color: #5B2A4A;">https://mooncafe.linkal.in</span>
                                     </div>
                                 </div>
                                 <div class="mock-content" style="text-align:center; padding:2rem 1.5rem;">
                                     <div style="display:inline-flex; align-items:center; gap:6px; background:#ECFDF5; color:#059669; font-weight:800; font-size:0.76rem; padding:0.35rem 0.95rem; border-radius:50px; margin-bottom:1rem;">
                                         <svg width="13" height="13" viewBox="0 0 24 24" fill="#059669"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg> FREE domain included with automated SSL
                                     </div>
-                                    <h4 style="font-size:1.35rem; color:#0D1B3E; font-weight:800; margin-bottom:0.5rem;">AI building your live website...</h4>
+                                    <h4 style="font-size:1.35rem; color: #5B2A4A; font-weight:800; margin-bottom:0.5rem;">AI building your live website...</h4>
                                     <p style="font-size:0.86rem; color:#4B5563; max-width:440px; margin:0 auto 1.25rem auto;">Generating responsive layout, configuring digital menu, and activating cloud CDN.</p>
 
                                     <!-- Progress steps -->
-                                    <div style="display:flex; justify-content:center; gap:1.25rem; font-size:0.78rem; font-weight:700; color:#0D1B3E; margin-bottom:0.85rem;">
+                                    <div style="display:flex; justify-content:center; gap:1.25rem; font-size:0.78rem; font-weight:700; color: #5B2A4A; margin-bottom:0.85rem;">
                                         <span style="color:#059669;">✓ Layout</span>
                                         <span style="color:#059669;">→</span>
                                         <span style="color:#059669;">✓ Menu</span>
                                         <span style="color:#059669;">→</span>
-                                        <span style="color:#0D1B3E; display:inline-flex; align-items:center; gap:4px;"><svg width="12" height="12" viewBox="0 0 24 24" fill="#F59E0B"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg> Publishing Live</span>
+                                        <span style="color: #5B2A4A; display:inline-flex; align-items:center; gap:4px;"><svg width="12" height="12" viewBox="0 0 24 24" fill="#F59E0B"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg> Publishing Live</span>
                                     </div>
 
                                     <div class="domain-progress-bar">
                                         <div class="domain-progress-fill" id="domainFill" style="width:100%;"></div>
                                     </div>
 
-                                    <div style="display:inline-flex; align-items:center; gap:8px; background:#F3EDE0; border:1px solid var(--border); padding:0.5rem 1rem; border-radius:10px; margin-top:0.75rem;">
+                                    <div style="display:inline-flex; align-items:center; gap:8px; background: #FCEFF1; border:1px solid var(--border); padding:0.5rem 1rem; border-radius:10px; margin-top:0.75rem;">
                                         <span style="width:8px; height:8px; background:#10B981; border-radius:50%; display:inline-block;"></span>
-                                        <span style="font-family:'SFMono-Regular',Consolas,monospace; font-size:0.85rem; font-weight:700; color:#0D1B3E;">mooncafe.linkal.in is LIVE</span>
+                                        <span style="font-family:'SFMono-Regular',Consolas,monospace; font-size:0.85rem; font-weight:700; color: #5B2A4A;">mooncafe.linkal.in is LIVE</span>
                                         <span style="background:#10B981; color:#FFFFFF; font-size:0.62rem; font-weight:800; padding:2px 6px; border-radius:4px;">SSL OK</span>
                                     </div>
                                 </div>
@@ -3640,13 +3646,13 @@
                                 <!-- Printable Scannable QR Code -->
                                 <div class="qr-card-showcase">
                                     <div style="font-size:0.72rem; text-transform:uppercase; letter-spacing:0.06em; color:#059669; font-weight:800; margin-bottom:0.4rem;">Official QR Stand</div>
-                                    <h4 style="font-size:1.05rem; color:#0D1B3E; font-weight:800; margin-bottom:0.85rem;">Scan to view menu</h4>
+                                    <h4 style="font-size:1.05rem; color: #5B2A4A; font-weight:800; margin-bottom:0.85rem;">Scan to view menu</h4>
                                     
                                     <div class="qr-img-box">
                                         <img src="/images/mooncafe/mooncafe-qr.svg" alt="Scan to view Moon Cafe menu" width="134" height="134" />
                                     </div>
 
-                                    <div style="font-family:'SFMono-Regular',Consolas,monospace; font-size:0.75rem; font-weight:700; color:#0D1B3E; margin-bottom:0.35rem;">https://mooncafe.linkal.in</div>
+                                    <div style="font-family:'SFMono-Regular',Consolas,monospace; font-size:0.75rem; font-weight:700; color: #5B2A4A; margin-bottom:0.35rem;">https://mooncafe.linkal.in</div>
                                     <p style="font-size:0.75rem; color:#4B5563; line-height:1.4;">Print and place on cafe tables or billing counter. Customers scan &amp; order on WhatsApp instantly.</p>
                                 </div>
                             </div>
@@ -3713,7 +3719,7 @@
                                             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.05 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
                                         </div>
                                         <div style="flex:1; min-width:0; text-align:left;">
-                                            <div style="font-size:0.72rem; font-weight:700; color:#0D1B3E; display:flex; justify-content:space-between;">
+                                            <div style="font-size:0.72rem; font-weight:700; color: #5B2A4A; display:flex; justify-content:space-between;">
                                                 <span>New WhatsApp Order!</span>
                                                 <span style="font-size:0.62rem; color:#059669; font-weight:600;">Just now</span>
                                             </div>
@@ -4198,7 +4204,7 @@
                 <!-- PLAN CARDS -->
                 <div class="pricing-grid reveal">
                     <!-- Free CV Website -->
-                    <div class="plan-card" style="border: 2px solid #0D1B3E; background: #FFFDF7;">
+                    <div class="plan-card" style="border: 2px solid #5B2A4A; background: #FFFFFF;">
                         <div style="position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: #059669; color: #FFFFFF; font-size: 0.7rem; font-weight: 800; padding: 0.25rem 0.85rem; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.05em; white-space: nowrap;">Free for Students &amp; Job Seekers</div>
                         <div class="plan-name">Free CV Website</div>
                         <div class="plan-price">₹0<span style="font-size: 0.88rem; color: #059669; font-weight: 700;"> Lifetime Free</span></div>
@@ -4451,7 +4457,7 @@
                 <div class="footer-col">
                     <h4>Support &amp; Contact</h4>
                     <ul>
-                        <li><a href="https://wa.me/918766882442?text=Hello%20Linkal%20Support" target="_blank" rel="noopener noreferrer">WhatsApp Support</a></li>
+                        <li><a href="https://wa.me/918766882442?text=Hello%20Linkal%20Support" target="_blank" rel="noopener noreferrer">💬 WhatsApp: 8766882442</a></li>
                         <li><a href="mailto:support@linkal.in">support@linkal.in</a></li>
                         <li><a href="javascript:void(0)" onclick="openPolicyModal('terms')">Terms of Service</a></li>
                         <li><a href="javascript:void(0)" onclick="openPolicyModal('privacy')">Privacy Policy</a></li>
@@ -4494,33 +4500,33 @@
 
     <!-- POLICY MODAL -->
     <div id="policyModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(13,27,62,0.6); backdrop-filter:blur(4px); z-index:9999; align-items:center; justify-content:center; padding:1.5rem;">
-        <div style="background:#FFFDF7; border-radius:18px; max-width:680px; width:100%; max-height:85vh; overflow-y:auto; padding:2rem; position:relative; box-shadow:0 20px 60px rgba(0,0,0,0.3); border:1px solid var(--border);">
-            <button onclick="closePolicyModal()" style="position:absolute; top:1.25rem; right:1.25rem; background:none; border:none; cursor:pointer; color:#0D1B3E; font-size:1.5rem; line-height:1;">&times;</button>
+        <div style="background: #FFFFFF; border-radius:18px; max-width:680px; width:100%; max-height:85vh; overflow-y:auto; padding:2rem; position:relative; box-shadow:0 20px 60px rgba(0,0,0,0.3); border:1px solid var(--border);">
+            <button onclick="closePolicyModal()" style="position:absolute; top:1.25rem; right:1.25rem; background:none; border:none; cursor:pointer; color: #5B2A4A; font-size:1.5rem; line-height:1;">&times;</button>
             <div id="policyModalBody"></div>
         </div>
     </div>
 
-    <!-- MOBILE STICKY BOTTOM TASKBAR (4 ITEMS, NO WA BUTTON, PRICING BUTTON INCLUDED) -->
+    <!-- MOBILE STICKY BOTTOM TASKBAR (SECTION 5: 4 ITEMS IN EXACT ORDER) -->
     <nav class="mobile-taskbar" aria-label="Mobile Bottom Navigation">
-        <!-- 1st: Home -->
-        <a href="#hero" class="taskbar-btn">
+        <!-- 1. Home -->
+        <a href="/" class="taskbar-btn active">
             <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
             <span>Home</span>
         </a>
-        <!-- 2nd: How It Works -->
-        <a href="#how" class="taskbar-btn">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-            <span>How It Works</span>
-        </a>
-        <!-- 3rd: Pricing (Smooth Scrolls to 3 Price Points) -->
-        <a href="#pricing" class="taskbar-btn">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
-            <span>Pricing</span>
-        </a>
-        <!-- 4th: Studio (Primary CTA) -->
+        <!-- 2. Studio (Previously 4th) -->
         <a href="https://studio.linkal.in" class="taskbar-btn primary">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
             <span>Studio</span>
+        </a>
+        <!-- 3. How It Works -->
+        <a href="/#how" class="taskbar-btn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <span>How It Works</span>
+        </a>
+        <!-- 4. Pricing -->
+        <a href="/#pricing" class="taskbar-btn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+            <span>Pricing</span>
         </a>
     </nav>
 
@@ -4545,26 +4551,41 @@
 
         // ─── HAMBURGER & OUTSIDE CLICK ───
         const hamburger = document.getElementById('hamburger');
-        const mobileMenu = document.getElementById('mobileMenu');
+        // ─── LEFT SLIDE-IN DRAWER CONTROLLER (SECTION 6) ───
+        const hamburgerBtn = document.getElementById('hamburger');
+        const leftDrawer = document.getElementById('leftDrawer');
+        const drawerOverlay = document.getElementById('drawerOverlay');
+        const drawerClose = document.getElementById('drawerClose');
 
-        if (hamburger && mobileMenu) {
-            hamburger.addEventListener('click', (e) => {
-                e.stopPropagation();
-                mobileMenu.classList.toggle('open');
-            });
-
-            document.addEventListener('click', (e) => {
-                if (mobileMenu.classList.contains('open')) {
-                    if (!mobileMenu.contains(e.target) && !hamburger.contains(e.target)) {
-                        mobileMenu.classList.remove('open');
-                    }
-                }
-            });
+        function openDrawer() {
+            if (!leftDrawer || !drawerOverlay) return;
+            leftDrawer.classList.add('open');
+            drawerOverlay.classList.add('open');
+            document.body.style.overflow = 'hidden';
+            if (hamburgerBtn) hamburgerBtn.setAttribute('aria-expanded', 'true');
         }
 
-        function closeMobileMenu() {
-            if (mobileMenu) mobileMenu.classList.remove('open');
+        function closeDrawer() {
+            if (!leftDrawer || !drawerOverlay) return;
+            leftDrawer.classList.remove('open');
+            drawerOverlay.classList.remove('open');
+            document.body.style.overflow = '';
+            if (hamburgerBtn) hamburgerBtn.setAttribute('aria-expanded', 'false');
         }
+
+        if (hamburgerBtn) hamburgerBtn.addEventListener('click', openDrawer);
+        if (drawerClose) drawerClose.addEventListener('click', closeDrawer);
+        if (drawerOverlay) drawerOverlay.addEventListener('click', closeDrawer);
+
+        document.querySelectorAll('.drawer-link').forEach(link => {
+            link.addEventListener('click', closeDrawer);
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && leftDrawer && leftDrawer.classList.contains('open')) {
+                closeDrawer();
+            }
+        });
 
         // ─── SCROLL REVEAL ───
         const revealElements = document.querySelectorAll('.reveal');
@@ -4624,20 +4645,29 @@
             requestAnimationFrame(tick);
 
             // 1. RESTART FROM 1ST POINT WHEN USER ENTERS THE SLIDER SCREEN
+            let tickerStartTimeout = null;
             const tickerObserver = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        // User came onto the slider screen: restart from 1st point!
+                        // User enters the slider screen: reset to beginning so "Live in 1 Minute" is fully visible!
                         currentX = 0;
                         applyTransform(0);
-                        isPaused = false;
+                        isPaused = true;
                         isVisible = true;
                         lastTimestamp = performance.now();
+                        // Hold for 750ms so user can comfortably see "Live in 1 Minute" before smooth slide starts
+                        clearTimeout(tickerStartTimeout);
+                        tickerStartTimeout = setTimeout(() => {
+                            isPaused = false;
+                            lastTimestamp = performance.now();
+                        }, 750);
                     } else {
                         isVisible = false;
+                        isPaused = true;
+                        clearTimeout(tickerStartTimeout);
                     }
                 });
-            }, { threshold: 0.12 });
+            }, { threshold: 0.15 });
             tickerObserver.observe(tickerEl);
 
             // 2. SLIDE WITH HANDS / DRAG (Touch & Mouse support)
