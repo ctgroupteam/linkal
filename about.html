@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Linkal AI – India's 1-Minute Website Generator</title>
+    <meta name="description"
+        content="Learn about Linkal AI, our mission to make website creation instant and accessible for everyone in India, and how you can launch a free website in 60 seconds." />
+    <link rel="canonical" href="https://linkal.in/about.html" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png" />
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#0D1B3E" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://linkal.in/about.html" />
+    <meta property="og:title" content="About Linkal AI – India's 1-Minute Website Generator" />
+    <meta property="og:description"
+        content="Learn about Linkal AI, our mission to make website creation instant and accessible for everyone in India." />
+    <meta property="og:image" content="https://linkal.in/linkal.jpeg" />
+    <meta property="og:site_name" content="Linkal AI" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="About Linkal AI – India's 1-Minute Website Generator" />
+    <meta name="twitter:description"
+        content="Learn about Linkal AI, our mission to make website creation instant and accessible for everyone in India." />
+    <meta name="twitter:image" content="https://linkal.in/linkal.jpeg" />
+
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "AboutPage",
+      "name": "About Linkal AI",
+      "url": "https://linkal.in/about.html",
+      "description": "Linkal AI makes website creation instant, accessible, and code-free for Indian entrepreneurs, creators, and individuals.",
+      "mainEntity": {
+        "@type": "Organization",
+        "name": "Linkal AI",
+        "url": "https://linkal.in/",
+        "logo": "https://linkal.in/favicon-192x192.png",
+        "sameAs": [
+          "https://instagram.com/linkal.in",
+          "https://linkedin.com/company/linkalai"
+        ]
+      }
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="/shared.css" />
+    <style>
+        .about-hero {
+            padding: 7.5rem 1.5rem 3.5rem 1.5rem;
+            text-align: center;
+            position: relative;
+            background: #FFFFFF;
+        }
+
+        .about-hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.4rem 1rem;
+            border-radius: 9999px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--navy);
+            background: var(--sky-light);
+            border: 1px solid var(--border);
+            margin-bottom: 1.25rem;
+        }
+
+        .about-hero h1 {
+            font-size: 2.75rem;
+            font-weight: 800;
+            line-height: 1.15;
+            letter-spacing: -0.03em;
+            color: var(--navy);
+            max-width: 800px;
+            margin: 0 auto 1.25rem auto;
+        }
+
+        .about-hero h1 span.accent {
+            color: var(--accent-blue);
+        }
+
+        .about-hero p.lead {
+            font-size: 1.125rem;
+            color: var(--text-secondary);
+            max-width: 680px;
+            margin: 0 auto 2.5rem auto;
+            line-height: 1.6;
+        }
+
+        .about-section {
+            padding: 4rem 1.5rem;
+            position: relative;
+        }
+
+        .about-grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2.5rem;
+            align-items: center;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .about-card {
+            background: #FFFFFF;
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 2.25rem;
+            box-shadow: 0 10px 30px rgba(13, 27, 62, 0.05);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .about-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 16px 36px rgba(13, 27, 62, 0.08);
+        }
+
+        .card-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            background: var(--sky-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.25rem;
+            color: var(--navy);
+        }
+
+        .about-card h3 {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 0.75rem;
+            letter-spacing: -0.01em;
+        }
+
+        .about-card p {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 0;
+        }
+
+        .types-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+            max-width: 1100px;
+            margin: 2.5rem auto 0 auto;
+        }
+
+        .type-pill-card {
+            background: #FFFFFF;
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 1.75rem 1.5rem;
+            text-align: left;
+            box-shadow: 0 8px 24px rgba(13, 27, 62, 0.04);
+        }
+
+        .type-pill-card .pill-tag {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 0.25rem 0.65rem;
+            border-radius: 9999px;
+            background: var(--sky-light);
+            color: var(--accent-blue);
+            margin-bottom: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+
+        .type-pill-card h4 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 0.5rem;
+        }
+
+        .type-pill-card p {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        .steps-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            max-width: 1100px;
+            margin: 3rem auto 0 auto;
+        }
+
+        .step-box {
+            background: #FFFFFF;
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 2rem;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(13, 27, 62, 0.04);
+        }
+
+        .step-number {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: var(--navy);
+            color: #FFFFFF;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 0.95rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .step-box h4 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 0.5rem;
+        }
+
+        .step-box p {
+            font-size: 0.92rem;
+            color: var(--text-secondary);
+            line-height: 1.55;
+            margin: 0;
+        }
+
+        @media (max-width: 860px) {
+            .about-hero h1 {
+                font-size: 2.1rem;
+            }
+
+            .about-grid-2 {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .steps-container {
+                grid-template-columns: 1fr;
+                gap: 1.25rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- BACKGROUND BLUR GLOWS -->
+    <div class="bg-glow bg-glow-center" aria-hidden="true"></div>
+    <div class="bg-glow bg-glow-top-right" aria-hidden="true"></div>
+
+    <!-- NAVBAR -->
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="/" class="brand-logo" aria-label="Linkal AI Home">
+                <svg width="28" height="28" viewBox="0 0 36 36" fill="none" class="brand-icon">
+                    <rect width="36" height="36" rx="9" fill="#0D1B3E" />
+                    <path d="M10 23L18 12L26 23H10Z" fill="#FFFFFF" />
+                    <circle cx="18" cy="18" r="3.5" fill="#4F8CF0" />
+                </svg>
+                <span class="brand-name">Linkal AI</span>
+            </a>
+
+            <nav class="desktop-nav" aria-label="Desktop Navigation">
+                <a href="/" class="nav-item">Home</a>
+                <a href="https://studio.linkal.in" class="nav-item">Studio</a>
+                <a href="/#how" class="nav-item">How It Works</a>
+                <a href="/#pricing" class="nav-item">Pricing</a>
+            </nav>
+
+            <div class="header-actions">
+                <a href="https://studio.linkal.in" class="btn btn-navy nav-cta">Get Started Free</a>
+                <button type="button" class="menu-toggle-btn" id="drawerOpenBtn" aria-label="Open Navigation Menu">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- LEFT SLIDING DRAWER -->
+    <div class="drawer-backdrop" id="drawerBackdrop"></div>
+    <aside class="side-drawer" id="sideDrawer" aria-label="Mobile Navigation Menu">
+        <div class="drawer-header">
+            <div class="brand-logo">
+                <svg width="26" height="26" viewBox="0 0 36 36" fill="none" class="brand-icon">
+                    <rect width="36" height="36" rx="9" fill="#0D1B3E" />
+                    <path d="M10 23L18 12L26 23H10Z" fill="#FFFFFF" />
+                    <circle cx="18" cy="18" r="3.5" fill="#4F8CF0" />
+                </svg>
+                <span class="brand-name">Linkal AI</span>
+            </div>
+            <button type="button" class="drawer-close-btn" id="drawerCloseBtn" aria-label="Close Menu">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+
+        <nav class="drawer-nav">
+            <a href="/" class="drawer-link">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                <span>Home</span>
+            </a>
+            <a href="/founder.html" class="drawer-link">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                <span>Founder</span>
+            </a>
+            <a href="https://studio.linkal.in" class="drawer-link">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+                <span>Studio</span>
+            </a>
+            <a href="/#how" class="drawer-link">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
+                <span>How It Works</span>
+            </a>
+            <a href="/#pricing" class="drawer-link">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                <span>Pricing</span>
+            </a>
+            <a href="/about.html" class="drawer-link active">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                <span>About Us</span>
+            </a>
+            <a href="/contact.html" class="drawer-link">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                <span>Contact Us</span>
+            </a>
+        </nav>
+
+        <div class="drawer-footer">
+            <a href="https://studio.linkal.in" class="btn btn-navy" style="width: 100%; justify-content: center;">
+                Open Studio
+            </a>
+        </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main>
+        <!-- HERO -->
+        <section class="about-hero">
+            <div class="container">
+                <div class="about-hero-badge">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                    </svg>
+                    <span>India's 1-Minute Website Generator</span>
+                </div>
+                <h1>Empowering Everyone to Go Online in <span class="accent">60 Seconds</span></h1>
+                <p class="lead">
+                    Linkal AI was built to solve a simple yet massive challenge: creating a professional website shouldn't take weeks, cost thousands of rupees, or require technical programming skills.
+                </p>
+            </div>
+        </section>
+
+        <!-- WHAT PROBLEM WE SOLVE -->
+        <section class="about-section">
+            <div class="container">
+                <div class="about-grid-2">
+                    <div class="about-card">
+                        <div class="card-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <line x1="4.93" y1="4.93" x2="19.07" y2="19.07"></line>
+                            </svg>
+                        </div>
+                        <h3>The Old, Frustrating Way</h3>
+                        <p>
+                            Historically, building a website meant paying expensive developer agencies, struggling with convoluted website builders, managing DNS records, setting up payment gateways, and waiting weeks for simple revisions. Millions of small businesses and individuals were left behind.
+                        </p>
+                    </div>
+
+                    <div class="about-card">
+                        <div class="card-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                            </svg>
+                        </div>
+                        <h3>The Linkal AI Breakthrough</h3>
+                        <p>
+                            Linkal turns website creation into an effortless, 1-minute guided process. Just enter your details or product catalogue, and Linkal AI automatically configures your branded domain, mobile-first design, SEO meta tags, and direct WhatsApp ordering without writing a single line of code.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- HOW IT WORKS IN 3 STEPS -->
+        <section class="about-section" style="background: #FAFCFF; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+            <div class="container">
+                <div style="text-align: center; max-width: 680px; margin: 0 auto;">
+                    <h2 style="font-size: 2.1rem; font-weight: 800; color: var(--navy); letter-spacing: -0.02em;">How the 1-Minute Creation Process Works</h2>
+                    <p style="color: var(--text-secondary); font-size: 1rem; margin-top: 0.5rem;">From zero to a published, Google-ready website in three simple steps.</p>
+                </div>
+
+                <div class="steps-container">
+                    <div class="step-box">
+                        <div class="step-number">1</div>
+                        <h4>Choose Category &amp; Details</h4>
+                        <p>Select your website type — CV, wedding invitation, online boutique, or restaurant menu — and provide your essential details or product pictures.</p>
+                    </div>
+
+                    <div class="step-box">
+                        <div class="step-number">2</div>
+                        <h4>Instant Generation</h4>
+                        <p>Our intelligent system crafts your responsive pages, organizes your catalog, and connects your direct WhatsApp order flow immediately.</p>
+                    </div>
+
+                    <div class="step-box">
+                        <div class="step-number">3</div>
+                        <h4>Live on Your Domain</h4>
+                        <p>Your site publishes instantly with free SSL, permanent hosting, Google indexing metadata, and a clean branded link ready to share on Instagram and WhatsApp.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SUPPORTED WEBSITE TYPES -->
+        <section class="about-section">
+            <div class="container">
+                <div style="text-align: center; max-width: 680px; margin: 0 auto;">
+                    <h2 style="font-size: 2.1rem; font-weight: 800; color: var(--navy); letter-spacing: -0.02em;">Supported Website Categories</h2>
+                    <p style="color: var(--text-secondary); font-size: 1rem; margin-top: 0.5rem;">Tailored, purpose-built digital experiences for creators, couples, and entrepreneurs.</p>
+                </div>
+
+                <div class="types-grid">
+                    <div class="type-pill-card">
+                        <span class="pill-tag">Free Lifetime</span>
+                        <h4>CV &amp; Portfolio Websites</h4>
+                        <p>Stand out to recruiters and clients with an interactive, mobile-optimized personal resume website.</p>
+                    </div>
+
+                    <div class="type-pill-card">
+                        <span class="pill-tag">Free Lifetime</span>
+                        <h4>Wedding Invitation Websites</h4>
+                        <p>Share your love story, venue directions, event itinerary, and collect digital RSVPs elegantly.</p>
+                    </div>
+
+                    <div class="type-pill-card">
+                        <span class="pill-tag">E-Commerce</span>
+                        <h4>Mobile Storefronts</h4>
+                        <p>Sell fashion, bakeries, crafts, and lifestyle items with direct WhatsApp checkout and ₹0 commission.</p>
+                    </div>
+
+                    <div class="type-pill-card">
+                        <span class="pill-tag">Hospitality</span>
+                        <h4>Restaurant QR Menus</h4>
+                        <p>Contactless, lightning-fast digital menus for cafes, bistros, and cloud kitchens with instant item updates.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MISSION STATEMENT -->
+        <section class="about-section" style="padding-bottom: 6rem;">
+            <div class="container">
+                <div style="background: var(--sky-light); border: 1px solid var(--border); border-radius: 24px; padding: 3.5rem 2.5rem; text-align: center; max-width: 800px; margin: 0 auto; box-shadow: 0 12px 32px rgba(13, 27, 62, 0.05);">
+                    <h2 style="font-size: 2rem; font-weight: 800; color: var(--navy); margin-bottom: 1rem;">Our Mission</h2>
+                    <p style="font-size: 1.05rem; color: var(--text-secondary); line-height: 1.65; max-width: 650px; margin: 0 auto 2rem auto;">
+                        To democratize online identity across India by removing every technical, financial, and logistical barrier, empowering millions of entrepreneurs, professionals, and families to own their digital presence with pride.
+                    </p>
+                    <a href="https://studio.linkal.in" class="btn btn-navy" style="display: inline-flex;">Launch Your Free Website Now</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <div class="footer-col brand-col">
+                <div class="brand-logo" style="margin-bottom: 0.75rem;">
+                    <svg width="24" height="24" viewBox="0 0 36 36" fill="none">
+                        <rect width="36" height="36" rx="9" fill="#0D1B3E" />
+                        <path d="M10 23L18 12L26 23H10Z" fill="#FFFFFF" />
+                        <circle cx="18" cy="18" r="3.5" fill="#4F8CF0" />
+                    </svg>
+                    <span class="brand-name">Linkal AI</span>
+                </div>
+                <p class="footer-desc">
+                    Create free websites in 1 minute. Free domain included for CVs, wedding invitations, and mobile commerce.
+                </p>
+                <div class="footer-socials">
+                    <a href="https://instagram.com/linkal.in" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                    </a>
+                    <a href="https://wa.me/918766882442" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+                    </a>
+                    <a href="https://linkedin.com/company/linkalai" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4>Product</h4>
+                <a href="https://studio.linkal.in">Linkal Studio</a>
+                <a href="/#how">How It Works</a>
+                <a href="/#pricing">Pricing</a>
+                <a href="/#faq">FAQ</a>
+            </div>
+
+            <div class="footer-col">
+                <h4>Company</h4>
+                <a href="/about.html">About Us</a>
+                <a href="/founder.html">Founder</a>
+                <a href="/contact.html">Contact Us</a>
+                <a href="https://yahya.in/" target="_blank" rel="noopener noreferrer">Dominal Tech</a>
+            </div>
+
+            <div class="footer-col">
+                <h4>Support</h4>
+                <a href="https://wa.me/918766882442" target="_blank" rel="noopener noreferrer">WhatsApp Helpdesk</a>
+                <a href="https://instagram.com/linkal.in" target="_blank" rel="noopener noreferrer">Instagram Support</a>
+                <a href="mailto:support@linkal.in">support@linkal.in</a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container footer-bottom-inner">
+                <p>&copy; 2026 Linkal AI. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="/privacy.html">Privacy Policy</a>
+                    <a href="/terms.html">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- DRAWER SCRIPT -->
+    <script>
+        (function () {
+            const drawer = document.getElementById('sideDrawer');
+            const backdrop = document.getElementById('drawerBackdrop');
+            const openBtn = document.getElementById('drawerOpenBtn');
+            const closeBtn = document.getElementById('drawerCloseBtn');
+
+            function openDrawer() {
+                drawer.classList.add('open');
+                backdrop.classList.add('open');
+                document.body.classList.add('drawer-locked');
+            }
+
+            function closeDrawer() {
+                drawer.classList.remove('open');
+                backdrop.classList.remove('open');
+                document.body.classList.remove('drawer-locked');
+            }
+
+            if (openBtn) openBtn.addEventListener('click', openDrawer);
+            if (closeBtn) closeBtn.addEventListener('click', closeDrawer);
+            if (backdrop) backdrop.addEventListener('click', closeDrawer);
+
+            document.querySelectorAll('.drawer-link').forEach(link => {
+                link.addEventListener('click', closeDrawer);
+            });
+        })();
+    </script>
+</body>
+
+</html>

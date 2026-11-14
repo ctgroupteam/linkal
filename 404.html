@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Page Not Found (404) | Linkal AI</title>
+    <meta name="robots" content="noindex, follow" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png" />
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <meta name="theme-color" content="#0D1B3E" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="/shared.css" />
+    <style>
+        .error-page {
+            min-height: calc(100vh - 70px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 7.5rem 1.5rem 5rem 1.5rem;
+            text-align: center;
+            background: #FFFFFF;
+            position: relative;
+        }
+
+        .error-card {
+            max-width: 540px;
+            width: 100%;
+            background: #FFFFFF;
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 3.5rem 2.5rem;
+            box-shadow: 0 16px 40px rgba(13, 27, 62, 0.06);
+            position: relative;
+            z-index: 2;
+        }
+
+        .error-code {
+            font-size: 5rem;
+            font-weight: 800;
+            line-height: 1;
+            color: var(--accent-blue);
+            letter-spacing: -0.04em;
+            margin-bottom: 1rem;
+        }
+
+        .error-card h1 {
+            font-size: 1.85rem;
+            font-weight: 800;
+            color: var(--navy);
+            margin-bottom: 0.75rem;
+        }
+
+        .error-card p {
+            font-size: 0.98rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+
+        .error-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bg-glow bg-glow-center" aria-hidden="true"></div>
+
+    <!-- NAVBAR -->
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="/" class="brand-logo" aria-label="Linkal AI Home">
+                <svg width="28" height="28" viewBox="0 0 36 36" fill="none" class="brand-icon">
+                    <rect width="36" height="36" rx="9" fill="#0D1B3E" />
+                    <path d="M10 23L18 12L26 23H10Z" fill="#FFFFFF" />
+                    <circle cx="18" cy="18" r="3.5" fill="#4F8CF0" />
+                </svg>
+                <span class="brand-name">Linkal AI</span>
+            </a>
+
+            <div class="header-actions">
+                <a href="/" class="btn btn-navy">Back to Home</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="error-page">
+        <div class="error-card">
+            <div class="error-code">404</div>
+            <h1>Page Not Found</h1>
+            <p>
+                The page you are looking for doesn't exist or has been moved. You can return to our homepage or start building your free website.
+            </p>
+            <div class="error-actions">
+                <a href="/" class="btn btn-navy">Go to Homepage</a>
+                <a href="https://studio.linkal.in" class="btn btn-secondary">Launch Studio</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="container footer-bottom-inner" style="justify-content: center; padding: 2rem 0;">
+            <p>&copy; 2026 Linkal AI. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

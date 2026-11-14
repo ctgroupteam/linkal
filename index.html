@@ -4,9 +4,8 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Build Free Websites in 1 min with Free Domain | Instagram Business | E Commerce Websites</title>
-    <meta name="description"
-        content="Linkal AI is India's fastest 1-minute website builder. Launch a branded mobile storefront, restaurant digital QR menu, live CV, or boutique website on your own .linkal.in subdomain with direct WhatsApp ordering and automated Google listing." />
+    <title>Create Free Websites in 1 Minute | Linkal AI</title>
+    <meta name="description" content="Create Free Websites in 1 Minute. Get Free Domain | CV Websites | Wedding Card Websites." />
     <meta name="keywords" content="Linkal, Linkal AI, linkal.in, Linkal website builder, AI store builder, restaurant digital menu, WhatsApp ordering website, live CV maker, portfolio builder, ecommerce website builder India" />
     <meta name="author" content="Linkal AI" />
     <link rel="canonical" href="https://linkal.in/" />
@@ -35,13 +34,14 @@
     <link rel="shortcut icon" href="https://linkal.in/favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="https://linkal.in/apple-touch-icon.png" />
     <link rel="manifest" href="/manifest.json" />
+    <link rel="stylesheet" href="/shared.css" />
     <meta name="theme-color" content="#0D1B3E" />
 
     <!-- Open Graph / Facebook / WhatsApp -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://linkal.in/" />
-    <meta property="og:title" content="Build Free Websites in 1 min with Free Domain | Instagram Business | E Commerce Websites" />
-    <meta property="og:description" content="Launch a branded mobile website, restaurant digital QR menu, live CV, or store on your own .linkal.in subdomain with Linkal AI." />
+    <meta property="og:title" content="Create Free Websites in 1 Minute | Linkal AI" />
+    <meta property="og:description" content="Create Free Websites in 1 Minute. Get Free Domain | CV Websites | Wedding Card Websites." />
     <meta property="og:site_name" content="Linkal AI" />
     <meta property="og:locale" content="en_IN" />
     <meta property="og:image" content="https://linkal.in/linkal.jpeg" />
@@ -51,8 +51,8 @@
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:url" content="https://linkal.in/" />
-    <meta name="twitter:title" content="Build Free Websites in 1 min with Free Domain | Instagram Business | E Commerce Websites" />
-    <meta name="twitter:description" content="Launch your branded website or digital menu on your own subdomain in 1 minute with Linkal AI." />
+    <meta name="twitter:title" content="Create Free Websites in 1 Minute | Linkal AI" />
+    <meta name="twitter:description" content="Create Free Websites in 1 Minute. Get Free Domain | CV Websites | Wedding Card Websites." />
     <meta name="twitter:image" content="https://linkal.in/linkal.jpeg" />
 
     <!-- Schema.org JSON-LD for Organization & Software Application -->
@@ -71,6 +71,7 @@
           "description": "Linkal AI is an intelligent SaaS website and storefront generator platform empowering Indian businesses, restaurants, creators, and professionals to launch branded websites on custom subdomains with WhatsApp ordering.",
           "sameAs": [
             "https://instagram.com/linkal.in",
+            "https://linkedin.com/company/linkalai",
             "https://github.com/ctgroupteam/linkal"
           ]
         },
@@ -1032,6 +1033,7 @@
         }
 
         .ticker-track {
+            padding-left: 2.5rem;
             display: inline-flex;
             align-items: center;
             gap: 2.5rem;
@@ -1113,11 +1115,11 @@
             width: 100%;
             max-width: 440px;
             max-height: 390px;
-            border-radius: 18px;
+            border-radius: 0;
             overflow: hidden;
-            border: 1px solid var(--border);
-            box-shadow: 0 8px 24px rgba(13, 27, 62, 0.05);
-            background: #FFFFFF;
+            border: none;
+            box-shadow: none;
+            background: transparent;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -3047,11 +3049,7 @@
                     <li><a href="#hero">Home</a></li>
                     <li><a href="https://studio.linkal.in" style="color:#0D1B3E; font-weight:700;">Studio</a></li>
                     <li><a href="#how">How It Works</a></li>
-                    <li><a href="#use-cases">Who Can Use</a></li>
-                    <li><a href="#seo">Google &amp; SEO</a></li>
-                    <li><a href="#features">Features</a></li>
                     <li><a href="#pricing">Pricing</a></li>
-                    <li><a href="#faq">FAQ</a></li>
                 </ul>
 
                 <a href="https://studio.linkal.in" class="btn btn-navy nav-cta">Get Started Free</a>
@@ -3063,18 +3061,59 @@
         </div>
     </header>
 
-    <!-- MOBILE MENU -->
-    <div class="mobile-menu" id="mobileMenu">
-        <a href="#hero" onclick="closeMobileMenu()">Home</a>
-        <a href="https://studio.linkal.in" onclick="closeMobileMenu()" style="color:#0D1B3E; font-weight:700;">Linkal Studio</a>
-        <a href="#how" onclick="closeMobileMenu()">How It Works</a>
-        <a href="#use-cases" onclick="closeMobileMenu()">Who Can Use</a>
-        <a href="#seo" onclick="closeMobileMenu()">Google &amp; SEO</a>
-        <a href="#features" onclick="closeMobileMenu()">Features</a>
-        <a href="#pricing" onclick="closeMobileMenu()">Pricing</a>
-        <a href="#faq" onclick="closeMobileMenu()">FAQ</a>
-        <a href="https://studio.linkal.in" class="btn btn-navy" onclick="closeMobileMenu()" style="justify-content:center;">Get Started Free</a>
-    </div>
+    <!-- LEFT SLIDING DRAWER -->
+    <div class="drawer-backdrop" id="drawerBackdrop"></div>
+    <aside class="side-drawer" id="sideDrawer" aria-label="Mobile Navigation Menu">
+        <div class="drawer-header">
+            <a href="/" class="logo" style="text-decoration:none;">
+                <img src="/linkal.jpeg" alt="Linkal AI" class="logo-img" style="width:34px;height:34px;border-radius:9px;" />
+                <span class="logo-text" style="font-size:1.25rem;">Linkal AI</span>
+            </a>
+            <button type="button" class="drawer-close-btn" id="drawerCloseBtn" aria-label="Close Menu">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+
+        <nav class="drawer-nav">
+            <a href="#hero" class="drawer-link active">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                <span>Home</span>
+            </a>
+            <a href="/founder.html" class="drawer-link">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                <span>Founder</span>
+            </a>
+            <a href="https://studio.linkal.in" class="drawer-link">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+                <span>Studio</span>
+            </a>
+            <a href="#how" class="drawer-link">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
+                <span>How It Works</span>
+            </a>
+            <a href="#pricing" class="drawer-link">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                <span>Pricing</span>
+            </a>
+            <a href="/about.html" class="drawer-link">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                <span>About Us</span>
+            </a>
+            <a href="/contact.html" class="drawer-link">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                <span>Contact Us</span>
+            </a>
+        </nav>
+
+        <div class="drawer-footer" style="padding:1.25rem 1rem; border-top:1px solid var(--border);">
+            <a href="https://studio.linkal.in" class="btn btn-navy" style="width: 100%; justify-content: center;">
+                Open Studio
+            </a>
+        </div>
+    </aside>
 
     <main>
 
@@ -3111,6 +3150,13 @@
                                 </span>
                                 <span class="single-box-text">Free Wedding Card Websites</span>
                             </div>
+                        </div>
+
+                        <!-- Mobile 1-line announcement (box hidden on mobile via CSS) -->
+                        <div class="hero-mobile-free-text">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#4F8CF0" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><polyline points="16 11 18 13 22 9"/></svg>
+                            <span>CV Website &amp; Wedding Card Website: Lifetime</span>
+                            <span class="mobile-free-pill">FREE</span>
                         </div>
 
                         <div class="hero-ctas">
@@ -3251,11 +3297,11 @@
                 <!-- Set 1 -->
                 <span class="ticker-item">
                     <span class="ticker-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="#F59E0B"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></span>
-                    Website in 1 Minute
+                    Live in 1 Minute
                     <span class="dot"></span>
                 </span>
                 <span class="ticker-item">
-                    <span class="ticker-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#06B6D4" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20M12 2a14.5 14.5 0 0 1 0 20M2 12h20"/></svg></span>
+                    <span class="ticker-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0284C7" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="18" rx="3"/><line x1="2" y1="9" x2="22" y2="9"/><circle cx="6" cy="6" r="1" fill="#0284C7"/><circle cx="10" cy="6" r="1" fill="#0284C7"/><circle cx="14" cy="6" r="1" fill="#0284C7"/><path d="M6 14h6M6 17h12"/></svg></span>
                     Free Website &amp; Domain Included
                     <span class="dot"></span>
                 </span>
@@ -3298,11 +3344,11 @@
                 <!-- Set 2 (Duplicate for Seamless Infinite Loop & Hand Dragging) -->
                 <span class="ticker-item">
                     <span class="ticker-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="#F59E0B"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></span>
-                    Website in 1 Minute
+                    Live in 1 Minute
                     <span class="dot"></span>
                 </span>
                 <span class="ticker-item">
-                    <span class="ticker-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#06B6D4" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20M12 2a14.5 14.5 0 0 1 0 20M2 12h20"/></svg></span>
+                    <span class="ticker-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0284C7" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="18" rx="3"/><line x1="2" y1="9" x2="22" y2="9"/><circle cx="6" cy="6" r="1" fill="#0284C7"/><circle cx="10" cy="6" r="1" fill="#0284C7"/><circle cx="14" cy="6" r="1" fill="#0284C7"/><path d="M6 14h6M6 17h12"/></svg></span>
                     Free Website &amp; Domain Included
                     <span class="dot"></span>
                 </span>
@@ -3394,9 +3440,7 @@
                             </div>
                         </div>
 
-                        <p class="machine-desc">
-                            No coding, no manual configuration. Just enter your details and Linkal puts your branded website on Google with direct WhatsApp ordering in 60 seconds.
-                        </p>
+                        
 
                         <div class="machine-cta-row">
                             <a href="https://studio.linkal.in" class="btn btn-navy">
@@ -4648,17 +4692,25 @@
             requestAnimationFrame(tick);
 
             // 1. RESTART FROM 1ST POINT WHEN USER ENTERS THE SLIDER SCREEN
+            let tickerHoldTimer = null;
             const tickerObserver = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        // User came onto the slider screen: restart from 1st point!
+                        // User came onto the slider screen: restart from 1st point with breathing room!
                         currentX = 0;
                         applyTransform(0);
-                        isPaused = false;
+                        isPaused = true; // Hold for 1.2s so "Live in 1 Minute" is clearly seen
                         isVisible = true;
                         lastTimestamp = performance.now();
+                        clearTimeout(tickerHoldTimer);
+                        tickerHoldTimer = setTimeout(() => {
+                            isPaused = false;
+                            lastTimestamp = performance.now();
+                        }, 1200);
                     } else {
                         isVisible = false;
+                        isPaused = false;
+                        clearTimeout(tickerHoldTimer);
                     }
                 });
             }, { threshold: 0.12 });
@@ -4972,8 +5024,34 @@
                 if (e.target === policyModal) closePolicyModal();
             });
         }
-    </script>
+            // ─── LEFT SLIDING DRAWER CONTROLLER ───
+        (function initSideDrawer() {
+            const drawer = document.getElementById('sideDrawer');
+            const backdrop = document.getElementById('drawerBackdrop');
+            const hamburger = document.getElementById('hamburger');
+            const closeBtn = document.getElementById('drawerCloseBtn');
 
+            function openDrawer() {
+                if (drawer) drawer.classList.add('open');
+                if (backdrop) backdrop.classList.add('open');
+                document.body.classList.add('drawer-locked');
+            }
+
+            function closeDrawer() {
+                if (drawer) drawer.classList.remove('open');
+                if (backdrop) backdrop.classList.remove('open');
+                document.body.classList.remove('drawer-locked');
+            }
+
+            if (hamburger) hamburger.addEventListener('click', openDrawer);
+            if (closeBtn) closeBtn.addEventListener('click', closeDrawer);
+            if (backdrop) backdrop.addEventListener('click', closeDrawer);
+
+            document.querySelectorAll('.drawer-link').forEach(link => {
+                link.addEventListener('click', closeDrawer);
+            });
+        })();
+    </script>
 </body>
 
 </html>
