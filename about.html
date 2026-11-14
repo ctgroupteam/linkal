@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title>About Linkal AI – India's 1-Minute Website Generator</title>
     <meta name="description"
         content="Linkal AI is India's fastest 1-minute website generator. Zero coding, zero hosting fees, and instant WhatsApp ordering for every Indian entrepreneur." />
@@ -384,13 +384,36 @@
                 grid-template-columns: 1fr;
             }
         }
+    
+        /* ─── OVERFLOW & MOBILE CONTAINER LOCK ─── */
+        html, body {
+            width: 100% !important;
+            max-width: 100vw !important;
+            overflow-x: hidden !important;
+        }
+
+        @media (max-width: 768px) {
+            .about-hero {
+                padding: 4.5rem 0.75rem 2.5rem 0.75rem !important;
+            }
+            .container {
+                width: 100% !important;
+                max-width: 100vw !important;
+                box-sizing: border-box !important;
+                padding-left: 0.75rem !important;
+                padding-right: 0.75rem !important;
+            }
+        }
+
     </style>
 </head>
 
 <body>
-    <!-- BACKGROUND BLUR GLOWS -->
-    <div class="bg-glow bg-glow-center" aria-hidden="true"></div>
-    <div class="bg-glow bg-glow-top-right" aria-hidden="true"></div>
+    <!-- BACKGROUND BLUR GLOWS (CONTAINED) -->
+    <div class="bg-glow-wrap">
+        <div class="bg-glow bg-glow-center" aria-hidden="true"></div>
+        <div class="bg-glow bg-glow-top-right" aria-hidden="true"></div>
+    </div>
 
     <!-- NAVBAR (MATCHES index.html EXACTLY) -->
     <header id="navbar">
@@ -413,7 +436,7 @@
 
                 <a href="https://studio.linkal.in" class="btn btn-navy nav-cta">Get Started Free</a>
 
-                <button class="hamburger" id="hamburger" aria-label="Open Navigation Menu">
+                <button class="hamburger" id="hamburger" onclick="openDrawer()" aria-label="Open Navigation Menu">
                     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
                         stroke-linecap="round" stroke-linejoin="round">
                         <line x1="3" y1="12" x2="21" y2="12"></line>
@@ -758,17 +781,17 @@
             const openBtn = document.getElementById('hamburger');
             const closeBtn = document.getElementById('drawerCloseBtn');
 
-            function openDrawer() {
+            window.openDrawer = function() {
                 if (drawer) drawer.classList.add('open');
                 if (backdrop) backdrop.classList.add('open');
                 document.body.classList.add('drawer-locked');
-            }
+            };
 
-            function closeDrawer() {
+            window.closeDrawer = function() {
                 if (drawer) drawer.classList.remove('open');
                 if (backdrop) backdrop.classList.remove('open');
                 document.body.classList.remove('drawer-locked');
-            }
+            };
 
             if (openBtn) openBtn.addEventListener('click', openDrawer);
             if (closeBtn) closeBtn.addEventListener('click', closeDrawer);
@@ -779,6 +802,89 @@
             });
         })();
     </script>
+
+    <!-- MOBILE STICKY BOTTOM TASKBAR (4 ITEMS: Home, Studio, How It Works, Profile/Account) -->
+    <nav class="mobile-taskbar" aria-label="Mobile Bottom Navigation">
+        <!-- 1st: Home -->
+        <a href="/#hero" class="taskbar-btn">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+            <span>Home</span>
+        </a>
+        <!-- 2nd: Studio (Primary CTA) -->
+        <a href="https://studio.linkal.in" class="taskbar-btn primary">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            <span>Studio</span>
+        </a>
+        <!-- 3rd: How It Works -->
+        <a href="/#how" class="taskbar-btn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <span>How It Works</span>
+        </a>
+        <!-- 4th: Create Account / My Profile -->
+        <a href="https://studio.linkal.in/dashboard?tab=profile" class="taskbar-btn" id="taskbarProfileLink">
+            <span id="taskbarProfileIcon" style="display:flex; align-items:center; justify-content:center; width:22px; height:22px;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+            </span>
+            <span id="taskbarProfileLabel">Create Account</span>
+        </a>
+    </nav>
+
+    <!-- DYNAMIC MOBILE TASKBAR PROFILE & AUTH SYNC -->
+    <script>
+        (function initTaskbarUser() {
+            function getCookie(name) {
+                try {
+                    const v = '; ' + document.cookie;
+                    const parts = v.split('; ' + name + '=');
+                    if (parts.length === 2) return decodeURIComponent(parts.pop().split(';').shift());
+                } catch (e) {}
+                return null;
+            }
+
+            function updateProfileDisplay() {
+                try {
+                    let userData = null;
+                    const cookieUser = getCookie('linkal_user');
+                    if (cookieUser) {
+                        try { userData = JSON.parse(cookieUser); } catch {}
+                    }
+                    if (!userData) {
+                        const localUser = localStorage.getItem('linkal_user');
+                        if (localUser) {
+                            try { userData = JSON.parse(localUser); } catch {}
+                        }
+                    }
+
+                    if (userData && (userData.email || userData.fullName || userData.id)) {
+                        const label = document.getElementById('taskbarProfileLabel');
+                        const icon = document.getElementById('taskbarProfileIcon');
+                        if (label) label.textContent = 'My Profile';
+
+                        if (icon) {
+                            const avatar = userData.avatarUrl || userData.avatar_url || userData.picture;
+                            const name = (userData.fullName || userData.name || userData.email || 'User').trim();
+                            const initial = (name[0] || 'U').toUpperCase();
+
+                            if (avatar && (avatar.startsWith('http://') || avatar.startsWith('https://')) && !avatar.includes('dicebear')) {
+                                icon.innerHTML = '<img src="' + avatar + '" alt="' + name + '" style="width:22px; height:22px; border-radius:50%; object-fit:cover; border:1.5px solid #0D1B3E;" onerror="this.onerror=null; this.parentNode.innerHTML=\'<span style=\\\'display:flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;background:#0D1B3E;color:#FFFFFF;font-size:10px;font-weight:800;\\\'>' + initial + '</span>\';" />';
+                            } else {
+                                icon.innerHTML = '<span style="display:flex; align-items:center; justify-content:center; width:22px; height:22px; border-radius:50%; background:#0D1B3E; color:#FFFFFF; font-size:10px; font-weight:800; text-transform:uppercase;">' + initial + '</span>';
+                            }
+                        }
+                    }
+                } catch (e) {
+                    console.error('[Taskbar Auth]', e);
+                }
+            }
+
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', updateProfileDisplay);
+            } else {
+                updateProfileDisplay();
+            }
+        })();
+    </script>
+
 </body>
 
 </html>

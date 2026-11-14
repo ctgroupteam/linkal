@@ -38,6 +38,9 @@
 
 html {
     scroll-behavior: smooth;
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
 }
 
 body {
@@ -46,7 +49,10 @@ body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     font-size: 16px;
     line-height: 1.65;
+    width: 100%;
+    max-width: 100vw;
     overflow-x: hidden;
+    position: relative;
     -webkit-font-smoothing: antialiased;
 }
 
@@ -564,4 +570,73 @@ body.drawer-locked {
     background: radial-gradient(circle, rgba(232, 245, 238, 0.35) 0%, rgba(255, 255, 255, 0) 70%);
     bottom: 5%;
     left: 5%;
+}
+
+/* ─── FIXED OVERFLOW WRAPPER FOR BACKGROUND GLOWS ─── */
+.bg-glow-wrap {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* ─── MOBILE STICKY BOTTOM TASKBAR (SHARED) ─── */
+.mobile-taskbar {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #FFFFFF;
+    border-top: 1px solid var(--border);
+    padding: 0.4rem 0.5rem;
+    z-index: 1000;
+    box-shadow: 0 -4px 16px rgba(13, 27, 62, 0.08);
+    justify-content: space-around;
+    align-items: center;
+}
+
+.taskbar-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    color: #5A6275;
+    text-decoration: none;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.68rem;
+    font-weight: 700;
+    padding: 0.3rem 0.5rem;
+    border-radius: 8px;
+    transition: color 0.15s ease;
+    min-width: 58px;
+    text-align: center;
+}
+
+.taskbar-btn:active {
+    color: #0D1B3E;
+}
+
+.taskbar-btn.primary {
+    background: #0D1B3E;
+    color: #FFFFFF !important;
+    padding: 0.45rem 1rem;
+    border-radius: 50px;
+    box-shadow: 0 2px 8px rgba(13, 27, 62, 0.2);
+}
+
+@media (max-width: 768px) {
+    .mobile-taskbar {
+        display: flex !important;
+    }
+    body {
+        padding-bottom: 60px !important;
+    }
 }
