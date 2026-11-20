@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Create Free Websites in 1 Minute | Linkal AI</title>
+    <title>Linkal AI: Create Free Websites in 1 Minute</title>
     <meta name="description" content="Create Free Websites in 1 Minute. Get Free Domain | CV Websites | Wedding Card Websites." />
     <meta name="keywords" content="Linkal, Linkal AI, linkal.in, Linkal website builder, AI store builder, restaurant digital menu, WhatsApp ordering website, live CV maker, portfolio builder, ecommerce website builder India" />
     <meta name="author" content="Linkal AI" />
@@ -21,7 +21,7 @@
       "@context": "https://schema.org",
       "@type": "WebSite",
       "name": "Linkal AI",
-      "alternateName": ["Linkal", "Linkal.in"],
+      "alternateName": ["Linkal"],
       "url": "https://linkal.in/"
     }
     </script>
@@ -43,20 +43,20 @@
     <!-- Open Graph / Facebook / WhatsApp -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://linkal.in/" />
-    <meta property="og:title" content="Create Free Websites in 1 Minute | Linkal AI" />
+    <meta property="og:title" content="Linkal AI: Create Free Websites in 1 Minute" />
     <meta property="og:description" content="Create Free Websites in 1 Minute. Get Free Domain | CV Websites | Wedding Card Websites." />
     <meta property="og:site_name" content="Linkal AI" />
     <meta property="og:locale" content="en_IN" />
-    <meta property="og:image" content="https://linkal.in/linkal.jpeg" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
+    <meta property="og:image" content="https://linkal.in/favicon-512.png" />
+    <meta property="og:image:width" content="512" />
+    <meta property="og:image:height" content="512" />
 
     <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:card" content="summary" />
     <meta name="twitter:url" content="https://linkal.in/" />
-    <meta name="twitter:title" content="Create Free Websites in 1 Minute | Linkal AI" />
+    <meta name="twitter:title" content="Linkal AI: Create Free Websites in 1 Minute" />
     <meta name="twitter:description" content="Create Free Websites in 1 Minute. Get Free Domain | CV Websites | Wedding Card Websites." />
-    <meta name="twitter:image" content="https://linkal.in/linkal.jpeg" />
+    <meta name="twitter:image" content="https://linkal.in/favicon-512.png" />
 
     <!-- Schema.org JSON-LD for Organization & Software Application -->
     <script type="application/ld+json">
@@ -67,10 +67,10 @@
           "@type": "Organization",
           "@id": "https://linkal.in/#organization",
           "name": "Linkal AI",
-          "alternateName": ["Linkal", "linkal.in", "Linkal.AI", "Linkal Website Builder"],
+          "alternateName": ["Linkal", "Linkal.AI", "Linkal Website Builder"],
           "url": "https://linkal.in/",
-          "logo": "https://linkal.in/linkal.jpeg",
-          "image": "https://linkal.in/linkal.jpeg",
+          "logo": "https://linkal.in/favicon-512.png",
+          "image": "https://linkal.in/favicon-512.png",
           "description": "Linkal AI is an intelligent SaaS website and storefront generator platform empowering Indian businesses, restaurants, creators, and professionals to launch branded websites on custom subdomains with WhatsApp ordering.",
           "sameAs": [
             "https://instagram.com/linkal.in",
@@ -429,10 +429,54 @@
             }
         }
 
+        /* ─── SIDE DRAWER & BACKDROP (Hidden on Desktop) ─── */
+        .drawer-backdrop {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(13, 27, 62, 0.45);
+            backdrop-filter: blur(4px);
+            z-index: 9998;
+            opacity: 0;
+            transition: opacity 0.25s ease;
+        }
+
+        .side-drawer,
+        #sideDrawer {
+            display: none !important;
+        }
+
+        @media (max-width: 960px) {
+            .side-drawer,
+            #sideDrawer {
+                display: flex !important;
+                flex-direction: column;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 280px;
+                max-width: 80vw;
+                height: 100vh;
+                background: #FFFFFF;
+                z-index: 9999;
+                transform: translateX(-100%);
+                transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+                box-shadow: 4px 0 24px rgba(13, 27, 62, 0.15);
+            }
+            .side-drawer.open,
+            #sideDrawer.open {
+                transform: translateX(0);
+            }
+            .drawer-backdrop.open {
+                display: block;
+                opacity: 1;
+            }
+        }
+
         /* ─── HERO ─── */
         #hero {
-            padding-top: calc(70px + 0.4rem);
-            padding-bottom: 1.25rem;
+            padding-top: 72px;
+            padding-bottom: 0.85rem;
             background: var(--white);
             position: relative;
         }
@@ -452,12 +496,12 @@
             background: #FFFFFF;
             border: 1px solid var(--border);
             border-radius: 50px;
-            padding: 0.4rem 1rem;
+            padding: 0.35rem 0.9rem;
             font-family: 'Plus Jakarta Sans', sans-serif;
             font-size: 0.8rem;
             font-weight: 600;
             color: var(--navy);
-            margin-bottom: 1.25rem;
+            margin-bottom: 0.65rem;
             flex-wrap: wrap;
             box-shadow: 0 8px 24px rgba(13, 27, 62, 0.08);
         }
@@ -569,7 +613,7 @@
             margin-bottom: 1.8rem;
         }
 
-        /* ─── CHROME MOBILE BROWSER PHONE MOCKUP ─── */
+        /* ─── CHROME MOBILE BROWSER PHONE MOCKUP (DAILY FASHION DEMO) ─── */
         .phone-wrap {
             display: flex;
             justify-content: center;
@@ -626,6 +670,66 @@
             display: flex;
             flex-direction: column;
             box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.08);
+            position: relative;
+        }
+
+        /* ─── SIDE BUTTONS DOCK (Instagram, Linkal, Google) ─── */
+        .phone-side-dock {
+            position: absolute;
+            right: -46px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            z-index: 30;
+        }
+
+        .side-dock-btn {
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
+            border: 1.5px solid #CBD5E1;
+            background: #FFFFFF;
+            color: #475569;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(13, 27, 62, 0.08);
+            transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+            padding: 0;
+            outline: none;
+        }
+
+        .side-dock-btn:hover {
+            transform: scale(1.08);
+            box-shadow: 0 6px 16px rgba(13, 27, 62, 0.16);
+            border-color: #94A3B8;
+        }
+
+        .side-dock-btn.active {
+            transform: scale(1.12);
+        }
+
+        .side-dock-btn#btnSideIg.active {
+            background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
+            border-color: #f77737;
+            color: #FFFFFF;
+            box-shadow: 0 0 0 2px #f77737, 0 6px 16px rgba(225, 48, 108, 0.4);
+        }
+
+        .side-dock-btn#btnSideLinkal.active {
+            background: #0284C7;
+            border-color: #38BDF8;
+            color: #FFFFFF;
+            box-shadow: 0 0 0 2px #38BDF8, 0 6px 16px rgba(2, 132, 199, 0.45);
+        }
+
+        .side-dock-btn#btnSideGoogle.active {
+            background: #FFFFFF;
+            border-color: #4285F4;
+            box-shadow: 0 0 0 2px #4285F4, 0 6px 16px rgba(66, 133, 244, 0.35);
         }
 
         /* 1. Phone Top Status Bar */
@@ -640,6 +744,7 @@
             font-weight: 700;
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+            user-select: none;
         }
 
         .status-icons {
@@ -652,11 +757,12 @@
         /* 2. Google Chrome Address Bar */
         .chrome-browser-bar {
             background: #F8FAFC;
-            padding: 5px 7px 5px 7px;
+            padding: 5px 7px;
             display: flex;
             align-items: center;
             gap: 4px;
             border-bottom: 1px solid #E2E8F0;
+            user-select: none;
         }
 
         .chrome-btn {
@@ -693,7 +799,7 @@
 
         .chrome-url-text {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            font-size: 0.65rem;
+            font-size: 0.64rem;
             font-weight: 700;
             color: #0F172A;
             white-space: nowrap;
@@ -726,20 +832,287 @@
             line-height: 1;
         }
 
-        /* 3. The Live Website Viewport */
-        .chrome-web-viewport {
+        /* ─── SCREEN 1: INSTAGRAM PROFILE ─── */
+        .phone-screen-ig {
             background: #FFFFFF;
-            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            height: 380px;
             max-height: 380px;
+            overflow-y: auto;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            color: #262626;
+            scrollbar-width: thin;
+        }
+
+        .ig-top-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 6px 10px;
+            border-bottom: 1px solid #EFEFEF;
+            position: sticky;
+            top: 0;
+            background: #FFFFFF;
+            z-index: 10;
+        }
+
+        .ig-top-user {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            font-weight: 700;
+            font-size: 0.72rem;
+            color: #000000;
+        }
+
+        .ig-verified-badge {
+            color: #0095F6;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .ig-profile-header {
+            padding: 8px 10px 4px 10px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .ig-avatar-wrap {
+            position: relative;
+            padding: 2px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+            flex-shrink: 0;
+        }
+
+        .ig-avatar-img {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            border: 2px solid #FFFFFF;
+            object-fit: cover;
+            display: block;
+        }
+
+        .ig-stats-row {
+            flex: 1;
+            display: flex;
+            justify-content: space-around;
+            text-align: center;
+        }
+
+        .ig-stat-col {
             display: flex;
             flex-direction: column;
         }
 
+        .ig-stat-val {
+            font-weight: 700;
+            font-size: 0.7rem;
+            color: #000000;
+            line-height: 1.1;
+        }
+
+        .ig-stat-lbl {
+            font-size: 0.52rem;
+            color: #737373;
+        }
+
+        .ig-bio-section {
+            padding: 2px 10px 6px 10px;
+            font-size: 0.58rem;
+            line-height: 1.35;
+        }
+
+        .ig-bio-name {
+            font-weight: 700;
+            color: #000000;
+            font-size: 0.64rem;
+        }
+
+        .ig-bio-cat {
+            color: #737373;
+            font-size: 0.54rem;
+            margin-bottom: 2px;
+        }
+
+        .ig-bio-desc {
+            color: #262626;
+            margin: 1px 0 3px 0;
+        }
+
+        .ig-bio-link-box {
+            position: relative;
+            display: inline-block;
+            margin-top: 4px;
+        }
+
+        .ig-bio-link-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            color: #00376B;
+            font-weight: 700;
+            font-size: 0.62rem;
+            text-decoration: none;
+            background: #E0F2FE;
+            border: 1.5px solid #7DD3FC;
+            padding: 3px 8px;
+            border-radius: 6px;
+            box-shadow: 0 1px 4px rgba(2, 132, 199, 0.12);
+            transition: all 0.2s ease;
+            cursor: pointer;
+        }
+
+        .ig-bio-link-btn:hover {
+            background: #BAE6FD;
+            border-color: #38BDF8;
+        }
+
+        /* Click ripple effect */
+        .ig-click-ripple {
+            position: absolute;
+            left: 54px;
+            top: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            background: rgba(0, 149, 246, 0.55);
+            pointer-events: none;
+            opacity: 0;
+            z-index: 20;
+        }
+
+        .ig-click-ripple.ripple-active {
+            animation: igRipplePulse 0.55s ease-out forwards;
+        }
+
+        @keyframes igRipplePulse {
+            0% { transform: translate(-50%, -50%) scale(0.2); opacity: 0.95; }
+            60% { transform: translate(-50%, -50%) scale(1.9); opacity: 0.45; }
+            100% { transform: translate(-50%, -50%) scale(2.8); opacity: 0; }
+        }
+
+        /* Arrow cursor animation */
+        .ig-arrow-cursor {
+            position: absolute;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 50;
+            opacity: 0;
+            transform: translate(120px, 60px) scale(0.9);
+            transition: transform 1.2s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.4s ease;
+            filter: drop-shadow(0 3px 6px rgba(0,0,0,0.35));
+        }
+
+        .ig-arrow-cursor.cursor-visible {
+            opacity: 1;
+        }
+
+        .ig-arrow-cursor.cursor-glide {
+            transform: translate(52px, 8px) scale(1);
+        }
+
+        .ig-arrow-cursor.cursor-clicked {
+            transform: translate(52px, 8px) scale(0.82);
+            transition: transform 0.2s ease;
+        }
+
+        .ig-actions-row {
+            padding: 4px 10px 6px 10px;
+            display: flex;
+            gap: 5px;
+        }
+
+        .ig-action-btn {
+            flex: 1;
+            background: #EFEFEF;
+            border: none;
+            border-radius: 6px;
+            padding: 4px 0;
+            font-size: 0.58rem;
+            font-weight: 600;
+            color: #000000;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .ig-action-btn.primary {
+            background: #0095F6;
+            color: #FFFFFF;
+        }
+
+        .ig-tabs-row {
+            display: flex;
+            border-top: 1px solid #EFEFEF;
+            border-bottom: 1px solid #EFEFEF;
+        }
+
+        .ig-tab {
+            flex: 1;
+            padding: 5px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #8E8E8E;
+            border-bottom: 1.5px solid transparent;
+        }
+
+        .ig-tab.active {
+            color: #000000;
+            border-bottom-color: #000000;
+        }
+
+        /* 3-column 9-post grid */
+        .ig-posts-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5px;
+            background: #FFFFFF;
+        }
+
+        .ig-post-item {
+            aspect-ratio: 1 / 1;
+            overflow: hidden;
+            background: #F1F5F9;
+            position: relative;
+        }
+
+        .ig-post-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.2s ease;
+        }
+
+        .ig-post-item:hover img {
+            transform: scale(1.05);
+        }
+
+        /* ─── SCREEN 2: THE LIVE WEBSITE VIEWPORT ─── */
+        .phone-screen-web {
+            background: #FFFFFF;
+            display: flex;
+            flex-direction: column;
+            height: 380px;
+            max-height: 380px;
+            overflow-y: auto;
+            scrollbar-width: thin;
+        }
+
         .phone-store-header {
             background: #0D1B3E;
-            padding: 0.75rem 0.75rem 0.45rem 0.75rem;
+            padding: 0.65rem 0.65rem 0.45rem 0.65rem;
             text-align: center;
             border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            position: sticky;
+            top: 0;
+            z-index: 10;
         }
 
         .phone-store-name {
@@ -751,42 +1124,60 @@
             font-family: 'Plus Jakarta Sans', sans-serif;
             font-weight: 800;
             font-size: 0.82rem;
+            letter-spacing: -0.01em;
         }
 
         .phone-store-sub {
             color: #94A3B8;
-            font-size: 0.58rem;
+            font-size: 0.56rem;
             margin-top: 1px;
         }
 
-        .phone-store-cats {
+        .phone-store-taskbar {
             display: flex;
             justify-content: center;
-            gap: 5px;
-            margin-top: 5px;
+            gap: 4px;
+            margin-top: 6px;
+            overflow-x: auto;
+            padding-bottom: 2px;
+            scrollbar-width: none;
         }
 
-        .phone-store-cats span {
-            font-size: 0.54rem;
+        .phone-store-taskbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .p-filter-btn {
+            font-size: 0.52rem;
             color: #94A3B8;
-            padding: 1px 6px;
+            padding: 2px 6px;
             border-radius: 4px;
             background: rgba(255, 255, 255, 0.08);
+            border: none;
+            cursor: pointer;
+            white-space: nowrap;
+            font-weight: 600;
+            transition: all 0.15s ease;
         }
 
-        .phone-store-cats span.active {
+        .p-filter-btn:hover {
+            background: rgba(255, 255, 255, 0.16);
+            color: #FFFFFF;
+        }
+
+        .p-filter-btn.active {
             background: #FFFFFF;
             color: #0D1B3E;
-            font-weight: 700;
+            font-weight: 800;
         }
 
         .phone-store-banner {
             background: #FEF3C7;
             color: #92400E;
-            font-size: 0.52rem;
+            font-size: 0.5rem;
             font-weight: 800;
             text-align: center;
-            padding: 2px 4px;
+            padding: 3px 4px;
             letter-spacing: 0.02em;
             border-bottom: 1px solid rgba(13, 27, 62, 0.06);
         }
@@ -795,7 +1186,7 @@
             padding: 0.45rem 0.5rem;
             display: flex;
             flex-direction: column;
-            gap: 0.4rem;
+            gap: 0.45rem;
         }
 
         .phone-product {
@@ -807,11 +1198,17 @@
             gap: 0.6rem;
             align-items: center;
             box-shadow: 0 1px 4px rgba(13, 27, 62, 0.04);
+            transition: transform 0.15s ease, box-shadow 0.15s ease;
+        }
+
+        .phone-product:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 3px 8px rgba(13, 27, 62, 0.08);
         }
 
         .phone-product-img {
-            width: 36px;
-            height: 36px;
+            width: 44px;
+            height: 44px;
             border-radius: 6px;
             overflow: hidden;
             flex-shrink: 0;
@@ -831,7 +1228,7 @@
 
         .phone-product-name {
             font-family: 'Plus Jakarta Sans', sans-serif;
-            font-size: 0.72rem;
+            font-size: 0.68rem;
             font-weight: 700;
             color: #0D1B3E;
             white-space: nowrap;
@@ -840,16 +1237,18 @@
         }
 
         .phone-product-price {
-            font-size: 0.7rem;
-            font-weight: 700;
+            font-size: 0.68rem;
+            font-weight: 800;
             color: #059669;
             margin: 1px 0 3px 0;
         }
 
         .phone-product-price span {
-            font-size: 0.58rem;
-            color: #64748B;
+            font-size: 0.54rem;
+            color: #94A3B8;
             font-weight: 500;
+            text-decoration: line-through;
+            margin-left: 3px;
         }
 
         .phone-wa-btn {
@@ -858,12 +1257,257 @@
             gap: 3px;
             background: #25D366;
             color: #FFFFFF;
-            font-size: 0.56rem;
+            font-size: 0.54rem;
             font-weight: 700;
-            padding: 2.5px 6px;
+            padding: 2.5px 7px;
             border-radius: 5px;
-            box-shadow: 0 2px 4px rgba(37, 211, 102, 0.18);
+            box-shadow: 0 2px 4px rgba(37, 211, 102, 0.2);
             text-decoration: none;
+            transition: background 0.15s;
+        }
+
+        .phone-wa-btn:hover {
+            background: #22C55E;
+        }
+
+        /* ─── SCREEN 3: GOOGLE SEARCH RESULTS ─── */
+        .phone-screen-google {
+            background: #F8FAFC;
+            display: flex;
+            flex-direction: column;
+            height: 380px;
+            max-height: 380px;
+            overflow-y: auto;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            scrollbar-width: thin;
+        }
+
+        .google-top-header {
+            background: #FFFFFF;
+            padding: 8px 10px 4px 10px;
+            border-bottom: 1px solid #E2E8F0;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .google-search-pill {
+            background: #FFFFFF;
+            border: 1px solid #DFE1E5;
+            border-radius: 24px;
+            padding: 4px 8px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            box-shadow: 0 1px 6px rgba(32, 33, 36, 0.08);
+            font-size: 0.65rem;
+        }
+
+        .google-search-pill:hover {
+            box-shadow: 0 1px 8px rgba(32, 33, 36, 0.18);
+        }
+
+        .google-typed-input {
+            flex: 1;
+            font-size: 0.64rem;
+            color: #202124;
+            font-weight: 500;
+            white-space: nowrap;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+        }
+
+        .google-cursor {
+            color: #1A73E8;
+            font-weight: 700;
+            animation: gBlink 0.8s infinite;
+        }
+
+        @keyframes gBlink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        .google-tabs-row {
+            display: flex;
+            gap: 12px;
+            padding: 6px 4px 0 4px;
+            overflow-x: auto;
+            scrollbar-width: none;
+            font-size: 0.58rem;
+            color: #5F6368;
+        }
+
+        .google-tabs-row::-webkit-scrollbar {
+            display: none;
+        }
+
+        .google-tab {
+            padding-bottom: 4px;
+            white-space: nowrap;
+            cursor: pointer;
+            border-bottom: 2px solid transparent;
+        }
+
+        .google-tab.active {
+            color: #1A73E8;
+            font-weight: 700;
+            border-bottom-color: #1A73E8;
+        }
+
+        .google-results-wrap {
+            padding: 8px 8px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .google-card {
+            background: #FFFFFF;
+            border-radius: 12px;
+            padding: 10px;
+            box-shadow: 0 1px 3px rgba(60, 64, 67, 0.08), 0 1px 2px rgba(60, 64, 67, 0.04);
+            border: 1px solid #DADCE0;
+            text-align: left;
+        }
+
+        .google-cite-row {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            margin-bottom: 3px;
+        }
+
+        .google-cite-fav {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: #0284C7;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #FFFFFF;
+            font-size: 0.5rem;
+            font-weight: 800;
+        }
+
+        .google-cite-meta {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.1;
+        }
+
+        .google-cite-title {
+            font-size: 0.62rem;
+            font-weight: 700;
+            color: #202124;
+        }
+
+        .google-cite-url {
+            font-size: 0.52rem;
+            color: #4D5156;
+        }
+
+        .google-res-title {
+            font-size: 0.78rem;
+            color: #1A0DAB;
+            font-weight: 600;
+            text-decoration: none;
+            line-height: 1.25;
+            display: block;
+            margin: 2px 0 4px 0;
+            cursor: pointer;
+        }
+
+        .google-res-title:hover {
+            text-decoration: underline;
+        }
+
+        .google-snippet-row {
+            display: flex;
+            gap: 8px;
+            align-items: flex-start;
+        }
+
+        .google-snippet-desc {
+            flex: 1;
+            font-size: 0.56rem;
+            color: #4D5156;
+            line-height: 1.35;
+        }
+
+        .google-snippet-thumb {
+            width: 48px;
+            height: 48px;
+            border-radius: 8px;
+            overflow: hidden;
+            flex-shrink: 0;
+            background: #F1F5F9;
+        }
+
+        .google-snippet-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .google-rating-row {
+            font-size: 0.54rem;
+            color: #5F6368;
+            margin: 3px 0 5px 0;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .google-stars {
+            color: #F59E0B;
+            font-size: 0.72rem;
+            letter-spacing: 0.5px;
+            font-weight: 800;
+            line-height: 1;
+        }
+
+        .google-rating-score {
+            font-weight: 700;
+            color: #202124;
+        }
+
+        .google-review-count {
+            color: #5F6368;
+        }
+
+        .google-verified-badge {
+            color: #0F9D58;
+            font-weight: 700;
+        }
+
+        .google-sitelinks-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
+            margin-top: 8px;
+            padding-top: 6px;
+            border-top: 1px solid #F1F3F4;
+        }
+
+        .google-sitelink-pill {
+            background: #F8FAFC;
+            border: 1px solid #E2E8F0;
+            border-radius: 12px;
+            padding: 2px 6px;
+            font-size: 0.52rem;
+            color: #1A0DAB;
+            text-decoration: none;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.15s;
+        }
+
+        .google-sitelink-pill:hover {
+            background: #EFF6FF;
+            border-color: #BFDBFE;
         }
 
         /* 4. Android/Chrome System Navigation Bar */
@@ -875,6 +1519,7 @@
             align-items: center;
             color: #94A3B8;
             border-top: 1px solid rgba(255, 255, 255, 0.06);
+            user-select: none;
         }
 
         .nav-btn-icon {
@@ -947,6 +1592,23 @@
             }
             .phone-screen {
                 border-radius: 20px;
+            }
+            .phone-side-dock {
+                right: -36px;
+                gap: 5px;
+            }
+            .side-dock-btn {
+                width: 30px;
+                height: 30px;
+                border-radius: 8px;
+            }
+            .side-dock-btn svg, .side-dock-btn img {
+                width: 15px !important;
+                height: 15px !important;
+            }
+            .phone-screen-ig, .phone-screen-web, .phone-screen-google {
+                height: 340px;
+                max-height: 340px;
             }
             .hero-ctas {
                 order: 5;
@@ -2897,9 +3559,10 @@
         .float-ig {
             position: fixed;
             bottom: 24px;
-            right: 24px;
-            width: 50px;
-            height: 50px;
+            left: 20px;
+            right: auto;
+            width: 48px;
+            height: 48px;
             border-radius: 50%;
             background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
             display: flex;
@@ -2919,10 +3582,11 @@
 
         .float-wa {
             position: fixed;
-            bottom: 84px;
-            right: 24px;
-            width: 50px;
-            height: 50px;
+            bottom: 80px;
+            left: 20px;
+            right: auto;
+            width: 48px;
+            height: 48px;
             border-radius: 50%;
             background: #25D366;
             display: flex;
@@ -2942,12 +3606,18 @@
 
         @media (max-width: 768px) {
             .float-ig {
-                bottom: 80px;
-                right: 18px;
+                bottom: 76px;
+                left: 14px;
+                right: auto;
+                width: 42px;
+                height: 42px;
             }
             .float-wa {
-                bottom: 140px;
-                right: 18px;
+                bottom: 126px;
+                left: 14px;
+                right: auto;
+                width: 42px;
+                height: 42px;
             }
         }
 
@@ -3208,7 +3878,7 @@
                         </div>
                     </div>
 
-                    <!-- Right — Chrome Mobile Browser Phone Mockup -->
+                    <!-- Right — Chrome Mobile Browser Phone Mockup (Daily Fashion 3-Screen Demo) -->
                     <div class="phone-wrap reveal reveal-delay-2">
                         <div class="phone">
                             <!-- Phone Notch / Speaker -->
@@ -3227,87 +3897,324 @@
                                     </div>
                                 </div>
 
-                                <!-- 2. Google Chrome Address Bar -->
-                                <div class="chrome-browser-bar">
-                                    <button class="chrome-btn" aria-label="Chrome Home">
-                                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#475569" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-                                    </button>
-
-                                    <div class="chrome-address-box">
-                                        <span class="chrome-lock-icon">
-                                            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-                                        </span>
-                                        <span class="chrome-url-text">royalcakes.linkal.in</span>
-                                        <span class="chrome-reload-btn">
-                                            <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#64748B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>
-                                        </span>
+                                <!-- SCREEN 1: INSTAGRAM PROFILE -->
+                                <div class="phone-screen-ig" id="phoneScreenIg">
+                                    <!-- Instagram Top Bar -->
+                                    <div class="ig-top-bar">
+                                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+                                        <div class="ig-top-user">
+                                            <span class="ig-uname-text">dailyfashion</span>
+                                            <span class="ig-verified-badge">
+                                                <svg width="11" height="11" viewBox="0 0 24 24" fill="#0095F6"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                                            </span>
+                                        </div>
+                                        <div style="display:flex; align-items:center; gap:8px;">
+                                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+                                            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="1.8"/><circle cx="19" cy="12" r="1.8"/><circle cx="5" cy="12" r="1.8"/></svg>
+                                        </div>
                                     </div>
 
-                                    <span class="chrome-tab-pill">1</span>
+                                    <!-- Profile Info Header -->
+                                    <div class="ig-profile-header">
+                                        <div class="ig-avatar-wrap">
+                                            <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=160&auto=format&fit=crop&q=80" alt="Daily Fashion Logo DP" class="ig-avatar-img" />
+                                        </div>
+                                        <div class="ig-stats-row">
+                                            <div class="ig-stat-col">
+                                                <span class="ig-stat-val">148</span>
+                                                <span class="ig-stat-lbl">posts</span>
+                                            </div>
+                                            <div class="ig-stat-col">
+                                                <span class="ig-stat-val">58.4K</span>
+                                                <span class="ig-stat-lbl">followers</span>
+                                            </div>
+                                            <div class="ig-stat-col">
+                                                <span class="ig-stat-val">216</span>
+                                                <span class="ig-stat-lbl">following</span>
+                                            </div>
+                                        </div>
+                                    </div>
 
-                                    <button class="chrome-btn" aria-label="More options">
-                                        <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="5" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="12" cy="19" r="2"/></svg>
-                                    </button>
+                                    <!-- Bio Section with Animated Link Click -->
+                                    <div class="ig-bio-section">
+                                        <div class="ig-bio-name">Daily Fashion</div>
+                                        <div class="ig-bio-cat">Clothing Brand</div>
+                                        <div class="ig-bio-desc">Men's Shirts &amp; Jeans 👖👕</div>
+                                        <div class="ig-bio-link-box">
+                                            <a href="javascript:void(0)" class="ig-bio-link-btn" id="igBioLink" title="dailyfashion.linkal.in">
+                                                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+                                                <span>dailyfashion.linkal.in</span>
+                                            </a>
+                                            <!-- Click Ripple Effect -->
+                                            <span class="ig-click-ripple" id="igClickRipple"></span>
+                                            <!-- Animated Arrow Cursor -->
+                                            <div class="ig-arrow-cursor" id="igArrowCursor">
+                                                <svg width="18" height="18" viewBox="0 0 24 24" fill="#000000" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                                    <path d="M4.5 3.5l14 7-6.5 1.5-3.5 6.5-4-15z"/>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Action Buttons -->
+                                    <div class="ig-actions-row">
+                                        <button class="ig-action-btn primary" id="igFollowBtn">Follow</button>
+                                        <button class="ig-action-btn" id="igMsgBtn">Message</button>
+                                        <button class="ig-action-btn" style="flex:0 0 24px; padding:0; display:flex; align-items:center; justify-content:center;">
+                                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+                                        </button>
+                                    </div>
+
+                                    <!-- Grid Tabs -->
+                                    <div class="ig-tabs-row">
+                                        <div class="ig-tab active">
+                                            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+                                        </div>
+                                        <div class="ig-tab">
+                                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                                        </div>
+                                        <div class="ig-tab">
+                                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                                        </div>
+                                    </div>
+
+                                    <!-- 3-Column Post Grid (9 Verified Model Photos) -->
+                                    <div class="ig-posts-grid">
+                                        <div class="ig-post-item"><img src="https://images.unsplash.com/photo-1542272604-787c3835535d?w=300&auto=format&fit=crop&q=80" alt="Denim Jeans Male Model" loading="lazy" /></div>
+                                        <div class="ig-post-item"><img src="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?w=300&auto=format&fit=crop&q=80" alt="Cotton Shirt Model" loading="lazy" /></div>
+                                        <div class="ig-post-item"><img src="https://images.unsplash.com/photo-1516257984-b1b4d707412e?w=300&auto=format&fit=crop&q=80" alt="Casual Shirts & Jeans" loading="lazy" /></div>
+                                        <div class="ig-post-item"><img src="https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=300&auto=format&fit=crop&q=80" alt="Classic Oxford Shirt" loading="lazy" /></div>
+                                        <div class="ig-post-item"><img src="https://images.unsplash.com/photo-1584370848010-d7fe6bc767ec?w=300&auto=format&fit=crop&q=80" alt="Rugged Blue Denim" loading="lazy" /></div>
+                                        <div class="ig-post-item"><img src="https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?w=300&auto=format&fit=crop&q=80" alt="Male Streetwear Fashion" loading="lazy" /></div>
+                                        <div class="ig-post-item"><img src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=300&auto=format&fit=crop&q=80" alt="Resort Printed Shirt" loading="lazy" /></div>
+                                        <div class="ig-post-item"><img src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=300&auto=format&fit=crop&q=80" alt="Black Stretch Jeans" loading="lazy" /></div>
+                                        <div class="ig-post-item"><img src="https://images.unsplash.com/photo-1488161628813-04466f872be2?w=300&auto=format&fit=crop&q=80" alt="Male Model Wearing Jeans" loading="lazy" /></div>
+                                    </div>
                                 </div>
 
-                                <!-- 3. Live Website Viewport inside Chrome -->
-                                <div class="chrome-web-viewport">
+                                <!-- SCREEN 2: WEBSITE (CHROME BROWSER VIEW) -->
+                                <div class="phone-screen-web" id="phoneScreenWeb" style="display:none;">
+                                    <!-- Google Chrome Address Bar -->
+                                    <div class="chrome-browser-bar">
+                                        <button class="chrome-btn" aria-label="Chrome Home">
+                                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#475569" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                                        </button>
+
+                                        <div class="chrome-address-box">
+                                            <span class="chrome-lock-icon">
+                                                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                                            </span>
+                                            <span class="chrome-url-text">dailyfashion.linkal.in</span>
+                                            <span class="chrome-reload-btn">
+                                                <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#64748B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>
+                                            </span>
+                                        </div>
+
+                                        <span class="chrome-tab-pill">1</span>
+
+                                        <button class="chrome-btn" aria-label="More options">
+                                            <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="5" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="12" cy="19" r="2"/></svg>
+                                        </button>
+                                    </div>
+
+                                    <!-- Store Header & Filter Taskbar -->
                                     <div class="phone-store-header">
                                         <div class="phone-store-name">
-                                            <span>Royal Cakes Mumbai</span>
+                                            <span>Daily Fashion</span>
                                             <svg width="12" height="12" viewBox="0 0 24 24" fill="#38BDF8"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
                                         </div>
-                                        <div class="phone-store-sub">Fresh Artisan Bakery &bull; Bandra West</div>
-                                        <div class="phone-store-cats">
-                                            <span class="active">All Cakes</span>
-                                            <span>Birthday</span>
-                                            <span>Cupcakes</span>
+                                        <div class="phone-store-sub">Men's Shirts &amp; Jeans &bull; WhatsApp Ordering</div>
+                                        <!-- Working Menu Taskbar (All Clickable) -->
+                                        <div class="phone-store-taskbar">
+                                            <button class="p-filter-btn active" data-filter="all">Home</button>
+                                            <button class="p-filter-btn" data-filter="shirts">Shirts</button>
+                                            <button class="p-filter-btn" data-filter="jeans">Jeans</button>
+                                            <button class="p-filter-btn" data-filter="u500">Under ₹500</button>
+                                            <button class="p-filter-btn" data-filter="u1000">Under ₹1000</button>
                                         </div>
                                     </div>
+
                                     <div class="phone-store-banner">
-                                        <span style="display:inline-flex; align-items:center; gap:4px;"><svg width="10" height="10" viewBox="0 0 24 24" fill="#F59E0B"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg> FREE DELIVERY ABOVE ₹499 &bull; FRESHLY BAKED</span>
+                                        <span style="display:inline-flex; align-items:center; gap:4px;"><svg width="10" height="10" viewBox="0 0 24 24" fill="#F59E0B"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg> FREE DELIVERY ABOVE ₹499 &bull; CASH ON DELIVERY</span>
                                     </div>
-                                    <div class="phone-products">
-                                        <!-- Product 1 -->
-                                        <div class="phone-product">
+
+                                    <!-- Product Cards with WhatsApp Ordering -->
+                                    <div class="phone-products" id="phoneWebProducts">
+                                        <!-- Product 1: Jeans (₹799) -->
+                                        <div class="phone-product" data-cat="jeans" data-price="799">
                                             <div class="phone-product-img">
-                                                <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=160&auto=format&fit=crop&q=80" alt="Chocolate Truffle Cake" width="40" height="40" />
+                                                <img src="https://images.unsplash.com/photo-1542272604-787c3835535d?w=300&auto=format&fit=crop&q=80" alt="Slim Fit Stretch Denim Jeans" loading="lazy" />
                                             </div>
                                             <div class="phone-product-info">
-                                                <div class="phone-product-name">Chocolate Truffle Cake</div>
-                                                <div class="phone-product-price">₹580 <span>/ 500g</span></div>
-                                                <a href="https://wa.me/918766882442?text=Hi%2C%20I%20want%20to%20order%20Chocolate%20Truffle%20Cake" target="_blank" rel="noopener noreferrer" class="phone-wa-btn">
+                                                <div class="phone-product-name">Slim Fit Stretch Denim Jeans</div>
+                                                <div class="phone-product-price">₹799 <span>₹1,499</span></div>
+                                                <a href="https://wa.me/918766882442?text=Hi%2C%20I%20want%20to%20order%20Slim%20Fit%20Stretch%20Denim%20Jeans%20(Rs.799)" target="_blank" rel="noopener noreferrer" class="phone-wa-btn">
                                                     <svg width="9" height="9" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.699c.971.53 1.771.815 2.796.815 3.182 0 5.768-2.587 5.768-5.767.001-3.18-2.585-5.766-5.768-5.766zm9.969 5.768c0 5.48-4.453 9.932-9.969 9.932-1.748 0-3.38-.456-4.807-1.252l-5.224 1.38 1.399-5.109c-.896-1.487-1.408-3.228-1.408-5.087 0-5.48 4.453-9.932 9.969-9.932 5.516 0 10.04 4.452 10.04 9.932z"/></svg>
                                                     <span>WhatsApp Order</span>
                                                 </a>
                                             </div>
                                         </div>
-                                        <!-- Product 2 (White Vanilla Birthday Cake) -->
-                                        <div class="phone-product">
+
+                                        <!-- Product 2: Shirt (₹449 - Under ₹500) -->
+                                        <div class="phone-product" data-cat="shirt" data-price="449">
                                             <div class="phone-product-img">
-                                                <img src="/images/cakes/vanilla-white-cake.jpg" alt="White Vanilla Birthday Cake" width="40" height="40" />
+                                                <img src="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?w=300&auto=format&fit=crop&q=80" alt="Classic Oxford Cotton Shirt" loading="lazy" />
                                             </div>
                                             <div class="phone-product-info">
-                                                <div class="phone-product-name">White Vanilla Birthday Cake</div>
-                                                <div class="phone-product-price">₹450 <span>/ 500g</span></div>
-                                                <a href="https://wa.me/918766882442?text=Hi%2C%20I%20want%20to%20order%20Vanilla%20Birthday%20Cake" target="_blank" rel="noopener noreferrer" class="phone-wa-btn">
+                                                <div class="phone-product-name">Classic Oxford Cotton Shirt</div>
+                                                <div class="phone-product-price">₹449 <span>₹899</span></div>
+                                                <a href="https://wa.me/918766882442?text=Hi%2C%20I%20want%20to%20order%20Classic%20Oxford%20Cotton%20Shirt%20(Rs.449)" target="_blank" rel="noopener noreferrer" class="phone-wa-btn">
+                                                    <svg width="9" height="9" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.699c.971.53 1.771.815 2.796.815 3.182 0 5.768-2.587 5.768-5.767.001-3.18-2.585-5.766-5.768-5.766zm9.969 5.768c0 5.48-4.453 9.932-9.969 9.932-1.748 0-3.38-.456-4.807-1.252l-5.224 1.38 1.399-5.109c-.896-1.487-1.408-3.228-1.408-5.087 0-5.48 4.453-9.932 9.969-9.932 5.516 0 10.04 4.452 10.04 9.932z"/></svg>
+                                                    <span>WhatsApp Order</span>
+                                                </a>
+                                            </div>
+                                        </div>
+
+                                        <!-- Product 3: Jeans (₹899) -->
+                                        <div class="phone-product" data-cat="jeans" data-price="899">
+                                            <div class="phone-product-img">
+                                                <img src="https://images.unsplash.com/photo-1584370848010-d7fe6bc767ec?w=300&auto=format&fit=crop&q=80" alt="Vintage Rugged Blue Jeans" loading="lazy" />
+                                            </div>
+                                            <div class="phone-product-info">
+                                                <div class="phone-product-name">Vintage Rugged Blue Jeans</div>
+                                                <div class="phone-product-price">₹899 <span>₹1,699</span></div>
+                                                <a href="https://wa.me/918766882442?text=Hi%2C%20I%20want%20to%20order%20Vintage%20Rugged%20Blue%20Jeans%20(Rs.899)" target="_blank" rel="noopener noreferrer" class="phone-wa-btn">
                                                     <svg width="9" height="9" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.699c.971.53 1.771.815 2.796.815 3.182 0 5.768-2.587 5.768-5.767.001-3.18-2.585-5.766-5.768-5.768zm9.969 5.768c0 5.48-4.453 9.932-9.969 9.932-1.748 0-3.38-.456-4.807-1.252l-5.224 1.38 1.399-5.109c-.896-1.487-1.408-3.228-1.408-5.087 0-5.48 4.453-9.932 9.969-9.932 5.516 0 10.04 4.452 10.04 9.932z"/></svg>
                                                     <span>WhatsApp Order</span>
                                                 </a>
                                             </div>
                                         </div>
-                                        <!-- Product 3 -->
-                                        <div class="phone-product">
+
+                                        <!-- Product 4: Shirt (₹499 - Under ₹500) -->
+                                        <div class="phone-product" data-cat="shirt" data-price="499">
                                             <div class="phone-product-img">
-                                                <img src="https://images.unsplash.com/photo-1614707267537-b85aaf00c4b7?w=160&auto=format&fit=crop&q=80" alt="Red Velvet Cupcakes" width="40" height="40" />
+                                                <img src="https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=300&auto=format&fit=crop&q=80" alt="Casual Striped Linen Shirt" loading="lazy" />
                                             </div>
                                             <div class="phone-product-info">
-                                                <div class="phone-product-name">Red Velvet Cupcakes</div>
-                                                <div class="phone-product-price">₹320 <span>/ Pack of 6</span></div>
-                                                <a href="https://wa.me/918766882442?text=Hi%2C%20I%20want%20to%20order%20Red%20Velvet%20Cupcakes" target="_blank" rel="noopener noreferrer" class="phone-wa-btn">
+                                                <div class="phone-product-name">Casual Striped Linen Shirt</div>
+                                                <div class="phone-product-price">₹499 <span>₹999</span></div>
+                                                <a href="https://wa.me/918766882442?text=Hi%2C%20I%20want%20to%20order%20Casual%20Striped%20Linen%20Shirt%20(Rs.499)" target="_blank" rel="noopener noreferrer" class="phone-wa-btn">
                                                     <svg width="9" height="9" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.699c.971.53 1.771.815 2.796.815 3.182 0 5.768-2.587 5.768-5.767.001-3.18-2.585-5.766-5.768-5.768zm9.969 5.768c0 5.48-4.453 9.932-9.969 9.932-1.748 0-3.38-.456-4.807-1.252l-5.224 1.38 1.399-5.109c-.896-1.487-1.408-3.228-1.408-5.087 0-5.48 4.453-9.932 9.969-9.932 5.516 0 10.04 4.452 10.04 9.932z"/></svg>
                                                     <span>WhatsApp Order</span>
                                                 </a>
+                                            </div>
+                                        </div>
+
+                                        <!-- Product 5: Jeans (₹480 - Under ₹500) -->
+                                        <div class="phone-product" data-cat="jeans" data-price="480">
+                                            <div class="phone-product-img">
+                                                <img src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=300&auto=format&fit=crop&q=80" alt="Urban Black Tapered Jeans" loading="lazy" />
+                                            </div>
+                                            <div class="phone-product-info">
+                                                <div class="phone-product-name">Urban Black Tapered Jeans</div>
+                                                <div class="phone-product-price">₹480 <span>₹999</span></div>
+                                                <a href="https://wa.me/918766882442?text=Hi%2C%20I%20want%20to%20order%20Urban%20Black%20Tapered%20Jeans%20(Rs.480)" target="_blank" rel="noopener noreferrer" class="phone-wa-btn">
+                                                    <svg width="9" height="9" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.699c.971.53 1.771.815 2.796.815 3.182 0 5.768-2.587 5.768-5.767.001-3.18-2.585-5.766-5.768-5.768zm9.969 5.768c0 5.48-4.453 9.932-9.969 9.932-1.748 0-3.38-.456-4.807-1.252l-5.224 1.38 1.399-5.109c-.896-1.487-1.408-3.228-1.408-5.087 0-5.48 4.453-9.932 9.969-9.932 5.516 0 10.04 4.452 10.04 9.932z"/></svg>
+                                                    <span>WhatsApp Order</span>
+                                                </a>
+                                            </div>
+                                        </div>
+
+                                        <!-- Product 6: Shirt (₹699 - Under ₹1000) -->
+                                        <div class="phone-product" data-cat="shirt" data-price="699">
+                                            <div class="phone-product-img">
+                                                <img src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=300&auto=format&fit=crop&q=80" alt="Cuban Collar Printed Resort Shirt" loading="lazy" />
+                                            </div>
+                                            <div class="phone-product-info">
+                                                <div class="phone-product-name">Cuban Collar Printed Resort Shirt</div>
+                                                <div class="phone-product-price">₹699 <span>₹1,299</span></div>
+                                                <a href="https://wa.me/918766882442?text=Hi%2C%20I%20want%20to%20order%20Cuban%20Collar%20Printed%20Resort%20Shirt%20(Rs.699)" target="_blank" rel="noopener noreferrer" class="phone-wa-btn">
+                                                    <svg width="9" height="9" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.699c.971.53 1.771.815 2.796.815 3.182 0 5.768-2.587 5.768-5.767.001-3.18-2.585-5.766-5.768-5.768zm9.969 5.768c0 5.48-4.453 9.932-9.969 9.932-1.748 0-3.38-.456-4.807-1.252l-5.224 1.38 1.399-5.109c-.896-1.487-1.408-3.228-1.408-5.087 0-5.48 4.453-9.932 9.969-9.932 5.516 0 10.04 4.452 10.04 9.932z"/></svg>
+                                                    <span>WhatsApp Order</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- SCREEN 3: GOOGLE SEARCH RESULTS -->
+                                <div class="phone-screen-google" id="phoneScreenGoogle" style="display:none;">
+                                    <!-- Chrome Address Bar (google.com) -->
+                                    <div class="chrome-browser-bar">
+                                        <button class="chrome-btn" aria-label="Chrome Home">
+                                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#475569" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                                        </button>
+
+                                        <div class="chrome-address-box">
+                                            <span class="chrome-lock-icon">
+                                                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                                            </span>
+                                            <span class="chrome-url-text">google.com/search?q=daily+fashion</span>
+                                            <span class="chrome-reload-btn">
+                                                <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#64748B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>
+                                            </span>
+                                        </div>
+
+                                        <span class="chrome-tab-pill">1</span>
+
+                                        <button class="chrome-btn" aria-label="More options">
+                                            <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="5" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="12" cy="19" r="2"/></svg>
+                                        </button>
+                                    </div>
+
+                                    <!-- Google Search Top Header -->
+                                    <div class="google-top-header">
+                                        <div class="google-search-pill">
+                                            <svg width="13" height="13" viewBox="0 0 24 24" style="flex-shrink:0;">
+                                                <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                                                <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                                                <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
+                                                <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
+                                            </svg>
+                                            <div class="google-typed-input">
+                                                <span id="googleSearchTypedText"></span><span class="google-cursor">|</span>
+                                            </div>
+                                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#5F6368" stroke-width="2" style="flex-shrink:0;"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/></svg>
+                                        </div>
+
+                                        <div class="google-tabs-row">
+                                            <span class="google-tab active">All</span>
+                                            <span class="google-tab">Images</span>
+                                            <span class="google-tab">Shopping</span>
+                                            <span class="google-tab">Maps</span>
+                                            <span class="google-tab">News</span>
+                                        </div>
+                                    </div>
+
+                                    <!-- Google Search Results Area -->
+                                    <div class="google-results-wrap">
+                                        <div class="google-card">
+                                            <div class="google-cite-row">
+                                                <div class="google-cite-fav">D</div>
+                                                <div class="google-cite-meta">
+                                                    <span class="google-cite-title">Daily Fashion</span>
+                                                    <span class="google-cite-url">https://dailyfashion.linkal.in</span>
+                                                </div>
+                                            </div>
+
+                                            <a href="javascript:void(0)" class="google-res-title" id="googleSearchResultLink">Daily Fashion - Best Shirts &amp; Jeans, Shop Online</a>
+
+                                            <!-- 5-Star Rating directly below the title link (Complete Google Workflow) -->
+                                            <div class="google-rating-row">
+                                                <span class="google-stars">★★★★★</span>
+                                                <span class="google-rating-score">5.0</span>
+                                                <span class="google-review-count">(1,480+ reviews)</span>
+                                                <span>&bull; In stock &bull; Fast Delivery</span>
+                                            </div>
+
+                                            <div class="google-snippet-row">
+                                                <div class="google-snippet-desc">
+                                                    Shop trendy men's shirts, rugged denim &amp; slim fit jeans at unbeatable prices. Free delivery across India. Direct WhatsApp ordering.
+                                                </div>
+                                                <div class="google-snippet-thumb">
+                                                    <img src="https://images.unsplash.com/photo-1542272604-787c3835535d?w=160&auto=format&fit=crop&q=80" alt="Daily Fashion Model" loading="lazy" />
+                                                </div>
+                                            </div>
+
+                                            <div class="google-sitelinks-row">
+                                                <a href="javascript:void(0)" class="google-sitelink-pill g-link-trigger">Men's Denim Jeans</a>
+                                                <a href="javascript:void(0)" class="google-sitelink-pill g-link-trigger">Shirts Under ₹500</a>
+                                                <a href="javascript:void(0)" class="google-sitelink-pill g-link-trigger">WhatsApp Order</a>
                                             </div>
                                         </div>
                                     </div>
@@ -3327,7 +4234,355 @@
                                 </div>
                             </div>
                         </div>
+
+                        <!-- SIDE BUTTONS (right side of the phone, top to bottom) -->
+                        <div class="phone-side-dock" role="tablist" aria-label="Demo Screens">
+                            <!-- 1. Instagram Icon -->
+                            <button class="side-dock-btn active" id="btnSideIg" data-screen="ig" aria-label="Instagram Profile Screen" title="Instagram Profile">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                                </svg>
+                            </button>
+                            <!-- 2. Linkal Icon -->
+                            <button class="side-dock-btn" id="btnSideLinkal" data-screen="web" aria-label="Linkal Website Screen" title="Linkal Website">
+                                <img src="/linkal.jpeg" alt="Linkal" width="18" height="18" style="border-radius:4px; object-fit:cover; display:block;" />
+                            </button>
+                            <!-- 3. Google Icon -->
+                            <button class="side-dock-btn" id="btnSideGoogle" data-screen="google" aria-label="Google Search Screen" title="Google Search">
+                                <svg width="17" height="17" viewBox="0 0 24 24">
+                                    <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                                    <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                                    <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
+                                    <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
+                                </svg>
+                            </button>
+                        </div>
                     </div>
+
+                    <!-- Interactive Phone Controller Script -->
+                    <script>
+                    (function() {
+                        const btnIg = document.getElementById('btnSideIg');
+                        const btnWeb = document.getElementById('btnSideLinkal');
+                        const btnGoogle = document.getElementById('btnSideGoogle');
+                        const screenIg = document.getElementById('phoneScreenIg');
+                        const screenWeb = document.getElementById('phoneScreenWeb');
+                        const screenGoogle = document.getElementById('phoneScreenGoogle');
+                        const igCursor = document.getElementById('igArrowCursor');
+                        const igRipple = document.getElementById('igClickRipple');
+                        const igBioLink = document.getElementById('igBioLink');
+                        const googleTyped = document.getElementById('googleSearchTypedText');
+                        const productList = document.getElementById('phoneWebProducts');
+                        const filterBtns = document.querySelectorAll('.p-filter-btn');
+
+                        let tourCompleted = false;
+                        let activeTimers = [];
+
+                        function clearAllTimers() {
+                            activeTimers.forEach(t => clearTimeout(t));
+                            activeTimers = [];
+                        }
+
+                        function addTimer(fn, ms) {
+                            const t = setTimeout(fn, ms);
+                            activeTimers.push(t);
+                            return t;
+                        }
+
+                        function setSideActive(btn) {
+                            [btnIg, btnWeb, btnGoogle].forEach(b => { if (b) b.classList.remove('active'); });
+                            if (btn) btn.classList.add('active');
+                        }
+
+                        function displayScreen(name) {
+                            if (screenIg) screenIg.style.display = (name === 'ig') ? 'flex' : 'none';
+                            if (screenWeb) screenWeb.style.display = (name === 'web') ? 'flex' : 'none';
+                            if (screenGoogle) screenGoogle.style.display = (name === 'google') ? 'flex' : 'none';
+
+                            if (name === 'ig') {
+                                setSideActive(btnIg);
+                            } else if (name === 'web') {
+                                setSideActive(btnWeb);
+                            } else if (name === 'google') {
+                                setSideActive(btnGoogle);
+                            }
+                        }
+
+                        // Instagram slow cursor glide & bio-link click
+                        function playInstagramCursorClick(onDone) {
+                            if (!igCursor || !igRipple) {
+                                if (onDone) onDone();
+                                return;
+                            }
+                            igCursor.classList.remove('cursor-glide', 'cursor-clicked', 'cursor-visible');
+                            igRipple.classList.remove('ripple-active');
+                            void igCursor.offsetWidth; // Reflow to reset CSS transition
+
+                            addTimer(() => {
+                                igCursor.classList.add('cursor-visible');
+
+                                addTimer(() => {
+                                    igCursor.classList.add('cursor-glide');
+
+                                    addTimer(() => {
+                                        igCursor.classList.add('cursor-clicked');
+                                        igRipple.classList.add('ripple-active');
+
+                                        if (onDone) {
+                                            addTimer(() => {
+                                                onDone();
+                                            }, 550);
+                                        }
+                                    }, 1250);
+                                }, 350);
+                            }, 150);
+                        }
+
+                        // Google typing animation
+                        function playGoogleTyping(onDone) {
+                            if (!googleTyped) {
+                                if (onDone) onDone();
+                                return;
+                            }
+                            googleTyped.textContent = '';
+                            const query = 'Daily Fashion';
+                            let i = 0;
+
+                            function typeChar() {
+                                if (i < query.length) {
+                                    googleTyped.textContent += query.charAt(i);
+                                    i++;
+                                    addTimer(typeChar, 75);
+                                } else if (onDone) {
+                                    addTimer(() => {
+                                        onDone();
+                                    }, 2600);
+                                }
+                            }
+                            addTimer(typeChar, 250);
+                        }
+
+                        // ─── ONE-TIME AUTOMATED 3-SCREEN TOUR (Instagram -> Website -> Google -> Website) ───
+                        function runInitialTour() {
+                            clearAllTimers();
+                            displayScreen('ig');
+                            if (screenIg) screenIg.scrollTop = 0;
+
+                            // 1. First scroll down inside Instagram to showcase post grid for 2 seconds
+                            addTimer(() => {
+                                if (tourCompleted) return;
+                                if (screenIg) {
+                                    screenIg.scrollTo({ top: 180, behavior: 'smooth' });
+                                }
+
+                                // Hold at bottom for 2 seconds
+                                addTimer(() => {
+                                    if (tourCompleted) return;
+                                    // Smoothly scroll back up to the top
+                                    if (screenIg) {
+                                        screenIg.scrollTo({ top: 0, behavior: 'smooth' });
+                                    }
+
+                                    // Let scroll up settle, then slowly glide cursor and click bio link
+                                    addTimer(() => {
+                                        if (tourCompleted) return;
+                                        playInstagramCursorClick(() => {
+                                            if (tourCompleted) return;
+
+                                            // 2. Transition automatically to Screen 2 (Linkal Site)
+                                            displayScreen('web');
+                                            if (screenWeb) screenWeb.scrollTop = 0;
+
+                                            // Hold on Linkal Site for 2.8s
+                                            addTimer(() => {
+                                                if (tourCompleted) return;
+
+                                                // 3. Transition automatically to Screen 3 (Google)
+                                                displayScreen('google');
+                                                if (screenGoogle) screenGoogle.scrollTop = 0;
+
+                                                // Type 'Daily Fashion' and show 5-star results
+                                                playGoogleTyping(() => {
+                                                    if (tourCompleted) return;
+
+                                                    // 4. Return to Linkal Site (Screen 2) & STOP auto-movement completely!
+                                                    displayScreen('web');
+                                                    if (screenWeb) screenWeb.scrollTop = 0;
+                                                    tourCompleted = true; // Complete! No more auto-move.
+                                                });
+                                            }, 2800);
+                                        });
+                                    }, 550);
+                                }, 2000);
+                            }, 500);
+                        }
+
+                        // ─── MANUAL USER INTERACTION ───
+                        // Any click marks tourCompleted = true, so screen never auto-advances away.
+                        if (btnIg) {
+                            btnIg.addEventListener('click', (e) => {
+                                e.preventDefault();
+                                tourCompleted = true;
+                                clearAllTimers();
+                                displayScreen('ig');
+                                if (screenIg) screenIg.scrollTop = 0;
+                                // Plays arrow glide & click on bio link, but stays on Instagram
+                                playInstagramCursorClick(null);
+                            });
+                        }
+
+                        if (btnWeb) {
+                            btnWeb.addEventListener('click', (e) => {
+                                e.preventDefault();
+                                tourCompleted = true;
+                                clearAllTimers();
+                                displayScreen('web');
+                                if (screenWeb) screenWeb.scrollTop = 0;
+                            });
+                        }
+
+                        if (btnGoogle) {
+                            btnGoogle.addEventListener('click', (e) => {
+                                e.preventDefault();
+                                tourCompleted = true;
+                                clearAllTimers();
+                                displayScreen('google');
+                                if (screenGoogle) screenGoogle.scrollTop = 0;
+                                playGoogleTyping(null);
+                            });
+                        }
+
+                        // Direct click on Instagram bio link
+                        if (igBioLink) {
+                            igBioLink.addEventListener('click', (e) => {
+                                e.preventDefault();
+                                tourCompleted = true;
+                                clearAllTimers();
+                                if (igRipple) igRipple.classList.add('ripple-active');
+                                addTimer(() => {
+                                    displayScreen('web');
+                                    if (screenWeb) screenWeb.scrollTop = 0;
+                                }, 220);
+                            });
+                        }
+
+                        // Direct click on Google Search Result or Sitelinks -> switches to Screen 2
+                        const gResultLink = document.getElementById('googleSearchResultLink');
+                        if (gResultLink) {
+                            gResultLink.addEventListener('click', (e) => {
+                                e.preventDefault();
+                                tourCompleted = true;
+                                clearAllTimers();
+                                displayScreen('web');
+                                if (screenWeb) screenWeb.scrollTop = 0;
+                            });
+                        }
+
+                        document.querySelectorAll('.g-link-trigger').forEach(pill => {
+                            pill.addEventListener('click', (e) => {
+                                e.preventDefault();
+                                tourCompleted = true;
+                                clearAllTimers();
+                                displayScreen('web');
+                                if (screenWeb) screenWeb.scrollTop = 0;
+                            });
+                        });
+
+                        // Screen 2: Real Website Filtering Taskbar
+                        if (filterBtns && productList) {
+                            filterBtns.forEach(btn => {
+                                btn.addEventListener('click', (e) => {
+                                    e.preventDefault();
+                                    filterBtns.forEach(b => b.classList.remove('active'));
+                                    btn.classList.add('active');
+
+                                    const filter = btn.getAttribute('data-filter');
+                                    const cards = productList.querySelectorAll('.phone-product');
+
+                                    cards.forEach(card => {
+                                        const cat = card.getAttribute('data-cat') || '';
+                                        const price = parseInt(card.getAttribute('data-price') || '0', 10);
+
+                                        if (filter === 'all') {
+                                            card.style.display = 'flex';
+                                        } else if (filter === 'shirts') {
+                                            card.style.display = cat.includes('shirt') ? 'flex' : 'none';
+                                        } else if (filter === 'jeans') {
+                                            card.style.display = cat.includes('jeans') ? 'flex' : 'none';
+                                        } else if (filter === 'u500') {
+                                            card.style.display = (price <= 500) ? 'flex' : 'none';
+                                        } else if (filter === 'u1000') {
+                                            card.style.display = (price <= 1000) ? 'flex' : 'none';
+                                        }
+                                    });
+                                });
+                            });
+                        }
+
+                        // Run initial automated 3-screen tour
+                        runInitialTour();
+
+                        // ─── DYNAMIC SUPABASE CLOUD SYNC (Zero GitHub Deployments for Future Website Updates) ───
+                        (function initCloudContentSync() {
+                            const CONFIG_URL = 'https://yuvkbugblplulrzrjamg.supabase.co/storage/v1/object/public/uploads/landing_config.json';
+                            fetch(CONFIG_URL, { cache: 'no-cache' })
+                                .then(res => res.ok ? res.json() : null)
+                                .then(cfg => {
+                                    if (!cfg) return;
+                                    // 1. Live announcement update
+                                    if (cfg.announcement) {
+                                        const ann = document.querySelector('.hero-free-announcement span');
+                                        if (ann) ann.textContent = cfg.announcement;
+                                    }
+                                    // 2. Live phone demo update
+                                    if (cfg.phoneDemo) {
+                                        const d = cfg.phoneDemo;
+                                        if (d.username) {
+                                            const u = document.querySelector('.ig-uname-text');
+                                            if (u) u.textContent = d.username;
+                                        }
+                                        if (d.brandName) {
+                                            const bName = document.querySelector('.ig-bio-name');
+                                            if (bName) bName.textContent = d.brandName;
+                                            const storeName = document.querySelector('.phone-store-name span');
+                                            if (storeName) storeName.textContent = d.brandName;
+                                            const gCite = document.querySelector('.google-cite-title');
+                                            if (gCite) gCite.textContent = d.brandName;
+                                        }
+                                        if (d.bio) {
+                                            const bioEl = document.querySelector('.ig-bio-desc');
+                                            if (bioEl) bioEl.textContent = d.bio;
+                                        }
+                                        if (d.linkText) {
+                                            const lk = document.querySelector('#igBioLink span');
+                                            if (lk) lk.textContent = d.linkText;
+                                            const urlBar = document.querySelector('.chrome-url-text');
+                                            if (urlBar) urlBar.textContent = d.linkText;
+                                            const gUrl = document.querySelector('.google-cite-url');
+                                            if (gUrl) gUrl.textContent = 'https://' + d.linkText;
+                                        }
+                                        if (d.stats) {
+                                            const statVals = document.querySelectorAll('.ig-stat-val');
+                                            if (statVals.length >= 3) {
+                                                if (d.stats.posts) statVals[0].textContent = d.stats.posts;
+                                                if (d.stats.followers) statVals[1].textContent = d.stats.followers;
+                                                if (d.stats.following) statVals[2].textContent = d.stats.following;
+                                            }
+                                        }
+                                        if (d.googleSearch) {
+                                            const gTitle = document.getElementById('googleSearchResultLink');
+                                            if (gTitle && d.googleSearch.title) gTitle.textContent = d.googleSearch.title;
+                                            const gDesc = document.querySelector('.google-snippet-desc');
+                                            if (gDesc && d.googleSearch.snippet) gDesc.textContent = d.googleSearch.snippet;
+                                        }
+                                    }
+                                })
+                                .catch(() => { /* Silent fallback to default baked-in HTML */ });
+                        })();
+                    })();
+                    </script>
                 </div>
             </div>
         </section>
