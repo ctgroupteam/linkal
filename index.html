@@ -1551,6 +1551,32 @@
             border-color: #BFDBFE;
         }
 
+        /* Screen 2 (Google Search) Arrow Cursor */
+        .google-arrow-cursor {
+            position: absolute;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 60;
+            opacity: 0;
+            transform: translate(160px, 90px) scale(0.9);
+            transition: transform 1.2s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.4s ease;
+            filter: drop-shadow(0 3px 6px rgba(0,0,0,0.35));
+        }
+
+        .google-arrow-cursor.cursor-visible {
+            opacity: 1;
+        }
+
+        .google-arrow-cursor.cursor-glide {
+            transform: translate(65px, 28px) scale(1);
+        }
+
+        .google-arrow-cursor.cursor-clicked {
+            transform: translate(65px, 28px) scale(0.82);
+            transition: transform 0.2s ease;
+        }
+
         /* Screen 3 (Website) Arrow Cursor & Ripple */
         .web-arrow-cursor {
             position: absolute;
@@ -1774,54 +1800,119 @@
             padding: 4px;
         }
 
-        .wa-qr-card {
-            background: #F8FAFC;
-            border: 1px solid #E2E8F0;
-            border-radius: 6px;
-            padding: 4px;
+        .wa-phonepe-qr-card {
+            background: #FFFFFF;
+            border: 1.5px solid #E2E8F0;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 6px rgba(95, 37, 159, 0.08);
+            margin: 2px 0;
+            width: 100%;
+        }
+
+        .phonepe-hdr {
+            background: #5f259f;
+            padding: 3.5px 8px;
             display: flex;
-            gap: 6px;
             align-items: center;
+            justify-content: space-between;
+            color: #FFFFFF;
         }
 
-        .wa-product-thumb {
-            width: 48px;
-            height: 48px;
-            border-radius: 4px;
-            object-fit: cover;
-            flex-shrink: 0;
+        .phonepe-logo-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
         }
 
-        .wa-qr-box {
+        .phonepe-hdr-title {
+            font-size: 0.58rem;
+            font-weight: 800;
+            letter-spacing: -0.01em;
+            color: #FFFFFF;
+        }
+
+        .phonepe-hdr-sub {
+            font-size: 0.44rem;
+            color: #E9D5FF;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+        }
+
+        .phonepe-qr-body {
+            padding: 5px;
             display: flex;
-            flex-direction: column;
+            gap: 7px;
+            align-items: center;
+            background: #FFFFFF;
+        }
+
+        .phonepe-qr-matrix-wrap {
+            flex-shrink: 0;
+            display: flex;
             align-items: center;
             justify-content: center;
-            flex: 1;
-            text-align: center;
+            border: 1px solid #F1F5F9;
+            border-radius: 4px;
+            padding: 2px;
+            background: #FFFFFF;
         }
 
-        .wa-qr-code-img svg {
-            width: 44px;
-            height: 44px;
+        .phonepe-qr-svg {
+            display: block;
+            width: 68px;
+            height: 68px;
         }
 
-        .wa-qr-label {
+        .phonepe-merchant-info {
             display: flex;
             flex-direction: column;
+            gap: 2px;
+            text-align: left;
+        }
+
+        .phonepe-merchant-name {
+            font-size: 0.60rem;
+            font-weight: 800;
+            color: #0F172A;
+            line-height: 1.2;
+        }
+
+        .phonepe-upi-id {
             font-size: 0.46rem;
-            line-height: 1.1;
+            color: #5f259f;
+            font-weight: 700;
+            word-break: break-all;
+        }
+
+        .phonepe-pay-amt {
+            font-size: 0.58rem;
+            font-weight: 800;
+            color: #059669;
             margin-top: 2px;
         }
 
-        .wa-qr-upi {
-            color: #0284C7;
-            font-weight: 700;
+        .phonepe-footer {
+            background: #FAF5FF;
+            border-top: 1px dashed #E9D5FF;
+            padding: 2px 8px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 0.42rem;
+            color: #6B7280;
         }
 
-        .wa-qr-amt {
-            color: #059669;
+        .phonepe-bhim {
             font-weight: 800;
+            color: #5f259f;
+            letter-spacing: 0.03em;
+        }
+
+        .phonepe-instant {
+            color: #059669;
+            font-weight: 700;
         }
 
         .wa-receipt-card {
@@ -2028,28 +2119,28 @@
             }
             .phone-wrap {
                 order: 4;
-                margin: 0.15rem auto 0 auto;
+                margin: 0.25rem auto 0 auto;
                 width: 100%;
                 display: flex;
                 justify-content: center;
                 align-items: center;
                 position: relative;
                 box-sizing: border-box;
-                padding-right: 48px;
+                padding: 0;
             }
             .phone {
-                width: clamp(234px, 66vw, 256px);
-                padding: 6px;
-                border-radius: 30px;
-                box-shadow: 0 10px 28px rgba(13, 27, 62, 0.18);
+                width: clamp(260px, 72vw, 292px);
+                padding: 6.5px;
+                border-radius: 32px;
+                box-shadow: 0 12px 34px rgba(13, 27, 62, 0.20);
                 box-sizing: border-box;
             }
             .phone-screen {
-                border-radius: 24px;
+                border-radius: 26px;
             }
             .phone-side-dock {
                 position: absolute;
-                left: calc(50% + (clamp(234px, 66vw, 256px) / 2) + 6px);
+                left: calc(50% + (clamp(260px, 72vw, 292px) / 2) + 6px);
                 right: auto;
                 top: 50%;
                 transform: translateY(-50%);
@@ -2059,13 +2150,13 @@
                 z-index: 30;
             }
             .side-dock-btn {
-                width: 36px;
-                height: 36px;
-                border-radius: 10px;
+                width: 38px;
+                height: 38px;
+                border-radius: 11px;
             }
             .side-dock-btn svg {
-                width: 18px !important;
-                height: 18px !important;
+                width: 20px !important;
+                height: 20px !important;
             }
             .side-dock-btn#btnSideLinkal img {
                 width: 100% !important;
@@ -2074,8 +2165,8 @@
                 object-fit: cover;
             }
             .phone-screen-ig, .phone-screen-web, .phone-screen-google, .phone-screen-wa {
-                height: 370px;
-                max-height: 370px;
+                height: 420px;
+                max-height: 420px;
             }
             .hero-ctas {
                 display: none !important;
@@ -4399,9 +4490,7 @@
                                         <div class="ig-bio-order-cta">👇 Visit Website to Order</div>
                                         <div class="ig-bio-link-box">
                                             <a href="javascript:void(0)" class="ig-bio-link-btn" id="igBioLink" title="dailyfashion.linkal.in">
-                                                <span class="ig-bio-link-icon-wrap" id="igBioLinkIconWrap" style="display:inline-flex; align-items:center;">
-                                                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
-                                                </span>
+                                                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="ig-link-svg-icon" style="flex-shrink:0; vertical-align:middle; margin-right:3px;"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
                                                 <span class="ig-bio-link-text">dailyfashion.linkal.in</span>
                                             </a>
                                             <!-- Click Ripple Effect -->
@@ -4650,7 +4739,7 @@
 
                                     <!-- Google Search Results Area -->
                                     <div class="google-results-wrap">
-                                        <div class="google-card">
+                                        <div class="google-card" style="position:relative;">
                                             <div class="google-cite-row">
                                                 <div class="google-cite-fav">D</div>
                                                 <div class="google-cite-meta">
@@ -4682,6 +4771,13 @@
                                                 <a href="javascript:void(0)" class="google-sitelink-pill g-link-trigger">Men's Denim Jeans</a>
                                                 <a href="javascript:void(0)" class="google-sitelink-pill g-link-trigger">Shirts Under ₹500</a>
                                                 <a href="javascript:void(0)" class="google-sitelink-pill g-link-trigger">WhatsApp Order</a>
+                                            </div>
+
+                                            <!-- Animated Arrow Cursor clicking Google Result -->
+                                            <div class="google-arrow-cursor" id="googleArrowCursor">
+                                                <svg width="18" height="18" viewBox="0 0 24 24" fill="#000000" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                                    <path d="M4.5 3.5l14 7-6.5 1.5-3.5 6.5-4-15z"/>
+                                                </svg>
                                             </div>
                                         </div>
                                     </div>
@@ -4743,39 +4839,111 @@
                                                 </div>
                                             </div>
 
-                                            <!-- Message 3: Daily Fashion sends Product Photo + QR Code (In) -->
+                                            <!-- Message 3: Daily Fashion sends Product Photo + PhonePe QR Code (In) -->
                                             <div class="wa-msg wa-msg-in" id="waMsg3" style="display:none;">
                                                 <div class="wa-bubble wa-media-bubble">
-                                                    <div class="wa-qr-card">
-                                                        <img src="https://images.unsplash.com/photo-1542272604-787c3835535d?w=260&auto=format&fit=crop&q=80" alt="Product" class="wa-product-thumb" />
-                                                        <div class="wa-qr-box">
-                                                            <div class="wa-qr-code-img">
-                                                                <svg width="40" height="40" viewBox="0 0 100 100" fill="#0F172A">
-                                                                    <rect width="28" height="28" x="8" y="8" rx="2"/>
-                                                                    <rect width="16" height="16" x="14" y="14" fill="#FFF"/>
-                                                                    <rect width="8" height="8" x="18" y="18"/>
-                                                                    <rect width="28" height="28" x="64" y="8" rx="2"/>
-                                                                    <rect width="16" height="16" x="70" y="14" fill="#FFF"/>
-                                                                    <rect width="8" height="8" x="74" y="18"/>
-                                                                    <rect width="28" height="28" x="8" y="64" rx="2"/>
-                                                                    <rect width="16" height="16" x="14" y="70" fill="#FFF"/>
-                                                                    <rect width="8" height="8" x="18" y="74"/>
-                                                                    <rect width="6" height="6" x="42" y="12"/>
-                                                                    <rect width="6" height="6" x="50" y="24"/>
-                                                                    <rect width="6" height="6" x="42" y="36"/>
-                                                                    <rect width="6" height="6" x="42" y="56"/>
-                                                                    <rect width="6" height="6" x="52" y="68"/>
-                                                                    <rect width="6" height="6" x="66" y="44"/>
-                                                                    <rect width="6" height="6" x="76" y="56"/>
-                                                                </svg>
-                                                            </div>
-                                                            <div class="wa-qr-label">
-                                                                <span class="wa-qr-upi">dailyfashion@upi</span>
-                                                                <span class="wa-qr-amt">Pay ₹799</span>
-                                                            </div>
+                                                    <div style="display:flex; align-items:center; gap:6px; margin-bottom:4px; padding:3px 5px; background:#F8FAFC; border-radius:5px; border:1px solid #E2E8F0;">
+                                                        <img src="https://images.unsplash.com/photo-1542272604-787c3835535d?w=160&auto=format&fit=crop&q=80" alt="Product" class="wa-product-thumb" style="width:36px; height:36px; border-radius:4px; object-fit:cover; flex-shrink:0;" />
+                                                        <div style="font-size:0.52rem; line-height:1.2; text-align:left;">
+                                                            <div style="font-weight:700; color:#0F172A;">Slim Fit Stretch Denim Jeans</div>
+                                                            <div style="color:#059669; font-weight:800;">₹799 <span style="color:#94A3B8; text-decoration:line-through; font-size:0.46rem;">₹1,499</span></div>
                                                         </div>
                                                     </div>
-                                                    <div class="wa-bubble-text" style="margin-top:3px;">Scan &amp; pay ₹799, then share screenshot for dispatch!</div>
+
+                                                    <!-- PhonePe UPI QR Standee Card -->
+                                                    <div class="wa-phonepe-qr-card">
+                                                        <div class="phonepe-hdr">
+                                                            <div class="phonepe-logo-badge">
+                                                                <svg width="12" height="12" viewBox="0 0 24 24" fill="#FFFFFF">
+                                                                    <rect width="24" height="24" rx="5" fill="#5f259f"/>
+                                                                    <text x="12" y="17" fill="#FFFFFF" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="900" font-size="14" text-anchor="middle">पे</text>
+                                                                </svg>
+                                                                <span class="phonepe-hdr-title">PhonePe</span>
+                                                            </div>
+                                                            <span class="phonepe-hdr-sub">Accepted Here</span>
+                                                        </div>
+                                                        <div class="phonepe-qr-body">
+                                                            <div class="phonepe-qr-matrix-wrap">
+                                                                <svg width="68" height="68" viewBox="0 0 110 110" class="phonepe-qr-svg">
+                                                                    <rect width="110" height="110" fill="#FFFFFF"/>
+                                                                    <!-- Top-Left Finder -->
+                                                                    <rect x="6" y="6" width="28" height="28" fill="#111827" rx="3"/>
+                                                                    <rect x="10" y="10" width="20" height="20" fill="#FFFFFF" rx="2"/>
+                                                                    <rect x="14" y="14" width="12" height="12" fill="#5f259f" rx="2"/>
+                                                                    <!-- Top-Right Finder -->
+                                                                    <rect x="76" y="6" width="28" height="28" fill="#111827" rx="3"/>
+                                                                    <rect x="80" y="10" width="20" height="20" fill="#FFFFFF" rx="2"/>
+                                                                    <rect x="84" y="14" width="12" height="12" fill="#5f259f" rx="2"/>
+                                                                    <!-- Bottom-Left Finder -->
+                                                                    <rect x="6" y="76" width="28" height="28" fill="#111827" rx="3"/>
+                                                                    <rect x="10" y="80" width="20" height="20" fill="#FFFFFF" rx="2"/>
+                                                                    <rect x="14" y="84" width="12" height="12" fill="#5f259f" rx="2"/>
+                                                                    <!-- Authentic Timing/Data Pattern -->
+                                                                    <rect x="38" y="16" width="4" height="4" fill="#111827"/>
+                                                                    <rect x="46" y="16" width="4" height="4" fill="#111827"/>
+                                                                    <rect x="54" y="16" width="4" height="4" fill="#111827"/>
+                                                                    <rect x="62" y="16" width="4" height="4" fill="#111827"/>
+                                                                    <rect x="16" y="38" width="4" height="4" fill="#111827"/>
+                                                                    <rect x="16" y="46" width="4" height="4" fill="#111827"/>
+                                                                    <rect x="16" y="54" width="4" height="4" fill="#111827"/>
+                                                                    <rect x="16" y="62" width="4" height="4" fill="#111827"/>
+                                                                    <rect x="38" y="6" width="4" height="6" fill="#111827"/>
+                                                                    <rect x="46" y="8" width="4" height="4" fill="#111827"/>
+                                                                    <rect x="58" y="6" width="6" height="4" fill="#111827"/>
+                                                                    <rect x="68" y="8" width="4" height="4" fill="#111827"/>
+                                                                    <rect x="38" y="24" width="6" height="4" fill="#111827"/>
+                                                                    <rect x="50" y="24" width="4" height="6" fill="#111827"/>
+                                                                    <rect x="62" y="24" width="6" height="4" fill="#111827"/>
+                                                                    <rect x="6" y="38" width="6" height="4" fill="#111827"/>
+                                                                    <rect x="26" y="40" width="4" height="6" fill="#111827"/>
+                                                                    <rect x="6" y="52" width="4" height="6" fill="#111827"/>
+                                                                    <rect x="24" y="56" width="6" height="4" fill="#111827"/>
+                                                                    <rect x="6" y="68" width="4" height="4" fill="#111827"/>
+                                                                    <rect x="24" y="66" width="6" height="4" fill="#111827"/>
+                                                                    <rect x="76" y="38" width="6" height="4" fill="#111827"/>
+                                                                    <rect x="86" y="40" width="4" height="6" fill="#111827"/>
+                                                                    <rect x="96" y="38" width="6" height="4" fill="#111827"/>
+                                                                    <rect x="76" y="52" width="4" height="6" fill="#111827"/>
+                                                                    <rect x="88" y="56" width="6" height="4" fill="#111827"/>
+                                                                    <rect x="96" y="52" width="4" height="6" fill="#111827"/>
+                                                                    <rect x="76" y="68" width="6" height="4" fill="#111827"/>
+                                                                    <rect x="88" y="66" width="4" height="4" fill="#111827"/>
+                                                                    <rect x="96" y="66" width="6" height="6" fill="#111827"/>
+                                                                    <rect x="38" y="76" width="4" height="6" fill="#111827"/>
+                                                                    <rect x="50" y="78" width="6" height="4" fill="#111827"/>
+                                                                    <rect x="62" y="76" width="4" height="6" fill="#111827"/>
+                                                                    <rect x="76" y="78" width="6" height="4" fill="#111827"/>
+                                                                    <rect x="90" y="78" width="4" height="6" fill="#111827"/>
+                                                                    <rect x="38" y="90" width="6" height="4" fill="#111827"/>
+                                                                    <rect x="48" y="88" width="4" height="6" fill="#111827"/>
+                                                                    <rect x="58" y="92" width="6" height="4" fill="#111827"/>
+                                                                    <rect x="70" y="90" width="4" height="4" fill="#111827"/>
+                                                                    <rect x="80" y="92" width="6" height="4" fill="#111827"/>
+                                                                    <rect x="92" y="90" width="4" height="6" fill="#111827"/>
+                                                                    <rect x="38" y="100" width="4" height="4" fill="#111827"/>
+                                                                    <rect x="48" y="98" width="6" height="4" fill="#111827"/>
+                                                                    <rect x="60" y="100" width="6" height="4" fill="#111827"/>
+                                                                    <rect x="76" y="100" width="4" height="4" fill="#111827"/>
+                                                                    <rect x="86" y="100" width="6" height="4" fill="#111827"/>
+                                                                    <!-- Central PhonePe Purple Badge with 'पे' Icon -->
+                                                                    <rect x="42" y="42" width="26" height="26" rx="6" fill="#FFFFFF"/>
+                                                                    <rect x="44" y="44" width="22" height="22" rx="5" fill="#5f259f"/>
+                                                                    <text x="55" y="60" fill="#FFFFFF" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="900" font-size="13" text-anchor="middle">पे</text>
+                                                                </svg>
+                                                            </div>
+                                                            <div class="phonepe-merchant-info">
+                                                                <div class="phonepe-merchant-name">Daily Fashion</div>
+                                                                <div class="phonepe-upi-id">dailyfashion@ybl</div>
+                                                                <div class="phonepe-pay-amt">Amount: ₹799</div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="phonepe-footer">
+                                                            <span class="phonepe-bhim">BHIM ▶ UPI</span>
+                                                            <span class="phonepe-instant">Scan &amp; Pay Instant</span>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="wa-bubble-text" style="margin-top:4px;">Scan PhonePe QR to pay ₹799, then share screenshot for dispatch!</div>
                                                     <div class="wa-bubble-meta"><span class="wa-time">10:42 AM</span></div>
                                                 </div>
                                             </div>
@@ -4898,6 +5066,8 @@
                         const igRipple = document.getElementById('igClickRipple');
                         const igBioLink = document.getElementById('igBioLink');
                         const googleTyped = document.getElementById('googleSearchTypedText');
+                        const googleCursor = document.getElementById('googleArrowCursor');
+                        const gResultLink = document.getElementById('googleSearchResultLink');
                         const webCursor = document.getElementById('webArrowCursor');
                         const phoneWaBtn1 = document.getElementById('phoneWaBtn1');
 
@@ -4950,7 +5120,7 @@
                             }
                         }
 
-                        // Screen 1: Instagram slow cursor glide & bio link icon click
+                        // Screen 1: Instagram leisurely cursor glide & bio link icon click
                         function playInstagramCursorClick(onDone, keepLooping) {
                             if (!igCursor || !igRipple) {
                                 if (onDone) onDone();
@@ -4974,26 +5144,30 @@
                                             addTimer(() => {
                                                 igCursor.classList.remove('cursor-clicked');
                                                 igCursor.classList.add('cursor-clicking-loop');
-                                            }, 350);
+                                            }, 400);
                                         }
 
                                         if (onDone) {
                                             addTimer(() => {
                                                 onDone();
-                                            }, 600);
+                                            }, 750);
                                         }
-                                    }, 1250);
-                                }, 350);
-                            }, 150);
+                                    }, 1400);
+                                }, 400);
+                            }, 250);
                         }
 
-                        // Screen 2: Google Search typing animation
+                        // Screen 2: Google Search typing animation & arrow clicking result
                         function playGoogleTyping(onDone) {
                             if (!googleTyped) {
                                 if (onDone) onDone();
                                 return;
                             }
                             googleTyped.textContent = '';
+                            if (googleCursor) {
+                                googleCursor.classList.remove('cursor-glide', 'cursor-clicked', 'cursor-visible');
+                                void googleCursor.offsetWidth;
+                            }
                             const query = 'Daily Fashion';
                             let i = 0;
 
@@ -5001,17 +5175,36 @@
                                 if (i < query.length) {
                                     googleTyped.textContent += query.charAt(i);
                                     i++;
-                                    addTimer(typeChar, 75);
-                                } else if (onDone) {
+                                    addTimer(typeChar, 85);
+                                } else {
+                                    // Search finished: arrow cursor appears and clicks on Google result
                                     addTimer(() => {
-                                        onDone();
-                                    }, 2400);
+                                        if (googleCursor) googleCursor.classList.add('cursor-visible');
+
+                                        addTimer(() => {
+                                            if (googleCursor) googleCursor.classList.add('cursor-glide');
+
+                                            addTimer(() => {
+                                                if (googleCursor) googleCursor.classList.add('cursor-clicked');
+                                                if (gResultLink) {
+                                                    gResultLink.style.color = '#1A0DAB';
+                                                    gResultLink.style.textDecoration = 'underline';
+                                                    setTimeout(() => { if (gResultLink) gResultLink.style.textDecoration = ''; }, 350);
+                                                }
+
+                                                addTimer(() => {
+                                                    if (googleCursor) googleCursor.classList.remove('cursor-visible');
+                                                    if (onDone) onDone();
+                                                }, 650);
+                                            }, 1250);
+                                        }, 350);
+                                    }, 600);
                                 }
                             }
-                            addTimer(typeChar, 250);
+                            addTimer(typeChar, 300);
                         }
 
-                        // Screen 3: Website cursor glide & WhatsApp Order click
+                        // Screen 3: Website leisurely cursor glide & WhatsApp Order click
                         function playWebsiteCursorClick(onDone) {
                             if (!webCursor) {
                                 if (onDone) onDone();
@@ -5034,13 +5227,13 @@
                                             if (phoneWaBtn1) phoneWaBtn1.style.transform = '';
                                             webCursor.classList.remove('cursor-visible');
                                             if (onDone) onDone();
-                                        }, 450);
-                                    }, 1150);
-                                }, 300);
-                            }, 200);
+                                        }, 550);
+                                    }, 1250);
+                                }, 350);
+                            }, 250);
                         }
 
-                        // Screen 4: WhatsApp Business Chat sequential flow
+                        // Screen 4: WhatsApp Business Chat relaxed sequential flow
                         function playWhatsAppChatFlow(onDone) {
                             const waMsgs = [waMsg1, waMsg2, waMsg3, waMsg4, waMsg5];
                             waMsgs.forEach(m => { if (m) m.style.display = 'none'; });
@@ -5079,12 +5272,12 @@
                                             if (waMsg1) waMsg1.style.display = 'flex';
                                             if (waChatBody) waChatBody.scrollTo({ top: waChatBody.scrollHeight, behavior: 'smooth' });
 
-                                            // 3. Daily Fashion Reply (Message 2)
+                                            // 3. Daily Fashion Reply (Message 2) - comfortable reading pause
                                             addTimer(() => {
                                                 if (waMsg2) waMsg2.style.display = 'flex';
                                                 if (waChatBody) waChatBody.scrollTo({ top: waChatBody.scrollHeight, behavior: 'smooth' });
 
-                                                // 4. Daily Fashion Product Photo + QR Code (Message 3)
+                                                // 4. Daily Fashion Product Photo + PhonePe QR Code (Message 3)
                                                 addTimer(() => {
                                                     if (waMsg3) waMsg3.style.display = 'flex';
                                                     if (waChatBody) waChatBody.scrollTo({ top: waChatBody.scrollHeight, behavior: 'smooth' });
@@ -5100,14 +5293,14 @@
                                                             if (waChatBody) waChatBody.scrollTo({ top: waChatBody.scrollHeight, behavior: 'smooth' });
                                                             tourCompleted = true; // Flow finished! Tour ends here.
                                                             if (onDone) onDone();
-                                                        }, 850);
-                                                    }, 950);
-                                                }, 750);
-                                            }, 650);
-                                        }, 250);
-                                    }, 1050);
-                                }, 350);
-                            }, 200);
+                                                        }, 1400);
+                                                    }, 1800);
+                                                }, 1400);
+                                            }, 1200);
+                                        }, 300);
+                                    }, 1200);
+                                }, 400);
+                            }, 250);
                         }
 
                         // ─── ONE-TIME AUTOMATED 4-SCREEN TOUR (Instagram -> Google -> Website -> WhatsApp) ───
@@ -5116,14 +5309,14 @@
                             displayScreen('ig');
                             if (screenIg) screenIg.scrollTop = 0;
 
-                            // 1. Instagram: scroll down to show 9 posts for 2 seconds
+                            // 1. Instagram: scroll down to show 9 posts for 2.5 seconds (relaxed)
                             addTimer(() => {
                                 if (tourCompleted) return;
                                 if (screenIg) {
                                     screenIg.scrollTo({ top: 180, behavior: 'smooth' });
                                 }
 
-                                // Hold at bottom for 2s
+                                // Hold at bottom for 2.5s
                                 addTimer(() => {
                                     if (tourCompleted) return;
                                     // Scroll back up to top
@@ -5148,24 +5341,40 @@
                                                 displayScreen('web');
                                                 if (screenWeb) screenWeb.scrollTop = 0;
 
+                                                // Website first scrolls down a bit to show products, then scrolls back and clicks WhatsApp
                                                 addTimer(() => {
                                                     if (tourCompleted) return;
-                                                    // Arrow clicks WhatsApp Order button on Product 1
-                                                    playWebsiteCursorClick(() => {
-                                                        if (tourCompleted) return;
+                                                    if (screenWeb) {
+                                                        screenWeb.scrollTo({ top: 120, behavior: 'smooth' });
+                                                    }
 
-                                                        // 4. Transition to Screen 4 (WhatsApp Business Chat)
-                                                        displayScreen('wa');
-                                                        playWhatsAppChatFlow(() => {
-                                                            tourCompleted = true; // Complete! Stops auto-move permanently.
-                                                        });
-                                                    });
-                                                }, 700);
+                                                    // Hold scroll to let user view catalog
+                                                    addTimer(() => {
+                                                        if (tourCompleted) return;
+                                                        if (screenWeb) {
+                                                            screenWeb.scrollTo({ top: 0, behavior: 'smooth' });
+                                                        }
+
+                                                        // Scroll settled -> arrow clicks WhatsApp Order button on Product 1
+                                                        addTimer(() => {
+                                                            if (tourCompleted) return;
+                                                            playWebsiteCursorClick(() => {
+                                                                if (tourCompleted) return;
+
+                                                                // 4. Transition to Screen 4 (WhatsApp Business Chat)
+                                                                displayScreen('wa');
+                                                                playWhatsAppChatFlow(() => {
+                                                                    tourCompleted = true; // Complete! Stops auto-move permanently.
+                                                                });
+                                                            });
+                                                        }, 650);
+                                                    }, 1500);
+                                                }, 600);
                                             });
                                         }, false);
-                                    }, 550);
-                                }, 2000);
-                            }, 450);
+                                    }, 700);
+                                }, 2500);
+                            }, 500);
                         }
 
                         // ─── MANUAL USER INTERACTION (Stops auto-rotation, stays on selected screen) ───
@@ -5227,7 +5436,6 @@
                         }
 
                         // Direct click on Google Search Result or Sitelinks -> switches to Screen 3 (Website)
-                        const gResultLink = document.getElementById('googleSearchResultLink');
                         if (gResultLink) {
                             gResultLink.addEventListener('click', (e) => {
                                 e.preventDefault();
@@ -5325,7 +5533,7 @@
                                             if (bioEl) bioEl.textContent = d.bio;
                                         }
                                         if (d.linkText) {
-                                            const lk = document.querySelector('#igBioLink span');
+                                            const lk = document.querySelector('#igBioLink .ig-bio-link-text');
                                             if (lk) lk.textContent = d.linkText;
                                             const urlBar = document.querySelector('.chrome-url-text');
                                             if (urlBar) urlBar.textContent = d.linkText;
