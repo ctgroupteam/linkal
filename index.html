@@ -521,9 +521,18 @@
         }
 
         .hero-h1 {
-            margin-bottom: 1.2rem;
+            margin-bottom: 0.5rem;
             line-height: 1.15;
             color: #0D1B3E;
+        }
+
+        .hero-subheading {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 1.18rem;
+            font-weight: 600;
+            color: #475569;
+            margin: 0.35rem 0 1.25rem 0;
+            line-height: 1.35;
         }
 
         /* Hero Single Feature Box (CV & Wedding Card in 1 box) */
@@ -774,8 +783,11 @@
             color: #334155;
         }
 
-        /* 2. Google Chrome Address Bar */
+        /* 2. Google Chrome Address Bar (Sticky at Top so it never disappears on scroll) */
         .chrome-browser-bar {
+            position: sticky;
+            top: 0;
+            z-index: 40;
             background: #F8FAFC;
             padding: 5px 7px;
             display: flex;
@@ -783,6 +795,8 @@
             gap: 4px;
             border-bottom: 1px solid #E2E8F0;
             user-select: none;
+            flex-shrink: 0;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
         }
 
         .chrome-btn {
@@ -1046,21 +1060,21 @@
         }
 
         .ig-arrow-cursor.cursor-glide {
-            transform: translate(10px, 7px) scale(1);
+            transform: translate(12px, 16px) scale(1);
         }
 
         .ig-arrow-cursor.cursor-clicked {
-            transform: translate(10px, 7px) scale(0.82);
+            transform: translate(12px, 16px) scale(0.82);
             transition: transform 0.2s ease;
         }
 
         .ig-arrow-cursor.cursor-clicking-loop {
-            animation: cursorClickPulse 1.4s ease-in-out infinite;
+            animation: cursorClickPulse 1.2s cubic-bezier(0.34, 1.56, 0.64, 1) infinite;
         }
 
         @keyframes cursorClickPulse {
-            0%, 100% { transform: translate(10px, 7px) scale(1); }
-            45% { transform: translate(10px, 7px) scale(0.82); }
+            0%, 100% { transform: translate(12px, 16px) scale(1); filter: drop-shadow(0 3px 6px rgba(0,0,0,0.35)); }
+            45% { transform: translate(12px, 16px) scale(0.80); filter: drop-shadow(0 1px 3px rgba(0,0,0,0.45)); }
         }
 
         .ig-actions-row {
@@ -1148,11 +1162,10 @@
 
         .phone-store-header {
             background: #0D1B3E;
-            padding: 0.65rem 0.65rem 0.45rem 0.65rem;
+            padding: 0.55rem 0.65rem 0.45rem 0.65rem;
             text-align: center;
             border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-            position: sticky;
-            top: 0;
+            position: relative;
             z-index: 10;
         }
 
@@ -1327,8 +1340,7 @@
             background: #FFFFFF;
             padding: 8px 10px 4px 10px;
             border-bottom: 1px solid #E2E8F0;
-            position: sticky;
-            top: 0;
+            position: relative;
             z-index: 10;
         }
 
@@ -2101,24 +2113,34 @@
                 white-space: normal;
                 font-size: clamp(1.22rem, 5.2vw, 1.55rem);
                 font-weight: 800;
-                margin-bottom: 0.25rem;
+                margin-bottom: 0.15rem;
                 line-height: 1.25;
                 letter-spacing: -0.02em;
                 text-wrap: balance;
                 padding: 0 0.5rem;
             }
-            .hero-single-box {
+            .hero-subheading {
                 order: 3;
+                font-size: clamp(0.85rem, 3.6vw, 0.98rem);
+                font-weight: 600;
+                color: #475569;
+                margin: 0.15rem auto 0.5rem auto;
+                text-align: center;
+                line-height: 1.3;
+                padding: 0 0.5rem;
+            }
+            .hero-single-box {
+                order: 4;
                 display: none !important;
             }
             .hero-free-announcement {
-                order: 3;
+                order: 4;
                 font-size: 0.72rem;
                 padding: 0.3rem 0.7rem;
                 margin-bottom: 0.4rem;
             }
             .phone-wrap {
-                order: 4;
+                order: 5;
                 margin: 0.25rem auto 0 auto;
                 width: 100%;
                 display: flex;
@@ -4409,12 +4431,8 @@
 
                         <h1 class="hero-h1">Create Free Website in 1 Minute and get a <span class="highlight">Free Domain</span></h1>
 
-                        <!-- 1-line announcement below heading (Desktop & Mobile) -->
-                        <div class="hero-free-announcement">
-                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#4F8CF0" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0; vertical-align:middle; display:inline-block;"><path d="M12 2l2.4 7.4 7.6 2.6-7.6 2.6L12 22l-2.4-7.4L2 12l7.6-2.6z"/></svg>
-                            <span>CV Websites &amp; Wedding Card Websites : Lifetime</span>
-                            <span class="free-pill-badge">FREE</span>
-                        </div>
+                        <!-- Subheading directly below heading -->
+                        <p class="hero-subheading">Grow your business with Linkal</p>
 
                         <div class="hero-ctas">
                             <a href="https://studio.linkal.in" class="btn btn-navy btn-lg">
@@ -4567,34 +4585,46 @@
 
                                     <!-- Store Header & Filter Taskbar -->
                                     <div class="phone-store-header">
-                                        <div class="phone-store-name">
-                                            <span>Daily Fashion</span>
-                                            <svg width="12" height="12" viewBox="0 0 24 24" fill="#38BDF8"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                                        <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:4px;">
+                                            <div class="phone-store-name">
+                                                <span style="background:#38BDF8; color:#0D1B3E; font-size:0.56rem; font-weight:900; padding:1px 4px; border-radius:3px;">DF</span>
+                                                <span>Daily Fashion</span>
+                                                <svg width="11" height="11" viewBox="0 0 24 24" fill="#38BDF8"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                                            </div>
+                                            <div style="display:flex; align-items:center; gap:6px; color:#94A3B8;">
+                                                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                                                <div style="position:relative;">
+                                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+                                                    <span style="position:absolute; top:-4px; right:-5px; background:#EF4444; color:#FFF; font-size:0.42rem; font-weight:800; border-radius:10px; width:10px; height:10px; display:flex; align-items:center; justify-content:center;">1</span>
+                                                </div>
+                                            </div>
                                         </div>
                                         <div class="phone-store-sub">Men's Shirts &amp; Jeans &bull; WhatsApp Ordering</div>
                                         <!-- Working Menu Taskbar (All Clickable) -->
                                         <div class="phone-store-taskbar">
-                                            <button class="p-filter-btn active" data-filter="all">Home</button>
+                                            <button class="p-filter-btn active" data-filter="all">All</button>
+                                            <button class="p-filter-btn" data-filter="jeans">Slim Jeans</button>
                                             <button class="p-filter-btn" data-filter="shirts">Shirts</button>
-                                            <button class="p-filter-btn" data-filter="jeans">Jeans</button>
                                             <button class="p-filter-btn" data-filter="u500">Under ₹500</button>
                                             <button class="p-filter-btn" data-filter="u1000">Under ₹1000</button>
                                         </div>
                                     </div>
 
                                     <div class="phone-store-banner">
-                                        <span style="display:inline-flex; align-items:center; gap:4px;"><svg width="10" height="10" viewBox="0 0 24 24" fill="#F59E0B"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg> FREE DELIVERY ABOVE ₹499 &bull; CASH ON DELIVERY</span>
+                                        <span style="display:inline-flex; align-items:center; gap:4px;"><svg width="10" height="10" viewBox="0 0 24 24" fill="#F59E0B"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg> FREE EXPRESS DELIVERY &bull; COD AVAILABLE</span>
                                     </div>
 
                                     <!-- Product Cards with WhatsApp Ordering -->
                                     <div class="phone-products" id="phoneWebProducts">
                                         <!-- Product 1: Jeans (₹799) -->
                                         <div class="phone-product" data-cat="jeans" data-price="799">
-                                            <div class="phone-product-img">
-                                                <img src="https://images.unsplash.com/photo-1542272604-787c3835535d?w=300&auto=format&fit=crop&q=80" alt="Slim Fit Stretch Denim Jeans" loading="lazy" />
+                                            <div class="phone-product-img" style="position:relative;">
+                                                <img src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=300&auto=format&fit=crop&q=80" alt="Slim Fit Stretch Denim Jeans" loading="lazy" />
+                                                <span style="position:absolute; bottom:2px; left:2px; background:#EF4444; color:#FFF; font-size:0.42rem; font-weight:800; padding:1px 3px; border-radius:3px;">50% OFF</span>
                                             </div>
                                             <div class="phone-product-info">
                                                 <div class="phone-product-name">Slim Fit Stretch Denim Jeans</div>
+                                                <div style="font-size:0.48rem; color:#F59E0B; margin:1px 0;">★★★★★ <span style="color:#64748B; font-weight:600;">4.9 (420)</span></div>
                                                 <div class="phone-product-price">₹799 <span>₹1,499</span></div>
                                                 <div style="position:relative;">
                                                     <a href="https://wa.me/918766882442?text=Hi%2C%20I%20want%20to%20order%20Slim%20Fit%20Stretch%20Denim%20Jeans%20(Rs.799)" target="_blank" rel="noopener noreferrer" class="phone-wa-btn" id="phoneWaBtn1">
@@ -4613,11 +4643,13 @@
 
                                         <!-- Product 2: Shirt (₹449 - Under ₹500) -->
                                         <div class="phone-product" data-cat="shirt" data-price="449">
-                                            <div class="phone-product-img">
+                                            <div class="phone-product-img" style="position:relative;">
                                                 <img src="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?w=300&auto=format&fit=crop&q=80" alt="Classic Oxford Cotton Shirt" loading="lazy" />
+                                                <span style="position:absolute; bottom:2px; left:2px; background:#0284C7; color:#FFF; font-size:0.42rem; font-weight:800; padding:1px 3px; border-radius:3px;">BESTSELLER</span>
                                             </div>
                                             <div class="phone-product-info">
                                                 <div class="phone-product-name">Classic Oxford Cotton Shirt</div>
+                                                <div style="font-size:0.48rem; color:#F59E0B; margin:1px 0;">★★★★★ <span style="color:#64748B; font-weight:600;">4.8 (280)</span></div>
                                                 <div class="phone-product-price">₹449 <span>₹899</span></div>
                                                 <a href="https://wa.me/918766882442?text=Hi%2C%20I%20want%20to%20order%20Classic%20Oxford%20Cotton%20Shirt%20(Rs.449)" target="_blank" rel="noopener noreferrer" class="phone-wa-btn">
                                                     <svg width="9" height="9" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.699c.971.53 1.771.815 2.796.815 3.182 0 5.768-2.587 5.768-5.767.001-3.18-2.585-5.766-5.768-5.766zm9.969 5.768c0 5.48-4.453 9.932-9.969 9.932-1.748 0-3.38-.456-4.807-1.252l-5.224 1.38 1.399-5.109c-.896-1.487-1.408-3.228-1.408-5.087 0-5.48 4.453-9.932 9.969-9.932 5.516 0 10.04 4.452 10.04 9.932z"/></svg>
@@ -4842,15 +4874,23 @@
                                             <!-- Message 3: Daily Fashion sends Product Photo + PhonePe QR Code (In) -->
                                             <div class="wa-msg wa-msg-in" id="waMsg3" style="display:none;">
                                                 <div class="wa-bubble wa-media-bubble">
-                                                    <div style="display:flex; align-items:center; gap:6px; margin-bottom:4px; padding:3px 5px; background:#F8FAFC; border-radius:5px; border:1px solid #E2E8F0;">
-                                                        <img src="https://images.unsplash.com/photo-1542272604-787c3835535d?w=160&auto=format&fit=crop&q=80" alt="Product" class="wa-product-thumb" style="width:36px; height:36px; border-radius:4px; object-fit:cover; flex-shrink:0;" />
-                                                        <div style="font-size:0.52rem; line-height:1.2; text-align:left;">
-                                                            <div style="font-weight:700; color:#0F172A;">Slim Fit Stretch Denim Jeans</div>
-                                                            <div style="color:#059669; font-weight:800;">₹799 <span style="color:#94A3B8; text-decoration:line-through; font-size:0.46rem;">₹1,499</span></div>
+                                                    <!-- Large high-res product card -->
+                                                    <div style="margin-bottom:6px; border-radius:7px; overflow:hidden; border:1px solid #E2E8F0; background:#FFFFFF;">
+                                                        <img src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=600&auto=format&fit=crop&q=80" alt="Slim Fit Stretch Denim Jeans" style="width:100%; height:96px; object-fit:cover; display:block;" />
+                                                        <div style="padding:4px 6px; text-align:left; background:#F8FAFC;">
+                                                            <div style="display:flex; align-items:center; justify-content:space-between;">
+                                                                <span style="font-weight:800; font-size:0.62rem; color:#0F172A;">Slim Fit Stretch Denim Jeans</span>
+                                                                <span style="background:#DCFCE7; color:#15803D; font-size:0.46rem; font-weight:800; padding:1px 4px; border-radius:3px;">IN STOCK</span>
+                                                            </div>
+                                                            <div style="display:flex; align-items:center; gap:5px; margin-top:2px;">
+                                                                <span style="color:#059669; font-weight:800; font-size:0.65rem;">₹799</span>
+                                                                <span style="color:#94A3B8; text-decoration:line-through; font-size:0.52rem;">₹1,499</span>
+                                                                <span style="color:#EA580C; font-weight:700; font-size:0.5rem;">(50% OFF)</span>
+                                                            </div>
                                                         </div>
                                                     </div>
 
-                                                    <!-- PhonePe UPI QR Standee Card -->
+                                                    <!-- Authentic PhonePe UPI QR Standee Card -->
                                                     <div class="wa-phonepe-qr-card">
                                                         <div class="phonepe-hdr">
                                                             <div class="phonepe-logo-badge">
@@ -4864,71 +4904,13 @@
                                                         </div>
                                                         <div class="phonepe-qr-body">
                                                             <div class="phonepe-qr-matrix-wrap">
-                                                                <svg width="68" height="68" viewBox="0 0 110 110" class="phonepe-qr-svg">
-                                                                    <rect width="110" height="110" fill="#FFFFFF"/>
-                                                                    <!-- Top-Left Finder -->
-                                                                    <rect x="6" y="6" width="28" height="28" fill="#111827" rx="3"/>
-                                                                    <rect x="10" y="10" width="20" height="20" fill="#FFFFFF" rx="2"/>
-                                                                    <rect x="14" y="14" width="12" height="12" fill="#5f259f" rx="2"/>
-                                                                    <!-- Top-Right Finder -->
-                                                                    <rect x="76" y="6" width="28" height="28" fill="#111827" rx="3"/>
-                                                                    <rect x="80" y="10" width="20" height="20" fill="#FFFFFF" rx="2"/>
-                                                                    <rect x="84" y="14" width="12" height="12" fill="#5f259f" rx="2"/>
-                                                                    <!-- Bottom-Left Finder -->
-                                                                    <rect x="6" y="76" width="28" height="28" fill="#111827" rx="3"/>
-                                                                    <rect x="10" y="80" width="20" height="20" fill="#FFFFFF" rx="2"/>
-                                                                    <rect x="14" y="84" width="12" height="12" fill="#5f259f" rx="2"/>
-                                                                    <!-- Authentic Timing/Data Pattern -->
-                                                                    <rect x="38" y="16" width="4" height="4" fill="#111827"/>
-                                                                    <rect x="46" y="16" width="4" height="4" fill="#111827"/>
-                                                                    <rect x="54" y="16" width="4" height="4" fill="#111827"/>
-                                                                    <rect x="62" y="16" width="4" height="4" fill="#111827"/>
-                                                                    <rect x="16" y="38" width="4" height="4" fill="#111827"/>
-                                                                    <rect x="16" y="46" width="4" height="4" fill="#111827"/>
-                                                                    <rect x="16" y="54" width="4" height="4" fill="#111827"/>
-                                                                    <rect x="16" y="62" width="4" height="4" fill="#111827"/>
-                                                                    <rect x="38" y="6" width="4" height="6" fill="#111827"/>
-                                                                    <rect x="46" y="8" width="4" height="4" fill="#111827"/>
-                                                                    <rect x="58" y="6" width="6" height="4" fill="#111827"/>
-                                                                    <rect x="68" y="8" width="4" height="4" fill="#111827"/>
-                                                                    <rect x="38" y="24" width="6" height="4" fill="#111827"/>
-                                                                    <rect x="50" y="24" width="4" height="6" fill="#111827"/>
-                                                                    <rect x="62" y="24" width="6" height="4" fill="#111827"/>
-                                                                    <rect x="6" y="38" width="6" height="4" fill="#111827"/>
-                                                                    <rect x="26" y="40" width="4" height="6" fill="#111827"/>
-                                                                    <rect x="6" y="52" width="4" height="6" fill="#111827"/>
-                                                                    <rect x="24" y="56" width="6" height="4" fill="#111827"/>
-                                                                    <rect x="6" y="68" width="4" height="4" fill="#111827"/>
-                                                                    <rect x="24" y="66" width="6" height="4" fill="#111827"/>
-                                                                    <rect x="76" y="38" width="6" height="4" fill="#111827"/>
-                                                                    <rect x="86" y="40" width="4" height="6" fill="#111827"/>
-                                                                    <rect x="96" y="38" width="6" height="4" fill="#111827"/>
-                                                                    <rect x="76" y="52" width="4" height="6" fill="#111827"/>
-                                                                    <rect x="88" y="56" width="6" height="4" fill="#111827"/>
-                                                                    <rect x="96" y="52" width="4" height="6" fill="#111827"/>
-                                                                    <rect x="76" y="68" width="6" height="4" fill="#111827"/>
-                                                                    <rect x="88" y="66" width="4" height="4" fill="#111827"/>
-                                                                    <rect x="96" y="66" width="6" height="6" fill="#111827"/>
-                                                                    <rect x="38" y="76" width="4" height="6" fill="#111827"/>
-                                                                    <rect x="50" y="78" width="6" height="4" fill="#111827"/>
-                                                                    <rect x="62" y="76" width="4" height="6" fill="#111827"/>
-                                                                    <rect x="76" y="78" width="6" height="4" fill="#111827"/>
-                                                                    <rect x="90" y="78" width="4" height="6" fill="#111827"/>
-                                                                    <rect x="38" y="90" width="6" height="4" fill="#111827"/>
-                                                                    <rect x="48" y="88" width="4" height="6" fill="#111827"/>
-                                                                    <rect x="58" y="92" width="6" height="4" fill="#111827"/>
-                                                                    <rect x="70" y="90" width="4" height="4" fill="#111827"/>
-                                                                    <rect x="80" y="92" width="6" height="4" fill="#111827"/>
-                                                                    <rect x="92" y="90" width="4" height="6" fill="#111827"/>
-                                                                    <rect x="38" y="100" width="4" height="4" fill="#111827"/>
-                                                                    <rect x="48" y="98" width="6" height="4" fill="#111827"/>
-                                                                    <rect x="60" y="100" width="6" height="4" fill="#111827"/>
-                                                                    <rect x="76" y="100" width="4" height="4" fill="#111827"/>
-                                                                    <rect x="86" y="100" width="6" height="4" fill="#111827"/>
+                                                                <svg width="72" height="72" viewBox="0 0 33 33" class="phonepe-qr-svg">
+                                                                    <rect style="fill:#FFFFFF;" x="0" y="0" width="33" height="33"/>
+                                                                    <path style="fill:rgb(0, 0, 0)" d="M 0,0 l 1,0 0,1 -1,0 z M 1,0 l 1,0 0,1 -1,0 z M 2,0 l 1,0 0,1 -1,0 z M 3,0 l 1,0 0,1 -1,0 z M 4,0 l 1,0 0,1 -1,0 z M 5,0 l 1,0 0,1 -1,0 z M 6,0 l 1,0 0,1 -1,0 z M 10,0 l 1,0 0,1 -1,0 z M 12,0 l 1,0 0,1 -1,0 z M 13,0 l 1,0 0,1 -1,0 z M 14,0 l 1,0 0,1 -1,0 z M 17,0 l 1,0 0,1 -1,0 z M 18,0 l 1,0 0,1 -1,0 z M 19,0 l 1,0 0,1 -1,0 z M 20,0 l 1,0 0,1 -1,0 z M 21,0 l 1,0 0,1 -1,0 z M 23,0 l 1,0 0,1 -1,0 z M 26,0 l 1,0 0,1 -1,0 z M 27,0 l 1,0 0,1 -1,0 z M 28,0 l 1,0 0,1 -1,0 z M 29,0 l 1,0 0,1 -1,0 z M 30,0 l 1,0 0,1 -1,0 z M 31,0 l 1,0 0,1 -1,0 z M 32,0 l 1,0 0,1 -1,0 z M 0,1 l 1,0 0,1 -1,0 z M 6,1 l 1,0 0,1 -1,0 z M 8,1 l 1,0 0,1 -1,0 z M 10,1 l 1,0 0,1 -1,0 z M 14,1 l 1,0 0,1 -1,0 z M 15,1 l 1,0 0,1 -1,0 z M 16,1 l 1,0 0,1 -1,0 z M 18,1 l 1,0 0,1 -1,0 z M 26,1 l 1,0 0,1 -1,0 z M 32,1 l 1,0 0,1 -1,0 z M 0,2 l 1,0 0,1 -1,0 z M 2,2 l 1,0 0,1 -1,0 z M 3,2 l 1,0 0,1 -1,0 z M 4,2 l 1,0 0,1 -1,0 z M 6,2 l 1,0 0,1 -1,0 z M 12,2 l 1,0 0,1 -1,0 z M 14,2 l 1,0 0,1 -1,0 z M 15,2 l 1,0 0,1 -1,0 z M 16,2 l 1,0 0,1 -1,0 z M 21,2 l 1,0 0,1 -1,0 z M 24,2 l 1,0 0,1 -1,0 z M 26,2 l 1,0 0,1 -1,0 z M 28,2 l 1,0 0,1 -1,0 z M 29,2 l 1,0 0,1 -1,0 z M 30,2 l 1,0 0,1 -1,0 z M 32,2 l 1,0 0,1 -1,0 z M 0,3 l 1,0 0,1 -1,0 z M 2,3 l 1,0 0,1 -1,0 z M 3,3 l 1,0 0,1 -1,0 z M 4,3 l 1,0 0,1 -1,0 z M 6,3 l 1,0 0,1 -1,0 z M 8,3 l 1,0 0,1 -1,0 z M 9,3 l 1,0 0,1 -1,0 z M 10,3 l 1,0 0,1 -1,0 z M 12,3 l 1,0 0,1 -1,0 z M 14,3 l 1,0 0,1 -1,0 z M 15,3 l 1,0 0,1 -1,0 z M 16,3 l 1,0 0,1 -1,0 z M 17,3 l 1,0 0,1 -1,0 z M 19,3 l 1,0 0,1 -1,0 z M 22,3 l 1,0 0,1 -1,0 z M 23,3 l 1,0 0,1 -1,0 z M 26,3 l 1,0 0,1 -1,0 z M 28,3 l 1,0 0,1 -1,0 z M 29,3 l 1,0 0,1 -1,0 z M 30,3 l 1,0 0,1 -1,0 z M 32,3 l 1,0 0,1 -1,0 z M 0,4 l 1,0 0,1 -1,0 z M 2,4 l 1,0 0,1 -1,0 z M 3,4 l 1,0 0,1 -1,0 z M 4,4 l 1,0 0,1 -1,0 z M 6,4 l 1,0 0,1 -1,0 z M 9,4 l 1,0 0,1 -1,0 z M 13,4 l 1,0 0,1 -1,0 z M 16,4 l 1,0 0,1 -1,0 z M 17,4 l 1,0 0,1 -1,0 z M 18,4 l 1,0 0,1 -1,0 z M 19,4 l 1,0 0,1 -1,0 z M 20,4 l 1,0 0,1 -1,0 z M 23,4 l 1,0 0,1 -1,0 z M 26,4 l 1,0 0,1 -1,0 z M 28,4 l 1,0 0,1 -1,0 z M 29,4 l 1,0 0,1 -1,0 z M 30,4 l 1,0 0,1 -1,0 z M 32,4 l 1,0 0,1 -1,0 z M 0,5 l 1,0 0,1 -1,0 z M 6,5 l 1,0 0,1 -1,0 z M 8,5 l 1,0 0,1 -1,0 z M 9,5 l 1,0 0,1 -1,0 z M 11,5 l 1,0 0,1 -1,0 z M 12,5 l 1,0 0,1 -1,0 z M 15,5 l 1,0 0,1 -1,0 z M 16,5 l 1,0 0,1 -1,0 z M 17,5 l 1,0 0,1 -1,0 z M 20,5 l 1,0 0,1 -1,0 z M 21,5 l 1,0 0,1 -1,0 z M 22,5 l 1,0 0,1 -1,0 z M 24,5 l 1,0 0,1 -1,0 z M 26,5 l 1,0 0,1 -1,0 z M 32,5 l 1,0 0,1 -1,0 z M 0,6 l 1,0 0,1 -1,0 z M 1,6 l 1,0 0,1 -1,0 z M 2,6 l 1,0 0,1 -1,0 z M 3,6 l 1,0 0,1 -1,0 z M 4,6 l 1,0 0,1 -1,0 z M 5,6 l 1,0 0,1 -1,0 z M 6,6 l 1,0 0,1 -1,0 z M 8,6 l 1,0 0,1 -1,0 z M 10,6 l 1,0 0,1 -1,0 z M 12,6 l 1,0 0,1 -1,0 z M 14,6 l 1,0 0,1 -1,0 z M 16,6 l 1,0 0,1 -1,0 z M 18,6 l 1,0 0,1 -1,0 z M 20,6 l 1,0 0,1 -1,0 z M 22,6 l 1,0 0,1 -1,0 z M 24,6 l 1,0 0,1 -1,0 z M 26,6 l 1,0 0,1 -1,0 z M 27,6 l 1,0 0,1 -1,0 z M 28,6 l 1,0 0,1 -1,0 z M 29,6 l 1,0 0,1 -1,0 z M 30,6 l 1,0 0,1 -1,0 z M 31,6 l 1,0 0,1 -1,0 z M 32,6 l 1,0 0,1 -1,0 z M 9,7 l 1,0 0,1 -1,0 z M 10,7 l 1,0 0,1 -1,0 z M 11,7 l 1,0 0,1 -1,0 z M 14,7 l 1,0 0,1 -1,0 z M 19,7 l 1,0 0,1 -1,0 z M 21,7 l 1,0 0,1 -1,0 z M 24,7 l 1,0 0,1 -1,0 z M 0,8 l 1,0 0,1 -1,0 z M 1,8 l 1,0 0,1 -1,0 z M 2,8 l 1,0 0,1 -1,0 z M 3,8 l 1,0 0,1 -1,0 z M 4,8 l 1,0 0,1 -1,0 z M 6,8 l 1,0 0,1 -1,0 z M 7,8 l 1,0 0,1 -1,0 z M 8,8 l 1,0 0,1 -1,0 z M 9,8 l 1,0 0,1 -1,0 z M 11,8 l 1,0 0,1 -1,0 z M 14,8 l 1,0 0,1 -1,0 z M 15,8 l 1,0 0,1 -1,0 z M 17,8 l 1,0 0,1 -1,0 z M 20,8 l 1,0 0,1 -1,0 z M 24,8 l 1,0 0,1 -1,0 z M 25,8 l 1,0 0,1 -1,0 z M 27,8 l 1,0 0,1 -1,0 z M 29,8 l 1,0 0,1 -1,0 z M 31,8 l 1,0 0,1 -1,0 z M 2,9 l 1,0 0,1 -1,0 z M 4,9 l 1,0 0,1 -1,0 z M 10,9 l 1,0 0,1 -1,0 z M 12,9 l 1,0 0,1 -1,0 z M 13,9 l 1,0 0,1 -1,0 z M 16,9 l 1,0 0,1 -1,0 z M 17,9 l 1,0 0,1 -1,0 z M 18,9 l 1,0 0,1 -1,0 z M 19,9 l 1,0 0,1 -1,0 z M 20,9 l 1,0 0,1 -1,0 z M 21,9 l 1,0 0,1 -1,0 z M 26,9 l 1,0 0,1 -1,0 z M 29,9 l 1,0 0,1 -1,0 z M 32,9 l 1,0 0,1 -1,0 z M 0,10 l 1,0 0,1 -1,0 z M 2,10 l 1,0 0,1 -1,0 z M 6,10 l 1,0 0,1 -1,0 z M 7,10 l 1,0 0,1 -1,0 z M 10,10 l 1,0 0,1 -1,0 z M 13,10 l 1,0 0,1 -1,0 z M 14,10 l 1,0 0,1 -1,0 z M 15,10 l 1,0 0,1 -1,0 z M 17,10 l 1,0 0,1 -1,0 z M 20,10 l 1,0 0,1 -1,0 z M 22,10 l 1,0 0,1 -1,0 z M 24,10 l 1,0 0,1 -1,0 z M 26,10 l 1,0 0,1 -1,0 z M 29,10 l 1,0 0,1 -1,0 z M 0,11 l 1,0 0,1 -1,0 z M 2,11 l 1,0 0,1 -1,0 z M 4,11 l 1,0 0,1 -1,0 z M 12,11 l 1,0 0,1 -1,0 z M 16,11 l 1,0 0,1 -1,0 z M 18,11 l 1,0 0,1 -1,0 z M 21,11 l 1,0 0,1 -1,0 z M 23,11 l 1,0 0,1 -1,0 z M 25,11 l 1,0 0,1 -1,0 z M 27,11 l 1,0 0,1 -1,0 z M 30,11 l 1,0 0,1 -1,0 z M 32,11 l 1,0 0,1 -1,0 z M 0,12 l 1,0 0,1 -1,0 z M 2,12 l 1,0 0,1 -1,0 z M 4,12 l 1,0 0,1 -1,0 z M 5,12 l 1,0 0,1 -1,0 z M 6,12 l 1,0 0,1 -1,0 z M 8,12 l 1,0 0,1 -1,0 z M 9,12 l 1,0 0,1 -1,0 z M 10,12 l 1,0 0,1 -1,0 z M 12,12 l 1,0 0,1 -1,0 z M 14,12 l 1,0 0,1 -1,0 z M 15,12 l 1,0 0,1 -1,0 z M 17,12 l 1,0 0,1 -1,0 z M 18,12 l 1,0 0,1 -1,0 z M 22,12 l 1,0 0,1 -1,0 z M 23,12 l 1,0 0,1 -1,0 z M 24,12 l 1,0 0,1 -1,0 z M 25,12 l 1,0 0,1 -1,0 z M 27,12 l 1,0 0,1 -1,0 z M 28,12 l 1,0 0,1 -1,0 z M 32,12 l 1,0 0,1 -1,0 z M 0,13 l 1,0 0,1 -1,0 z M 3,13 l 1,0 0,1 -1,0 z M 4,13 l 1,0 0,1 -1,0 z M 7,13 l 1,0 0,1 -1,0 z M 14,13 l 1,0 0,1 -1,0 z M 18,13 l 1,0 0,1 -1,0 z M 19,13 l 1,0 0,1 -1,0 z M 20,13 l 1,0 0,1 -1,0 z M 21,13 l 1,0 0,1 -1,0 z M 22,13 l 1,0 0,1 -1,0 z M 23,13 l 1,0 0,1 -1,0 z M 26,13 l 1,0 0,1 -1,0 z M 29,13 l 1,0 0,1 -1,0 z M 31,13 l 1,0 0,1 -1,0 z M 32,13 l 1,0 0,1 -1,0 z M 1,14 l 1,0 0,1 -1,0 z M 6,14 l 1,0 0,1 -1,0 z M 7,14 l 1,0 0,1 -1,0 z M 9,14 l 1,0 0,1 -1,0 z M 10,14 l 1,0 0,1 -1,0 z M 11,14 l 1,0 0,1 -1,0 z M 12,14 l 1,0 0,1 -1,0 z M 13,14 l 1,0 0,1 -1,0 z M 15,14 l 1,0 0,1 -1,0 z M 17,14 l 1,0 0,1 -1,0 z M 21,14 l 1,0 0,1 -1,0 z M 25,14 l 1,0 0,1 -1,0 z M 26,14 l 1,0 0,1 -1,0 z M 27,14 l 1,0 0,1 -1,0 z M 29,14 l 1,0 0,1 -1,0 z M 0,15 l 1,0 0,1 -1,0 z M 1,15 l 1,0 0,1 -1,0 z M 2,15 l 1,0 0,1 -1,0 z M 7,15 l 1,0 0,1 -1,0 z M 9,15 l 1,0 0,1 -1,0 z M 10,15 l 1,0 0,1 -1,0 z M 11,15 l 1,0 0,1 -1,0 z M 15,15 l 1,0 0,1 -1,0 z M 18,15 l 1,0 0,1 -1,0 z M 19,15 l 1,0 0,1 -1,0 z M 20,15 l 1,0 0,1 -1,0 z M 21,15 l 1,0 0,1 -1,0 z M 23,15 l 1,0 0,1 -1,0 z M 29,15 l 1,0 0,1 -1,0 z M 30,15 l 1,0 0,1 -1,0 z M 31,15 l 1,0 0,1 -1,0 z M 2,16 l 1,0 0,1 -1,0 z M 3,16 l 1,0 0,1 -1,0 z M 5,16 l 1,0 0,1 -1,0 z M 6,16 l 1,0 0,1 -1,0 z M 9,16 l 1,0 0,1 -1,0 z M 11,16 l 1,0 0,1 -1,0 z M 15,16 l 1,0 0,1 -1,0 z M 16,16 l 1,0 0,1 -1,0 z M 17,16 l 1,0 0,1 -1,0 z M 22,16 l 1,0 0,1 -1,0 z M 23,16 l 1,0 0,1 -1,0 z M 24,16 l 1,0 0,1 -1,0 z M 25,16 l 1,0 0,1 -1,0 z M 27,16 l 1,0 0,1 -1,0 z M 28,16 l 1,0 0,1 -1,0 z M 29,16 l 1,0 0,1 -1,0 z M 32,16 l 1,0 0,1 -1,0 z M 0,17 l 1,0 0,1 -1,0 z M 2,17 l 1,0 0,1 -1,0 z M 8,17 l 1,0 0,1 -1,0 z M 10,17 l 1,0 0,1 -1,0 z M 12,17 l 1,0 0,1 -1,0 z M 13,17 l 1,0 0,1 -1,0 z M 18,17 l 1,0 0,1 -1,0 z M 20,17 l 1,0 0,1 -1,0 z M 23,17 l 1,0 0,1 -1,0 z M 25,17 l 1,0 0,1 -1,0 z M 26,17 l 1,0 0,1 -1,0 z M 30,17 l 1,0 0,1 -1,0 z M 32,17 l 1,0 0,1 -1,0 z M 0,18 l 1,0 0,1 -1,0 z M 1,18 l 1,0 0,1 -1,0 z M 3,18 l 1,0 0,1 -1,0 z M 6,18 l 1,0 0,1 -1,0 z M 7,18 l 1,0 0,1 -1,0 z M 13,18 l 1,0 0,1 -1,0 z M 14,18 l 1,0 0,1 -1,0 z M 15,18 l 1,0 0,1 -1,0 z M 18,18 l 1,0 0,1 -1,0 z M 20,18 l 1,0 0,1 -1,0 z M 22,18 l 1,0 0,1 -1,0 z M 26,18 l 1,0 0,1 -1,0 z M 30,18 l 1,0 0,1 -1,0 z M 31,18 l 1,0 0,1 -1,0 z M 1,19 l 1,0 0,1 -1,0 z M 2,19 l 1,0 0,1 -1,0 z M 3,19 l 1,0 0,1 -1,0 z M 5,19 l 1,0 0,1 -1,0 z M 7,19 l 1,0 0,1 -1,0 z M 8,19 l 1,0 0,1 -1,0 z M 10,19 l 1,0 0,1 -1,0 z M 12,19 l 1,0 0,1 -1,0 z M 13,19 l 1,0 0,1 -1,0 z M 15,19 l 1,0 0,1 -1,0 z M 19,19 l 1,0 0,1 -1,0 z M 21,19 l 1,0 0,1 -1,0 z M 24,19 l 1,0 0,1 -1,0 z M 25,19 l 1,0 0,1 -1,0 z M 28,19 l 1,0 0,1 -1,0 z M 29,19 l 1,0 0,1 -1,0 z M 30,19 l 1,0 0,1 -1,0 z M 1,20 l 1,0 0,1 -1,0 z M 4,20 l 1,0 0,1 -1,0 z M 5,20 l 1,0 0,1 -1,0 z M 6,20 l 1,0 0,1 -1,0 z M 7,20 l 1,0 0,1 -1,0 z M 8,20 l 1,0 0,1 -1,0 z M 9,20 l 1,0 0,1 -1,0 z M 10,20 l 1,0 0,1 -1,0 z M 12,20 l 1,0 0,1 -1,0 z M 14,20 l 1,0 0,1 -1,0 z M 15,20 l 1,0 0,1 -1,0 z M 16,20 l 1,0 0,1 -1,0 z M 17,20 l 1,0 0,1 -1,0 z M 19,20 l 1,0 0,1 -1,0 z M 23,20 l 1,0 0,1 -1,0 z M 24,20 l 1,0 0,1 -1,0 z M 25,20 l 1,0 0,1 -1,0 z M 28,20 l 1,0 0,1 -1,0 z M 0,21 l 1,0 0,1 -1,0 z M 2,21 l 1,0 0,1 -1,0 z M 3,21 l 1,0 0,1 -1,0 z M 4,21 l 1,0 0,1 -1,0 z M 5,21 l 1,0 0,1 -1,0 z M 8,21 l 1,0 0,1 -1,0 z M 17,21 l 1,0 0,1 -1,0 z M 18,21 l 1,0 0,1 -1,0 z M 19,21 l 1,0 0,1 -1,0 z M 22,21 l 1,0 0,1 -1,0 z M 23,21 l 1,0 0,1 -1,0 z M 26,21 l 1,0 0,1 -1,0 z M 27,21 l 1,0 0,1 -1,0 z M 30,21 l 1,0 0,1 -1,0 z M 31,21 l 1,0 0,1 -1,0 z M 32,21 l 1,0 0,1 -1,0 z M 0,22 l 1,0 0,1 -1,0 z M 2,22 l 1,0 0,1 -1,0 z M 3,22 l 1,0 0,1 -1,0 z M 4,22 l 1,0 0,1 -1,0 z M 5,22 l 1,0 0,1 -1,0 z M 6,22 l 1,0 0,1 -1,0 z M 8,22 l 1,0 0,1 -1,0 z M 11,22 l 1,0 0,1 -1,0 z M 12,22 l 1,0 0,1 -1,0 z M 15,22 l 1,0 0,1 -1,0 z M 20,22 l 1,0 0,1 -1,0 z M 21,22 l 1,0 0,1 -1,0 z M 22,22 l 1,0 0,1 -1,0 z M 24,22 l 1,0 0,1 -1,0 z M 25,22 l 1,0 0,1 -1,0 z M 29,22 l 1,0 0,1 -1,0 z M 30,22 l 1,0 0,1 -1,0 z M 31,22 l 1,0 0,1 -1,0 z M 0,23 l 1,0 0,1 -1,0 z M 2,23 l 1,0 0,1 -1,0 z M 5,23 l 1,0 0,1 -1,0 z M 8,23 l 1,0 0,1 -1,0 z M 9,23 l 1,0 0,1 -1,0 z M 10,23 l 1,0 0,1 -1,0 z M 11,23 l 1,0 0,1 -1,0 z M 14,23 l 1,0 0,1 -1,0 z M 16,23 l 1,0 0,1 -1,0 z M 21,23 l 1,0 0,1 -1,0 z M 22,23 l 1,0 0,1 -1,0 z M 24,23 l 1,0 0,1 -1,0 z M 26,23 l 1,0 0,1 -1,0 z M 27,23 l 1,0 0,1 -1,0 z M 29,23 l 1,0 0,1 -1,0 z M 30,23 l 1,0 0,1 -1,0 z M 31,23 l 1,0 0,1 -1,0 z M 0,24 l 1,0 0,1 -1,0 z M 2,24 l 1,0 0,1 -1,0 z M 3,24 l 1,0 0,1 -1,0 z M 5,24 l 1,0 0,1 -1,0 z M 6,24 l 1,0 0,1 -1,0 z M 11,24 l 1,0 0,1 -1,0 z M 17,24 l 1,0 0,1 -1,0 z M 18,24 l 1,0 0,1 -1,0 z M 19,24 l 1,0 0,1 -1,0 z M 20,24 l 1,0 0,1 -1,0 z M 21,24 l 1,0 0,1 -1,0 z M 22,24 l 1,0 0,1 -1,0 z M 23,24 l 1,0 0,1 -1,0 z M 24,24 l 1,0 0,1 -1,0 z M 25,24 l 1,0 0,1 -1,0 z M 26,24 l 1,0 0,1 -1,0 z M 27,24 l 1,0 0,1 -1,0 z M 28,24 l 1,0 0,1 -1,0 z M 29,24 l 1,0 0,1 -1,0 z M 31,24 l 1,0 0,1 -1,0 z M 8,25 l 1,0 0,1 -1,0 z M 9,25 l 1,0 0,1 -1,0 z M 12,25 l 1,0 0,1 -1,0 z M 13,25 l 1,0 0,1 -1,0 z M 14,25 l 1,0 0,1 -1,0 z M 17,25 l 1,0 0,1 -1,0 z M 19,25 l 1,0 0,1 -1,0 z M 20,25 l 1,0 0,1 -1,0 z M 21,25 l 1,0 0,1 -1,0 z M 24,25 l 1,0 0,1 -1,0 z M 28,25 l 1,0 0,1 -1,0 z M 31,25 l 1,0 0,1 -1,0 z M 32,25 l 1,0 0,1 -1,0 z M 0,26 l 1,0 0,1 -1,0 z M 1,26 l 1,0 0,1 -1,0 z M 2,26 l 1,0 0,1 -1,0 z M 3,26 l 1,0 0,1 -1,0 z M 4,26 l 1,0 0,1 -1,0 z M 5,26 l 1,0 0,1 -1,0 z M 6,26 l 1,0 0,1 -1,0 z M 8,26 l 1,0 0,1 -1,0 z M 9,26 l 1,0 0,1 -1,0 z M 13,26 l 1,0 0,1 -1,0 z M 14,26 l 1,0 0,1 -1,0 z M 15,26 l 1,0 0,1 -1,0 z M 16,26 l 1,0 0,1 -1,0 z M 21,26 l 1,0 0,1 -1,0 z M 22,26 l 1,0 0,1 -1,0 z M 23,26 l 1,0 0,1 -1,0 z M 24,26 l 1,0 0,1 -1,0 z M 26,26 l 1,0 0,1 -1,0 z M 28,26 l 1,0 0,1 -1,0 z M 29,26 l 1,0 0,1 -1,0 z M 30,26 l 1,0 0,1 -1,0 z M 31,26 l 1,0 0,1 -1,0 z M 0,27 l 1,0 0,1 -1,0 z M 6,27 l 1,0 0,1 -1,0 z M 12,27 l 1,0 0,1 -1,0 z M 13,27 l 1,0 0,1 -1,0 z M 15,27 l 1,0 0,1 -1,0 z M 20,27 l 1,0 0,1 -1,0 z M 21,27 l 1,0 0,1 -1,0 z M 23,27 l 1,0 0,1 -1,0 z M 24,27 l 1,0 0,1 -1,0 z M 28,27 l 1,0 0,1 -1,0 z M 30,27 l 1,0 0,1 -1,0 z M 31,27 l 1,0 0,1 -1,0 z M 32,27 l 1,0 0,1 -1,0 z M 0,28 l 1,0 0,1 -1,0 z M 2,28 l 1,0 0,1 -1,0 z M 3,28 l 1,0 0,1 -1,0 z M 4,28 l 1,0 0,1 -1,0 z M 6,28 l 1,0 0,1 -1,0 z M 8,28 l 1,0 0,1 -1,0 z M 12,28 l 1,0 0,1 -1,0 z M 14,28 l 1,0 0,1 -1,0 z M 16,28 l 1,0 0,1 -1,0 z M 17,28 l 1,0 0,1 -1,0 z M 18,28 l 1,0 0,1 -1,0 z M 19,28 l 1,0 0,1 -1,0 z M 22,28 l 1,0 0,1 -1,0 z M 24,28 l 1,0 0,1 -1,0 z M 25,28 l 1,0 0,1 -1,0 z M 26,28 l 1,0 0,1 -1,0 z M 27,28 l 1,0 0,1 -1,0 z M 28,28 l 1,0 0,1 -1,0 z M 29,28 l 1,0 0,1 -1,0 z M 31,28 l 1,0 0,1 -1,0 z M 32,28 l 1,0 0,1 -1,0 z M 0,29 l 1,0 0,1 -1,0 z M 2,29 l 1,0 0,1 -1,0 z M 3,29 l 1,0 0,1 -1,0 z M 4,29 l 1,0 0,1 -1,0 z M 6,29 l 1,0 0,1 -1,0 z M 8,29 l 1,0 0,1 -1,0 z M 9,29 l 1,0 0,1 -1,0 z M 19,29 l 1,0 0,1 -1,0 z M 20,29 l 1,0 0,1 -1,0 z M 21,29 l 1,0 0,1 -1,0 z M 23,29 l 1,0 0,1 -1,0 z M 25,29 l 1,0 0,1 -1,0 z M 27,29 l 1,0 0,1 -1,0 z M 28,29 l 1,0 0,1 -1,0 z M 29,29 l 1,0 0,1 -1,0 z M 31,29 l 1,0 0,1 -1,0 z M 32,29 l 1,0 0,1 -1,0 z M 0,30 l 1,0 0,1 -1,0 z M 2,30 l 1,0 0,1 -1,0 z M 3,30 l 1,0 0,1 -1,0 z M 4,30 l 1,0 0,1 -1,0 z M 6,30 l 1,0 0,1 -1,0 z M 8,30 l 1,0 0,1 -1,0 z M 9,30 l 1,0 0,1 -1,0 z M 10,30 l 1,0 0,1 -1,0 z M 11,30 l 1,0 0,1 -1,0 z M 12,30 l 1,0 0,1 -1,0 z M 15,30 l 1,0 0,1 -1,0 z M 16,30 l 1,0 0,1 -1,0 z M 17,30 l 1,0 0,1 -1,0 z M 20,30 l 1,0 0,1 -1,0 z M 21,30 l 1,0 0,1 -1,0 z M 24,30 l 1,0 0,1 -1,0 z M 26,30 l 1,0 0,1 -1,0 z M 29,30 l 1,0 0,1 -1,0 z M 0,31 l 1,0 0,1 -1,0 z M 6,31 l 1,0 0,1 -1,0 z M 8,31 l 1,0 0,1 -1,0 z M 11,31 l 1,0 0,1 -1,0 z M 14,31 l 1,0 0,1 -1,0 z M 15,31 l 1,0 0,1 -1,0 z M 21,31 l 1,0 0,1 -1,0 z M 22,31 l 1,0 0,1 -1,0 z M 23,31 l 1,0 0,1 -1,0 z M 27,31 l 1,0 0,1 -1,0 z M 29,31 l 1,0 0,1 -1,0 z M 30,31 l 1,0 0,1 -1,0 z M 0,32 l 1,0 0,1 -1,0 z M 1,32 l 1,0 0,1 -1,0 z M 2,32 l 1,0 0,1 -1,0 z M 3,32 l 1,0 0,1 -1,0 z M 4,32 l 1,0 0,1 -1,0 z M 5,32 l 1,0 0,1 -1,0 z M 6,32 l 1,0 0,1 -1,0 z M 8,32 l 1,0 0,1 -1,0 z M 9,32 l 1,0 0,1 -1,0 z M 10,32 l 1,0 0,1 -1,0 z M 11,32 l 1,0 0,1 -1,0 z M 16,32 l 1,0 0,1 -1,0 z M 17,32 l 1,0 0,1 -1,0 z M 18,32 l 1,0 0,1 -1,0 z M 19,32 l 1,0 0,1 -1,0 z M 22,32 l 1,0 0,1 -1,0 z M 23,32 l 1,0 0,1 -1,0 z M 24,32 l 1,0 0,1 -1,0 z M 25,32 l 1,0 0,1 -1,0 z M 27,32 l 1,0 0,1 -1,0 z M 29,32 l 1,0 0,1 -1,0 z M 31,32 l 1,0 0,1 -1,0 z " />
                                                                     <!-- Central PhonePe Purple Badge with 'पे' Icon -->
-                                                                    <rect x="42" y="42" width="26" height="26" rx="6" fill="#FFFFFF"/>
-                                                                    <rect x="44" y="44" width="22" height="22" rx="5" fill="#5f259f"/>
-                                                                    <text x="55" y="60" fill="#FFFFFF" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="900" font-size="13" text-anchor="middle">पे</text>
+                                                                    <rect x="11" y="11" width="11" height="11" rx="2.5" fill="#FFFFFF"/>
+                                                                    <rect x="11.8" y="11.8" width="9.4" height="9.4" rx="2" fill="#5f259f"/>
+                                                                    <text x="16.5" y="19" fill="#FFFFFF" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="900" font-size="6.5" text-anchor="middle">पे</text>
                                                                 </svg>
                                                             </div>
                                                             <div class="phonepe-merchant-info">
@@ -5303,28 +5285,29 @@
                             }, 250);
                         }
 
-                        // ─── ONE-TIME AUTOMATED 4-SCREEN TOUR (Instagram -> Google -> Website -> WhatsApp) ───
+                                                // ─── ONE-TIME AUTOMATED 4-SCREEN TOUR (Instagram -> Google -> Website -> WhatsApp -> Return to Instagram) ───
                         function runInitialTour() {
                             clearAllTimers();
                             displayScreen('ig');
                             if (screenIg) screenIg.scrollTop = 0;
 
-                            // 1. Instagram: scroll down to show 9 posts for 2.5 seconds (relaxed)
+                            // 1. Instagram: WAIT 1.5 seconds when site is loaded showing top of Insta page
                             addTimer(() => {
                                 if (tourCompleted) return;
+                                // Then smoothly scroll down to show the 9 posts grid
                                 if (screenIg) {
                                     screenIg.scrollTo({ top: 180, behavior: 'smooth' });
                                 }
 
-                                // Hold at bottom for 2.5s
+                                // Hold at bottom for 2.0s to view posts
                                 addTimer(() => {
                                     if (tourCompleted) return;
-                                    // Scroll back up to top
+                                    // Then smoothly scroll back up to top
                                     if (screenIg) {
                                         screenIg.scrollTo({ top: 0, behavior: 'smooth' });
                                     }
 
-                                    // Let scroll settle, then slowly glide cursor and click bio link icon
+                                    // Let scroll settle, then slowly glide cursor below bio link icon and click
                                     addTimer(() => {
                                         if (tourCompleted) return;
                                         playInstagramCursorClick(() => {
@@ -5364,7 +5347,15 @@
                                                                 // 4. Transition to Screen 4 (WhatsApp Business Chat)
                                                                 displayScreen('wa');
                                                                 playWhatsAppChatFlow(() => {
-                                                                    tourCompleted = true; // Complete! Stops auto-move permanently.
+                                                                    // When WhatsApp chat finishes:
+                                                                    // Wait 2.5 seconds, then return back to Screen 1 (Instagram)!
+                                                                    addTimer(() => {
+                                                                        tourCompleted = true; // Complete! Stops auto-move permanently.
+                                                                        displayScreen('ig');
+                                                                        if (screenIg) screenIg.scrollTop = 0;
+                                                                        // Show arrow below link icon, keep clicking indefinitely and stay there!
+                                                                        playInstagramCursorClick(null, true);
+                                                                    }, 2500);
                                                                 });
                                                             });
                                                         }, 650);
@@ -5373,8 +5364,8 @@
                                             });
                                         }, false);
                                     }, 700);
-                                }, 2500);
-                            }, 500);
+                                }, 2000);
+                            }, 1500);
                         }
 
                         // ─── MANUAL USER INTERACTION (Stops auto-rotation, stays on selected screen) ───
@@ -5560,6 +5551,15 @@
                         })();
                     })();
                     </script>
+                </div>
+
+                <!-- Below the Fold Announcement (CV & Wedding Card Websites Lifetime FREE) -->
+                <div class="hero-bottom-announcement reveal" style="text-align: center; margin-top: 1.5rem; margin-bottom: 0.25rem;">
+                    <div class="hero-free-announcement" style="display: inline-flex; margin: 0 auto;">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#4F8CF0" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0; vertical-align:middle; display:inline-block;"><path d="M12 2l2.4 7.4 7.6 2.6-7.6 2.6L12 22l-2.4-7.4L2 12l7.6-2.6z"/></svg>
+                        <span>CV Websites &amp; Wedding Card Websites : Lifetime</span>
+                        <span class="free-pill-badge">FREE</span>
+                    </div>
                 </div>
             </div>
         </section>
